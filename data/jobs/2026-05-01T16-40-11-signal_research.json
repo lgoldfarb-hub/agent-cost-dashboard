@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Pitchlane (wrong company \u2014 manual entry)",
+  "model": "claude-opus-4-6",
+  "started_at": "2026-05-01T16:40:11+00:00",
+  "completed_at": "2026-05-01T16:45:05+00:00",
+  "duration_seconds": 294.0,
+  "input_tokens": 47393,
+  "output_tokens": 8513,
+  "cache_read_tokens": 673601,
+  "cache_write_tokens": 35508,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 0,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.7108949999999999,
+  "cost_output": 0.638475,
+  "cost_cache_read": 1.0104015,
+  "cost_cache_write": 0.665775,
+  "cost_web_search": 0.0,
+  "cost_total": 0.6051
+}
