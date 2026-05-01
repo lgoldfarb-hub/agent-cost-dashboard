@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ agent_label }} — Agent Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+  <a href="/" class="back-link">← All Agents</a>
+  <h1 id="agent-title">{{ agent_label }}</h1>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-label">MTD Spend</div><div class="stat-value" id="a-spend">—</div></div>
+    <div class="stat-card"><div class="stat-label">Avg Cost/Job</div><div class="stat-value" id="a-avg-cost">—</div></div>
+    <div class="stat-card"><div class="stat-label">Avg Duration</div><div class="stat-value" id="a-duration">—</div></div>
+    <div class="stat-card"><div class="stat-label">Cache Hit Rate</div><div class="stat-value" id="a-cache">—</div></div>
+    <div class="stat-card"><div class="stat-label">Avg Searches/Job</div><div class="stat-value" id="a-searches">—</div></div>
+    <div class="stat-card"><div class="stat-label">Success Rate</div><div class="stat-value" id="a-success">—</div></div>
+    <div class="stat-card"><div class="stat-label">Runs Today</div><div class="stat-value" id="a-today">—</div></div>
+    <div class="stat-card"><div class="stat-label">Runs This Week</div><div class="stat-value" id="a-week">—</div></div>
+    <div class="stat-card"><div class="stat-label">Runs This Month</div><div class="stat-value" id="a-month">—</div></div>
+  </div>
+
+  <div class="budget-row">
+    <label>Monthly Budget ($): <input type="number" id="budget-input" min="0" step="1" placeholder="not set"></label>
+    <button onclick="saveBudget()">Save</button>
+    <span id="budget-status-badge"></span>
+    <span id="budget-projected"></span>
+  </div>
+
+  <div id="bloat-alert" class="alert-bloat" style="display:none">
+    ⚠️ Cost-per-job has increased &gt;20% over the last 14 days — possible prompt bloat.
+  </div>
+
+  <div class="charts-row">
+    <div class="chart-card">
+      <h2>Avg Cost/Job Trend (30d)</h2>
+      <canvas id="chart-cost-trend"></canvas>
+    </div>
+    <div class="chart-card">
+      <h2>Run Frequency (30d)</h2>
+      <canvas id="chart-run-freq"></canvas>
+    </div>
+  </div>
+
+  <div class="chart-card chart-wide">
+    <h2>Input Token Sources — estimated avg (last 30 jobs)</h2>
+    <canvas id="chart-token-breakdown" style="max-height:120px"></canvas>
+    <p class="est-note">* System prompt, tool result, and conversation token counts are estimates (chars ÷ 4).</p>
+  </div>
+
+  <div class="insights-panel">
+    <h2>AI Insights <button id="refresh-insights-btn" onclick="refreshInsights()">Refresh</button></h2>
+    <div id="insights-content"><em>Click Refresh to generate insights.</em></div>
+  </div>
+
+  <h2>Jobs</h2>
+  <div class="filter-row">
+    <input type="text" id="filter-input" placeholder="Filter by name…" oninput="filterJobs()">
+    <select id="filter-status" onchange="filterJobs()">
+      <option value="">All statuses</option>
+      <option value="success">Success</option>
+      <option value="failed">Failed</option>
+      <option value="partial">Partial</option>
+    </select>
+  </div>
+  <table id="jobs-table">
+    <thead>
+      <tr>
+        <th onclick="sortBy('started_at')">Time ↕</th>
+        <th onclick="sortBy('job_name')">Job</th>
+        <th onclick="sortBy('duration_seconds')">Duration ↕</th>
+        <th>Status</th>
+        <th onclick="sortBy('input_tokens')">In Tokens ↕</th>
+        <th onclick="sortBy('output_tokens')">Out Tokens ↕</th>
+        <th onclick="sortBy('cache_read_tokens')">Cache Read ↕</th>
+        <th onclick="sortBy('web_searches')">Searches ↕</th>
+        <th onclick="sortBy('cost_total')">Cost ↕</th>
+      </tr>
+    </thead>
+    <tbody id="jobs-tbody"></tbody>
+  </table>
+</div>
+
+<script src="/static/app.js"></script>
+<script>
+const AGENT_NAME = "{{ agent_name }}";
+loadAgent(AGENT_NAME);
+</script>
+</body>
+</html>

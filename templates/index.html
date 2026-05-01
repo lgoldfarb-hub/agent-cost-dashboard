@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Agent Cost Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Agent Cost Dashboard</h1>
+
+  <div class="stat-grid" id="global-stats">
+    <div class="stat-card"><div class="stat-label">MTD Spend</div><div class="stat-value" id="g-spend">—</div></div>
+    <div class="stat-card"><div class="stat-label">Input Tokens</div><div class="stat-value" id="g-in">—</div></div>
+    <div class="stat-card"><div class="stat-label">Output Tokens</div><div class="stat-value" id="g-out">—</div></div>
+    <div class="stat-card"><div class="stat-label">Web Searches</div><div class="stat-value" id="g-searches">—</div></div>
+    <div class="stat-card"><div class="stat-label">Jobs Run</div><div class="stat-value" id="g-jobs">—</div></div>
+    <div class="stat-card"><div class="stat-label">Failed Jobs</div><div class="stat-value" id="g-failed">—</div></div>
+  </div>
+
+  <div class="charts-row">
+    <div class="chart-card">
+      <h2>MTD Cost by Agent</h2>
+      <canvas id="chart-by-agent"></canvas>
+    </div>
+    <div class="chart-card">
+      <h2>Daily Spend (30 days)</h2>
+      <canvas id="chart-daily"></canvas>
+    </div>
+  </div>
+
+  <h2>Agents</h2>
+  <table id="agents-table">
+    <thead>
+      <tr>
+        <th>Agent</th>
+        <th>MTD Spend</th>
+        <th>Jobs</th>
+        <th>Failed</th>
+        <th>Web Searches</th>
+        <th>Jobs/day (7d)</th>
+        <th>Budget</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="agents-tbody"></tbody>
+  </table>
+
+  <div class="insights-panel" id="global-insights">
+    <h2>Cross-Agent Insights</h2>
+    <div id="insights-content">—</div>
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+<script>
+loadSummary();
+</script>
+</body>
+</html>
