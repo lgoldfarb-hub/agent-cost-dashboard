@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Fluix | Paid_meetings_Feb26 (via brief)",
+  "model": "claude-opus-4-6",
+  "started_at": "2026-05-01T16:44:12+00:00",
+  "completed_at": "2026-05-01T16:59:36+00:00",
+  "duration_seconds": 924.0,
+  "input_tokens": 415,
+  "output_tokens": 7696,
+  "cache_read_tokens": 1799923,
+  "cache_write_tokens": 68235,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 0,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.006225,
+  "cost_output": 0.5771999999999999,
+  "cost_cache_read": 2.6998845,
+  "cost_cache_write": 1.27940625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.9125
+}
