@@ -48,6 +48,20 @@ def _days_elapsed():
     return max(n.day, 1)
 
 
+def _parse_date_range():
+    """Return (start_iso, end_iso, days) from query params or MTD defaults."""
+    from_str = request.args.get("from")
+    to_str = request.args.get("to")
+    try:
+        start = datetime.fromisoformat(from_str).replace(tzinfo=timezone.utc) if from_str else _now_utc().replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+        end = datetime.fromisoformat(to_str).replace(hour=23, minute=59, second=59, tzinfo=timezone.utc) if to_str else _now_utc()
+    except ValueError:
+        start = _now_utc().replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+        end = _now_utc()
+    days = max((end - start).days + 1, 1)
+    return start.isoformat(), end.isoformat(), days
+
+
 def _30d_start():
     return (_now_utc() - timedelta(days=30)).isoformat()
 
@@ -56,7 +70,9 @@ def _7d_start():
     return (_now_utc() - timedelta(days=7)).isoformat()
 
 
-def _agent_mtd(conn, agent_name):
+def _agent_mtd(conn, agent_name, start=None, end=None):
+    start = start or _mtd_start()
+    end = end or _now_utc().isoformat()
     row = conn.execute("""
         SELECT
             COALESCE(SUM(cost_total),0) as spend,
@@ -65,8 +81,8 @@ def _agent_mtd(conn, agent_name):
             COALESCE(SUM(web_searches),0) as web_searches,
             COUNT(*) as jobs,
             COALESCE(SUM(CASE WHEN status='failed' THEN 1 ELSE 0 END),0) as failed
-        FROM jobs WHERE agent_name=? AND started_at>=?
-    """, (agent_name, _mtd_start())).fetchone()
+        FROM jobs WHERE agent_name=? AND started_at>=? AND started_at<=?
+    """, (agent_name, start, end)).fetchone()
     return dict(row)
 
 
@@ -108,13 +124,13 @@ def agent_page(agent_name):
 @app.route("/api/summary")
 def api_summary():
     conn = get_conn()
-    days = _days_elapsed()
+    start, end, days = _parse_date_range()
 
     agents_data = []
     total_spend = total_in = total_out = total_searches = total_jobs = total_failed = 0
 
     for agent in AGENTS:
-        mtd = _agent_mtd(conn, agent)
+        mtd = _agent_mtd(conn, agent, start, end)
         budget = _budget(conn, agent)
         status = _budget_status(mtd["spend"], budget, days)
         projected = mtd["spend"] / days * 30 if days > 0 else 0
@@ -138,20 +154,20 @@ def api_summary():
         total_jobs    += mtd["jobs"]
         total_failed  += mtd["failed"]
 
-    # Daily spend last 30 days (all agents combined)
+    # Daily spend within selected range
     daily = conn.execute("""
         SELECT DATE(started_at) as day, SUM(cost_total) as spend
-        FROM jobs WHERE started_at>=?
+        FROM jobs WHERE started_at>=? AND started_at<=?
         GROUP BY day ORDER BY day
-    """, (_30d_start(),)).fetchall()
+    """, (start, end)).fetchall()
 
-    # Run frequency: jobs per day per agent, last 7 days
+    # Run frequency: jobs per day per agent, within selected range
     freq = conn.execute("""
         SELECT agent_name, COUNT(*) as jobs
-        FROM jobs WHERE started_at>=?
+        FROM jobs WHERE started_at>=? AND started_at<=?
         GROUP BY agent_name
-    """, (_7d_start(),)).fetchall()
-    freq_map = {r["agent_name"]: round(r["jobs"] / 7, 2) for r in freq}
+    """, (start, end)).fetchall()
+    freq_map = {r["agent_name"]: round(r["jobs"] / max(days, 1), 2) for r in freq}
 
     conn.close()
     return jsonify({

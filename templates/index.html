@@ -10,6 +10,13 @@
 <div class="container">
   <h1>Agent Cost Dashboard</h1>
 
+  <div class="date-picker-row">
+    <label>From <input type="date" id="date-from"></label>
+    <label>To <input type="date" id="date-to"></label>
+    <button onclick="applyDateRange()">Apply</button>
+    <button onclick="resetDateRange()">MTD</button>
+  </div>
+
   <div class="stat-grid" id="global-stats">
     <div class="stat-card"><div class="stat-label">MTD Spend</div><div class="stat-value" id="g-spend">—</div></div>
     <div class="stat-card"><div class="stat-label">Input Tokens</div><div class="stat-value" id="g-in">—</div></div>
@@ -55,6 +62,8 @@
 
 <script src="/static/app.js"></script>
 <script>
+document.getElementById('date-from').value = _mtdStartStr();
+document.getElementById('date-to').value = _todayStr();
 loadSummary();
 </script>
 </body>

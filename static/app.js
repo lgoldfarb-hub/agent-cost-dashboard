@@ -22,8 +22,34 @@ let _summaryData = null;
 let _agentChart = null;
 let _dailyChart = null;
 
-async function loadSummary() {
-  const r = await fetch('/api/summary');
+function _todayStr() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function _mtdStartStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-01`;
+}
+
+function applyDateRange() {
+  const from = document.getElementById('date-from').value;
+  const to = document.getElementById('date-to').value;
+  loadSummary(from, to);
+}
+
+function resetDateRange() {
+  document.getElementById('date-from').value = _mtdStartStr();
+  document.getElementById('date-to').value = _todayStr();
+  loadSummary();
+}
+
+async function loadSummary(from, to) {
+  let url = '/api/summary';
+  const params = new URLSearchParams();
+  if (from) params.set('from', from);
+  if (to) params.set('to', to);
+  if (params.toString()) url += '?' + params.toString();
+  const r = await fetch(url);
   const d = await r.json();
   _summaryData = d;
 
