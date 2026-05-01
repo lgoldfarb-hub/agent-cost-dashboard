@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Fluix",
+  "model": "claude-opus-4-6",
+  "started_at": "2026-05-01T16:48:42+00:00",
+  "completed_at": "2026-05-01T16:54:07+00:00",
+  "duration_seconds": 325.0,
+  "input_tokens": 15703,
+  "output_tokens": 9398,
+  "cache_read_tokens": 1565064,
+  "cache_write_tokens": 63194,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 0,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.23554500000000003,
+  "cost_output": 0.70485,
+  "cost_cache_read": 2.3475960000000002,
+  "cost_cache_write": 1.1848875,
+  "cost_web_search": 0.0,
+  "cost_total": 0.8946
+}
