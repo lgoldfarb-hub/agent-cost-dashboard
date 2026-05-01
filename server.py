@@ -8,10 +8,13 @@ sys_path = os.path.dirname(__file__)
 import sys
 sys.path.insert(0, sys_path)
 
-from tracker.db import get_conn, init_db, DB_PATH
+from tracker.db import get_conn, init_db, import_json_jobs, DB_PATH
 
 app = Flask(__name__)
 init_db()
+_imported = import_json_jobs()
+if _imported:
+    print(f"[db] Imported {_imported} job(s) from data/jobs/")
 
 AGENTS = [
     "discovery_brief",
