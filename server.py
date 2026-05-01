@@ -9,12 +9,22 @@ import sys
 sys.path.insert(0, sys_path)
 
 from tracker.db import get_conn, init_db, import_json_jobs, DB_PATH
+import subprocess
 
 app = Flask(__name__)
 init_db()
-_imported = import_json_jobs()
-if _imported:
-    print(f"[db] Imported {_imported} job(s) from data/jobs/")
+
+def _pull_and_import():
+    try:
+        result = subprocess.run(["git", "pull"], cwd=os.path.dirname(__file__), capture_output=True, text=True, timeout=15)
+        if "Fast-forward" in result.stdout or "Already up to date" not in result.stdout:
+            n = import_json_jobs()
+            if n:
+                print(f"[db] Imported {n} job(s) from data/jobs/")
+    except Exception as e:
+        print(f"[db] pull_and_import failed: {e}", file=sys.stderr)
+
+_pull_and_import()
 
 AGENTS = [
     "discovery_brief",
@@ -126,6 +136,7 @@ def agent_page(agent_name):
 
 @app.route("/api/summary")
 def api_summary():
+    _pull_and_import()
     conn = get_conn()
     start, end, days = _parse_date_range()
 
