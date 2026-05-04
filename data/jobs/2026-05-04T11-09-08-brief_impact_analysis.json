@@ -1,0 +1,23 @@
+{
+  "agent_name": "brief_impact_analysis",
+  "job_name": "Impact:  Vainu| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-04T11:09:08.883220+00:00",
+  "completed_at": "2026-05-04T11:12:15.619634+00:00",
+  "duration_seconds": 186.736414,
+  "input_tokens": 23079,
+  "output_tokens": 9619,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 1490,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 21589,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.06923699999999999,
+  "cost_output": 0.14428500000000002,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.21352200000000002
+}
