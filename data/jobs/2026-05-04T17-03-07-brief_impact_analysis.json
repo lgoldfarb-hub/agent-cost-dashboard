@@ -1,0 +1,23 @@
+{
+  "agent_name": "brief_impact_analysis",
+  "job_name": "Impact:  Fluix| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-04T17:03:07.147898+00:00",
+  "completed_at": "2026-05-04T17:05:30.987202+00:00",
+  "duration_seconds": 143.839304,
+  "input_tokens": 23123,
+  "output_tokens": 7441,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 1490,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 21633,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.069369,
+  "cost_output": 0.11161499999999999,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.18098399999999998
+}
