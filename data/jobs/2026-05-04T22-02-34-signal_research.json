@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Perform - SaaStock MeetUp",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-04T22:02:34.047884+00:00",
+  "completed_at": "2026-05-04T22:07:37.525324+00:00",
+  "duration_seconds": 303.47744,
+  "input_tokens": 45405,
+  "output_tokens": 9843,
+  "cache_read_tokens": 843075,
+  "cache_write_tokens": 30356,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 42489,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.136215,
+  "cost_output": 0.147645,
+  "cost_cache_read": 0.2529225,
+  "cost_cache_write": 0.113835,
+  "cost_web_search": 0.0,
+  "cost_total": 0.6506175
+}
