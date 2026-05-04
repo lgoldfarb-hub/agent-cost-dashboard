@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  NinjaTech AI| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-04T17:34:28.497727+00:00",
+  "completed_at": "2026-05-04T17:50:04.716027+00:00",
+  "duration_seconds": 936.2183,
+  "input_tokens": 12828,
+  "output_tokens": 31533,
+  "cache_read_tokens": 1473648,
+  "cache_write_tokens": 107056,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 5773,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.038484000000000004,
+  "cost_output": 0.472995,
+  "cost_cache_read": 0.4420944,
+  "cost_cache_write": 0.40146,
+  "cost_web_search": 0.0,
+  "cost_total": 1.3550334
+}
