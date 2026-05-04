@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Axonify| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-04T14:55:36.296984+00:00",
+  "completed_at": "2026-05-04T15:00:05.999980+00:00",
+  "duration_seconds": 269.702996,
+  "input_tokens": 28340,
+  "output_tokens": 7231,
+  "cache_read_tokens": 760665,
+  "cache_write_tokens": 51109,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25424,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.08502,
+  "cost_output": 0.10846499999999999,
+  "cost_cache_read": 0.2281995,
+  "cost_cache_write": 0.19165875000000002,
+  "cost_web_search": 0.0,
+  "cost_total": 0.61334325
+}
