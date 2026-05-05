@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  Cube| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-05T14:49:41.731857+00:00",
+  "completed_at": "2026-05-05T15:11:48.469887+00:00",
+  "duration_seconds": 1326.73803,
+  "input_tokens": 13136,
+  "output_tokens": 50445,
+  "cache_read_tokens": 6706461,
+  "cache_write_tokens": 184667,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 6081,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.039408,
+  "cost_output": 0.756675,
+  "cost_cache_read": 2.0119382999999997,
+  "cost_cache_write": 0.69250125,
+  "cost_web_search": 0.0,
+  "cost_total": 3.5005225499999995
+}
