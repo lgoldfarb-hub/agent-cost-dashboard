@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: PartnrUp | SaaStock US 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-05T13:19:27.561417+00:00",
+  "completed_at": "2026-05-05T13:38:30.820236+00:00",
+  "duration_seconds": 1143.258819,
+  "input_tokens": 12190,
+  "output_tokens": 33161,
+  "cache_read_tokens": 2411738,
+  "cache_write_tokens": 113501,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 5135,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.03657,
+  "cost_output": 0.49741500000000005,
+  "cost_cache_read": 0.7235214,
+  "cost_cache_write": 0.42562875,
+  "cost_web_search": 0.0,
+  "cost_total": 1.68313515
+}
