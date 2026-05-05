@@ -33,6 +33,7 @@ AGENTS = [
     "action_plan",
     "nps",
     "pipeline_agent",
+    "followup_tracker",
 ]
 
 AGENT_LABELS = {
@@ -42,6 +43,7 @@ AGENT_LABELS = {
     "action_plan":          "Action Plan",
     "nps":                  "NPS Agent",
     "pipeline_agent":       "Pipeline Agent",
+    "followup_tracker":     "Follow-up Tracker",
 }
 
 
