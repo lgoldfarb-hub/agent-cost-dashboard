@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  Surfe| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-05T12:54:31.930664+00:00",
+  "completed_at": "2026-05-05T13:03:23.032874+00:00",
+  "duration_seconds": 531.10221,
+  "input_tokens": 11415,
+  "output_tokens": 24823,
+  "cache_read_tokens": 955403,
+  "cache_write_tokens": 71087,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4360,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.034245,
+  "cost_output": 0.37234500000000004,
+  "cost_cache_read": 0.2866209,
+  "cost_cache_write": 0.26657625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.9597871499999999
+}
