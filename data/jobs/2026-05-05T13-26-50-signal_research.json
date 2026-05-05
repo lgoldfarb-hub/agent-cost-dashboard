@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Fivepm AI FZ LLC | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-05T13:26:50.766776+00:00",
+  "completed_at": "2026-05-05T13:28:44.337499+00:00",
+  "duration_seconds": 113.570723,
+  "input_tokens": 44159,
+  "output_tokens": 3822,
+  "cache_read_tokens": 82036,
+  "cache_write_tokens": 31005,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 41243,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.13247699999999998,
+  "cost_output": 0.05733,
+  "cost_cache_read": 0.0246108,
+  "cost_cache_write": 0.11626875,
+  "cost_web_search": 0.0,
+  "cost_total": 0.33068654999999997
+}
