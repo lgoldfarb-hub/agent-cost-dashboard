@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Runa| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-06T19:37:36.392194+00:00",
+  "completed_at": "2026-05-06T19:43:22.237908+00:00",
+  "duration_seconds": 345.845714,
+  "input_tokens": 60497,
+  "output_tokens": 8512,
+  "cache_read_tokens": 1083571,
+  "cache_write_tokens": 59081,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 57581,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.181491,
+  "cost_output": 0.12768000000000002,
+  "cost_cache_read": 0.3250713,
+  "cost_cache_write": 0.22155375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.85579605
+}
