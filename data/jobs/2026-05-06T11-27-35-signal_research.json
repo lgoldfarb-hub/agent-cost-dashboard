@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Youkti| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-06T11:27:35.645118+00:00",
+  "completed_at": "2026-05-06T11:32:59.327578+00:00",
+  "duration_seconds": 323.68246,
+  "input_tokens": 26646,
+  "output_tokens": 8327,
+  "cache_read_tokens": 1324559,
+  "cache_write_tokens": 55300,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 23730,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.079938,
+  "cost_output": 0.12490499999999999,
+  "cost_cache_read": 0.3973677,
+  "cost_cache_write": 0.207375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.8095857
+}
