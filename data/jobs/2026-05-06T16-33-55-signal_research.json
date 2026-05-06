@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Axya| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-06T16:33:55.403479+00:00",
+  "completed_at": "2026-05-06T16:38:27.739809+00:00",
+  "duration_seconds": 272.33633,
+  "input_tokens": 46343,
+  "output_tokens": 7348,
+  "cache_read_tokens": 529723,
+  "cache_write_tokens": 30611,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 43427,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.139029,
+  "cost_output": 0.11022000000000001,
+  "cost_cache_read": 0.1589169,
+  "cost_cache_write": 0.11479125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.52295715
+}
