@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  LinkyBot| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-06T15:51:43.055855+00:00",
+  "completed_at": "2026-05-06T15:55:40.328694+00:00",
+  "duration_seconds": 237.272839,
+  "input_tokens": 28619,
+  "output_tokens": 7140,
+  "cache_read_tokens": 777065,
+  "cache_write_tokens": 47299,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25703,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.08585699999999999,
+  "cost_output": 0.1071,
+  "cost_cache_read": 0.23311949999999998,
+  "cost_cache_write": 0.17737125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.60344775
+}
