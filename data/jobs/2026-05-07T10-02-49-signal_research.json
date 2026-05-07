@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Enrichley | Zapier Batch 15 | New apps - Dec 24",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-07T10:02:49.767097+00:00",
+  "completed_at": "2026-05-07T10:04:29.833259+00:00",
+  "duration_seconds": 100.066162,
+  "input_tokens": 18886,
+  "output_tokens": 4022,
+  "cache_read_tokens": 93526,
+  "cache_write_tokens": 26609,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 15970,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.056658,
+  "cost_output": 0.06033000000000001,
+  "cost_cache_read": 0.028057799999999997,
+  "cost_cache_write": 0.09978375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.24482955
+}
