@@ -137,23 +137,26 @@
         <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Count Meetings on Deal</div><div class="wf-sub">HubSpot</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-condition"><div class="wf-icon">🔀</div><div class="wf-label">Meeting #?</div><div class="wf-sub">1st vs 2nd+</div></div>
-        <div class="wf-arrow">→</div>
         <div class="wf-branch">
           <div class="wf-branch-row">
             <div class="wf-branch-label">1st mtg</div>
             <div class="wf-node wf-action" style="min-width:120px"><div class="wf-icon">📄</div><div class="wf-label">Generic Agenda</div><div class="wf-sub">Fixed template</div></div>
+            <div class="wf-arrow">→</div>
+            <div class="wf-node wf-output"><div class="wf-icon">✉️</div><div class="wf-label">Create Front Draft</div><div class="wf-sub">AE's mailbox</div></div>
+            <div class="wf-arrow">→</div>
+            <div class="wf-node wf-external"><div class="wf-icon">💬</div><div class="wf-label">Slack Notify</div><div class="wf-sub">Link to review draft</div></div>
           </div>
           <div class="wf-branch-row">
             <div class="wf-branch-label">2nd+ mtg</div>
             <div class="wf-node wf-action" style="min-width:120px"><div class="wf-icon">📋</div><div class="wf-label">Fetch Deal Context</div><div class="wf-sub">HubSpot engagements</div></div>
             <div class="wf-arrow">→</div>
             <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Personalize Agenda</div><div class="wf-sub">Claude Sonnet</div></div>
+            <div class="wf-arrow">→</div>
+            <div class="wf-node wf-output"><div class="wf-icon">✉️</div><div class="wf-label">Create Front Draft</div><div class="wf-sub">AE's mailbox</div></div>
+            <div class="wf-arrow">→</div>
+            <div class="wf-node wf-external"><div class="wf-icon">💬</div><div class="wf-label">Slack Notify</div><div class="wf-sub">Link to review draft</div></div>
           </div>
         </div>
-        <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">✉️</div><div class="wf-label">Create Front Draft</div><div class="wf-sub">AE's mailbox</div></div>
-        <div class="wf-arrow">→</div>
-        <div class="wf-node wf-external"><div class="wf-icon">💬</div><div class="wf-label">Slack Notify</div><div class="wf-sub">Link to review draft</div></div>
       </div>
       <div class="doc-section-label">Rules</div>
       <div class="rules-list">
