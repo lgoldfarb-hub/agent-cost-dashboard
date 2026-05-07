@@ -1,0 +1,23 @@
+{
+  "agent_name": "brief_impact_analysis",
+  "job_name": "Impact: TaxCloud | SaaStock US 2026",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-07T20:27:23.355338+00:00",
+  "completed_at": "2026-05-07T20:28:48.194195+00:00",
+  "duration_seconds": 84.838857,
+  "input_tokens": 11756,
+  "output_tokens": 4210,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 1490,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 10266,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.035268,
+  "cost_output": 0.06315,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.098418
+}
