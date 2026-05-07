@@ -102,6 +102,10 @@
           <div class="rule-body">Only runs for deals in the <strong>Global Embedded Pipeline</strong> at the <strong>"Lead or Opportunity (Meeting Booked)"</strong> stage. Any other pipeline or stage → agent exits early with no brief generated. This is the most common reason a brief silently doesn't appear.</div>
         </div>
         <div class="rule-item">
+          <div class="rule-title">🔍 Signal Research reuse</div>
+          <div class="rule-body">Before running web research for §9 (Trigger Signals), the agent checks whether a Signal Research Agent note already exists on the deal. If found, it reuses that content directly — skipping the web search step entirely. If no signal note exists, it runs <code>run_signal_research()</code> to generate one fresh.</div>
+        </div>
+        <div class="rule-item">
           <div class="rule-title">📊 Deal stage advancement</div>
           <div class="rule-body">After every successful brief, the deal stage is automatically advanced to <strong>"First Meeting Scheduled"</strong> (stage ID: 113001644). This cannot be disabled on the auto-trigger flow.</div>
         </div>
