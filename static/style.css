@@ -346,8 +346,12 @@ tr.row-partial td { background: #fffbf0; }
 .wf-branch {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
   align-self: center;
+  margin-left: 8px;
+  padding: 16px;
+  background: rgba(0,0,0,.03);
+  border-radius: 10px;
 }
 .wf-branch-row {
   display: flex;
@@ -358,8 +362,15 @@ tr.row-partial td { background: #fffbf0; }
   font-size: 10px;
   font-weight: 700;
   color: #9ca3af;
-  padding: 0 6px;
+  width: 56px;
+  min-width: 56px;
+  text-align: right;
+  padding-right: 10px;
   white-space: nowrap;
+}
+.wf-branch .wf-node {
+  min-width: 128px;
+  max-width: 128px;
 }
 
 /* ── Rules list ── */
