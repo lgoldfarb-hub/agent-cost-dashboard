@@ -254,13 +254,13 @@
     <!-- Signal Research Agent -->
     <div class="doc-card">
       <h2>Signal Research Agent</h2>
-      <div class="doc-meta">Trigger: Webhook / manual &nbsp;·&nbsp; Model: Claude Opus 4.6 &nbsp;·&nbsp; Repo: signal-research-agent</div>
+      <div class="doc-meta">Trigger: Albato webhook (new lead created) &nbsp;·&nbsp; Model: Claude Opus 4.6 &nbsp;·&nbsp; Repo: signal-research-agent</div>
       <p class="doc-description">
         Researches buying signals for a specific deal on demand. Given a company domain, it runs targeted web searches to surface relevant signals — funding rounds, hiring trends, product launches, tech stack changes, integrations needed — and posts a structured findings note to the HubSpot deal. Used to prioritize outreach and prep for calls where the discovery brief hasn't run yet.
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
-        <div class="wf-node wf-trigger"><div class="wf-icon">🔔</div><div class="wf-label">Webhook / Manual</div><div class="wf-sub">repository_dispatch</div></div>
+        <div class="wf-node wf-trigger"><div class="wf-icon">🔔</div><div class="wf-label">Albato Webhook</div><div class="wf-sub">New lead created</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Deal Context</div><div class="wf-sub">HubSpot CRM</div></div>
         <div class="wf-arrow">→</div>
