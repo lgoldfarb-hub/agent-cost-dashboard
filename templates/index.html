@@ -10,55 +10,316 @@
 <div class="container">
   <h1>Agent Cost Dashboard</h1>
 
-  <div class="date-picker-row">
-    <label>From <input type="date" id="date-from"></label>
-    <label>To <input type="date" id="date-to"></label>
-    <button onclick="applyDateRange()">Apply</button>
-    <button onclick="resetDateRange()">MTD</button>
+  <div class="tab-nav">
+    <button class="tab-btn active" data-tab="dashboard" onclick="showTab('dashboard')">Dashboard</button>
+    <button class="tab-btn" data-tab="docs" onclick="showTab('docs')">Documentation</button>
   </div>
 
-  <div class="stat-grid" id="global-stats">
-    <div class="stat-card"><div class="stat-label">MTD Spend</div><div class="stat-value" id="g-spend">—</div></div>
-    <div class="stat-card"><div class="stat-label">Input Tokens</div><div class="stat-value" id="g-in">—</div></div>
-    <div class="stat-card"><div class="stat-label">Output Tokens</div><div class="stat-value" id="g-out">—</div></div>
-    <div class="stat-card"><div class="stat-label">Web Searches</div><div class="stat-value" id="g-searches">—</div></div>
-    <div class="stat-card"><div class="stat-label">Jobs Run</div><div class="stat-value" id="g-jobs">—</div></div>
-    <div class="stat-card"><div class="stat-label">Failed Jobs</div><div class="stat-value" id="g-failed">—</div></div>
-  </div>
-
-  <div class="charts-row">
-    <div class="chart-card">
-      <h2>MTD Cost by Agent</h2>
-      <canvas id="chart-by-agent"></canvas>
+  <!-- ── Dashboard tab ── -->
+  <div id="tab-dashboard">
+    <div class="date-picker-row">
+      <label>From <input type="date" id="date-from"></label>
+      <label>To <input type="date" id="date-to"></label>
+      <button onclick="applyDateRange()">Apply</button>
+      <button onclick="resetDateRange()">MTD</button>
     </div>
-    <div class="chart-card">
-      <h2>Daily Spend (30 days)</h2>
-      <canvas id="chart-daily"></canvas>
+
+    <div class="stat-grid" id="global-stats">
+      <div class="stat-card"><div class="stat-label">MTD Spend</div><div class="stat-value" id="g-spend">—</div></div>
+      <div class="stat-card"><div class="stat-label">Input Tokens</div><div class="stat-value" id="g-in">—</div></div>
+      <div class="stat-card"><div class="stat-label">Output Tokens</div><div class="stat-value" id="g-out">—</div></div>
+      <div class="stat-card"><div class="stat-label">Web Searches</div><div class="stat-value" id="g-searches">—</div></div>
+      <div class="stat-card"><div class="stat-label">Jobs Run</div><div class="stat-value" id="g-jobs">—</div></div>
+      <div class="stat-card"><div class="stat-label">Failed Jobs</div><div class="stat-value" id="g-failed">—</div></div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-card">
+        <h2>MTD Cost by Agent</h2>
+        <canvas id="chart-by-agent"></canvas>
+      </div>
+      <div class="chart-card">
+        <h2>Daily Spend (30 days)</h2>
+        <canvas id="chart-daily"></canvas>
+      </div>
+    </div>
+
+    <h2>Agents</h2>
+    <table id="agents-table">
+      <thead>
+        <tr>
+          <th>Agent</th>
+          <th>MTD Spend</th>
+          <th>Jobs</th>
+          <th>Failed</th>
+          <th>Web Searches</th>
+          <th>Jobs/day (7d)</th>
+          <th>Budget</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="agents-tbody"></tbody>
+    </table>
+
+    <div class="insights-panel" id="global-insights">
+      <h2>Cross-Agent Insights</h2>
+      <div id="insights-content">—</div>
     </div>
   </div>
 
-  <h2>Agents</h2>
-  <table id="agents-table">
-    <thead>
-      <tr>
-        <th>Agent</th>
-        <th>MTD Spend</th>
-        <th>Jobs</th>
-        <th>Failed</th>
-        <th>Web Searches</th>
-        <th>Jobs/day (7d)</th>
-        <th>Budget</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody id="agents-tbody"></tbody>
-  </table>
+  <!-- ── Documentation tab ── -->
+  <div id="tab-docs" style="display:none">
 
-  <div class="insights-panel" id="global-insights">
-    <h2>Cross-Agent Insights</h2>
-    <div id="insights-content">—</div>
-  </div>
-</div>
+    <!-- Discovery Brief Agent -->
+    <div class="doc-card">
+      <h2>Discovery Brief Agent</h2>
+      <div class="doc-meta">Trigger: HubSpot webhook (meeting booked) &nbsp;·&nbsp; Model: Claude Opus 4.6 &nbsp;·&nbsp; Repo: discovery-brief-agent</div>
+      <p class="doc-description">
+        Automatically researches a prospect before a discovery call. When a new meeting is booked in HubSpot, this agent pulls deal and contact data, enriches it via Amplemarket, runs live web research, and generates a 16-section MEDDPICC-style brief saved directly as a HubSpot note on the deal. It also advances the deal stage to "First Meeting Scheduled" so the pipeline stays accurate. The goal is for the AE to walk into every call knowing the prospect's integration landscape, pain points, and ICP fit — without doing any manual research.
+      </p>
+      <div class="doc-section-label">Workflow</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">🔔</div><div class="wf-label">HubSpot Webhook</div><div class="wf-sub">Meeting booked</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Deal & Contact</div><div class="wf-sub">HubSpot REST API</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-external"><div class="wf-icon">🔍</div><div class="wf-label">Contact Enrichment</div><div class="wf-sub">Amplemarket API</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Web Research</div><div class="wf-sub">Claude Opus + web_search</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">📝</div><div class="wf-label">Generate Brief</div><div class="wf-sub">16-section MEDDPICC</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💾</div><div class="wf-label">Save HubSpot Note</div><div class="wf-sub">On the deal</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">📊</div><div class="wf-label">Advance Deal Stage</div><div class="wf-sub">First Mtg Scheduled</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-external"><div class="wf-icon">💬</div><div class="wf-label">Slack Notify</div><div class="wf-sub">Success / failure</div></div>
+      </div>
+      <div class="doc-section-label">Input Data</div>
+      <table class="input-table">
+        <thead><tr><th>Field</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Deal ID</td><td>HubSpot webhook (repository_dispatch payload)</td></tr>
+          <tr><td>Contact email, name, title</td><td>HubSpot CRM — contact associated with deal</td></tr>
+          <tr><td>Deal name, stage, pipeline</td><td>HubSpot CRM — deal properties</td></tr>
+          <tr><td>Company enrichment (LinkedIn, funding, headcount)</td><td>Amplemarket API — contact enrichment</td></tr>
+          <tr><td>Web research (news, product, integrations)</td><td>Claude web_search + web_fetch tools</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Meeting Confirmation Agent -->
+    <div class="doc-card">
+      <h2>Meeting Confirmation Agent</h2>
+      <div class="doc-meta">Trigger: Albato automation (3h before call) &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; Repo: meeting-confirmation-agent</div>
+      <p class="doc-description">
+        Sends a personalized meeting confirmation email 3 hours before every discovery call, from the right Albato team member's Front mailbox. For first meetings, it uses a standard intro agenda. For second and further meetings, it fetches recent emails and notes from the HubSpot deal and asks Claude to generate a tailored agenda based on actual next steps and commitments discussed with the lead. The agent creates a Front draft — the AE reviews and sends it manually.
+      </p>
+      <div class="doc-section-label">Workflow</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">⏰</div><div class="wf-label">Albato Webhook</div><div class="wf-sub">3h before call</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">👤</div><div class="wf-label">Parse Participant</div><div class="wf-sub">Name + email</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-external"><div class="wf-icon">📬</div><div class="wf-label">Identify Host</div><div class="wf-sub">Front message history</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Deal Context</div><div class="wf-sub">HubSpot engagements</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Personalize Agenda</div><div class="wf-sub">Claude (2nd+ meetings)</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">✉️</div><div class="wf-label">Create Front Draft</div><div class="wf-sub">AE's mailbox</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-external"><div class="wf-icon">💬</div><div class="wf-label">Slack Notify</div><div class="wf-sub">Link to review draft</div></div>
+      </div>
+      <div class="doc-section-label">Input Data</div>
+      <table class="input-table">
+        <thead><tr><th>Field</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Meeting ID, name, start time</td><td>Albato webhook (client_payload)</td></tr>
+          <tr><td>Participant name + email</td><td>Albato webhook (client_payload)</td></tr>
+          <tr><td>Meeting organizer inbox override</td><td>Albato webhook — optional</td></tr>
+          <tr><td>Albato host identity</td><td>Front API — outbound message from-address pattern matching</td></tr>
+          <tr><td>Meeting count on deal</td><td>HubSpot — meetings associated with deal</td></tr>
+          <tr><td>Recent emails + notes (for personalization)</td><td>HubSpot engagements API — last 5 emails + notes on deal</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Follow-up Tracker Agent -->
+    <div class="doc-card">
+      <h2>Follow-up Tracker Agent</h2>
+      <div class="doc-meta">Trigger: Daily cron 18:00 UTC &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; Repo: followup-tracker-agent</div>
+      <p class="doc-description">
+        Every evening, checks whether the sales team's HubSpot follow-up tasks for the day were actually executed. For each task due today, it gathers evidence — emails sent, calls logged, notes added — and asks Claude to classify the outcome as Completed, Incomplete, Missed, or Not enough data. Posts a structured Slack report to the appropriate channel based on deal stage, giving managers a clear daily view of follow-up discipline across the pipeline.
+      </p>
+      <div class="doc-section-label">Workflow</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">🕕</div><div class="wf-label">Daily Cron</div><div class="wf-sub">18:00 UTC</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Today's Tasks</div><div class="wf-sub">HubSpot tasks API</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">🔎</div><div class="wf-label">Filter Pipeline</div><div class="wf-sub">Global Embedded only</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📩</div><div class="wf-label">Gather Engagements</div><div class="wf-sub">Emails, calls, notes</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Classify Tasks</div><div class="wf-sub">Claude Sonnet</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">🗂️</div><div class="wf-label">Group by Stage</div><div class="wf-sub">3 Slack channels</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Post Slack Report</div><div class="wf-sub">✅ ⚠️ ❌ per task</div></div>
+      </div>
+      <div class="doc-section-label">Input Data</div>
+      <table class="input-table">
+        <thead><tr><th>Field</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Tasks due today (subject, status, owner)</td><td>HubSpot tasks search API</td></tr>
+          <tr><td>Associated deal + pipeline/stage</td><td>HubSpot CRM — deal associated with task</td></tr>
+          <tr><td>Emails logged today on deal</td><td>HubSpot engagements — filtered by today's date</td></tr>
+          <tr><td>Calls logged today on deal</td><td>HubSpot engagements — filtered by today's date</td></tr>
+          <tr><td>Notes added today on deal</td><td>HubSpot engagements — agent-generated notes excluded</td></tr>
+          <tr><td>Next scheduled task on deal</td><td>HubSpot — earliest future open task</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Signal Research Agent -->
+    <div class="doc-card">
+      <h2>Signal Research Agent</h2>
+      <div class="doc-meta">Trigger: Webhook / manual &nbsp;·&nbsp; Model: Claude Opus 4.6 &nbsp;·&nbsp; Repo: signal-research-agent</div>
+      <p class="doc-description">
+        Researches buying signals for a specific deal on demand. Given a company domain, it runs targeted web searches to surface relevant signals — funding rounds, hiring trends, product launches, tech stack changes, integrations needed — and posts a structured findings note to the HubSpot deal. Used to prioritize outreach and prep for calls where the discovery brief hasn't run yet.
+      </p>
+      <div class="doc-section-label">Workflow</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">🔔</div><div class="wf-label">Webhook / Manual</div><div class="wf-sub">repository_dispatch</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Deal Context</div><div class="wf-sub">HubSpot CRM</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Web Research</div><div class="wf-sub">Claude Opus + web_search</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">📝</div><div class="wf-label">Generate Signal Report</div><div class="wf-sub">Ranked buying signals</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💾</div><div class="wf-label">Save HubSpot Note</div><div class="wf-sub">On the deal</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-external"><div class="wf-icon">💬</div><div class="wf-label">Slack DM</div><div class="wf-sub">Success / failure</div></div>
+      </div>
+      <div class="doc-section-label">Input Data</div>
+      <table class="input-table">
+        <thead><tr><th>Field</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Deal ID</td><td>Webhook payload</td></tr>
+          <tr><td>Company domain</td><td>Webhook payload</td></tr>
+          <tr><td>LinkedIn URL (optional)</td><td>Webhook payload</td></tr>
+          <tr><td>Deal name, stage</td><td>HubSpot CRM — deal properties</td></tr>
+          <tr><td>Signal data (news, jobs, funding)</td><td>Claude web_search + web_fetch tools</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pipeline Agent -->
+    <div class="doc-card">
+      <h2>Pipeline Agent</h2>
+      <div class="doc-meta">Trigger: Daily cron 16:00 UTC &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; Repo: pipeline-agent</div>
+      <p class="doc-description">
+        Runs daily to keep HubSpot deal stages accurate and CRM data clean. Applies five pipeline rules automatically: advancing deal stages when meetings are completed, fixing incorrect meeting types, extracting Business Fit scores from Sybill call transcripts using Claude, and backfilling contact engagement associations so activity history stays linked to deals. Removes the need for reps to manually update stages after each call.
+      </p>
+      <div class="doc-section-label">Workflow</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">🕔</div><div class="wf-label">Daily Cron</div><div class="wf-sub">16:00 UTC</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch All Deals</div><div class="wf-sub">Global Embedded pipeline</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📅</div><div class="wf-label">Rule 2–3: Meeting Status</div><div class="wf-sub">Advance stage / set status</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Rule 4: Extract Business Fit</div><div class="wf-sub">Claude ← Sybill transcript</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">🔧</div><div class="wf-label">Rule 5: Fix Meeting Types</div><div class="wf-sub">Correct mislabeled meetings</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">🔗</div><div class="wf-label">Rule 6: Backfill Engagements</div><div class="wf-sub">Link contact activity to deal</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💾</div><div class="wf-label">Update HubSpot</div><div class="wf-sub">Stages, fields, associations</div></div>
+      </div>
+      <div class="doc-section-label">Input Data</div>
+      <table class="input-table">
+        <thead><tr><th>Field</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>All deals in Global Embedded pipeline</td><td>HubSpot CRM — pipeline filter</td></tr>
+          <tr><td>Meeting records (type, status, dates)</td><td>HubSpot CRM — meetings associated with each deal</td></tr>
+          <tr><td>Sybill call transcripts</td><td>HubSpot notes — auto-posted by Sybill after each call</td></tr>
+          <tr><td>Contact engagement history (last 2 weeks)</td><td>HubSpot CRM — contacts linked to deal</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- NPS Agent -->
+    <div class="doc-card">
+      <h2>NPS Agent</h2>
+      <div class="doc-meta">Trigger: Weekday cron 12:00 + 15:00 UTC &nbsp;·&nbsp; Repo: nps-agent</div>
+      <p class="doc-description">
+        Automates Albato's quarterly NPS survey end-to-end. Sends surveys via email and Slack, tracks who has responded in a Google Sheet, sends up to three reminder waves to non-respondents, and posts daily response rate updates to Slack. At the end of the quarter, generates a final PDF report with the NPS score, per-client breakdown, and qualitative feedback analysis. Also listens for @Albato NPS Agent mentions in Slack for live Q&A about results.
+      </p>
+      <div class="doc-section-label">Workflow</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">📅</div><div class="wf-label">Weekday Cron</div><div class="wf-sub">12:00 heads-up / 15:00 send</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-external"><div class="wf-icon">📊</div><div class="wf-label">Read Respondent List</div><div class="wf-sub">Google Sheets</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">📧</div><div class="wf-label">Send Surveys</div><div class="wf-sub">Gmail + Slack</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-external"><div class="wf-icon">✅</div><div class="wf-label">Track Responses</div><div class="wf-sub">Google Sheets</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">🔔</div><div class="wf-label">Send Reminders</div><div class="wf-sub">Up to 3 waves</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Daily Slack Update</div><div class="wf-sub">Response rate + avg score</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">📄</div><div class="wf-label">Final PDF Report</div><div class="wf-sub">NPS + per-client breakdown</div></div>
+      </div>
+      <div class="doc-section-label">Input Data</div>
+      <table class="input-table">
+        <thead><tr><th>Field</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Respondent list (name, email, Slack handle)</td><td>Google Sheets — quarterly survey sheet</td></tr>
+          <tr><td>Survey phase state (sent, reminded, responded)</td><td>Google Sheets — checkbox columns per phase</td></tr>
+          <tr><td>NPS scores + Q5 qualitative feedback</td><td>Google Sheets — response columns</td></tr>
+          <tr><td>@mention Q&A queries</td><td>Slack — via Cloudflare Worker webhook listener</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Action Plan Agent -->
+    <div class="doc-card">
+      <h2>Action Plan Agent</h2>
+      <div class="doc-meta">Trigger: Sybill webhook → Albato → GitHub dispatch &nbsp;·&nbsp; Model: Claude Opus 4.6 &nbsp;·&nbsp; Repo: action-plan-agent</div>
+      <p class="doc-description">
+        Generates a Mutual Action Plan (MAP) immediately after a discovery call ends. Triggered automatically by a Sybill call transcript arriving via Albato. Claude analyzes the transcript to extract concrete next steps, mutual commitments, AE coaching tips, and a nurture vs. push recommendation — then saves the output as a HubSpot note and notifies the sales team on Slack. The goal is to have a structured action plan ready within minutes of the call ending, while context is fresh.
+      </p>
+      <div class="doc-section-label">Workflow</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">📞</div><div class="wf-label">Sybill Webhook</div><div class="wf-sub">Call ends → Albato → GitHub</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Deal Context</div><div class="wf-sub">HubSpot CRM</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Analyze Transcript</div><div class="wf-sub">Claude Opus</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">📝</div><div class="wf-label">Generate MAP</div><div class="wf-sub">Next steps + coaching tips</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💾</div><div class="wf-label">Save HubSpot Note</div><div class="wf-sub">On the deal</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-external"><div class="wf-icon">💬</div><div class="wf-label">Slack Notify</div><div class="wf-sub">Sales channel</div></div>
+      </div>
+      <div class="doc-section-label">Input Data</div>
+      <table class="input-table">
+        <thead><tr><th>Field</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Deal ID</td><td>Webhook payload (client_payload)</td></tr>
+          <tr><td>Full call transcript (speaker + text + timestamps)</td><td>Sybill — via Albato webhook relay</td></tr>
+          <tr><td>Deal name, stage, contact info</td><td>HubSpot CRM — deal properties</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /tab-docs -->
+</div><!-- /container -->
 
 <script src="/static/app.js"></script>
 <script>

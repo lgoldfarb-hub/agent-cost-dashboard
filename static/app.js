@@ -301,3 +301,12 @@ async function refreshInsights() {
     btn.textContent = 'Refresh';
   }
 }
+
+// ── Tab switching ──────────────────────────────────────────────────────────
+function showTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.tab === name);
+  });
+  document.getElementById('tab-dashboard').style.display = name === 'dashboard' ? '' : 'none';
+  document.getElementById('tab-docs').style.display      = name === 'docs'      ? '' : 'none';
+}
