@@ -334,11 +334,32 @@ tr.row-partial td { background: #fffbf0; }
 .wf-sub   { font-size: 10px; margin-top: 3px; opacity: .75; }
 .wf-arrow { color: #9ca3af; font-size: 20px; padding: 0 6px; align-self: center; flex-shrink: 0; }
 
-.wf-trigger  { background: #dbeafe; color: #1e40af; }
-.wf-action   { background: #f3f4f6; color: #1f2937; }
-.wf-ai       { background: #ede9fe; color: #5b21b6; }
-.wf-output   { background: #dcfce7; color: #15803d; }
-.wf-external { background: #fef3c7; color: #92400e; }
+.wf-trigger   { background: #dbeafe; color: #1e40af; }
+.wf-action    { background: #f3f4f6; color: #1f2937; }
+.wf-ai        { background: #ede9fe; color: #5b21b6; }
+.wf-output    { background: #dcfce7; color: #15803d; }
+.wf-external  { background: #fef3c7; color: #92400e; }
+.wf-condition { background: #fff7ed; color: #9a3412; border: 2px dashed #fb923c; }
+
+/* Branch layout for conditional flows */
+.wf-branch {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: center;
+}
+.wf-branch-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.wf-branch-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #9ca3af;
+  padding: 0 6px;
+  white-space: nowrap;
+}
 
 /* ── Input table ── */
 .input-table {
