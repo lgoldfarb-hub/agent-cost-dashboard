@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Perspective|  Smartlead_zapier_LinkedIn (Gabi&Mariana)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-07T18:31:05.526038+00:00",
+  "completed_at": "2026-05-07T18:36:56.082516+00:00",
+  "duration_seconds": 350.556478,
+  "input_tokens": 34538,
+  "output_tokens": 9002,
+  "cache_read_tokens": 772951,
+  "cache_write_tokens": 36006,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 31622,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.103614,
+  "cost_output": 0.13502999999999998,
+  "cost_cache_read": 0.23188530000000002,
+  "cost_cache_write": 0.13502250000000002,
+  "cost_web_search": 0.0,
+  "cost_total": 0.6055518
+}
