@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan: ContactDrive (ex-Datrm.in) | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-07T20:50:33.773845+00:00",
+  "completed_at": "2026-05-07T20:52:07.449083+00:00",
+  "duration_seconds": 93.675238,
+  "input_tokens": 113319,
+  "output_tokens": 3782,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 112309,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.339957,
+  "cost_output": 0.05673,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.396687
+}
