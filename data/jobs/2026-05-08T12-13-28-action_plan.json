@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan:  Surfe| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-08T12:13:28.691768+00:00",
+  "completed_at": "2026-05-08T12:15:18.852508+00:00",
+  "duration_seconds": 110.16074,
+  "input_tokens": 128368,
+  "output_tokens": 4938,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 127358,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.385104,
+  "cost_output": 0.07407,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.45917399999999997
+}
