@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Lemund | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-11T10:03:50.842864+00:00",
+  "completed_at": "2026-05-11T10:12:43.284010+00:00",
+  "duration_seconds": 532.441146,
+  "input_tokens": 48665,
+  "output_tokens": 13667,
+  "cache_read_tokens": 1354417,
+  "cache_write_tokens": 42278,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 45749,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.14599499999999999,
+  "cost_output": 0.205005,
+  "cost_cache_read": 0.4063251,
+  "cost_cache_write": 0.1585425,
+  "cost_web_search": 0.0,
+  "cost_total": 0.9158676
+}
