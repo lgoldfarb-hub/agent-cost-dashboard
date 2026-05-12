@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: MailPool | SaaStr AI 2026 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-12T18:04:35.918521+00:00",
+  "completed_at": "2026-05-12T18:17:55.124847+00:00",
+  "duration_seconds": 799.206326,
+  "input_tokens": 11608,
+  "output_tokens": 31056,
+  "cache_read_tokens": 1300498,
+  "cache_write_tokens": 93178,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4553,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.034824,
+  "cost_output": 0.46584000000000003,
+  "cost_cache_read": 0.3901494,
+  "cost_cache_write": 0.3494175,
+  "cost_web_search": 0.0,
+  "cost_total": 1.2402309
+}
