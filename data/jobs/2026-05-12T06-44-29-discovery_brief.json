@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: Leadspicker | SaaStr Linkedin High-value",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-12T06:44:29.833323+00:00",
+  "completed_at": "2026-05-12T07:00:30.039736+00:00",
+  "duration_seconds": 960.206413,
+  "input_tokens": 10999,
+  "output_tokens": 37407,
+  "cache_read_tokens": 3382087,
+  "cache_write_tokens": 135509,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 3944,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.032997,
+  "cost_output": 0.5611050000000001,
+  "cost_cache_read": 1.0146260999999999,
+  "cost_cache_write": 0.50815875,
+  "cost_web_search": 0.0,
+  "cost_total": 2.11688685
+}
