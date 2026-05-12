@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Aloware | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-12T07:00:02.960607+00:00",
+  "completed_at": "2026-05-12T07:05:02.786598+00:00",
+  "duration_seconds": 299.825991,
+  "input_tokens": 29808,
+  "output_tokens": 8295,
+  "cache_read_tokens": 583724,
+  "cache_write_tokens": 31652,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 26892,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.089424,
+  "cost_output": 0.12442500000000001,
+  "cost_cache_read": 0.1751172,
+  "cost_cache_write": 0.118695,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5076612
+}
