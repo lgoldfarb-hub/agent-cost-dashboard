@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Degreed| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-13T15:45:05.686585+00:00",
+  "completed_at": "2026-05-13T15:51:32.953286+00:00",
+  "duration_seconds": 387.266701,
+  "input_tokens": 28501,
+  "output_tokens": 11155,
+  "cache_read_tokens": 1663727,
+  "cache_write_tokens": 63612,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25585,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.085503,
+  "cost_output": 0.167325,
+  "cost_cache_read": 0.49911809999999995,
+  "cost_cache_write": 0.238545,
+  "cost_web_search": 0.0,
+  "cost_total": 0.9904911
+}
