@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: Spinach.ai | SaaStr 2026",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-13T14:56:45.165796+00:00",
+  "completed_at": "2026-05-13T15:12:15.335825+00:00",
+  "duration_seconds": 930.170029,
+  "input_tokens": 12190,
+  "output_tokens": 33572,
+  "cache_read_tokens": 2146027,
+  "cache_write_tokens": 110077,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 5135,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.03657,
+  "cost_output": 0.5035799999999999,
+  "cost_cache_read": 0.6438081,
+  "cost_cache_write": 0.41278875,
+  "cost_web_search": 0.0,
+  "cost_total": 1.59674685
+}
