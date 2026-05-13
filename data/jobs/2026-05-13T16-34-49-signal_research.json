@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Morada.ai| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-13T16:34:49.670625+00:00",
+  "completed_at": "2026-05-13T16:38:28.525933+00:00",
+  "duration_seconds": 218.855308,
+  "input_tokens": 37900,
+  "output_tokens": 6455,
+  "cache_read_tokens": 363049,
+  "cache_write_tokens": 36259,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 34984,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.11370000000000001,
+  "cost_output": 0.096825,
+  "cost_cache_read": 0.1089147,
+  "cost_cache_write": 0.13597125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.45541095
+}
