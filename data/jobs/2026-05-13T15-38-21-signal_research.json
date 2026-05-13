@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  netLex| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-13T15:38:21.345845+00:00",
+  "completed_at": "2026-05-13T15:42:15.124889+00:00",
+  "duration_seconds": 233.779044,
+  "input_tokens": 29401,
+  "output_tokens": 6346,
+  "cache_read_tokens": 604021,
+  "cache_write_tokens": 47026,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 26485,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.088203,
+  "cost_output": 0.09519,
+  "cost_cache_read": 0.18120630000000001,
+  "cost_cache_write": 0.1763475,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5409468
+}
