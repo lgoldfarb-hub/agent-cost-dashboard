@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  AmpUp.Ai| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-13T18:52:31.742772+00:00",
+  "completed_at": "2026-05-13T18:58:20.658100+00:00",
+  "duration_seconds": 348.915328,
+  "input_tokens": 27741,
+  "output_tokens": 10448,
+  "cache_read_tokens": 1275275,
+  "cache_write_tokens": 58609,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 24825,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.08322299999999999,
+  "cost_output": 0.15672,
+  "cost_cache_read": 0.3825825,
+  "cost_cache_write": 0.21978375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.84230925
+}
