@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Convirza| Paid_meetings_AE_May26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-13T23:11:43.666677+00:00",
+  "completed_at": "2026-05-13T23:15:37.639235+00:00",
+  "duration_seconds": 233.972558,
+  "input_tokens": 28112,
+  "output_tokens": 7501,
+  "cache_read_tokens": 494692,
+  "cache_write_tokens": 34438,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25196,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.08433600000000001,
+  "cost_output": 0.112515,
+  "cost_cache_read": 0.1484076,
+  "cost_cache_write": 0.12914250000000002,
+  "cost_web_search": 0.0,
+  "cost_total": 0.4744011
+}
