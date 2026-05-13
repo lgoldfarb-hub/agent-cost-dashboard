@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Sendoso| Paid_meetings_AE_May26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-13T10:35:11.768092+00:00",
+  "completed_at": "2026-05-13T10:38:46.844777+00:00",
+  "duration_seconds": 215.076685,
+  "input_tokens": 27963,
+  "output_tokens": 6513,
+  "cache_read_tokens": 625410,
+  "cache_write_tokens": 41568,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25047,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.08388899999999999,
+  "cost_output": 0.09769499999999999,
+  "cost_cache_read": 0.187623,
+  "cost_cache_write": 0.15588,
+  "cost_web_search": 0.0,
+  "cost_total": 0.525087
+}
