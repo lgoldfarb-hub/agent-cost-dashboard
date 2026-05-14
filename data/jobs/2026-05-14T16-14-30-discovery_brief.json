@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  Axya| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-14T16:14:30.940142+00:00",
+  "completed_at": "2026-05-14T16:24:14.398382+00:00",
+  "duration_seconds": 583.45824,
+  "input_tokens": 12271,
+  "output_tokens": 24877,
+  "cache_read_tokens": 986326,
+  "cache_write_tokens": 60615,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 5216,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.036813,
+  "cost_output": 0.373155,
+  "cost_cache_read": 0.2958978,
+  "cost_cache_write": 0.22730625000000002,
+  "cost_web_search": 0.0,
+  "cost_total": 0.93317205
+}
