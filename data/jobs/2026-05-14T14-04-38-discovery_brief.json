@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  Naoma AI| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-14T14:04:38.632955+00:00",
+  "completed_at": "2026-05-14T14:20:51.227358+00:00",
+  "duration_seconds": 972.594403,
+  "input_tokens": 12510,
+  "output_tokens": 36308,
+  "cache_read_tokens": 2345929,
+  "cache_write_tokens": 111880,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 5455,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.03753,
+  "cost_output": 0.54462,
+  "cost_cache_read": 0.7037787,
+  "cost_cache_write": 0.41955,
+  "cost_web_search": 0.0,
+  "cost_total": 1.7054787
+}
