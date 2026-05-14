@@ -68,7 +68,7 @@ async function loadSummary(from, to) {
 
 function renderAgentsTable(d) {
   const tbody = document.getElementById('agents-tbody');
-  tbody.innerHTML = d.agents.map(a => `
+  tbody.innerHTML = [...d.agents].sort((a, b) => b.spend - a.spend).map(a => `
     <tr>
       <td><a href="/agent/${a.name}">${a.label}</a></td>
       <td>${fmt$(a.spend)}</td>
