@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  S\u00f3lides| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-14T20:39:27.081012+00:00",
+  "completed_at": "2026-05-14T20:58:00.927952+00:00",
+  "duration_seconds": 1113.84694,
+  "input_tokens": 12609,
+  "output_tokens": 45559,
+  "cache_read_tokens": 3792315,
+  "cache_write_tokens": 162570,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 5554,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.037827,
+  "cost_output": 0.683385,
+  "cost_cache_read": 1.1376944999999998,
+  "cost_cache_write": 0.6096374999999999,
+  "cost_web_search": 0.0,
+  "cost_total": 2.4685439999999996
+}
