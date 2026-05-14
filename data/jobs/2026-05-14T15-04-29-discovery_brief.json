@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  Kestral| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-14T15:04:29.017826+00:00",
+  "completed_at": "2026-05-14T15:17:58.393541+00:00",
+  "duration_seconds": 809.375715,
+  "input_tokens": 11259,
+  "output_tokens": 30789,
+  "cache_read_tokens": 1185963,
+  "cache_write_tokens": 80282,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4204,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.033777,
+  "cost_output": 0.461835,
+  "cost_cache_read": 0.3557889,
+  "cost_cache_write": 0.30105750000000003,
+  "cost_web_search": 0.0,
+  "cost_total": 1.1524584
+}
