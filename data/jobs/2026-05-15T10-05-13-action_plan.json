@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan:  Coachello| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-15T10:05:13.647186+00:00",
+  "completed_at": "2026-05-15T10:07:07.915149+00:00",
+  "duration_seconds": 114.267963,
+  "input_tokens": 127400,
+  "output_tokens": 4837,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 1126,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 126390,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.38220000000000004,
+  "cost_output": 0.07255500000000001,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0042225000000000006,
+  "cost_web_search": 0.0,
+  "cost_total": 0.45897750000000004
+}
