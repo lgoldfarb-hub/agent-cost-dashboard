@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: eGain | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-15T06:59:40.861851+00:00",
+  "completed_at": "2026-05-15T07:04:10.986663+00:00",
+  "duration_seconds": 270.124812,
+  "input_tokens": 40662,
+  "output_tokens": 7309,
+  "cache_read_tokens": 696197,
+  "cache_write_tokens": 42868,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 37746,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.12198599999999998,
+  "cost_output": 0.10963500000000001,
+  "cost_cache_read": 0.2088591,
+  "cost_cache_write": 0.160755,
+  "cost_web_search": 0.0,
+  "cost_total": 0.6012351
+}
