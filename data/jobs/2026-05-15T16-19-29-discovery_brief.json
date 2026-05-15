@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  Axonify| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-15T16:19:29.295619+00:00",
+  "completed_at": "2026-05-15T16:29:34.569406+00:00",
+  "duration_seconds": 605.273787,
+  "input_tokens": 12054,
+  "output_tokens": 26722,
+  "cache_read_tokens": 1731796,
+  "cache_write_tokens": 73536,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4999,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.036162,
+  "cost_output": 0.40082999999999996,
+  "cost_cache_read": 0.5195388,
+  "cost_cache_write": 0.27576,
+  "cost_web_search": 0.0,
+  "cost_total": 1.2322908
+}
