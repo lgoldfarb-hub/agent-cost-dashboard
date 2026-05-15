@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  Coachello| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-15T08:34:35.309296+00:00",
+  "completed_at": "2026-05-15T08:45:03.013801+00:00",
+  "duration_seconds": 627.704505,
+  "input_tokens": 11940,
+  "output_tokens": 27060,
+  "cache_read_tokens": 1759551,
+  "cache_write_tokens": 69983,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4885,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.03582,
+  "cost_output": 0.40590000000000004,
+  "cost_cache_read": 0.5278653,
+  "cost_cache_write": 0.26243625000000004,
+  "cost_web_search": 0.0,
+  "cost_total": 1.2320215500000002
+}
