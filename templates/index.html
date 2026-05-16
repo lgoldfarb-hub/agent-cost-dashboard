@@ -73,7 +73,7 @@
     <!-- Discovery Brief Agent -->
     <div class="doc-card">
       <h2>Discovery Brief Agent</h2>
-      <div class="doc-meta">Trigger: HubSpot webhook (meeting booked) &nbsp;·&nbsp; Model: Claude Opus 4.6 &nbsp;·&nbsp; Repo: discovery-brief-agent</div>
+      <div class="doc-meta">Trigger: HubSpot webhook (meeting booked) &nbsp;·&nbsp; Model: Claude Opus 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/discovery-brief-agent" target="_blank">lgoldfarb-hub/discovery-brief-agent</a></div>
       <p class="doc-description">
         Automatically researches a prospect before a discovery call. When a new meeting is booked in HubSpot, this agent pulls deal and contact data, enriches it via Amplemarket, runs live web research, and generates a 16-section MEDDPICC-style brief saved directly as a HubSpot note on the deal. It also advances the deal stage to "First Meeting Scheduled" so the pipeline stays accurate. The goal is for the AE to walk into every call knowing the prospect's integration landscape, pain points, and ICP fit — without doing any manual research.
       </p>
@@ -114,11 +114,30 @@
       <table class="input-table">
         <thead><tr><th>Field</th><th>Source</th></tr></thead>
         <tbody>
-          <tr><td>Deal ID</td><td>HubSpot webhook (repository_dispatch payload)</td></tr>
-          <tr><td>Contact email, name, title</td><td>HubSpot CRM — contact associated with deal</td></tr>
-          <tr><td>Deal name, stage, pipeline</td><td>HubSpot CRM — deal properties</td></tr>
-          <tr><td>Company enrichment (LinkedIn, funding, headcount)</td><td>Amplemarket API — contact enrichment</td></tr>
-          <tr><td>Web research (news, product, integrations)</td><td>Claude web_search + web_fetch tools</td></tr>
+          <tr><td>Meeting ID</td><td>Albato webhook — repository_dispatch payload</td></tr>
+          <tr><td>Deal name, stage, pipeline</td><td>HubSpot CRM — deal associated with meeting</td></tr>
+          <tr><td>Contact email(s)</td><td>HubSpot CRM — contacts associated with meeting</td></tr>
+          <tr><td>Notes on deal (last 10)</td><td>HubSpot CRM — notes associated with deal</td></tr>
+          <tr><td>Emails on deal (last 10)</td><td>HubSpot CRM — emails associated with deal</td></tr>
+          <tr><td>Meetings on deal (last 5)</td><td>HubSpot CRM — meetings associated with deal</td></tr>
+          <tr><td>Company profile (LinkedIn, funding, headcount, description)</td><td>Amplemarket API — company enrichment by domain</td></tr>
+          <tr><td>Contact profile (title, seniority, LinkedIn)</td><td>Amplemarket API — person enrichment by email</td></tr>
+          <tr><td>Decision makers at company (C-suite, VP, Head)</td><td>Amplemarket API — people search by domain</td></tr>
+          <tr><td>Signal research (news, integrations, funding, G2 reviews)</td><td>Reused from HubSpot note if Signal Agent ran first; otherwise Claude web_search</td></tr>
+          <tr><td>Web research (company product, ICP, pricing, marketplace)</td><td>Claude web_search + web_fetch tools</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Secrets</div>
+      <table class="input-table">
+        <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — runs the brief generation and signal research</td></tr>
+          <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads deals, contacts, notes, meetings; writes note and deal stage</td></tr>
+          <tr><td><code>AMPLEMARKET_MCP_TOKEN</code></td><td>Amplemarket API — company and person enrichment</td></tr>
+          <tr><td><code>SLACK_BOT_DISCOVERY_AGENT</code></td><td>Slack bot token — posts success/failure notifications</td></tr>
+          <tr><td><code>SIGNAL_RESEARCH_AGENT</code></td><td>GitHub PAT — triggers the Signal Research Agent via repository_dispatch when called from the Brief</td></tr>
+          <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
+          <tr><td><code>IMPACT_ANALYSIS_SHEET_ID</code></td><td>Google Sheet ID — for the brief impact analysis workflow</td></tr>
         </tbody>
       </table>
     </div>
@@ -126,7 +145,7 @@
     <!-- Meeting Confirmation Agent -->
     <div class="doc-card">
       <h2>Meeting Confirmation Agent</h2>
-      <div class="doc-meta">Trigger: Albato automation (3h before call) &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; Repo: meeting-confirmation-agent</div>
+      <div class="doc-meta">Trigger: Albato automation (3h before call) &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/meeting-confirmation-agent" target="_blank">lgoldfarb-hub/meeting-confirmation-agent</a></div>
       <p class="doc-description">
         Sends a personalized meeting confirmation email 3 hours before every discovery call, from the right Albato team member's Front mailbox. For first meetings, it uses a standard intro agenda. For second and further meetings, it fetches recent emails and notes from the HubSpot deal and asks Claude to generate a tailored agenda based on actual next steps and commitments discussed with the lead. The agent creates a Front draft — the AE reviews and sends it manually.
       </p>
@@ -189,12 +208,22 @@
           <tr><td>Recent emails + notes (for personalization)</td><td>HubSpot engagements API — last 5 emails + notes on deal</td></tr>
         </tbody>
       </table>
+      <div class="doc-section-label">Secrets</div>
+      <table class="input-table">
+        <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>FRONT_SECRET</code></td><td>Front API token — reads conversation history to identify the AE's mailbox; creates the draft email</td></tr>
+          <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads meetings, deal data, and engagements (emails + notes)</td></tr>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — generates personalized agenda for 2nd+ meetings</td></tr>
+          <tr><td><code>SIGNAL_MEETING_CONFIRMATION_AGENT</code></td><td>Slack bot token — posts notification with link to review the Front draft</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Follow-up Tracker Agent -->
     <div class="doc-card">
       <h2>Follow-up Tracker Agent</h2>
-      <div class="doc-meta">Trigger: Daily cron 18:00 UTC &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; Repo: followup-tracker-agent</div>
+      <div class="doc-meta">Trigger: Daily cron 18:00 UTC &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/followup-tracker-agent" target="_blank">lgoldfarb-hub/followup-tracker-agent</a></div>
       <p class="doc-description">
         Every evening, checks whether the sales team's HubSpot follow-up tasks for the day were actually executed. For each task due today, it gathers evidence — emails sent, calls logged, notes added — and asks Claude to classify the outcome as Completed, Incomplete, Missed, or Not enough data. Posts a structured Slack report to the appropriate channel based on deal stage, giving managers a clear daily view of follow-up discipline across the pipeline.
       </p>
@@ -241,12 +270,24 @@
       <table class="input-table">
         <thead><tr><th>Field</th><th>Source</th></tr></thead>
         <tbody>
-          <tr><td>Tasks due today (subject, status, owner)</td><td>HubSpot tasks search API</td></tr>
-          <tr><td>Associated deal + pipeline/stage</td><td>HubSpot CRM — deal associated with task</td></tr>
-          <tr><td>Emails logged today on deal</td><td>HubSpot engagements — filtered by today's date</td></tr>
-          <tr><td>Calls logged today on deal</td><td>HubSpot engagements — filtered by today's date</td></tr>
-          <tr><td>Notes added today on deal</td><td>HubSpot engagements — agent-generated notes excluded</td></tr>
-          <tr><td>Next scheduled task on deal</td><td>HubSpot — earliest future open task</td></tr>
+          <tr><td>Tasks due today (subject, status, owner)</td><td>HubSpot tasks search API — filtered to Global Embedded pipeline</td></tr>
+          <tr><td>Associated deal name, stage, pipeline</td><td>HubSpot CRM — deal associated with each task</td></tr>
+          <tr><td>Emails logged today on deal</td><td>HubSpot CRM — engagements filtered by today's date</td></tr>
+          <tr><td>Calls logged today on deal</td><td>HubSpot CRM — engagements filtered by today's date</td></tr>
+          <tr><td>Notes added today on deal (agent-generated excluded)</td><td>HubSpot CRM — engagements filtered by today's date</td></tr>
+          <tr><td>Meetings logged today on deal</td><td>HubSpot CRM — engagements filtered by today's date</td></tr>
+          <tr><td>Tasks created/updated today on deal</td><td>HubSpot CRM — engagements filtered by today's date</td></tr>
+          <tr><td>Next scheduled open task on deal</td><td>HubSpot CRM — earliest future task with status OPEN</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Secrets</div>
+      <table class="input-table">
+        <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — classifies each task as Completed / Incomplete / Missed / Not enough data</td></tr>
+          <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads tasks, deals, and all engagements</td></tr>
+          <tr><td><code>SLACK_BOT_FOLLOWUP_TRACKER</code></td><td>Slack bot token — posts daily task report to 3 stage-specific channels</td></tr>
+          <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
     </div>
@@ -254,7 +295,7 @@
     <!-- Signal Research Agent -->
     <div class="doc-card">
       <h2>Signal Research Agent</h2>
-      <div class="doc-meta">Trigger: Albato webhook (new lead created) &nbsp;·&nbsp; Model: Claude Opus 4.6 &nbsp;·&nbsp; Repo: signal-research-agent</div>
+      <div class="doc-meta">Trigger: Albato webhook (new lead created) &nbsp;·&nbsp; Model: Claude Opus 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/signal-research-agent" target="_blank">lgoldfarb-hub/signal-research-agent</a></div>
       <p class="doc-description">
         Researches buying signals for a specific deal on demand. Given a company domain, it runs targeted web searches to surface relevant signals — funding rounds, hiring trends, product launches, tech stack changes, integrations needed — and posts a structured findings note to the HubSpot deal. Used to prioritize outreach and prep for calls where the discovery brief hasn't run yet.
       </p>
@@ -272,15 +313,44 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-external"><div class="wf-icon">💬</div><div class="wf-label">Slack DM</div><div class="wf-sub">Success / failure</div></div>
       </div>
+      <div class="doc-section-label">Rules</div>
+      <div class="rules-list">
+        <div class="rule-item">
+          <div class="rule-title">🎯 AI score gate</div>
+          <div class="rule-body">If <code>ai_score</code> is passed in the webhook payload and is <strong>&lt; 7</strong>, the agent exits immediately — no research runs, no HubSpot note, no cost. If the field is absent, the check is skipped and the agent runs normally.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🔁 Deduplication</div>
+          <div class="rule-body">Checks whether a Buying Signals note already exists on the deal for today. If one is found, the agent exits without running research — prevents duplicate notes from re-triggers on the same day.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">📋 Fields-only mode</div>
+          <div class="rule-body">If <code>fields_only=true</code>, skips signal research entirely and only populates empty HubSpot deal fields (company category, region, size, etc.) from existing notes. Useful for backfilling deal data without re-running web searches.</div>
+        </div>
+      </div>
       <div class="doc-section-label">Input Data</div>
       <table class="input-table">
         <thead><tr><th>Field</th><th>Source</th></tr></thead>
         <tbody>
-          <tr><td>Deal ID</td><td>Webhook payload</td></tr>
-          <tr><td>Company domain</td><td>Webhook payload</td></tr>
-          <tr><td>LinkedIn URL (optional)</td><td>Webhook payload</td></tr>
-          <tr><td>Deal name, stage</td><td>HubSpot CRM — deal properties</td></tr>
-          <tr><td>Signal data (news, jobs, funding)</td><td>Claude web_search + web_fetch tools</td></tr>
+          <tr><td>Deal ID</td><td>Albato webhook — repository_dispatch payload</td></tr>
+          <tr><td>Company domain</td><td>Albato webhook — repository_dispatch payload</td></tr>
+          <tr><td>LinkedIn URL (optional)</td><td>Albato webhook — repository_dispatch payload</td></tr>
+          <tr><td>AI score (1–10)</td><td>Albato webhook — repository_dispatch payload; agent skips if &lt; 7</td></tr>
+          <tr><td>Deal stage (to detect "Contact Later" and skip)</td><td>Albato webhook — repository_dispatch payload</td></tr>
+          <tr><td>HubSpot task ID (optional, to mark task complete)</td><td>Albato webhook — repository_dispatch payload</td></tr>
+          <tr><td>Deal name, existing deal field values</td><td>HubSpot CRM — deal properties</td></tr>
+          <tr><td>Existing notes on deal (to check if signals note already exists)</td><td>HubSpot CRM — notes associated with deal</td></tr>
+          <tr><td>Signal data (news, integrations, funding, G2 reviews, LinkedIn posts)</td><td>Claude web_search tools</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Secrets</div>
+      <table class="input-table">
+        <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — runs signal research web searches and populates deal fields</td></tr>
+          <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads deal data, checks existing notes, writes signal note and updates deal properties</td></tr>
+          <tr><td><code>SLACK_BOT_SIGNAL_AGENT</code></td><td>Slack bot token — sends a DM to the deal owner with the signal research summary</td></tr>
+          <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
     </div>
@@ -288,9 +358,9 @@
     <!-- Pipeline Agent -->
     <div class="doc-card">
       <h2>Pipeline Agent</h2>
-      <div class="doc-meta">Trigger: Daily cron 16:00 UTC &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; Repo: pipeline-agent</div>
+      <div class="doc-meta">Trigger: Daily cron 16:00 UTC &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/pipeline-agent" target="_blank">lgoldfarb-hub/pipeline-agent</a></div>
       <p class="doc-description">
-        Runs daily to keep HubSpot deal stages accurate and CRM data clean. Applies five pipeline rules automatically: advancing deal stages when meetings are completed, fixing incorrect meeting types, extracting Business Fit scores from Sybill call transcripts using Claude, and backfilling contact engagement associations so activity history stays linked to deals. Removes the need for reps to manually update stages after each call.
+        Runs daily to keep HubSpot deal stages accurate and CRM data clean. Applies five pipeline rules automatically: advancing deal stages when meetings are completed, fixing incorrect meeting types, extracting Business Fit fields from Sybill meeting summary notes using Claude, and backfilling contact engagement associations so activity history stays linked to deals. Removes the need for reps to manually update stages after each call.
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
@@ -300,7 +370,7 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">📅</div><div class="wf-label">Rule 2–3: Meeting Status</div><div class="wf-sub">Advance stage / set status</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Rule 4: Extract Business Fit</div><div class="wf-sub">Claude ← Sybill transcript</div></div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Rule 4: Extract Business Fit fields</div><div class="wf-sub">Claude ← Sybill summary note</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">🔧</div><div class="wf-label">Rule 5: Fix Meeting Types</div><div class="wf-sub">Correct mislabeled meetings</div></div>
         <div class="wf-arrow">→</div>
@@ -320,7 +390,7 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">Rule 4 — Post-Meeting Qualification + Business Fit extraction</div>
-          <div class="rule-body">Deal has exactly 1 meeting in <strong>Completed</strong> status → advance stage to "Post-Meeting Qualification". Claude reads the Sybill call transcript from HubSpot notes and extracts the Business Fit score, writing it back to the deal property.</div>
+          <div class="rule-body">Deal has exactly 1 meeting in <strong>Completed</strong> status → advance stage to "Post-Meeting Qualification". Claude reads the Sybill <strong>meeting summary note</strong> (auto-posted to HubSpot by Sybill after the call) and extracts structured Business Fit fields: buying intent, BANT, integration bottleneck flags, competitor iPaaS in use or being evaluated. Writes all extracted values back to the deal properties.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">Rule 5 — Fix mislabeled meeting types</div>
@@ -330,6 +400,18 @@
           <div class="rule-title">Rule 6 — Backfill contact engagements</div>
           <div class="rule-body">For every deal, finds linked contacts and copies their recent engagement records (last 2 weeks) as deal associations — ensuring emails and calls from contacts appear on the deal timeline even if not logged directly against it.</div>
         </div>
+        <div class="rule-item">
+          <div class="rule-title">HubSpot fields populated by Rule 4</div>
+          <div class="rule-body">
+            <strong>buying_intent</strong> — Very high / Urgent · High · Moderate · Low · No intent · Unclear<br>
+            <strong>bant</strong> — multi-select: Budget / Authority / Need / Timing, each Yes / No / Unknown<br>
+            <strong>integrations_bottleneck___embedded</strong> — true / false (has integration-related pain)<br>
+            <strong>use_integrations_partnerships___embedded</strong> — true / false (uses non-iPaaS integration partners)<br>
+            <strong>integrations_dev_team___embedded</strong> — true / false (has in-house dev team for integrations)<br>
+            <strong>considering_any_competitor_ipaas_</strong> — multi-select: competitor iPaaS being evaluated<br>
+            <strong>using_any_competitor_ipaas_</strong> — multi-select: competitor iPaaS currently in use
+          </div>
+        </div>
       </div>
       <div class="doc-section-label">Input Data</div>
       <table class="input-table">
@@ -337,8 +419,17 @@
         <tbody>
           <tr><td>All deals in Global Embedded pipeline</td><td>HubSpot CRM — pipeline filter</td></tr>
           <tr><td>Meeting records (type, status, dates)</td><td>HubSpot CRM — meetings associated with each deal</td></tr>
-          <tr><td>Sybill call transcripts</td><td>HubSpot notes — auto-posted by Sybill after each call</td></tr>
+          <tr><td>Sybill meeting summary note</td><td>HubSpot notes — auto-posted by Sybill after each call; identified by "sybill" in note body</td></tr>
           <tr><td>Contact engagement history (last 2 weeks)</td><td>HubSpot CRM — contacts linked to deal</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Secrets</div>
+      <table class="input-table">
+        <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads and updates all deals, meetings, notes, and contact associations</td></tr>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — extracts Business Fit score from Sybill transcripts (Rule 4)</td></tr>
+          <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
     </div>
@@ -346,7 +437,7 @@
     <!-- NPS Agent -->
     <div class="doc-card">
       <h2>NPS Agent</h2>
-      <div class="doc-meta">Trigger: Weekday cron 12:00 + 15:00 UTC &nbsp;·&nbsp; Repo: nps-agent</div>
+      <div class="doc-meta">Trigger: Weekday cron 12:00 + 15:00 UTC &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/nps-agent" target="_blank">lgoldfarb-hub/nps-agent</a></div>
       <p class="doc-description">
         Automates Albato's quarterly NPS survey end-to-end. Sends surveys via email and Slack, tracks who has responded in a Google Sheet, sends up to three reminder waves to non-respondents, and posts daily response rate updates to Slack. At the end of the quarter, generates a final PDF report with the NPS score, per-client breakdown, and qualitative feedback analysis. Also listens for @Albato NPS Agent mentions in Slack for live Q&A about results.
       </p>
@@ -370,10 +461,23 @@
       <table class="input-table">
         <thead><tr><th>Field</th><th>Source</th></tr></thead>
         <tbody>
-          <tr><td>Respondent list (name, email, Slack handle)</td><td>Google Sheets — quarterly survey sheet</td></tr>
-          <tr><td>Survey phase state (sent, reminded, responded)</td><td>Google Sheets — checkbox columns per phase</td></tr>
-          <tr><td>NPS scores + Q5 qualitative feedback</td><td>Google Sheets — response columns</td></tr>
+          <tr><td>Respondent list (name, company, email)</td><td>Google Sheets — quarterly survey sheet (respondents tab)</td></tr>
+          <tr><td>Delivery channel per respondent (email or Slack)</td><td>Google Sheets — "channel" column (email / slack)</td></tr>
+          <tr><td>Slack channel ID per respondent</td><td>Google Sheets — "slack channel id" column</td></tr>
+          <tr><td>Survey phase state (NPS Sent, Responded flags)</td><td>Google Sheets — boolean columns per respondent row</td></tr>
+          <tr><td>NPS score + qualitative feedback</td><td>Google Sheets — response columns written by form-response workflow</td></tr>
           <tr><td>@mention Q&A queries</td><td>Slack — via Cloudflare Worker webhook listener</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Secrets</div>
+      <table class="input-table">
+        <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>GOOGLE_SERVICE_ACCOUNT_JSON</code></td><td>Google service account key — read/write access to the respondent Google Sheet</td></tr>
+          <tr><td><code>SLACK_BOT</code></td><td>Slack bot token — sends NPS surveys and reminders to Slack channels; posts daily updates and final report</td></tr>
+          <tr><td><code>SLACK_USER_TOKEN</code></td><td>Slack user token (Leo's) — sends messages from client-facing Slack channels</td></tr>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — answers @mention Q&A queries about NPS results</td></tr>
+          <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
     </div>
@@ -381,7 +485,7 @@
     <!-- Action Plan Agent -->
     <div class="doc-card">
       <h2>Action Plan Agent</h2>
-      <div class="doc-meta">Trigger: Sybill webhook → Albato → GitHub dispatch &nbsp;·&nbsp; Model: Claude Opus 4.6 &nbsp;·&nbsp; Repo: action-plan-agent</div>
+      <div class="doc-meta">Trigger: Sybill webhook → Albato → GitHub dispatch &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/action-plan-agent" target="_blank">lgoldfarb-hub/action-plan-agent</a></div>
       <p class="doc-description">
         Generates a Mutual Action Plan (MAP) immediately after a discovery call ends. Triggered automatically by a Sybill call transcript arriving via Albato. Claude analyzes the transcript to extract concrete next steps, mutual commitments, AE coaching tips, and a nurture vs. push recommendation — then saves the output as a HubSpot note and notifies the sales team on Slack. The goal is to have a structured action plan ready within minutes of the call ending, while context is fresh.
       </p>
@@ -391,7 +495,7 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Deal Context</div><div class="wf-sub">HubSpot CRM</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Analyze Transcript</div><div class="wf-sub">Claude Opus</div></div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Analyze Transcript</div><div class="wf-sub">Claude Sonnet</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-ai"><div class="wf-icon">📝</div><div class="wf-label">Generate MAP</div><div class="wf-sub">Next steps + coaching tips</div></div>
         <div class="wf-arrow">→</div>
@@ -403,9 +507,137 @@
       <table class="input-table">
         <thead><tr><th>Field</th><th>Source</th></tr></thead>
         <tbody>
-          <tr><td>Deal ID</td><td>Webhook payload (client_payload)</td></tr>
-          <tr><td>Full call transcript (speaker + text + timestamps)</td><td>Sybill — via Albato webhook relay</td></tr>
-          <tr><td>Deal name, stage, contact info</td><td>HubSpot CRM — deal properties</td></tr>
+          <tr><td>Deal ID</td><td>Webhook payload (<code>client_payload.deal_id</code>)</td></tr>
+          <tr><td>Meeting name</td><td>Webhook payload (<code>client_payload.meeting_name</code>) — Sybill recording title</td></tr>
+          <tr><td>Full call transcript (speaker + text + timestamps)</td><td>Webhook payload (<code>client_payload.transcript</code>) — Sybill via Albato</td></tr>
+          <tr><td>Deal name, stage, amount, close date, owner ID</td><td>HubSpot CRM — deal properties API</td></tr>
+          <tr><td>Contact name, email, job title, company</td><td>HubSpot CRM — contacts associated with the deal</td></tr>
+          <tr><td>All notes on the deal (discovery brief, prior action plans)</td><td>HubSpot CRM — notes associated with the deal</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Secrets</div>
+      <table class="input-table">
+        <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — analyzes the transcript and generates the MAP + coaching tips</td></tr>
+          <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads deal, contacts, and notes; writes the action plan note</td></tr>
+          <tr><td><code>SLACK_BOT_ACTION_PLAN_AGENT</code></td><td>Slack bot token — posts the action plan notification as a thread reply in the AE evaluation channel</td></tr>
+          <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Albato Helper -->
+    <div class="doc-card">
+      <h2>Albato Helper</h2>
+      <div class="doc-meta">Trigger: Albato webhook (AI Deals Review bot reply) &nbsp;·&nbsp; No Claude &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/albato-helper" target="_blank">lgoldfarb-hub/albato-helper</a></div>
+      <p class="doc-description">
+        Takes a follow-up email draft generated by the AI Deals Review bot (posted as a Slack thread reply in <code>#embedded-follow-ups-upper-funnel</code>) and automatically pushes it into Front as a reply draft on the existing email thread with the lead. The AE gets a pre-written, contextual follow-up ready to send in one click — no copy-pasting from Slack. Posts a ✅ confirmation back to the Slack thread with a link to the Front draft.
+      </p>
+      <div class="doc-section-label">Workflow</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">🤖</div><div class="wf-label">AI Deals Review Bot</div><div class="wf-sub">Sends webhook → Albato Helper → GitHub dispatch</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Parse Bot Message</div><div class="wf-sub">Extract subject + body + deal name</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">👤</div><div class="wf-label">Fetch Lead Emails</div><div class="wf-sub">HubSpot — contacts on deal</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📬</div><div class="wf-label">Find Conversation</div><div class="wf-sub">Front — match lead email + sender</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">✉️</div><div class="wf-label">Create Reply Draft</div><div class="wf-sub">Front — in AE's mailbox</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-external"><div class="wf-icon">✅</div><div class="wf-label">Slack Confirm</div><div class="wf-sub">Thread reply with Front link</div></div>
+      </div>
+      <div class="doc-section-label">Input Data</div>
+      <table class="input-table">
+        <thead><tr><th>Field</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Deal ID</td><td>AI Deals Review Bot — repository_dispatch payload (<code>client_payload.deal_id</code>)</td></tr>
+          <tr><td>Full bot message text (subject + draft body + deal name)</td><td>AI Deals Review Bot — repository_dispatch payload (<code>client_payload.slack_message</code>)</td></tr>
+          <tr><td>Slack thread timestamp (optional)</td><td>AI Deals Review Bot — repository_dispatch payload (<code>client_payload.slack_thread_ts</code>)</td></tr>
+          <tr><td>Slack channel ID</td><td>AI Deals Review Bot — repository_dispatch payload (<code>C08475D3ASK</code> upper funnel or <code>C09PUG35MJL</code> lower funnel)</td></tr>
+          <tr><td>Lead contact emails</td><td>HubSpot CRM — contacts associated with the deal</td></tr>
+          <tr><td>Existing email conversation with lead</td><td>Front API — conversation lookup by lead email</td></tr>
+          <tr><td>AE sender identity</td><td>Front API — last outbound message sender on the conversation</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Secrets</div>
+      <table class="input-table">
+        <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads contact emails associated with the deal</td></tr>
+          <tr><td><code>FRONT_SECRET</code></td><td>Front API company token — looks up conversations and creates the reply draft</td></tr>
+          <tr><td><code>SLACK_ALBATO_HELPER_TOKEN</code></td><td>Slack bot token — searches channel history for the parent thread; posts ✅ confirmation reply</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Second Brain -->
+    <div class="doc-card">
+      <h2>Second Brain</h2>
+      <div class="doc-meta">Trigger: Polling every 30 min &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; Hosted on Railway (24/7) &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/second-brain" target="_blank">lgoldfarb-hub/second-brain</a></div>
+      <p class="doc-description">
+        Leo's personal AI assistant with two interfaces: a Telegram bot (24/7 on Railway) and a local web dashboard (Flask on localhost:5055). Aggregates messages and events from Slack, Pachka, Telegram, Gmail, Front, and Google Calendar into a structured digest every 30 minutes. Claude classifies each item into: tasks Leo personally needs to act on, hot topics happening at Albato (important to know, no action needed), direct mentions waiting for a response, and upcoming meetings. Leo interacts via Telegram or the web dashboard — asking questions, requesting fresh data, or triggering actions like sending emails or creating calendar events. Bot hosted on Railway so it runs 24/7 regardless of whether Leo's Mac is on.
+      </p>
+      <div class="doc-section-label">Workflow</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">⏱️</div><div class="wf-label">30-min Poller</div><div class="wf-sub">Background thread on Railway</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📥</div><div class="wf-label">Fetch All Sources</div><div class="wf-sub">Slack, Pachka, Telegram, Gmail, Front, Calendar</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">💾</div><div class="wf-label">Upsert to DB</div><div class="wf-sub">SQLite — deduped by item ID</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Generate Digest</div><div class="wf-sub">Claude — tasks, hot topics, mentions, meetings</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Telegram Bot</div><div class="wf-sub">Responds to messages 24/7</div></div>
+      </div>
+      <div class="doc-section-label">How it works</div>
+      <p class="doc-description">
+        <strong>Poller (every 30 min):</strong> A background thread fetches fresh data from all connectors, upserts items into SQLite (deduped by item ID), then calls Claude to generate a structured digest. The digest is stored in the DB and served to the bot on demand.<br><br>
+        <strong>Digest structure:</strong> Claude classifies items into 4 buckets — (1) Tasks: max 7, things Leo personally must act on (reply, decide, approve) — excludes internal Albato updates, automated notifications, OOO replies, support tickets, things addressed to other teammates; (2) Hot topics: max 4, important things happening at Albato that Leo should know but don't require action — includes deals going Lost or Contact Later; (3) Mentions: max 8, direct messages from real humans waiting for Leo's personal response — excludes anything already in tasks; (4) Meetings: next 48 hours only. Every item includes its original creation date (not fetch time).<br><br>
+        <strong>Telegram bot:</strong> Leo interacts via Telegram. Sending "новости" / "what's new" triggers an immediate poll + returns fetch counts per source (how many items fetched, lookback window used) + today's digest. Any other message uses the DB from the last automatic poll (max 30 min stale). Bot can also take actions: send emails, create calendar events, fetch live items from a specific source with a custom lookback.<br><br>
+        <strong>News trigger flow:</strong> On "новости", bot runs <code>run_once_with_counts()</code>, waits up to 120s, then appends a fetch summary to the user message before passing to Claude: sources, counts, lookback windows, and digest totals (tasks/topics/mentions/meetings).<br><br>
+        <strong>Telethon (personal Telegram reading):</strong> Uses a <code>StringSession</code> stored as <code>TELEGRAM_SESSION_STRING</code> env var — no interactive phone auth needed on Railway. Runs in an isolated thread with its own asyncio event loop to avoid conflicts with python-telegram-bot's async context. Thread replies in Pachka are fetched inline. Slack thread replies fetched via <code>conversations.replies</code> for messages with reply_count &gt; 0.<br><br>
+        <strong>Google OAuth:</strong> <code>credentials.json</code> and <code>token.json</code> are written to <code>/app/</code> on startup from <code>GOOGLE_CREDENTIALS</code> / <code>GOOGLE_TOKEN</code> env vars (raw JSON). Token auto-refreshes via refresh_token. If token expires permanently, it must be refreshed locally and <code>GOOGLE_TOKEN</code> updated in Railway.
+      </p>
+      <div class="doc-section-label">Input Data</div>
+      <table class="input-table">
+        <thead><tr><th>Source</th><th>What's fetched</th><th>Lookback</th></tr></thead>
+        <tbody>
+          <tr><td>Slack</td><td>Messages from configured channels + thread replies</td><td>1 hour</td></tr>
+          <tr><td>Pachka</td><td>Messages from configured channels + thread replies</td><td>24 hours</td></tr>
+          <tr><td>Telegram (personal)</td><td>DMs + group mentions via Telethon StringSession</td><td>1 hour</td></tr>
+          <tr><td>Gmail</td><td>Last 30 threads</td><td>Last 30 threads (no time limit)</td></tr>
+          <tr><td>Front</td><td>Updated conversations</td><td>1 hour</td></tr>
+          <tr><td>Google Calendar</td><td>Upcoming meetings (digest shows next 48h only)</td><td>Next 7 days</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Actions available to bot</div>
+      <table class="input-table">
+        <thead><tr><th>Tool</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td><code>get_digest</code></td><td>Returns cached digest (max 30 min old)</td></tr>
+          <tr><td><code>refresh_and_get_digest</code></td><td>Triggers live poll, regenerates digest, returns it</td></tr>
+          <tr><td><code>get_recent_items</code></td><td>Returns raw items from DB filtered by source</td></tr>
+          <tr><td><code>fetch_live_items</code></td><td>Fetches directly from connector with custom lookback (bypasses DB)</td></tr>
+          <tr><td><code>send_email</code></td><td>Sends email via Gmail API</td></tr>
+          <tr><td><code>create_calendar_event</code></td><td>Creates Google Calendar event with attendees + Meet link</td></tr>
+          <tr><td><code>dismiss_task</code></td><td>Removes a task/topic/mention from the digest permanently</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Secrets (Railway env vars)</div>
+      <table class="input-table">
+        <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — digest generation and bot responses</td></tr>
+          <tr><td><code>TELEGRAM_BOT_TOKEN</code></td><td>Telegram bot — receive and send messages</td></tr>
+          <tr><td><code>TELEGRAM_API_ID</code> / <code>TELEGRAM_API_HASH</code> / <code>TELEGRAM_PHONE</code></td><td>Telethon — personal Telegram account reader</td></tr>
+          <tr><td><code>TELEGRAM_SESSION_STRING</code></td><td>Telethon string session — avoids interactive phone auth on Railway</td></tr>
+          <tr><td><code>GOOGLE_CREDENTIALS</code></td><td>Raw JSON of credentials.json — Google OAuth app credentials</td></tr>
+          <tr><td><code>GOOGLE_TOKEN</code></td><td>Raw JSON of token.json — OAuth access + refresh token for Gmail/Calendar</td></tr>
+          <tr><td><code>SLACK_USER_TOKEN</code> / <code>SLACK_CHANNEL_IDS</code></td><td>Slack — read messages from channels</td></tr>
+          <tr><td><code>FRONT_API_KEY</code> / <code>FRONT_TEAMMATE_ID</code></td><td>Front — read conversations</td></tr>
+          <tr><td><code>PACHKA_API_KEY</code> / <code>PACHKA_CHANNEL_IDS</code></td><td>Pachka — read messages and resolve user names</td></tr>
         </tbody>
       </table>
     </div>
