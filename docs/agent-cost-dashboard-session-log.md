@@ -10,6 +10,22 @@ Each entry covers:
 
 ---
 
+## 2026-05-16
+
+### Done
+- **Updated Second Brain documentation** — expanded the Second Brain entry in `templates/index.html` with full description: two interfaces (Telegram bot + web dashboard at localhost:5055), Railway hosting, digest classification logic, all connectors with exact lookback windows, available bot actions table, secrets table (names only). Fixed workflow diagram to show 2 triggers (30-min poller + Telegram message) and 2 outputs (Telegram bot + web dashboard).
+
+### Problems
+- None.
+
+### Deferred
+- None.
+
+### Open questions / next session
+- None.
+
+---
+
 ## 2026-05-14
 
 ### Done
