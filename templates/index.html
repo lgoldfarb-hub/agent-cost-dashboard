@@ -581,7 +581,10 @@
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
-        <div class="wf-node wf-trigger"><div class="wf-icon">⏱️</div><div class="wf-label">30-min Poller</div><div class="wf-sub">Background thread on Railway</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="wf-node wf-trigger"><div class="wf-icon">⏱️</div><div class="wf-label">30-min Poller</div><div class="wf-sub">Auto — background thread on Railway</div></div>
+          <div class="wf-node wf-trigger"><div class="wf-icon">💬</div><div class="wf-label">Telegram Message</div><div class="wf-sub">Manual — "новости" triggers fresh poll</div></div>
+        </div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">📥</div><div class="wf-label">Fetch All Sources</div><div class="wf-sub">Slack, Pachka, Telegram, Gmail, Front, Calendar</div></div>
         <div class="wf-arrow">→</div>
@@ -589,7 +592,10 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Generate Digest</div><div class="wf-sub">Claude — tasks, hot topics, mentions, meetings</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Telegram Bot</div><div class="wf-sub">Responds to messages 24/7</div></div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Telegram Bot</div><div class="wf-sub">Responds to messages 24/7</div></div>
+          <div class="wf-node wf-output"><div class="wf-icon">🖥️</div><div class="wf-label">Web Dashboard</div><div class="wf-sub">Flask — localhost:5055</div></div>
+        </div>
       </div>
       <div class="doc-section-label">How it works</div>
       <p class="doc-description">
