@@ -154,6 +154,19 @@
           <tr><td><code>IMPACT_ANALYSIS_SHEET_ID</code></td><td>Google Sheet ID — for the brief impact analysis workflow</td></tr>
         </tbody>
       </table>
+      <div class="doc-section-label">File Structure</div>
+      <pre class="file-tree">discovery-brief-agent/
+├── generate_brief.py          # auto-trigger entry point (repository_dispatch)
+├── generate_brief_onetime.py  # manual entry point (workflow_dispatch)
+├── brief_core.py              # shared brief generation logic
+├── brief_prompts.py           # prompt templates for all 16 sections
+├── brief_impact_analyzer.py   # impact analysis workflow
+├── brief_impact_analyzer_prompt.py
+├── tracker.py                 # cost tracking push to agent-cost-dashboard
+├── requirements.txt
+├── CLAUDE.md
+└── docs/
+    └── discovery-brief-agent-session-log.md</pre>
     </div>
 
     <!-- Meeting Confirmation Agent -->
@@ -232,6 +245,13 @@
           <tr><td><code>SIGNAL_MEETING_CONFIRMATION_AGENT</code></td><td>Slack bot token — posts notification with link to review the Front draft</td></tr>
         </tbody>
       </table>
+      <div class="doc-section-label">File Structure</div>
+      <pre class="file-tree">meeting-confirmation-agent/
+├── confirm_meeting.py   # single entry point (repository_dispatch)
+├── requirements.txt
+├── CLAUDE.md
+└── docs/
+    └── session-log-meeting-confirmation.md</pre>
     </div>
 
     <!-- Follow-up Tracker Agent -->
@@ -304,6 +324,13 @@
           <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
+      <div class="doc-section-label">File Structure</div>
+      <pre class="file-tree">followup-tracker-agent/
+├── followup_tracker.py   # single entry point (cron + workflow_dispatch)
+├── requirements.txt
+├── CLAUDE.md
+└── docs/
+    └── follow-up-tracker-session-log.md</pre>
     </div>
 
     <!-- Signal Research Agent -->
@@ -367,6 +394,16 @@
           <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
+      <div class="doc-section-label">File Structure</div>
+      <pre class="file-tree">signal-research-agent/
+├── generate_signal_research.py      # main entry point (repository_dispatch)
+├── bulk_signal_research_onetime.py  # bulk manual run (workflow_dispatch)
+├── signal_research_domain_only.py   # domain-only variant (no deal context)
+├── tracker.py                       # cost tracking push to agent-cost-dashboard
+├── requirements.txt
+├── CLAUDE.md
+└── docs/
+    └── Signal-Research-Agent-session-log.md</pre>
     </div>
 
     <!-- Pipeline Agent -->
@@ -446,6 +483,13 @@
           <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
+      <div class="doc-section-label">File Structure</div>
+      <pre class="file-tree">pipeline-agent/
+├── pipeline_agent.py   # single entry point (cron + workflow_dispatch)
+├── requirements.txt
+├── CLAUDE.md
+└── docs/
+    └── pipeline-agent-session-log.md</pre>
     </div>
 
     <!-- Daily Todo Agent -->
@@ -515,6 +559,16 @@
           <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
+      <div class="doc-section-label">File Structure</div>
+      <pre class="file-tree">daily-todo-agent/
+├── daily_todo_agent.py   # single entry point (cron + workflow_dispatch)
+├── debug_score.py        # utility: debug deal scoring for a specific deal
+├── debug_stages.py       # utility: inspect stage IDs
+├── debug_tasks.py        # utility: debug task fetching
+├── requirements.txt
+├── CLAUDE.md
+└── docs/
+    └── daily-todo-agent-session-log.md</pre>
     </div>
 
     <!-- NPS Agent -->
@@ -563,6 +617,30 @@
           <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
+      <div class="doc-section-label">File Structure</div>
+      <pre class="file-tree">nps-agent/
+├── src/nps_agent/
+│   ├── bot.py           # Slack bot @mention handler
+│   ├── config.py        # quarter config, respondent list
+│   ├── phase.py         # phase state machine (send → remind → report)
+│   ├── reminders.py     # reminder wave logic
+│   ├── report.py        # final PDF report generation
+│   ├── sheets.py        # Google Sheets read/write
+│   ├── slack_client.py  # Slack API wrapper
+│   ├── gmail_client.py  # Gmail send wrapper
+│   ├── templates.py     # email + Slack message templates
+│   ├── models.py        # data models
+│   ├── dryrun.py        # dry-run helpers
+│   └── tracker.py       # cost tracking
+├── slack-worker/
+│   └── worker.js        # Cloudflare Worker — receives Slack @mention webhooks
+├── tests/               # pytest suite
+├── pyproject.toml
+├── wrangler.toml
+├── CLAUDE.md
+└── docs/
+    ├── nps-session-log.md
+    └── infrastructure.md</pre>
     </div>
 
     <!-- Action Plan Agent -->
@@ -608,6 +686,16 @@
           <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
+      <div class="doc-section-label">File Structure</div>
+      <pre class="file-tree">action-plan-agent/
+├── generate_action_plan.py   # single entry point (repository_dispatch)
+├── action_plan_prompts.py    # prompt templates for MAP generation
+├── tracker.py                # cost tracking push to agent-cost-dashboard
+├── requirements.txt
+├── CLAUDE.md
+└── docs/
+    ├── action-plan-agent-session-log.md
+    └── connections.md</pre>
     </div>
 
     <!-- Albato Helper -->
@@ -653,6 +741,13 @@
           <tr><td><code>SLACK_ALBATO_HELPER_TOKEN</code></td><td>Slack bot token — searches channel history for the parent thread; posts ✅ confirmation reply</td></tr>
         </tbody>
       </table>
+      <div class="doc-section-label">File Structure</div>
+      <pre class="file-tree">albato-helper/
+├── albato_helper.py   # single entry point (repository_dispatch)
+├── requirements.txt
+├── CLAUDE.md
+└── docs/
+    └── session-log-albato-helper.md</pre>
     </div>
 
     <!-- Second Brain -->
@@ -729,6 +824,24 @@
           <tr><td><code>PACHKA_API_KEY</code> / <code>PACHKA_CHANNEL_IDS</code></td><td>Pachka — read messages and resolve user names</td></tr>
         </tbody>
       </table>
+      <div class="doc-section-label">File Structure</div>
+      <pre class="file-tree">second-brain/
+├── telegram_bot.py          # Telegram bot entry point (runs 24/7 on Railway)
+├── poller.py                # background 30-min poll + run_once_with_counts
+├── brain.py                 # Claude digest generation
+├── actions.py               # tool dispatch (get_digest, fetch_live_items, send_email, etc.)
+├── db.py                    # SQLite helpers (upsert, save_digest, get_dismissed)
+├── server.py                # Flask web dashboard (localhost:5055)
+├── connectors/
+│   ├── gmail.py             # Gmail API connector
+│   ├── calendar.py          # Google Calendar connector
+│   ├── slack.py             # Slack connector
+│   ├── front.py             # Front connector
+│   ├── pachka.py            # Pachka connector
+│   └── telegram_reader.py   # Telethon personal Telegram reader
+├── CLAUDE.md
+└── docs/
+    └── second-brain-session-log.md</pre>
     </div>
 
   </div><!-- /tab-docs -->
