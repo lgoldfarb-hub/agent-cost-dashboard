@@ -34,6 +34,8 @@ AGENTS = [
     "nps",
     "pipeline_agent",
     "followup_tracker",
+    "second_brain",
+    "daily_todo_agent",
 ]
 
 AGENT_LABELS = {
@@ -44,6 +46,8 @@ AGENT_LABELS = {
     "nps":                  "NPS Agent",
     "pipeline_agent":       "Pipeline Agent",
     "followup_tracker":     "Follow-up Tracker",
+    "second_brain":         "Second Brain",
+    "daily_todo_agent":     "Daily Todo Agent",
 }
 
 

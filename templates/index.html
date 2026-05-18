@@ -434,6 +434,79 @@
       </table>
     </div>
 
+    <!-- Daily Todo Agent -->
+    <div class="doc-card">
+      <h2>Daily Todo Agent</h2>
+      <div class="doc-meta">Trigger: Daily cron 07:00 UTC (Mon–Fri) &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/daily-todo-agent" target="_blank">lgoldfarb-hub/daily-todo-agent</a></div>
+      <p class="doc-description">
+        Eliminates the time sales reps spend deciding what to work on each morning. Runs at 8 AM CET on weekdays and delivers a ranked, opinionated to-do list to each rep's Slack channel. For every active deal it computes a score out of 100 based on ICP fit, buying intent, deal value, and recent engagement signals, then uses Claude to generate one specific action per deal. Deals with upcoming scheduled meetings are always surfaced first. Output is split into three tiers: 🔥 Top Priority, ⚡ Also Worth Attention, and 🧊 On Ice.
+      </p>
+      <div class="doc-section-label">Workflow</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">🕖</div><div class="wf-label">Daily Cron</div><div class="wf-sub">07:00 UTC Mon–Fri</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Deals per Rep</div><div class="wf-sub">HubSpot — filtered by owner + stage</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📊</div><div class="wf-label">Score Each Deal</div><div class="wf-sub">ICP + intent + value + engagement</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Generate Actions</div><div class="wf-sub">Claude — one action per deal</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Post to Slack</div><div class="wf-sub">Ranked to-do list per rep</div></div>
+      </div>
+      <div class="doc-section-label">Scoring (100 pts max)</div>
+      <div class="rules-list">
+        <div class="rule-item">
+          <div class="rule-title">ICP Fit — 40 pts</div>
+          <div class="rule-body">Read from the <code>ai_icp_score</code> deal field (0–100). Scaled linearly: 100 → 40 pts.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">Buying Intent — 40 pts</div>
+          <div class="rule-body">Read from the <code>buying_intent</code> deal field (populated by Pipeline Agent from Sybill notes). Very high/Urgent=40 · High=32 · Moderate=24 · Low=16 · Unclear=8 · No intent=0. Falls back to note keyword scan if field is empty.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">Deal Value — 20 pts</div>
+          <div class="rule-body">Read from the <code>deal_value</code> deal field. High=20 · Mid=12 · Low=5 · unknown=0.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">Engagement Bonus — +5 pts</div>
+          <div class="rule-body">+5 if a prospect-side signal is detected in the last 7 days (inbound reply in a note, or a newly scheduled meeting). Only prospect signals count — rep-authored follow-up notes are excluded.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">📅 Upcoming meeting override</div>
+          <div class="rule-body">Deals with a <strong>Scheduled</strong> meeting in the next 7 days are always surfaced at the top of the list as "Prep for meeting", regardless of their score.</div>
+        </div>
+      </div>
+      <div class="doc-section-label">Reps</div>
+      <table class="input-table">
+        <thead><tr><th>Rep</th><th>Role</th><th>Stages covered</th><th>Slack channel</th></tr></thead>
+        <tbody>
+          <tr><td>Tanya Deshkevich</td><td>BDR</td><td>Lead, Opportunity</td><td>C08475D3ASK</td></tr>
+          <tr><td>Mariana Guerci</td><td>AE</td><td>Post-Meeting Qual, 2nd Meeting Booked, Contract</td><td>C09PUG35MJL</td></tr>
+          <tr><td>Leonid Goldfarb</td><td>AE</td><td>Post-Meeting Qual, 2nd Meeting Booked, Contract</td><td>C09PUG35MJL</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Input Data</div>
+      <table class="input-table">
+        <thead><tr><th>Field</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Active deals per rep (filtered by owner + stage)</td><td>HubSpot CRM — deal search with pipeline + stage + owner filters</td></tr>
+          <tr><td>ICP score, buying intent, deal value</td><td>HubSpot deal properties</td></tr>
+          <tr><td>Meeting records (status, start time, title)</td><td>HubSpot CRM — meetings associated with each deal</td></tr>
+          <tr><td>Last 5 notes per deal</td><td>HubSpot CRM — notes associated with each deal (used for intent fallback and engagement scoring)</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Secrets</div>
+      <table class="input-table">
+        <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads deals, meetings, notes (read-only, no writes)</td></tr>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — generates one action recommendation per deal</td></tr>
+          <tr><td><code>SLACK_BOT_TOKEN</code></td><td>Slack bot token — posts ranked to-do list to each rep's channel</td></tr>
+          <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <!-- NPS Agent -->
     <div class="doc-card">
       <h2>NPS Agent</h2>
