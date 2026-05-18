@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Reechee | New Deal | Tekpon | MeetUp",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-18T13:37:49.110227+00:00",
+  "completed_at": "2026-05-18T13:42:02.598442+00:00",
+  "duration_seconds": 253.488215,
+  "input_tokens": 30876,
+  "output_tokens": 9697,
+  "cache_read_tokens": 427482,
+  "cache_write_tokens": 24752,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 27960,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.092628,
+  "cost_output": 0.145455,
+  "cost_cache_read": 0.1282446,
+  "cost_cache_write": 0.09282,
+  "cost_web_search": 0.0,
+  "cost_total": 0.4591476
+}
