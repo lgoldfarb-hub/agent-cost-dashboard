@@ -461,7 +461,7 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">Buying Intent — 40 pts</div>
-          <div class="rule-body">Read from the <code>buying_intent</code> deal field (populated by Pipeline Agent from Sybill notes). Very high/Urgent=40 · High=32 · Moderate=24 · Low=16 · Unclear=8 · No intent=0. Falls back to note keyword scan if field is empty.</div>
+          <div class="rule-body">Primary source: the <strong>Buying Intent / Intent Levels (AI)</strong> note on the deal (created via HubSpot Enrichment). The agent reads the <code>Intent Level:</code> line and maps it to a score: Very High/Urgent=40 · High=32 · Moderate=24 · Low=16 · Unclear=8 · No intent=0. If no intent note exists, Claude evaluates buying intent directly from the deal's raw notes and engagement history.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">Deal Value — 20 pts</div>
