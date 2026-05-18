@@ -439,7 +439,7 @@
       <h2>Daily Todo Agent</h2>
       <div class="doc-meta">Trigger: Daily cron 07:00 UTC (Mon–Fri) &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/daily-todo-agent" target="_blank">lgoldfarb-hub/daily-todo-agent</a></div>
       <p class="doc-description">
-        Eliminates the time sales reps spend deciding what to work on each morning. Runs at 8 AM CET on weekdays and delivers a ranked, opinionated to-do list to each rep's Slack channel. For every active deal it computes a score out of 100 based on ICP fit, buying intent, deal value, and recent engagement signals, then uses Claude to generate one specific action per deal. Deals with upcoming scheduled meetings are always surfaced first. Output is split into three tiers: 🔥 Top Priority, ⚡ Also Worth Attention, and 🧊 On Ice.
+        Eliminates the time sales reps spend deciding what to work on each morning. Runs at 8 AM CET on weekdays and delivers a ranked, opinionated to-do list to each rep's Slack channel. For every active deal it computes a score out of 100 based on ICP fit, buying intent, and deal value, then uses Claude to generate one specific action per deal. Deals with upcoming scheduled meetings are always surfaced first. Output is split into three tiers: 🔥 Top Priority, ⚡ Also Worth Attention, and 🧊 On Ice.
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
@@ -447,7 +447,7 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Deals per Rep</div><div class="wf-sub">HubSpot — filtered by owner + stage</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-action"><div class="wf-icon">📊</div><div class="wf-label">Score Each Deal</div><div class="wf-sub">ICP + intent + value + engagement</div></div>
+        <div class="wf-node wf-action"><div class="wf-icon">📊</div><div class="wf-label">Score Each Deal</div><div class="wf-sub">ICP + intent + value</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Generate Actions</div><div class="wf-sub">Claude — one action per deal</div></div>
         <div class="wf-arrow">→</div>
@@ -456,20 +456,16 @@
       <div class="doc-section-label">Scoring (100 pts max)</div>
       <div class="rules-list">
         <div class="rule-item">
-          <div class="rule-title">ICP Fit — 40 pts</div>
-          <div class="rule-body">Read from the <code>ai_icp_score</code> deal field (0–100). Scaled linearly: 100 → 40 pts.</div>
+          <div class="rule-title">ICP Fit — 35 pts</div>
+          <div class="rule-body">Read from the <code>ai_icp_score</code> deal field (scale 1–10). Multiplied by 3.5: score of 10 → 35 pts.</div>
         </div>
         <div class="rule-item">
-          <div class="rule-title">Buying Intent — 40 pts</div>
-          <div class="rule-body">Primary source: the <strong>Buying Intent / Intent Levels (AI)</strong> note on the deal (created via HubSpot Enrichment). The agent reads the <code>Intent Level:</code> line and maps it to a score: Very High/Urgent=40 · High=32 · Moderate=24 · Low=16 · Unclear=8 · No intent=0. If no intent note exists, Claude evaluates buying intent directly from the deal's raw notes and engagement history.</div>
+          <div class="rule-title">Buying Intent — 50 pts</div>
+          <div class="rule-body">Primary source: the most recent <strong>Buying Intent / Intent Levels (AI)</strong> note on the deal (created weekly by HubSpot Enrichment). The agent reads the numeric score (e.g. <code>44 / 100</code>) and multiplies by 0.5: 100 → 50 pts. Fallback 1: <code>buying_intent</code> deal field mapped to fixed pts (Very High/Urgent=50 · High=40 · Moderate=30 · Low=20 · Unclear=10 · No intent=0). Fallback 2: Claude evaluates intent from the deal's raw notes.</div>
         </div>
         <div class="rule-item">
-          <div class="rule-title">Deal Value — 20 pts</div>
-          <div class="rule-body">Read from the <code>deal_value</code> deal field. High=20 · Mid=12 · Low=5 · unknown=0.</div>
-        </div>
-        <div class="rule-item">
-          <div class="rule-title">Engagement Bonus — +5 pts</div>
-          <div class="rule-body">+5 if a prospect-side signal is detected in the last 7 days (inbound reply in a note, or a newly scheduled meeting). Only prospect signals count — rep-authored follow-up notes are excluded.</div>
+          <div class="rule-title">Deal Value — 15 pts</div>
+          <div class="rule-body">Read from the <code>deal_value</code> deal field. High=15 · Mid=9 · Low=4 · unknown=0.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">📅 Upcoming meeting override</div>
@@ -492,7 +488,7 @@
           <tr><td>Active deals per rep (filtered by owner + stage)</td><td>HubSpot CRM — deal search with pipeline + stage + owner filters</td></tr>
           <tr><td>ICP score, buying intent, deal value</td><td>HubSpot deal properties</td></tr>
           <tr><td>Meeting records (status, start time, title)</td><td>HubSpot CRM — meetings associated with each deal</td></tr>
-          <tr><td>Last 5 notes per deal</td><td>HubSpot CRM — notes associated with each deal (used for intent fallback and engagement scoring)</td></tr>
+          <tr><td>All notes per deal</td><td>HubSpot CRM — all notes associated with each deal (used for intent note + fallback Claude eval)</td></tr>
         </tbody>
       </table>
       <div class="doc-section-label">Secrets</div>
