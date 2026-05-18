@@ -70,8 +70,22 @@
   <!-- ── Documentation tab ── -->
   <div id="tab-docs" style="display:none">
 
+    <div class="agent-filter-bar">
+      <button class="agent-filter-btn active" onclick="filterDocs('all')">All</button>
+      <button class="agent-filter-btn" onclick="filterDocs('discovery-brief')">Discovery Brief</button>
+      <button class="agent-filter-btn" onclick="filterDocs('meeting-confirmation')">Meeting Confirmation</button>
+      <button class="agent-filter-btn" onclick="filterDocs('followup-tracker')">Follow-up Tracker</button>
+      <button class="agent-filter-btn" onclick="filterDocs('signal-research')">Signal Research</button>
+      <button class="agent-filter-btn" onclick="filterDocs('pipeline')">Pipeline</button>
+      <button class="agent-filter-btn" onclick="filterDocs('daily-todo')">Daily Todo</button>
+      <button class="agent-filter-btn" onclick="filterDocs('nps')">NPS</button>
+      <button class="agent-filter-btn" onclick="filterDocs('action-plan')">Action Plan</button>
+      <button class="agent-filter-btn" onclick="filterDocs('albato-helper')">Albato Helper</button>
+      <button class="agent-filter-btn" onclick="filterDocs('second-brain')">Second Brain</button>
+    </div>
+
     <!-- Discovery Brief Agent -->
-    <div class="doc-card">
+    <div class="doc-card" data-agent="discovery-brief">
       <h2>Discovery Brief Agent</h2>
       <div class="doc-meta">Trigger: HubSpot webhook (meeting booked) &nbsp;·&nbsp; Model: Claude Opus 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/discovery-brief-agent" target="_blank">lgoldfarb-hub/discovery-brief-agent</a></div>
       <p class="doc-description">
@@ -143,7 +157,7 @@
     </div>
 
     <!-- Meeting Confirmation Agent -->
-    <div class="doc-card">
+    <div class="doc-card" data-agent="meeting-confirmation">
       <h2>Meeting Confirmation Agent</h2>
       <div class="doc-meta">Trigger: Albato automation (3h before call) &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/meeting-confirmation-agent" target="_blank">lgoldfarb-hub/meeting-confirmation-agent</a></div>
       <p class="doc-description">
@@ -221,7 +235,7 @@
     </div>
 
     <!-- Follow-up Tracker Agent -->
-    <div class="doc-card">
+    <div class="doc-card" data-agent="followup-tracker">
       <h2>Follow-up Tracker Agent</h2>
       <div class="doc-meta">Trigger: Daily cron 18:00 UTC &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/followup-tracker-agent" target="_blank">lgoldfarb-hub/followup-tracker-agent</a></div>
       <p class="doc-description">
@@ -293,7 +307,7 @@
     </div>
 
     <!-- Signal Research Agent -->
-    <div class="doc-card">
+    <div class="doc-card" data-agent="signal-research">
       <h2>Signal Research Agent</h2>
       <div class="doc-meta">Trigger: Albato webhook (new lead created) &nbsp;·&nbsp; Model: Claude Opus 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/signal-research-agent" target="_blank">lgoldfarb-hub/signal-research-agent</a></div>
       <p class="doc-description">
@@ -356,7 +370,7 @@
     </div>
 
     <!-- Pipeline Agent -->
-    <div class="doc-card">
+    <div class="doc-card" data-agent="pipeline">
       <h2>Pipeline Agent</h2>
       <div class="doc-meta">Trigger: Daily cron 16:00 UTC &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/pipeline-agent" target="_blank">lgoldfarb-hub/pipeline-agent</a></div>
       <p class="doc-description">
@@ -435,7 +449,7 @@
     </div>
 
     <!-- Daily Todo Agent -->
-    <div class="doc-card">
+    <div class="doc-card" data-agent="daily-todo">
       <h2>Daily Todo Agent</h2>
       <div class="doc-meta">Trigger: Daily cron 07:00 UTC (Mon–Fri) &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/daily-todo-agent" target="_blank">lgoldfarb-hub/daily-todo-agent</a></div>
       <p class="doc-description">
@@ -504,7 +518,7 @@
     </div>
 
     <!-- NPS Agent -->
-    <div class="doc-card">
+    <div class="doc-card" data-agent="nps">
       <h2>NPS Agent</h2>
       <div class="doc-meta">Trigger: Weekday cron 12:00 + 15:00 UTC &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/nps-agent" target="_blank">lgoldfarb-hub/nps-agent</a></div>
       <p class="doc-description">
@@ -552,7 +566,7 @@
     </div>
 
     <!-- Action Plan Agent -->
-    <div class="doc-card">
+    <div class="doc-card" data-agent="action-plan">
       <h2>Action Plan Agent</h2>
       <div class="doc-meta">Trigger: Sybill webhook → Albato → GitHub dispatch &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/action-plan-agent" target="_blank">lgoldfarb-hub/action-plan-agent</a></div>
       <p class="doc-description">
@@ -597,7 +611,7 @@
     </div>
 
     <!-- Albato Helper -->
-    <div class="doc-card">
+    <div class="doc-card" data-agent="albato-helper">
       <h2>Albato Helper</h2>
       <div class="doc-meta">Trigger: Albato webhook (AI Deals Review bot reply) &nbsp;·&nbsp; No Claude &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/albato-helper" target="_blank">lgoldfarb-hub/albato-helper</a></div>
       <p class="doc-description">
@@ -642,7 +656,7 @@
     </div>
 
     <!-- Second Brain -->
-    <div class="doc-card">
+    <div class="doc-card" data-agent="second-brain">
       <h2>Second Brain</h2>
       <div class="doc-meta">Trigger: Polling every 30 min &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; Hosted on Railway (24/7) &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/second-brain" target="_blank">lgoldfarb-hub/second-brain</a></div>
       <p class="doc-description">
@@ -725,6 +739,14 @@
 document.getElementById('date-from').value = _mtdStartStr();
 document.getElementById('date-to').value = _todayStr();
 loadSummary();
+
+function filterDocs(agent) {
+  document.querySelectorAll('.agent-filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.doc-card').forEach(card => {
+    card.style.display = (agent === 'all' || card.dataset.agent === agent) ? '' : 'none';
+  });
+}
 </script>
 </body>
 </html>

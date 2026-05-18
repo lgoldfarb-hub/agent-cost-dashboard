@@ -293,6 +293,13 @@ tr.row-partial td { background: #fffbf0; }
   color: #6b7280;
   margin-bottom: 14px;
 }
+.doc-card .doc-meta a {
+  color: #4a6cf7;
+  text-decoration: none;
+}
+.doc-card .doc-meta a:hover {
+  text-decoration: underline;
+}
 .doc-card .doc-description {
   color: #374151;
   margin-bottom: 22px;
@@ -425,3 +432,24 @@ tr.row-partial td { background: #fffbf0; }
   vertical-align: top;
 }
 .input-table td:first-child { font-weight: 500; white-space: nowrap; }
+
+/* ── Agent filter bar ── */
+.agent-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.agent-filter-btn {
+  padding: 6px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.agent-filter-btn:hover { background: #f3f4f6; color: #374151; }
+.agent-filter-btn.active { background: #1d4ed8; color: #fff; border-color: #1d4ed8; }
