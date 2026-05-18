@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Mirro | New Deal | Tekpon | Meetup",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-18T12:32:29.367456+00:00",
+  "completed_at": "2026-05-18T12:37:08.791206+00:00",
+  "duration_seconds": 279.42375,
+  "input_tokens": 61661,
+  "output_tokens": 8684,
+  "cache_read_tokens": 602209,
+  "cache_write_tokens": 29086,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 58745,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.184983,
+  "cost_output": 0.13026000000000001,
+  "cost_cache_read": 0.18066269999999998,
+  "cost_cache_write": 0.1090725,
+  "cost_web_search": 0.0,
+  "cost_total": 0.6049782
+}
