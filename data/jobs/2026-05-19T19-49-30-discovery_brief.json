@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  Lytho| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-19T19:49:30.324485+00:00",
+  "completed_at": "2026-05-19T20:07:08.889739+00:00",
+  "duration_seconds": 1058.565254,
+  "input_tokens": 100358,
+  "output_tokens": 30880,
+  "cache_read_tokens": 2367593,
+  "cache_write_tokens": 101923,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 93303,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.301074,
+  "cost_output": 0.4632,
+  "cost_cache_read": 0.7102778999999999,
+  "cost_cache_write": 0.38221125,
+  "cost_web_search": 0.0,
+  "cost_total": 1.85676315
+}
