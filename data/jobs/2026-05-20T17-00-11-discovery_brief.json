@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  Kameleoon| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-20T17:00:11.067989+00:00",
+  "completed_at": "2026-05-20T17:10:43.969629+00:00",
+  "duration_seconds": 632.90164,
+  "input_tokens": 11838,
+  "output_tokens": 27136,
+  "cache_read_tokens": 1805604,
+  "cache_write_tokens": 74868,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4783,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.035514,
+  "cost_output": 0.40704,
+  "cost_cache_read": 0.5416812,
+  "cost_cache_write": 0.28075500000000003,
+  "cost_web_search": 0.0,
+  "cost_total": 1.2649902
+}
