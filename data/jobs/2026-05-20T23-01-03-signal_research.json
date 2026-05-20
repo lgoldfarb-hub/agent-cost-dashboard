@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: AliExpress",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-20T23:01:03.033191+00:00",
+  "completed_at": "2026-05-20T23:04:06.543283+00:00",
+  "duration_seconds": 183.510092,
+  "input_tokens": 46668,
+  "output_tokens": 5170,
+  "cache_read_tokens": 407038,
+  "cache_write_tokens": 38761,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 43752,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.14000400000000002,
+  "cost_output": 0.07755000000000001,
+  "cost_cache_read": 0.1221114,
+  "cost_cache_write": 0.14535374999999998,
+  "cost_web_search": 0.0,
+  "cost_total": 0.48501914999999995
+}
