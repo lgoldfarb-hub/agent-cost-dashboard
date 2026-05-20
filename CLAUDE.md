@@ -29,6 +29,7 @@ At the end of every session, always append a new entry to `docs/agent-cost-dashb
 
 - Always push commits to remote immediately after committing (`git push origin main`). Railway auto-deploys from main.
 - All dashboard UI is in `templates/index.html` — no separate JS files.
+- Always delete debug workflows from `.github/workflows/` immediately after debugging is complete. Never leave temporary workflows in the repo.
 - The Documentation tab contains one card per agent with scoring/config details — keep these in sync when agent logic changes.
 
 ## Secrets (stored as Railway env vars)
