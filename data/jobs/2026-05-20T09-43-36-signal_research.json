@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: 3CLogic | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-20T09:43:36.679722+00:00",
+  "completed_at": "2026-05-20T09:46:26.989053+00:00",
+  "duration_seconds": 170.309331,
+  "input_tokens": 50168,
+  "output_tokens": 6273,
+  "cache_read_tokens": 164885,
+  "cache_write_tokens": 27267,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 47252,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.150504,
+  "cost_output": 0.094095,
+  "cost_cache_read": 0.0494655,
+  "cost_cache_write": 0.10225125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.39631575
+}
