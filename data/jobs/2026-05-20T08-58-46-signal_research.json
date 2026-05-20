@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Learning Pool | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-20T08:58:46.252458+00:00",
+  "completed_at": "2026-05-20T09:02:31.215175+00:00",
+  "duration_seconds": 224.962717,
+  "input_tokens": 59913,
+  "output_tokens": 5725,
+  "cache_read_tokens": 192933,
+  "cache_write_tokens": 29378,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 56997,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.179739,
+  "cost_output": 0.085875,
+  "cost_cache_read": 0.0578799,
+  "cost_cache_write": 0.1101675,
+  "cost_web_search": 0.0,
+  "cost_total": 0.4336614
+}
