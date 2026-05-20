@@ -670,7 +670,8 @@
         <tbody>
           <tr><td>Deal ID</td><td>Webhook payload (<code>client_payload.deal_id</code>)</td></tr>
           <tr><td>Meeting name</td><td>Webhook payload (<code>client_payload.meeting_name</code>) — Sybill recording title</td></tr>
-          <tr><td>Full call transcript (speaker + text + timestamps)</td><td>Webhook payload (<code>client_payload.transcript</code>) — Sybill via Albato</td></tr>
+          <tr><td>Call ID</td><td>Webhook payload (<code>client_payload.call_id</code>) — parsed from Sybill URL field (<code>?id=</code>)</td></tr>
+          <tr><td>Full call transcript (speaker + text + timestamps)</td><td>Sybill API — fetched directly via <code>GET /v1/conversations/{call_id}</code> using <code>SYBILL_KEY</code></td></tr>
           <tr><td>Deal name, stage, amount, close date, owner ID</td><td>HubSpot CRM — deal properties API</td></tr>
           <tr><td>Contact name, email, job title, company</td><td>HubSpot CRM — contacts associated with the deal</td></tr>
           <tr><td>All notes on the deal (discovery brief, prior action plans)</td><td>HubSpot CRM — notes associated with the deal</td></tr>
@@ -683,6 +684,7 @@
           <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — analyzes the transcript and generates the MAP + coaching tips</td></tr>
           <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads deal, contacts, and notes; writes the action plan note</td></tr>
           <tr><td><code>SLACK_BOT_ACTION_PLAN_AGENT</code></td><td>Slack bot token — posts the action plan notification as a thread reply in the AE evaluation channel</td></tr>
+          <tr><td><code>SYBILL_KEY</code></td><td>Sybill API key (Export scope) — fetches full call transcript from <code>/v1/conversations/{call_id}</code></td></tr>
           <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
