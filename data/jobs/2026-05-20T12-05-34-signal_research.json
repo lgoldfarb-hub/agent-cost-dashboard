@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Claspo | GetSales ceo,no emails,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-20T12:05:34.579868+00:00",
+  "completed_at": "2026-05-20T12:10:25.076923+00:00",
+  "duration_seconds": 290.497055,
+  "input_tokens": 88128,
+  "output_tokens": 6532,
+  "cache_read_tokens": 682226,
+  "cache_write_tokens": 38945,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 85212,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.264384,
+  "cost_output": 0.09798,
+  "cost_cache_read": 0.20466779999999998,
+  "cost_cache_write": 0.14604375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.71307555
+}
