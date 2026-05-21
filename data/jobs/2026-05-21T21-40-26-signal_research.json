@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Alliants| SaaStr_2026_postconf",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-21T21:40:26.087286+00:00",
+  "completed_at": "2026-05-21T21:44:29.636349+00:00",
+  "duration_seconds": 243.549063,
+  "input_tokens": 70439,
+  "output_tokens": 8081,
+  "cache_read_tokens": 180189,
+  "cache_write_tokens": 21928,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 67523,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.211317,
+  "cost_output": 0.12121499999999999,
+  "cost_cache_read": 0.05405669999999999,
+  "cost_cache_write": 0.08223,
+  "cost_web_search": 0.0,
+  "cost_total": 0.46881870000000003
+}
