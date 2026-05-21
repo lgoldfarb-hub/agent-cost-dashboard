@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Hubstaff| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-21T09:36:52.250927+00:00",
+  "completed_at": "2026-05-21T09:41:54.353330+00:00",
+  "duration_seconds": 302.102403,
+  "input_tokens": 28913,
+  "output_tokens": 9170,
+  "cache_read_tokens": 1085781,
+  "cache_write_tokens": 49443,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25997,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.08673900000000001,
+  "cost_output": 0.13754999999999998,
+  "cost_cache_read": 0.32573430000000003,
+  "cost_cache_write": 0.18541125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.73543455
+}
