@@ -257,13 +257,13 @@
     <!-- Follow-up Tracker Agent -->
     <div class="doc-card" data-agent="followup-tracker">
       <h2>Follow-up Tracker Agent</h2>
-      <div class="doc-meta">Trigger: Daily cron 18:00 UTC &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/followup-tracker-agent" target="_blank">lgoldfarb-hub/followup-tracker-agent</a></div>
+      <div class="doc-meta">Trigger: Albato scheduler → repository_dispatch (18:00 UTC) &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/followup-tracker-agent" target="_blank">lgoldfarb-hub/followup-tracker-agent</a></div>
       <p class="doc-description">
         Every evening, checks whether the sales team's HubSpot follow-up tasks for the day were actually executed. For each task due today, it gathers evidence — emails sent, calls logged, notes added — and asks Claude to classify the outcome as Completed, Incomplete, Missed, or Not enough data. Posts a structured Slack report to the appropriate channel based on deal stage, giving managers a clear daily view of follow-up discipline across the pipeline.
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
-        <div class="wf-node wf-trigger"><div class="wf-icon">🕕</div><div class="wf-label">Daily Cron</div><div class="wf-sub">18:00 UTC</div></div>
+        <div class="wf-node wf-trigger"><div class="wf-icon">🕕</div><div class="wf-label">Albato Scheduler</div><div class="wf-sub">18:00 UTC → repository_dispatch</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Today's Tasks</div><div class="wf-sub">HubSpot tasks API</div></div>
         <div class="wf-arrow">→</div>
@@ -299,7 +299,7 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">🚫 Excluded from evidence</div>
-          <div class="rule-body">Agent-generated notes are excluded (case-insensitive prefix match): any note starting with "auto-generated", "reactivation review note:", "buying intent / intent levels (ai)", "weekly review (ai)", or "ai meeting evaluation".</div>
+          <div class="rule-body">Agent-generated notes are excluded (case-insensitive prefix match): any note starting with <code>"buying intent / intent levels (ai)"</code>, <code>"weekly review (ai)"</code>, <code>"ai meeting evaluation"</code>, <code>"auto-generated"</code> (covers all auto-generated notes from any agent), or <code>"reactivation review note:"</code>.</div>
         </div>
       </div>
       <div class="doc-section-label">Input Data</div>
@@ -328,7 +328,8 @@
       </table>
       <div class="doc-section-label">File Structure</div>
       <pre class="file-tree">followup-tracker-agent/
-├── followup_tracker.py   # single entry point (cron + workflow_dispatch)
+├── followup_tracker.py   # single entry point (repository_dispatch + workflow_dispatch)
+├── tracker.py            # cost tracking push to agent-cost-dashboard
 ├── requirements.txt
 ├── CLAUDE.md
 └── docs/
