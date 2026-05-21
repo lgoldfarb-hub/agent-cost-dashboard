@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  beehiiv| Paid_meetings_CTO_May26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-21T13:11:24.384354+00:00",
+  "completed_at": "2026-05-21T13:14:54.119814+00:00",
+  "duration_seconds": 209.73546,
+  "input_tokens": 37657,
+  "output_tokens": 6111,
+  "cache_read_tokens": 211554,
+  "cache_write_tokens": 27191,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 34741,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.11297100000000002,
+  "cost_output": 0.091665,
+  "cost_cache_read": 0.0634662,
+  "cost_cache_write": 0.10196625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.37006845
+}
