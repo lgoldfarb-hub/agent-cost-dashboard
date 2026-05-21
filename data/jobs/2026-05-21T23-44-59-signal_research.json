@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Vivun| SaaStr_2026_postconf",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-21T23:44:59.747207+00:00",
+  "completed_at": "2026-05-21T23:51:11.045041+00:00",
+  "duration_seconds": 371.297834,
+  "input_tokens": 54446,
+  "output_tokens": 10214,
+  "cache_read_tokens": 823470,
+  "cache_write_tokens": 35718,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 51530,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.163338,
+  "cost_output": 0.15321,
+  "cost_cache_read": 0.247041,
+  "cost_cache_write": 0.1339425,
+  "cost_web_search": 0.0,
+  "cost_total": 0.6975315000000001
+}
