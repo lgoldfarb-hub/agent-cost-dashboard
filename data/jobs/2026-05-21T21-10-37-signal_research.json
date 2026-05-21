@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Smith.ai | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-21T21:10:37.788761+00:00",
+  "completed_at": "2026-05-21T21:14:16.656537+00:00",
+  "duration_seconds": 218.867776,
+  "input_tokens": 37821,
+  "output_tokens": 6741,
+  "cache_read_tokens": 518603,
+  "cache_write_tokens": 39716,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 34905,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.11346300000000001,
+  "cost_output": 0.101115,
+  "cost_cache_read": 0.1555809,
+  "cost_cache_write": 0.148935,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5190939
+}
