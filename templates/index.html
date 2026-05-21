@@ -498,13 +498,13 @@
     <!-- Daily Todo Agent -->
     <div class="doc-card" data-agent="daily-todo">
       <h2>Daily Todo Agent</h2>
-      <div class="doc-meta">Trigger: Daily cron 07:00 UTC (Mon–Fri) &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/daily-todo-agent" target="_blank">lgoldfarb-hub/daily-todo-agent</a></div>
+      <div class="doc-meta">Trigger: Albato scheduler → repository_dispatch (08:00 CET, Mon–Fri) &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/daily-todo-agent" target="_blank">lgoldfarb-hub/daily-todo-agent</a></div>
       <p class="doc-description">
         Eliminates the time sales reps spend deciding what to work on each morning. Runs at 8 AM CET on weekdays and delivers a ranked, opinionated to-do list to each rep's Slack channel. For every active deal it computes a score out of 100 based on ICP fit, buying intent, and deal value, then uses Claude to generate one specific action per deal. Deals with upcoming scheduled meetings are always surfaced first. Output is split into three tiers: 🔥 Top Priority, ⚡ Also Worth Attention, and 🧊 On Ice.
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
-        <div class="wf-node wf-trigger"><div class="wf-icon">🕖</div><div class="wf-label">Daily Cron</div><div class="wf-sub">07:00 UTC Mon–Fri</div></div>
+        <div class="wf-node wf-trigger"><div class="wf-icon">🕗</div><div class="wf-label">Albato Scheduler</div><div class="wf-sub">08:00 CET Mon–Fri → repository_dispatch</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Deals per Rep</div><div class="wf-sub">HubSpot — filtered by owner + stage</div></div>
         <div class="wf-arrow">→</div>
