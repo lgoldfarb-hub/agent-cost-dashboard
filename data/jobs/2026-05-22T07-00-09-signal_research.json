@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Close | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-22T07:00:09.808647+00:00",
+  "completed_at": "2026-05-22T07:04:20.732289+00:00",
+  "duration_seconds": 250.923642,
+  "input_tokens": 28124,
+  "output_tokens": 8097,
+  "cache_read_tokens": 590304,
+  "cache_write_tokens": 29835,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25208,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.084372,
+  "cost_output": 0.12145500000000001,
+  "cost_cache_read": 0.1770912,
+  "cost_cache_write": 0.11188125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.49479945
+}
