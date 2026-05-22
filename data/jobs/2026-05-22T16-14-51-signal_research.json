@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Ignition Benefits| SaaStr_2026_postconf",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-22T16:14:51.902323+00:00",
+  "completed_at": "2026-05-22T16:17:32.711224+00:00",
+  "duration_seconds": 160.808901,
+  "input_tokens": 39742,
+  "output_tokens": 6255,
+  "cache_read_tokens": 160739,
+  "cache_write_tokens": 31424,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 36826,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.119226,
+  "cost_output": 0.093825,
+  "cost_cache_read": 0.0482217,
+  "cost_cache_write": 0.11784,
+  "cost_web_search": 0.0,
+  "cost_total": 0.37911269999999997
+}
