@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan: Reevo | SaaStr 2026",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-22T15:52:14.297872+00:00",
+  "completed_at": "2026-05-22T15:54:07.556517+00:00",
+  "duration_seconds": 113.258645,
+  "input_tokens": 17317,
+  "output_tokens": 4930,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 1126,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 16307,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.051951,
+  "cost_output": 0.07395,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0042225000000000006,
+  "cost_web_search": 0.0,
+  "cost_total": 0.13012349999999998
+}
