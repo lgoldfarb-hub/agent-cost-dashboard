@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: B12 Sales | New Deal | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-25T18:00:59.313476+00:00",
+  "completed_at": "2026-05-25T18:07:43.446423+00:00",
+  "duration_seconds": 404.132947,
+  "input_tokens": 49546,
+  "output_tokens": 9871,
+  "cache_read_tokens": 1598870,
+  "cache_write_tokens": 56921,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 46630,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.148638,
+  "cost_output": 0.148065,
+  "cost_cache_read": 0.479661,
+  "cost_cache_write": 0.21345375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.98981775
+}
