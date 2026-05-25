@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Rosslyn| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-25T13:37:09.844682+00:00",
+  "completed_at": "2026-05-25T13:40:57.513253+00:00",
+  "duration_seconds": 227.668571,
+  "input_tokens": 33291,
+  "output_tokens": 5534,
+  "cache_read_tokens": 412433,
+  "cache_write_tokens": 28930,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 30375,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.099873,
+  "cost_output": 0.08301,
+  "cost_cache_read": 0.12372989999999999,
+  "cost_cache_write": 0.1084875,
+  "cost_web_search": 0.0,
+  "cost_total": 0.41510040000000004
+}
