@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Ikigai| Paid_meetings_CTO_May26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-25T14:39:47.524997+00:00",
+  "completed_at": "2026-05-25T14:43:36.736856+00:00",
+  "duration_seconds": 229.211859,
+  "input_tokens": 29606,
+  "output_tokens": 5975,
+  "cache_read_tokens": 545673,
+  "cache_write_tokens": 42022,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 26690,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.08881800000000001,
+  "cost_output": 0.08962500000000001,
+  "cost_cache_read": 0.16370189999999998,
+  "cost_cache_write": 0.1575825,
+  "cost_web_search": 0.0,
+  "cost_total": 0.49972739999999993
+}
