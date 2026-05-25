@@ -83,8 +83,9 @@ function renderAgentsTable(d) {
 }
 
 function renderAgentChart(d) {
-  const labels = d.agents.map(a => a.label);
-  const values = d.agents.map(a => +a.spend.toFixed(4));
+  const sorted = [...d.agents].sort((a, b) => b.spend - a.spend);
+  const labels = sorted.map(a => a.label);
+  const values = sorted.map(a => +a.spend.toFixed(4));
   const ctx = document.getElementById('chart-by-agent').getContext('2d');
   if (_agentChart) _agentChart.destroy();
   _agentChart = new Chart(ctx, {
