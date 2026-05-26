@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  PartnerPage| SaaStr_2026_postconf",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-26T22:10:20.697644+00:00",
+  "completed_at": "2026-05-26T22:14:56.491151+00:00",
+  "duration_seconds": 275.793507,
+  "input_tokens": 181203,
+  "output_tokens": 7797,
+  "cache_read_tokens": 700974,
+  "cache_write_tokens": 40564,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 178287,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.543609,
+  "cost_output": 0.116955,
+  "cost_cache_read": 0.21029219999999998,
+  "cost_cache_write": 0.152115,
+  "cost_web_search": 0.0,
+  "cost_total": 1.0229712
+}
