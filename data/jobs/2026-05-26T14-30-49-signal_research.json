@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: RiskAdvisor| Zapier Batch 13 - Resequence",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-26T14:30:49.238022+00:00",
+  "completed_at": "2026-05-26T14:35:36.967385+00:00",
+  "duration_seconds": 287.729363,
+  "input_tokens": 29680,
+  "output_tokens": 9086,
+  "cache_read_tokens": 454565,
+  "cache_write_tokens": 44989,
+  "system_prompt_tokens": 2916,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 26764,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.08904000000000001,
+  "cost_output": 0.13629,
+  "cost_cache_read": 0.1363695,
+  "cost_cache_write": 0.16870875000000002,
+  "cost_web_search": 0.0,
+  "cost_total": 0.53040825
+}
