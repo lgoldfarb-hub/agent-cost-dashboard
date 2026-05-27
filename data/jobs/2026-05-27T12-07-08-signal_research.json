@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Tolstoy | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-27T12:07:08.476104+00:00",
+  "completed_at": "2026-05-27T12:12:13.669411+00:00",
+  "duration_seconds": 305.193307,
+  "input_tokens": 135767,
+  "output_tokens": 9341,
+  "cache_read_tokens": 588279,
+  "cache_write_tokens": 40217,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 132512,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.407301,
+  "cost_output": 0.14011500000000002,
+  "cost_cache_read": 0.1764837,
+  "cost_cache_write": 0.15081375000000002,
+  "cost_web_search": 0.0,
+  "cost_total": 0.87471345
+}
