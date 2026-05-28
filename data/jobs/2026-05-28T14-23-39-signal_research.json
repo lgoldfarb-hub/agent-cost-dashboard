@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Sunday| ZapierMCP_April26_CEO ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-28T14:23:39.252091+00:00",
+  "completed_at": "2026-05-28T14:29:50.926614+00:00",
+  "duration_seconds": 371.674523,
+  "input_tokens": 38392,
+  "output_tokens": 11145,
+  "cache_read_tokens": 1384151,
+  "cache_write_tokens": 65937,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 35137,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.115176,
+  "cost_output": 0.16717500000000002,
+  "cost_cache_read": 0.4152453,
+  "cost_cache_write": 0.24726374999999998,
+  "cost_web_search": 0.0,
+  "cost_total": 0.9448600500000001
+}
