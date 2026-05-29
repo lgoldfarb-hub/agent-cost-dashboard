@@ -433,6 +433,8 @@
         <div class="wf-node wf-action"><div class="wf-icon">⏰</div><div class="wf-label">Rule 9: Fix Task Times</div><div class="wf-sub">Reschedule early tasks to 10am CET</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-output"><div class="wf-icon">💾</div><div class="wf-label">Update HubSpot</div><div class="wf-sub">Stages, fields, associations, tasks</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-external"><div class="wf-icon">💬</div><div class="wf-label">Slack Report</div><div class="wf-sub">Daily summary → C09NJPKC66T</div></div>
       </div>
       <div class="doc-section-label">Rules</div>
       <div class="rules-list">
@@ -491,6 +493,7 @@
           <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads and updates all deals, meetings, notes, and contact associations</td></tr>
           <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — extracts Business Fit score from Sybill transcripts (Rule 4)</td></tr>
           <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
+          <tr><td><code>SLACK_BOT_TOKEN</code></td><td>Slack bot token — posts daily run summary to channel C09NJPKC66T</td></tr>
         </tbody>
       </table>
       <div class="doc-section-label">File Structure</div>
