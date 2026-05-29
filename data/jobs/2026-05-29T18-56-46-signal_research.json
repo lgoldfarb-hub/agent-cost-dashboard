@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Abacus| Paid_meetings_CTO_May26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-05-29T18:56:46.188592+00:00",
+  "completed_at": "2026-05-29T19:00:06.214932+00:00",
+  "duration_seconds": 200.02634,
+  "input_tokens": 61473,
+  "output_tokens": 6491,
+  "cache_read_tokens": 192876,
+  "cache_write_tokens": 35407,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 58218,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.184419,
+  "cost_output": 0.09736500000000001,
+  "cost_cache_read": 0.05786279999999999,
+  "cost_cache_write": 0.13277625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.47242305000000007
+}
