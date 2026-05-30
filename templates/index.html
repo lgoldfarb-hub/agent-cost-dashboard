@@ -259,7 +259,7 @@
       <h2>Follow-up Tracker Agent</h2>
       <div class="doc-meta">Trigger: Albato scheduler → repository_dispatch (18:00 UTC) &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/followup-tracker-agent" target="_blank">lgoldfarb-hub/followup-tracker-agent</a></div>
       <p class="doc-description">
-        Every evening, checks whether the sales team's HubSpot follow-up tasks for the day were actually executed. For each task due today, it gathers evidence — emails sent, calls logged, notes added — and asks Claude to classify the outcome as Completed, Incomplete, Missed, or Not enough data. Posts a structured Slack report to the appropriate channel based on deal stage, giving managers a clear daily view of follow-up discipline across the pipeline.
+        Every evening, checks whether the sales team's HubSpot follow-up tasks for the day were actually executed. For each task due today, it gathers evidence — emails sent, calls logged, notes added, meetings booked — and asks Claude to classify the outcome as Completed, Incomplete, Missed, or Not enough data. Also surfaces active pipeline deals that have no future task planned at all. Posts a structured Slack report to the appropriate channel based on deal stage, giving managers a clear daily view of follow-up discipline across the pipeline.
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
@@ -271,35 +271,50 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">🔗</div><div class="wf-label">Backfill Engagements</div><div class="wf-sub">Contact → deal (30d)</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-action"><div class="wf-icon">📩</div><div class="wf-label">Gather Engagements</div><div class="wf-sub">Emails, calls, notes</div></div>
+        <div class="wf-node wf-action"><div class="wf-icon">📩</div><div class="wf-label">Gather Engagements</div><div class="wf-sub">Emails, calls, notes, meetings</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Classify Tasks</div><div class="wf-sub">Claude Sonnet</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-action"><div class="wf-icon">🗂️</div><div class="wf-label">Group by Stage</div><div class="wf-sub">3 Slack channels</div></div>
+        <div class="wf-node wf-action"><div class="wf-icon">🔍</div><div class="wf-label">No-Task Sweep</div><div class="wf-sub">Deals with no future task</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Post Slack Report</div><div class="wf-sub">✅ ⚠️ ❌ ❓ per task</div></div>
+        <div class="wf-node wf-action"><div class="wf-icon">🗂️</div><div class="wf-label">Group by Stage</div><div class="wf-sub">Upper / lower funnel / contact later</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Post Slack Report</div><div class="wf-sub">✅ ⚠️ ❌ ❓ + no-task deals</div></div>
       </div>
+      <div class="doc-section-label">Channel Routing</div>
+      <table class="input-table">
+        <thead><tr><th>Channel</th><th>Stages included</th></tr></thead>
+        <tbody>
+          <tr><td><code>C08475D3ASK</code> — Upper Funnel</td><td>Lead, Opportunity (Meeting Booked)</td></tr>
+          <tr><td><code>C09PUG35MJL</code> — Lower Funnel</td><td>Post-Meeting Qualification, 2nd Meeting Booked, Business Fit, Product Fit / POC / Trial, Proposal, Contract</td></tr>
+          <tr><td><code>C0AN5LN598T</code> — Contact Later</td><td>Contact Later</td></tr>
+        </tbody>
+      </table>
       <div class="doc-section-label">Rules</div>
       <div class="rules-list">
         <div class="rule-item">
           <div class="rule-title">✅ COMPLETED</div>
-          <div class="rule-body">Sufficient evidence the intended action was fully executed. "Follow up with X" → any email, call, or note logged today. "Book a meeting" → meeting scheduled or logged. "Send proposal" → email logged or note confirms sent.</div>
+          <div class="rule-body">Sufficient evidence the intended action was fully executed. "Follow up with X" → any email, call, or note logged today. "Book a meeting" → meeting scheduled or logged. "Send proposal" → email logged or note confirms sent. Compound-intent tasks (e.g. "Follow up with X; schedule a call") require BOTH intents satisfied — an email alone is not enough if scheduling is required.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">⚠️ INCOMPLETE</div>
-          <div class="rule-body">Some activity exists but doesn't fully meet the task intent — e.g. a note was added but no actual outreach was sent.</div>
+          <div class="rule-body">Some activity exists but doesn't fully meet the task intent — e.g. a note was added but no actual outreach was sent, or an email was sent but its content doesn't match the task intent.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">❌ MISSED</div>
-          <div class="rule-body">No engagement of any kind logged today on the deal, and no next task exists to indicate follow-up activity was rescheduled.</div>
+          <div class="rule-body">No engagement of any kind logged today on the deal, and no next task exists to indicate follow-up was rescheduled.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">❓ NOT ENOUGH DATA</div>
           <div class="rule-body">Task title is too ambiguous to determine intent, deal association is missing, or the action likely happened outside HubSpot (e.g. WhatsApp, phone).</div>
         </div>
         <div class="rule-item">
+          <div class="rule-title">❌ DEALS WITH NO PLANNED TASKS</div>
+          <div class="rule-body">A separate section appended to each channel's report: all active deals in the tracked stages that have no open task with a future due date. Runs even on days with zero overdue tasks.</div>
+        </div>
+        <div class="rule-item">
           <div class="rule-title">🚫 Excluded from evidence</div>
-          <div class="rule-body">Agent-generated notes are excluded (case-insensitive prefix match): any note starting with <code>"buying intent / intent levels (ai)"</code>, <code>"weekly review (ai)"</code>, <code>"ai meeting evaluation"</code>, <code>"auto-generated"</code> (covers all auto-generated notes from any agent), or <code>"reactivation review note:"</code>.</div>
+          <div class="rule-body">Agent-generated notes are excluded (case-insensitive prefix match): any note starting with <code>"buying intent / intent levels (ai)"</code>, <code>"weekly review (ai)"</code>, <code>"ai meeting evaluation"</code>, <code>"auto-generated"</code>, or <code>"reactivation review note:"</code>. Content of emails and notes is passed to Claude to verify the engagement actually matches the task intent — activity count alone is not sufficient for Completed.</div>
         </div>
       </div>
       <div class="doc-section-label">Input Data</div>
@@ -308,12 +323,13 @@
         <tbody>
           <tr><td>Tasks due today (subject, status, owner)</td><td>HubSpot tasks search API — filtered to Global Embedded pipeline</td></tr>
           <tr><td>Associated deal name, stage, pipeline</td><td>HubSpot CRM — deal associated with each task</td></tr>
-          <tr><td>Emails logged today on deal</td><td>HubSpot CRM — engagements filtered by today's date</td></tr>
+          <tr><td>Emails logged today on deal (subject + body)</td><td>HubSpot CRM — engagements filtered by today's date; hs_email_send_time / hs_activity_date used for accurate date</td></tr>
           <tr><td>Calls logged today on deal</td><td>HubSpot CRM — engagements filtered by today's date</td></tr>
           <tr><td>Notes added today on deal (agent-generated excluded)</td><td>HubSpot CRM — engagements filtered by today's date</td></tr>
-          <tr><td>Meetings logged today on deal</td><td>HubSpot CRM — engagements filtered by today's date</td></tr>
+          <tr><td>Meetings logged today on deal</td><td>HubSpot CRM — includes future meetings booked today (created ≤24h ago with future start time)</td></tr>
           <tr><td>Tasks created/updated today on deal</td><td>HubSpot CRM — engagements filtered by today's date</td></tr>
           <tr><td>Next scheduled open task on deal</td><td>HubSpot CRM — earliest future task with status OPEN</td></tr>
+          <tr><td>All active deals with no future task</td><td>HubSpot CRM — deals search across tracked stages; task associations checked per deal</td></tr>
         </tbody>
       </table>
       <div class="doc-section-label">Secrets</div>
@@ -321,8 +337,8 @@
         <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
         <tbody>
           <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — classifies each task as Completed / Incomplete / Missed / Not enough data</td></tr>
-          <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads tasks, deals, and all engagements. Required scopes: <code>crm.objects.deals.read</code>, <code>crm.objects.contacts.read</code>, <code>crm.objects.owners.read</code>, <code>sales-email-read</code></td></tr>
-          <tr><td><code>SLACK_BOT_FOLLOWUP_TRACKER</code></td><td>Slack bot token — posts daily task report to 3 stage-specific channels</td></tr>
+          <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads tasks, deals, engagements, and owners. Required scopes: <code>crm.objects.deals.read</code>, <code>crm.objects.contacts.read</code>, <code>crm.objects.owners.read</code>, <code>crm.associations.read</code>, <code>crm.associations.write</code>, <code>sales-email-read</code></td></tr>
+          <tr><td><code>SLACK_BOT_FOLLOWUP_TRACKER</code></td><td>Slack bot token — posts daily report to 3 stage-specific channels. Scopes: <code>chat:write</code>, <code>chat:write.public</code></td></tr>
           <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
