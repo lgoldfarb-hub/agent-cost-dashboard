@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Altify | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-01T06:59:10.219677+00:00",
+  "completed_at": "2026-06-01T07:04:29.597620+00:00",
+  "duration_seconds": 319.377943,
+  "input_tokens": 38564,
+  "output_tokens": 9277,
+  "cache_read_tokens": 747049,
+  "cache_write_tokens": 39553,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 35309,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.115692,
+  "cost_output": 0.139155,
+  "cost_cache_read": 0.22411469999999997,
+  "cost_cache_write": 0.14832375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.6272854499999999
+}
