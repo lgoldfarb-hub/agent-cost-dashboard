@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Birdie AI | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-01T16:18:02.241221+00:00",
+  "completed_at": "2026-06-01T16:25:06.706392+00:00",
+  "duration_seconds": 424.465171,
+  "input_tokens": 44274,
+  "output_tokens": 10135,
+  "cache_read_tokens": 969042,
+  "cache_write_tokens": 42184,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 41019,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.132822,
+  "cost_output": 0.152025,
+  "cost_cache_read": 0.2907126,
+  "cost_cache_write": 0.15819,
+  "cost_web_search": 0.0,
+  "cost_total": 0.7337495999999999
+}
