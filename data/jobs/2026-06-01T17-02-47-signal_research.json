@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Deskpro | Leo,SaaStock app,SaaStock",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-01T17:02:47.923184+00:00",
+  "completed_at": "2026-06-01T17:08:51.484277+00:00",
+  "duration_seconds": 363.561093,
+  "input_tokens": 38520,
+  "output_tokens": 10986,
+  "cache_read_tokens": 928792,
+  "cache_write_tokens": 43028,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 35265,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.11556,
+  "cost_output": 0.16479,
+  "cost_cache_read": 0.2786376,
+  "cost_cache_write": 0.161355,
+  "cost_web_search": 0.0,
+  "cost_total": 0.7203426
+}
