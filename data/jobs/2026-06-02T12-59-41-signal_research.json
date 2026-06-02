@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Voxie | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-02T12:59:41.544079+00:00",
+  "completed_at": "2026-06-02T13:07:54.580344+00:00",
+  "duration_seconds": 493.036265,
+  "input_tokens": 48262,
+  "output_tokens": 11468,
+  "cache_read_tokens": 1558129,
+  "cache_write_tokens": 65924,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 45007,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.144786,
+  "cost_output": 0.17202,
+  "cost_cache_read": 0.4674387,
+  "cost_cache_write": 0.247215,
+  "cost_web_search": 0.0,
+  "cost_total": 1.0314597
+}
