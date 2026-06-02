@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Brevo| HubSpot_November 25_Complains (size 1-1000)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-02T09:01:04.827727+00:00",
+  "completed_at": "2026-06-02T09:03:27.005721+00:00",
+  "duration_seconds": 142.177994,
+  "input_tokens": 19081,
+  "output_tokens": 5144,
+  "cache_read_tokens": 111223,
+  "cache_write_tokens": 28287,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 15826,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.057243,
+  "cost_output": 0.07716,
+  "cost_cache_read": 0.0333669,
+  "cost_cache_write": 0.10607625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.27384615
+}
