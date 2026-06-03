@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: net2phone | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-03T07:00:40.622757+00:00",
+  "completed_at": "2026-06-03T07:07:33.575171+00:00",
+  "duration_seconds": 412.952414,
+  "input_tokens": 39814,
+  "output_tokens": 9190,
+  "cache_read_tokens": 1298107,
+  "cache_write_tokens": 63427,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 36559,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.119442,
+  "cost_output": 0.13785,
+  "cost_cache_read": 0.38943209999999995,
+  "cost_cache_write": 0.23785125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.8845753499999999
+}
