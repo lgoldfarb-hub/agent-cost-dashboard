@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  VeraData The Donor Science Company| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-03T11:03:32.534612+00:00",
+  "completed_at": "2026-06-03T11:08:33.948624+00:00",
+  "duration_seconds": 301.414012,
+  "input_tokens": 42673,
+  "output_tokens": 8086,
+  "cache_read_tokens": 648535,
+  "cache_write_tokens": 24163,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 39418,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.128019,
+  "cost_output": 0.12129,
+  "cost_cache_read": 0.1945605,
+  "cost_cache_write": 0.09061125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5344807500000001
+}
