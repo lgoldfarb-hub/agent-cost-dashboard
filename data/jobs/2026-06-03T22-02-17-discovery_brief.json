@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  contactSPACE| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-03T22:02:17.227009+00:00",
+  "completed_at": "2026-06-03T22:19:05.809760+00:00",
+  "duration_seconds": 1008.582751,
+  "input_tokens": 11587,
+  "output_tokens": 34702,
+  "cache_read_tokens": 3276472,
+  "cache_write_tokens": 135966,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4532,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.034761,
+  "cost_output": 0.5205299999999999,
+  "cost_cache_read": 0.9829416,
+  "cost_cache_write": 0.5098725000000001,
+  "cost_web_search": 0.0,
+  "cost_total": 2.0481051
+}
