@@ -1,0 +1,23 @@
+{
+  "agent_name": "brief_impact_analysis",
+  "job_name": "Impact: Helply | SaaStr 2026",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-03T18:49:03.658397+00:00",
+  "completed_at": "2026-06-03T18:51:45.894327+00:00",
+  "duration_seconds": 162.23593,
+  "input_tokens": 22749,
+  "output_tokens": 8534,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 1490,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 21259,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.068247,
+  "cost_output": 0.12801,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.19625700000000001
+}
