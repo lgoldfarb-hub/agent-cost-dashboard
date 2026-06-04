@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan: Yuri Lysenko",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-04T20:37:38.694578+00:00",
+  "completed_at": "2026-06-04T20:39:41.763039+00:00",
+  "duration_seconds": 123.068461,
+  "input_tokens": 22904,
+  "output_tokens": 5242,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 1126,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 21894,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.068712,
+  "cost_output": 0.07863,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0042225000000000006,
+  "cost_web_search": 0.0,
+  "cost_total": 0.1515645
+}
