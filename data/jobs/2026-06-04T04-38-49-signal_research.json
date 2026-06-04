@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Deskpro| SaaStock US 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-04T04:38:49.841513+00:00",
+  "completed_at": "2026-06-04T04:42:12.037993+00:00",
+  "duration_seconds": 202.19648,
+  "input_tokens": 31794,
+  "output_tokens": 6843,
+  "cache_read_tokens": 282369,
+  "cache_write_tokens": 37093,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 28539,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.09538200000000001,
+  "cost_output": 0.102645,
+  "cost_cache_read": 0.08471069999999999,
+  "cost_cache_write": 0.13909875,
+  "cost_web_search": 0.0,
+  "cost_total": 0.42183645
+}
