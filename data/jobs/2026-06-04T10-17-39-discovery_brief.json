@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: Zenloop | saas.unbound intro",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-04T10:17:39.899179+00:00",
+  "completed_at": "2026-06-04T10:34:05.552015+00:00",
+  "duration_seconds": 985.652836,
+  "input_tokens": 11917,
+  "output_tokens": 33721,
+  "cache_read_tokens": 3681570,
+  "cache_write_tokens": 136353,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4862,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.035751000000000005,
+  "cost_output": 0.505815,
+  "cost_cache_read": 1.104471,
+  "cost_cache_write": 0.51132375,
+  "cost_web_search": 0.0,
+  "cost_total": 2.15736075
+}
