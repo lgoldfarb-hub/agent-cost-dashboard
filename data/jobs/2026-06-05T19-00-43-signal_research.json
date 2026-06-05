@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Thena | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-05T19:00:43.629407+00:00",
+  "completed_at": "2026-06-05T19:06:22.113992+00:00",
+  "duration_seconds": 338.484585,
+  "input_tokens": 38235,
+  "output_tokens": 8982,
+  "cache_read_tokens": 541117,
+  "cache_write_tokens": 36113,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 34980,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.114705,
+  "cost_output": 0.13473000000000002,
+  "cost_cache_read": 0.16233509999999998,
+  "cost_cache_write": 0.13542375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.54719385
+}
