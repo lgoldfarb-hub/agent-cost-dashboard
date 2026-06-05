@@ -1,0 +1,23 @@
+{
+  "agent_name": "followup_tracker",
+  "job_name": "Daily run 2026-06-05",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-05T18:00:23.760298+00:00",
+  "completed_at": "2026-06-05T18:02:08.903030+00:00",
+  "duration_seconds": 105.142732,
+  "input_tokens": 3678,
+  "output_tokens": 852,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 3678,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.011033999999999999,
+  "cost_output": 0.01278,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.023814
+}
