@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: TapClicks | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-05T19:40:59.680635+00:00",
+  "completed_at": "2026-06-05T19:44:30.891797+00:00",
+  "duration_seconds": 211.211162,
+  "input_tokens": 39396,
+  "output_tokens": 5774,
+  "cache_read_tokens": 134874,
+  "cache_write_tokens": 31737,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 36141,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.118188,
+  "cost_output": 0.08660999999999999,
+  "cost_cache_read": 0.0404622,
+  "cost_cache_write": 0.11901375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.36427394999999996
+}
