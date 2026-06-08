@@ -1,0 +1,23 @@
+{
+  "agent_name": "brief_impact_analysis",
+  "job_name": "Impact: Leadspicker | SaaStr Linkedin High-value",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-08T10:27:36.889027+00:00",
+  "completed_at": "2026-06-08T10:30:07.956254+00:00",
+  "duration_seconds": 151.067227,
+  "input_tokens": 17775,
+  "output_tokens": 7936,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 1490,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 16285,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.053325,
+  "cost_output": 0.11904,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.172365
+}
