@@ -1,0 +1,23 @@
+{
+  "agent_name": "brief_impact_analysis",
+  "job_name": "Impact:  Glide| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-09T18:25:53.028287+00:00",
+  "completed_at": "2026-06-09T18:27:44.495746+00:00",
+  "duration_seconds": 111.467459,
+  "input_tokens": 18535,
+  "output_tokens": 5471,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 1490,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 17045,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.055605,
+  "cost_output": 0.082065,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.13767000000000001
+}
