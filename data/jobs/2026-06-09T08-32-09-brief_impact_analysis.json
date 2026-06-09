@@ -1,0 +1,23 @@
+{
+  "agent_name": "brief_impact_analysis",
+  "job_name": "Impact:  contactSPACE| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-09T08:32:09.264258+00:00",
+  "completed_at": "2026-06-09T08:35:42.559176+00:00",
+  "duration_seconds": 213.294918,
+  "input_tokens": 25312,
+  "output_tokens": 10939,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 1490,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 23822,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.075936,
+  "cost_output": 0.164085,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.240021
+}
