@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan:  Glide| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-09T18:25:50.483806+00:00",
+  "completed_at": "2026-06-09T18:27:37.710041+00:00",
+  "duration_seconds": 107.226235,
+  "input_tokens": 23211,
+  "output_tokens": 4436,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 1126,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 22201,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.069633,
+  "cost_output": 0.06654,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0042225000000000006,
+  "cost_web_search": 0.0,
+  "cost_total": 0.14039549999999998
+}
