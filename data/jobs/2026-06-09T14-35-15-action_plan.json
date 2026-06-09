@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan: Zenloop | saas.unbound intro",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-09T14:35:15.300923+00:00",
+  "completed_at": "2026-06-09T14:37:09.939731+00:00",
+  "duration_seconds": 114.638808,
+  "input_tokens": 18098,
+  "output_tokens": 4784,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 1126,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 17088,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.054293999999999995,
+  "cost_output": 0.07176,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0042225000000000006,
+  "cost_web_search": 0.0,
+  "cost_total": 0.1302765
+}
