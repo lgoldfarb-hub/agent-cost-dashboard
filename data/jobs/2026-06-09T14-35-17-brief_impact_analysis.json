@@ -1,0 +1,23 @@
+{
+  "agent_name": "brief_impact_analysis",
+  "job_name": "Impact: Zenloop | saas.unbound intro",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-09T14:35:17.874277+00:00",
+  "completed_at": "2026-06-09T14:38:17.964924+00:00",
+  "duration_seconds": 180.090647,
+  "input_tokens": 21411,
+  "output_tokens": 9281,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 1490,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 19921,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.064233,
+  "cost_output": 0.13921499999999998,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.20344799999999996
+}
