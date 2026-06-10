@@ -259,7 +259,7 @@
       <h2>Follow-up Tracker Agent</h2>
       <div class="doc-meta">Trigger: Albato scheduler → repository_dispatch (18:00 UTC) &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/followup-tracker-agent" target="_blank">lgoldfarb-hub/followup-tracker-agent</a></div>
       <p class="doc-description">
-        Every evening, checks whether the sales team's HubSpot follow-up tasks for the day were actually executed. For each task due today, it gathers evidence — emails sent, calls logged, notes added, meetings booked — and asks Claude to classify the outcome as Completed, Incomplete, Missed, or Not enough data. Also surfaces active pipeline deals that have no future task planned at all. Posts a structured Slack report to the appropriate channel based on deal stage, giving managers a clear daily view of follow-up discipline across the pipeline.
+        Every evening, checks whether the sales team's HubSpot follow-up tasks for the day were actually executed. For each task due today, it gathers evidence — emails sent, calls logged, notes added, meetings booked — and asks Claude to classify the outcome as Completed, Incomplete, Missed, or Not enough data. Also surfaces active pipeline deals that have no future task planned, and identifies deals no longer worth chasing (low engagement, repeated follow-ups, poor buying intent) for Closed Lost review. Posts a structured Slack report per channel filtered by deal stage.
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
@@ -277,9 +277,13 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">🔍</div><div class="wf-label">No-Task Sweep</div><div class="wf-sub">Deals with no future task</div></div>
         <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">🚫</div><div class="wf-label">Closed Lost Sweep</div><div class="wf-sub">Low engagement + buying intent</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Generate Reasoning</div><div class="wf-sub">Claude Sonnet per candidate</div></div>
+        <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">🗂️</div><div class="wf-label">Group by Stage</div><div class="wf-sub">Upper / lower funnel / contact later</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Post Slack Report</div><div class="wf-sub">✅ ⚠️ ❌ ❓ + no-task deals</div></div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Post Slack Report</div><div class="wf-sub">✅ ⚠️ ❌ ❓ + no-task + closed-lost</div></div>
       </div>
       <div class="doc-section-label">Channel Routing</div>
       <table class="input-table">
@@ -313,6 +317,18 @@
           <div class="rule-body">A separate section appended to each channel's report: all active deals in the tracked stages that have no open task with a future due date. Runs even on days with zero overdue tasks.</div>
         </div>
         <div class="rule-item">
+          <div class="rule-title">🚫 DEALS NOT WORTH CHASING — REVIEW FOR CLOSED LOST</div>
+          <div class="rule-body">
+            Identifies deals that have likely exhausted reasonable follow-up effort. Two criteria sets based on ICP score:
+            <br><br>
+            <strong>High ICP (ai_icp_score ≥ 8):</strong> deal lifetime ≥ 30 days, total follow-ups ≥ 5, and most recent "Buying Intent / Intent Levels (AI)" note Block 3 (Engagement) ≤ 7.
+            <br>
+            <strong>Lower ICP (ai_icp_score &lt; 8):</strong> deal lifetime ≥ 20 days, total follow-ups ≥ 4, follow-ups with signals &amp; insights ≥ 1, and Block 3 (Engagement) ≤ 7.
+            <br><br>
+            For each qualifying deal, Claude generates a concise deal-specific reasoning sentence referencing the actual context (low engagement, repeated outreach, weak buying intent, lack of progression). Each channel's report shows only deals from its own deal stages. Recommended action: Move to Closed Lost.
+          </div>
+        </div>
+        <div class="rule-item">
           <div class="rule-title">🚫 Excluded from evidence</div>
           <div class="rule-body">Agent-generated notes are excluded (case-insensitive prefix match): any note starting with <code>"buying intent / intent levels (ai)"</code>, <code>"weekly review (ai)"</code>, <code>"ai meeting evaluation"</code>, <code>"auto-generated"</code>, or <code>"reactivation review note:"</code>. Content of emails and notes is passed to Claude to verify the engagement actually matches the task intent — activity count alone is not sufficient for Completed.</div>
         </div>
@@ -330,6 +346,8 @@
           <tr><td>Tasks created/updated today on deal</td><td>HubSpot CRM — engagements filtered by today's date</td></tr>
           <tr><td>Next scheduled open task on deal</td><td>HubSpot CRM — earliest future task with status OPEN</td></tr>
           <tr><td>All active deals with no future task</td><td>HubSpot CRM — deals search across tracked stages; task associations checked per deal</td></tr>
+          <tr><td>Closed Lost candidates (ai_icp_score, createdate, total__of_followups, of_followups_w_signals__insights)</td><td>HubSpot CRM — deals search across active stages; ICP/lifetime/follow-up criteria applied in Python</td></tr>
+          <tr><td>Most recent "Buying Intent / Intent Levels (AI)" note — Block 3 (Engagement) score</td><td>HubSpot CRM — note associations on each candidate deal; parsed via regex from note body</td></tr>
         </tbody>
       </table>
       <div class="doc-section-label">Secrets</div>
