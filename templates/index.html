@@ -323,13 +323,13 @@
             <br><br>
             <strong>Pre-filter exclusions:</strong> Lead deals with a future meeting booked are always excluded. Post-meeting deals with an active next step (future meeting, active POC, mutual action plan, procurement/legal review, or concrete next step agreed within 14 days) are excluded — Claude applies this check and sets action = "exclude" for those deals.
             <br><br>
-            <strong>Closed Lost — High ICP (≥ 8):</strong> Lead lifetime ≥ 30d or Post-Meeting lifetime ≥ 50d; Block 3 (Engagement) ≤ 5; total follow-ups ≥ 5; follow-ups with signals ≥ 1; no meaningful progression in last 14 days.
+            <strong>Closed Lost — High ICP (≥ 8):</strong> Lead lifetime ≥ 30d; or Post-Meeting ≥ 20d since last meeting; Block 3 (Engagement) ≤ 5; total follow-ups ≥ 5; follow-ups with signals ≥ 1; no meaningful progression in last 14 days.
             <br>
-            <strong>Closed Lost — Lower ICP (&lt; 8):</strong> Lead lifetime ≥ 14d or Post-Meeting lifetime ≥ 30d; Block 3 ≤ 6; total follow-ups ≥ 4; no active next step.
+            <strong>Closed Lost — Lower ICP (&lt; 8):</strong> Lead lifetime ≥ 14d; or Post-Meeting ≥ 20d since last meeting; Block 3 ≤ 6; total follow-ups ≥ 4; no active next step.
             <br><br>
-            <strong>Contact Later — High ICP (≥ 8):</strong> Same lifetime thresholds as Closed Lost; Block 3 &gt; 7; total follow-ups ≥ 5; signals ≥ 1; at least one of: prior interest shown, timing/bandwidth/budget objection, positive reply, strong ICP fit, future trigger.
+            <strong>Contact Later — High ICP (≥ 8):</strong> Same thresholds as Closed Lost; Block 3 &gt; 7; total follow-ups ≥ 5; signals ≥ 1; at least one of: prior interest shown, timing/bandwidth/budget objection, positive reply, strong ICP fit, future trigger.
             <br>
-            <strong>Contact Later — Lower ICP (&lt; 8):</strong> Lead ≥ 14d or Post-Meeting ≥ 30d; Block 3 &gt; 7; total follow-ups ≥ 4; positive signal or timing objection.
+            <strong>Contact Later — Lower ICP (&lt; 8):</strong> Lead ≥ 14d or Post-Meeting ≥ 20d since last meeting; Block 3 &gt; 7; total follow-ups ≥ 4; positive signal or timing objection.
             <br><br>
             Buying Intent note lookup checks deal-associated notes first, then falls back to contact-associated notes (HubSpot Enrichment creates notes on the contact, not the deal). Block 3 score parsed via regex from note body (handles <code>*Block 3 (Engagement)*: N / 25</code> format).
           </div>
@@ -352,8 +352,9 @@
           <tr><td>Tasks created/updated today on deal</td><td>HubSpot CRM — engagements filtered by today's date</td></tr>
           <tr><td>Next scheduled open task on deal</td><td>HubSpot CRM — earliest future task with status OPEN</td></tr>
           <tr><td>All active deals with no future task</td><td>HubSpot CRM — deals search across tracked stages; task associations checked per deal</td></tr>
-          <tr><td>"Not worth chasing" candidates (ai_icp_score, createdate, total__of_followups, of_followups_w_signals__insights)</td><td>HubSpot CRM — deals search scoped to Lead + Post-Meeting Qualification; ICP/lifetime/follow-up criteria applied in Python</td></tr>
+          <tr><td>"Not worth chasing" candidates (ai_icp_score, createdate, total__of_followups, of_followups_w_signals__insights)</td><td>HubSpot CRM — deals search scoped to Lead + Post-Meeting Qualification; Lead stage filtered by deal lifetime; Post-Meeting Qualification filtered by days since last meeting (≥ 20d) via meeting associations lookup</td></tr>
           <tr><td>Most recent "Buying Intent / Intent Levels (AI)" note — Block 3 (Engagement) score</td><td>HubSpot CRM — deal note associations first, then contact note associations as fallback; Block 3 score parsed via regex (handles bold markdown format)</td></tr>
+          <tr><td>Meeting associations on Post-Meeting Qualification candidates</td><td>HubSpot CRM — all associated meetings fetched; most recent past meeting date computed; deals with no past meeting or &lt; 20d since last meeting are excluded</td></tr>
           <tr><td>Future meetings on Lead-stage candidate deals</td><td>HubSpot CRM — meeting associations checked per deal; Lead deals with a future meeting are excluded before Claude evaluation</td></tr>
         </tbody>
       </table>
