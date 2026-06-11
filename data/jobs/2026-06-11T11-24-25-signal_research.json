@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Exclaimer | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-11T11:24:25.290177+00:00",
+  "completed_at": "2026-06-11T11:29:41.284489+00:00",
+  "duration_seconds": 315.994312,
+  "input_tokens": 50395,
+  "output_tokens": 10313,
+  "cache_read_tokens": 528446,
+  "cache_write_tokens": 44664,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 47140,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.151185,
+  "cost_output": 0.154695,
+  "cost_cache_read": 0.15853379999999997,
+  "cost_cache_write": 0.16749,
+  "cost_web_search": 0.0,
+  "cost_total": 0.6319038
+}
