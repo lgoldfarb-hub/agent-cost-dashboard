@@ -907,7 +907,7 @@
       <h2>BDR Agent (Amy Walker)</h2>
       <div class="doc-meta">Trigger: Albato webhook → repository_dispatch &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/bdr-agent" target="_blank">lgoldfarb-hub/bdr-agent</a></div>
       <p class="doc-description">
-        AI-powered BDR agent that responds to inbound prospect emails on behalf of Albato's sales team. Goal: book discovery calls with qualified prospects for Albato Embedded and Albato MCP. Operates in three modes: <strong>draft</strong> (generates reply to inbound email, posts to Slack for rep approval), <strong>send</strong> (converts approved draft into a Front reply draft), and <strong>respond</strong> (conversational Slack loop where the rep can ask for rewrites, approve, or reject). The agent persona is "Amy Walker" and all drafts are grounded in a product KB scraped from albato.com docs, case studies, and competitive comparisons.
+        AI-powered BDR agent that responds to inbound prospect emails on behalf of Albato's sales team. Goal: book discovery calls with qualified prospects for Albato Embedded and Albato MCP. Operates in four modes: <strong>draft</strong> (generates reply to inbound email, posts to Slack for rep approval), <strong>send</strong> (converts approved draft into a Front reply draft), <strong>respond</strong> (conversational Slack loop where the rep can ask for rewrites, approve, or reject), and <strong>learn</strong> (extracts winning email threads when a deal books a meeting and adds them to the KB). The agent persona is "Amy Walker" and all drafts are grounded in a product KB and real winning threads from past bookings.
       </p>
       <div class="doc-section-label">Workflow — Draft mode</div>
       <div class="workflow">
@@ -917,11 +917,23 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Deal Context</div><div class="wf-sub">HubSpot notes + emails</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-action"><div class="wf-icon">📚</div><div class="wf-label">Retrieve KB</div><div class="wf-sub">product_kb.json (keyword match)</div></div>
+        <div class="wf-node wf-action"><div class="wf-icon">📚</div><div class="wf-label">Retrieve KB</div><div class="wf-sub">product_kb.json + winning_threads.json</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Generate Draft</div><div class="wf-sub">Claude Sonnet — Amy persona</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Post to Slack</div><div class="wf-sub">C0ALHBW32CD — rep approval</div></div>
+      </div>
+      <div class="doc-section-label">Workflow — Learn mode</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">🏆</div><div class="wf-label">Meeting Booked</div><div class="wf-sub">HubSpot deal stage change → Albato → repository_dispatch</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">🔍</div><div class="wf-label">Resolve Lead</div><div class="wf-sub">HubSpot deal → contact email + title</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📬</div><div class="wf-label">Find Conversation</div><div class="wf-sub">Front by email; fallback: domain search</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">✂️</div><div class="wf-label">Extract Thread</div><div class="wf-sub">First inbound reply onward (strip outreach)</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💾</div><div class="wf-label">Append to KB</div><div class="wf-sub">winning_threads.json — committed to repo</div></div>
       </div>
       <div class="doc-section-label">Workflow — Respond mode (Slack loop)</div>
       <div class="workflow">
@@ -966,6 +978,10 @@
           <div class="rule-body">Resolved from <code>owner_email</code> in the webhook payload (e.g. <code>l.goldfarb@albato.com</code> → Leo's inbox). Pattern-matched against <code>SENDER_PATTERNS</code> (goldfarb, guerci, nick.g, mike/fedorinin). Falls back to scanning the Front conversation's last outbound from-address if not provided. Each team member has a distinct Front inbox, channel, and signature ID used when creating the reply draft.</div>
         </div>
         <div class="rule-item">
+          <div class="rule-title">🏆 Winning threads KB</div>
+          <div class="rule-body">When a HubSpot deal moves to "Meeting Booked", the learn mode extracts the Front conversation from the first inbound lead reply onward (direction-based — all automated outbound before first reply is excluded). Appended to <code>kb/winning_threads.json</code>, deduplicated by <code>deal_id</code>, committed to repo. Last 5 winning threads are injected into <code>BDR_PROMPT</code> as examples. Domain fallback: if no conversation found by exact email, searches Front contacts at the lead's domain.</div>
+        </div>
+        <div class="rule-item">
           <div class="rule-title">📋 Deal context</div>
           <div class="rule-body">Fetches last 5 emails + last 3 notes from the HubSpot deal (via legacy engagements API). Agent-generated notes are excluded (same prefix filter as Follow-up Tracker: <code>buying intent</code>, <code>weekly review (ai)</code>, <code>ai meeting evaluation</code>, <code>auto-generated</code>, <code>reactivation review</code>).</div>
         </div>
@@ -994,6 +1010,7 @@
           <tr><td>Tone of voice guide</td><td><code>tone_of_voice.md</code></td></tr>
           <tr><td>Slack thread (all messages)</td><td>Slack API — <code>conversations.replies</code> (respond mode only)</td></tr>
           <tr><td>Front draft body (for redraft / send)</td><td>Slack thread metadata <code>&lt;!--meta:...--&gt;</code> or Front drafts API fallback</td></tr>
+          <tr><td>Winning threads (learn mode)</td><td>HubSpot deal stage → contact email → Front conversation → <code>kb/winning_threads.json</code></td></tr>
         </tbody>
       </table>
       <div class="doc-section-label">Secrets</div>
@@ -1009,10 +1026,11 @@
       </table>
       <div class="doc-section-label">File Structure</div>
       <pre class="file-tree">bdr-agent/
-├── bdr_agent.py          # single entry point (--draft / --send / --respond)
+├── bdr_agent.py          # single entry point (--draft / --send / --respond / --learn)
 ├── tracker.py            # cost tracking push to agent-cost-dashboard
 ├── kb/
-│   └── product_kb.json   # product knowledge base (auto-refreshed bi-weekly)
+│   ├── product_kb.json   # product knowledge base (auto-refreshed bi-weekly)
+│   └── winning_threads.json  # real email threads that resulted in booked meetings
 ├── tone_of_voice.md      # Amy's writing style guide
 ├── kb_refresh.py         # KB scraper (runs via kb-refresh.yml)
 ├── requirements.txt
