@@ -457,7 +457,7 @@
       <h2>Pipeline Agent</h2>
       <div class="doc-meta">Trigger: Daily cron 16:00 UTC &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/pipeline-agent" target="_blank">lgoldfarb-hub/pipeline-agent</a></div>
       <p class="doc-description">
-        Runs daily to keep HubSpot deal stages accurate and CRM data clean. Applies pipeline rules automatically: advancing deal stages when meetings are completed, fixing incorrect meeting types, extracting Business Fit fields from Sybill meeting summary notes using Claude, backfilling contact engagement associations so activity history stays linked to deals, and rescheduling deal tasks due before 10am CET to ensure nothing is buried in off-hours. Removes the need for reps to manually update stages after each call.
+        Runs daily to keep HubSpot deal stages accurate and CRM data clean. Applies pipeline rules automatically: advancing deal stages when meetings are completed, fixing incorrect meeting types across all pipeline stages (not just active deals), extracting Business Fit fields from Sybill meeting summary notes using Claude, backfilling contact engagement associations so activity history stays linked to deals, and rescheduling deal tasks due before 10am CET to ensure nothing is buried in off-hours. Removes the need for reps to manually update stages after each call.
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
@@ -469,13 +469,15 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Rule 4: Extract Business Fit fields</div><div class="wf-sub">Claude ← Sybill summary note</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-action"><div class="wf-icon">🔧</div><div class="wf-label">Rule 5: Fix Meeting Types</div><div class="wf-sub">Correct mislabeled meetings</div></div>
+        <div class="wf-node wf-action"><div class="wf-icon">🔧</div><div class="wf-label">Rule 5: Fix Meeting Types</div><div class="wf-sub">Correct mislabeled meetings on deal</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">🔗</div><div class="wf-label">Rule 6: Backfill Engagements</div><div class="wf-sub">Link contact activity to deal</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">⏰</div><div class="wf-label">Rule 9: Fix Task Times</div><div class="wf-sub">Reschedule early tasks to 10am CET</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">💾</div><div class="wf-label">Update HubSpot</div><div class="wf-sub">Stages, fields, associations, tasks</div></div>
+        <div class="wf-node wf-action"><div class="wf-icon">📅</div><div class="wf-label">Rule 7: Meeting Type Hygiene</div><div class="wf-sub">Fix today's new meetings pipeline-wide</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💾</div><div class="wf-label">Update HubSpot</div><div class="wf-sub">Stages, fields, associations, tasks, meeting types</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-external"><div class="wf-icon">💬</div><div class="wf-label">Slack Report</div><div class="wf-sub">Daily summary → C09NJPKC66T</div></div>
       </div>
@@ -494,12 +496,16 @@
           <div class="rule-body">Deal has exactly 1 meeting in <strong>Completed</strong> status → advance stage to "Post-Meeting Qualification". Claude reads the Sybill <strong>meeting summary note</strong> (auto-posted to HubSpot by Sybill after the call) and extracts structured Business Fit fields: buying intent, BANT, integration bottleneck flags, competitor iPaaS in use or being evaluated. Writes all extracted values back to the deal properties.</div>
         </div>
         <div class="rule-item">
-          <div class="rule-title">Rule 5 — Fix mislabeled meeting types</div>
-          <div class="rule-body">Deals with multiple meetings where all are labeled "Outreach - 1st meeting" → relabel subsequent meetings as "Embedded Negotiations" to keep the meeting type data accurate.</div>
+          <div class="rule-title">Rule 5 — Fix mislabeled meeting types (active deals)</div>
+          <div class="rule-body">For deals in the 4 active pipeline stages with multiple meetings: any meeting after the first (chronologically) that still carries a first-meeting type label (<code>Outreach - 1st meeting (Embedded)</code> or <code>Embedded - 1st meeting (Prospect)</code>) is relabeled to <code>Embedded Negotiations</code>.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">Rule 6 — Backfill contact engagements</div>
           <div class="rule-body">For every deal (including "Contact later" stage), finds linked contacts and copies their recent engagement records (last 2 weeks) as deal associations — ensuring emails and calls from contacts appear on the deal timeline even if not logged directly against it.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">Rule 7 — Daily meeting type hygiene (all stages)</div>
+          <div class="rule-body">Fetches all meetings <strong>created today</strong> across the entire HubSpot account. For each meeting with a first-meeting type label, looks up its associated deal, fetches all meetings on that deal, and checks chronological order. Any meeting that is not the first on the deal gets relabeled to <code>Embedded Negotiations</code>. Covers all pipeline stages — including POC, Negotiations, and beyond — that Rule 5 does not touch. Count of corrections included in the daily Slack report.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">Rule 9 — Reschedule early tasks to 10am CET</div>
@@ -523,7 +529,8 @@
         <thead><tr><th>Field</th><th>Source</th></tr></thead>
         <tbody>
           <tr><td>All deals in Global Embedded pipeline</td><td>HubSpot CRM — pipeline filter</td></tr>
-          <tr><td>Meeting records (type, status, dates)</td><td>HubSpot CRM — meetings associated with each deal</td></tr>
+          <tr><td>Meeting records (type, status, dates)</td><td>HubSpot CRM — meetings associated with each deal (paginated, limit 500)</td></tr>
+          <tr><td>All meetings created today (for Rule 7)</td><td>HubSpot CRM — meetings search by hs_createdate = today</td></tr>
           <tr><td>Sybill meeting summary note</td><td>HubSpot notes — auto-posted by Sybill after each call; identified by "sybill" in note body</td></tr>
           <tr><td>Contact engagement history (last 2 weeks)</td><td>HubSpot CRM — contacts linked to deal</td></tr>
           <tr><td>Open future tasks on each deal</td><td>HubSpot CRM — tasks associated with each deal</td></tr>
