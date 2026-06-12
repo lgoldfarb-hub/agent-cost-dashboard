@@ -907,7 +907,7 @@
       <h2>BDR Agent (Amy Walker)</h2>
       <div class="doc-meta">Trigger: Albato webhook → repository_dispatch &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/bdr-agent" target="_blank">lgoldfarb-hub/bdr-agent</a></div>
       <p class="doc-description">
-        AI-powered BDR agent that responds to inbound prospect emails on behalf of Albato's sales team. Goal: book discovery calls with qualified prospects for Albato Embedded and Albato MCP. Operates in four modes: <strong>draft</strong> (generates reply to inbound email, posts to Slack for rep approval), <strong>send</strong> (converts approved draft into a Front reply draft), <strong>respond</strong> (conversational Slack loop where the rep can ask for rewrites, approve, or reject), and <strong>learn</strong> (extracts winning email threads when a deal books a meeting and adds them to the KB). The agent persona is "Amy Walker" and all drafts are grounded in a product KB and real winning threads from past bookings.
+        AI-powered BDR agent that responds to inbound prospect emails on behalf of Albato's sales team. Goal: book discovery calls with qualified prospects for Albato Embedded and Albato MCP. Operates in four modes: <strong>draft</strong> (generates reply to inbound email, posts to Slack for rep approval), <strong>send</strong> (converts approved draft into a Front reply draft), <strong>respond</strong> (conversational Slack loop where the rep can ask for rewrites, approve, or reject), and <strong>learn</strong> (extracts winning email threads when a deal books a meeting and adds them to the KB). Reps can train Amy directly from Slack: add winning threads, update tone of voice, or add URLs to the KB by messaging Amy in any draft thread.
       </p>
       <div class="doc-section-label">Workflow — Draft mode</div>
       <div class="workflow">
@@ -917,7 +917,7 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Deal Context</div><div class="wf-sub">HubSpot notes + emails</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-action"><div class="wf-icon">📚</div><div class="wf-label">Retrieve KB</div><div class="wf-sub">product_kb.json + winning_threads.json</div></div>
+        <div class="wf-node wf-action"><div class="wf-icon">📚</div><div class="wf-label">Retrieve KB</div><div class="wf-sub">kb_sources.json + kb_winning_threads.json</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Generate Draft</div><div class="wf-sub">Claude Sonnet — Amy persona</div></div>
         <div class="wf-arrow">→</div>
@@ -933,7 +933,7 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">✂️</div><div class="wf-label">Extract Thread</div><div class="wf-sub">First inbound reply onward (strip outreach)</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">💾</div><div class="wf-label">Append to KB</div><div class="wf-sub">winning_threads.json — committed to repo</div></div>
+        <div class="wf-node wf-output"><div class="wf-icon">💾</div><div class="wf-label">Append to KB</div><div class="wf-sub">kb_winning_threads.json — committed to repo</div></div>
       </div>
       <div class="doc-section-label">Workflow — Respond mode (Slack loop)</div>
       <div class="workflow">
@@ -957,17 +957,29 @@
             <div class="wf-branch-label">REJECT</div>
             <div class="wf-node wf-output" style="min-width:130px"><div class="wf-icon">❌</div><div class="wf-label">Reject Confirmation</div><div class="wf-sub">Slack thread reply</div></div>
           </div>
+          <div class="wf-branch-row">
+            <div class="wf-branch-label">LEARN</div>
+            <div class="wf-node wf-output" style="min-width:130px"><div class="wf-icon">🏆</div><div class="wf-label">Save Winning Thread</div><div class="wf-sub">Append to kb_winning_threads.json</div></div>
+          </div>
+          <div class="wf-branch-row">
+            <div class="wf-branch-label">TOV</div>
+            <div class="wf-node wf-output" style="min-width:130px"><div class="wf-icon">✍️</div><div class="wf-label">Update Tone of Voice</div><div class="wf-sub">Append rule to kb_tone_of_voice.md</div></div>
+          </div>
+          <div class="wf-branch-row">
+            <div class="wf-branch-label">KB</div>
+            <div class="wf-node wf-output" style="min-width:130px"><div class="wf-icon">🔗</div><div class="wf-label">Scrape URL</div><div class="wf-sub">Chunks added to kb_sources.json</div></div>
+          </div>
         </div>
       </div>
       <div class="doc-section-label">Rules</div>
       <div class="rules-list">
         <div class="rule-item">
           <div class="rule-title">🤖 Amy persona</div>
-          <div class="rule-body">All drafts are written in Amy Walker's voice using the tone-of-voice guide at <code>tone_of_voice.md</code>. Claude never reveals it is an AI. Tone: matches the prospect's register. Goal: establish relevance first — never push for a meeting prematurely.</div>
+          <div class="rule-body">All drafts are written in Amy Walker's voice using the tone-of-voice guide at <code>kb/kb_tone_of_voice.md</code>. Claude never reveals it is an AI. Tone: matches the prospect's register. Goal: establish relevance first — never push for a meeting prematurely.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">📚 KB retrieval</div>
-          <div class="rule-body">Keyword-scored retrieval from <code>kb/product_kb.json</code> (up to 6 chunks for draft, 4 for respond). Falls back to first few product chunks if no terms match. KB refreshed bi-weekly by <code>kb-refresh.yml</code> cron (Mon + Thu 06:00 UTC) from albato.com docs, embedded docs, competitive comparisons, case studies, security pages.</div>
+          <div class="rule-body">Keyword-scored retrieval from <code>kb/kb_sources.json</code> (up to 6 chunks for draft, 4 for respond). Falls back to first few product chunks if no terms match. Sources KB refreshed bi-weekly by <code>kb-refresh.yml</code> cron (Mon + Thu 06:00 UTC) from albato.com docs, embedded docs, competitive comparisons, case studies, security pages. Last 5 winning threads from <code>kb/kb_winning_threads.json</code> always injected into the prompt.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">🔁 Infinite loop guard</div>
@@ -979,7 +991,7 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">🏆 Winning threads KB</div>
-          <div class="rule-body">When a HubSpot deal moves to "Meeting Booked", the learn mode extracts the Front conversation from the first inbound lead reply onward (direction-based — all automated outbound before first reply is excluded). Appended to <code>kb/winning_threads.json</code>, deduplicated by <code>deal_id</code>, committed to repo. Last 5 winning threads are injected into <code>BDR_PROMPT</code> as examples. Domain fallback: if no conversation found by exact email, searches Front contacts at the lead's domain.</div>
+          <div class="rule-body">Populated two ways: (1) automatically when a HubSpot deal moves to "Meeting Booked" — learn mode extracts the Front conversation from the first inbound reply onward, strips all automated outbound; (2) manually by a rep saying "Amy, add this to your winning threads KB" in any Slack draft thread. Stored in <code>kb/kb_winning_threads.json</code>, deduplicated by <code>deal_id</code>, committed to repo. Domain fallback for Front lookup.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">📋 Deal context</div>
@@ -1006,11 +1018,11 @@
           <tr><td>Lead job title, sequence name</td><td>Amplemarket — injected into BDR_PROMPT as Lead Context for tone/pitch tailoring</td></tr>
           <tr><td>Front conversation thread (last 6 messages)</td><td>Front API — conversation history for lead email</td></tr>
           <tr><td>Deal notes + emails (last 5 emails, last 3 notes)</td><td>HubSpot engagements API — deal associations</td></tr>
-          <tr><td>Product KB (grounding context)</td><td><code>kb/product_kb.json</code> — keyword-scored retrieval</td></tr>
-          <tr><td>Tone of voice guide</td><td><code>tone_of_voice.md</code></td></tr>
+          <tr><td>Product KB (grounding context)</td><td><code>kb/kb_sources.json</code> — keyword-scored retrieval</td></tr>
+          <tr><td>Tone of voice guide</td><td><code>kb/kb_tone_of_voice.md</code></td></tr>
           <tr><td>Slack thread (all messages)</td><td>Slack API — <code>conversations.replies</code> (respond mode only)</td></tr>
           <tr><td>Front draft body (for redraft / send)</td><td>Slack thread metadata <code>&lt;!--meta:...--&gt;</code> or Front drafts API fallback</td></tr>
-          <tr><td>Winning threads (learn mode)</td><td>HubSpot deal stage → contact email → Front conversation → <code>kb/winning_threads.json</code></td></tr>
+          <tr><td>Winning threads (learn mode)</td><td>HubSpot deal stage → contact email → Front conversation → <code>kb/kb_winning_threads.json</code></td></tr>
         </tbody>
       </table>
       <div class="doc-section-label">Secrets</div>
@@ -1029,9 +1041,9 @@
 ├── bdr_agent.py          # single entry point (--draft / --send / --respond / --learn)
 ├── tracker.py            # cost tracking push to agent-cost-dashboard
 ├── kb/
-│   ├── product_kb.json   # product knowledge base (auto-refreshed bi-weekly)
-│   └── winning_threads.json  # real email threads that resulted in booked meetings
-├── tone_of_voice.md      # Amy's writing style guide
+│   ├── kb_sources.json         # product KB (auto-refreshed bi-weekly; reps can add URLs via Slack)
+│   ├── kb_winning_threads.json # winning email threads (auto + Slack training)
+│   └── kb_tone_of_voice.md    # Amy's writing style guide (editable via Slack)
 ├── kb_refresh.py         # KB scraper (runs via kb-refresh.yml)
 ├── requirements.txt
 ├── CLAUDE.md
