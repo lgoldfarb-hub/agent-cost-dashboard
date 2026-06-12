@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: Exclaimer | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-12T14:43:47.773310+00:00",
+  "completed_at": "2026-06-12T14:54:41.984710+00:00",
+  "duration_seconds": 654.2114,
+  "input_tokens": 12622,
+  "output_tokens": 27369,
+  "cache_read_tokens": 1786165,
+  "cache_write_tokens": 80253,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 5567,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.037866,
+  "cost_output": 0.41053500000000004,
+  "cost_cache_read": 0.5358495,
+  "cost_cache_write": 0.30094875000000004,
+  "cost_web_search": 0.0,
+  "cost_total": 1.28519925
+}
