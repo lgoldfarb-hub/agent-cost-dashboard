@@ -911,7 +911,7 @@
       </p>
       <div class="doc-section-label">Workflow — Draft mode</div>
       <div class="workflow">
-        <div class="wf-node wf-trigger"><div class="wf-icon">📧</div><div class="wf-label">Inbound Email</div><div class="wf-sub">Albato detects → repository_dispatch</div></div>
+        <div class="wf-node wf-trigger"><div class="wf-icon">📧</div><div class="wf-label">Inbound Email</div><div class="wf-sub">Amplemarket reply received → Albato → repository_dispatch</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">📬</div><div class="wf-label">Fetch Thread</div><div class="wf-sub">Front conversation history</div></div>
         <div class="wf-arrow">→</div>
@@ -963,7 +963,7 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">👤 Owner identification</div>
-          <div class="rule-body">Pattern-matches the from-address of the last outbound message in the Front conversation (e.g. <code>goldfarb</code> → Leo, <code>guerci</code> → Mariana). Can be overridden by passing <code>owner_inbox</code> in the webhook payload. Each team member has a distinct Front inbox, channel, and signature ID used when creating the reply draft.</div>
+          <div class="rule-body">Resolved from <code>owner_email</code> in the webhook payload (e.g. <code>l.goldfarb@albato.com</code> → Leo's inbox). Pattern-matched against <code>SENDER_PATTERNS</code> (goldfarb, guerci, nick.g, mike/fedorinin). Falls back to scanning the Front conversation's last outbound from-address if not provided. Each team member has a distinct Front inbox, channel, and signature ID used when creating the reply draft.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">📋 Deal context</div>
@@ -984,7 +984,10 @@
       <table class="input-table">
         <thead><tr><th>Field</th><th>Source</th></tr></thead>
         <tbody>
-          <tr><td>Lead email, name, subject, deal_id, owner_inbox</td><td>Albato webhook — repository_dispatch payload</td></tr>
+          <tr><td>Lead email, full name, subject, deal_id</td><td>Amplemarket "email reply received" trigger → Albato → repository_dispatch</td></tr>
+          <tr><td>Owner email (<code>owner_email</code>)</td><td>Amplemarket user email — resolved to Front inbox via SENDER_PATTERNS</td></tr>
+          <tr><td>Lead message text</td><td>Amplemarket reply body — used for KB retrieval query; fallback if Front hasn't synced yet</td></tr>
+          <tr><td>Lead job title, sequence name</td><td>Amplemarket — injected into BDR_PROMPT as Lead Context for tone/pitch tailoring</td></tr>
           <tr><td>Front conversation thread (last 6 messages)</td><td>Front API — conversation history for lead email</td></tr>
           <tr><td>Deal notes + emails (last 5 emails, last 3 notes)</td><td>HubSpot engagements API — deal associations</td></tr>
           <tr><td>Product KB (grounding context)</td><td><code>kb/product_kb.json</code> — keyword-scored retrieval</td></tr>
