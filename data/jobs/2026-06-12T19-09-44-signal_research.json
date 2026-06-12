@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Madison Logic | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-12T19:09:44.045338+00:00",
+  "completed_at": "2026-06-12T19:15:13.541032+00:00",
+  "duration_seconds": 329.495694,
+  "input_tokens": 38619,
+  "output_tokens": 9285,
+  "cache_read_tokens": 675355,
+  "cache_write_tokens": 36137,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 35364,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.115857,
+  "cost_output": 0.139275,
+  "cost_cache_read": 0.2026065,
+  "cost_cache_write": 0.13551375000000002,
+  "cost_web_search": 0.0,
+  "cost_total": 0.59325225
+}
