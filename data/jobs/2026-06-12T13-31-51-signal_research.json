@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Response IQ LTD | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-12T13:31:51.822023+00:00",
+  "completed_at": "2026-06-12T13:38:08.602617+00:00",
+  "duration_seconds": 376.780594,
+  "input_tokens": 26473,
+  "output_tokens": 8973,
+  "cache_read_tokens": 1579731,
+  "cache_write_tokens": 68924,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 23218,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.079419,
+  "cost_output": 0.134595,
+  "cost_cache_read": 0.4739193,
+  "cost_cache_write": 0.258465,
+  "cost_web_search": 0.0,
+  "cost_total": 0.9463983
+}
