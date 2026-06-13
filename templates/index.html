@@ -912,9 +912,9 @@
     <!-- BDR Agent (Amy Walker) -->
     <div class="doc-card" data-agent="bdr-agent">
       <h2>BDR Agent (Amy Walker)</h2>
-      <div class="doc-meta">Trigger: Albato webhook → repository_dispatch &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/bdr-agent" target="_blank">lgoldfarb-hub/bdr-agent</a></div>
+      <div class="doc-meta">Trigger: Albato webhook → repository_dispatch &nbsp;·&nbsp; Model: Claude Opus 4.8 (draft) / Sonnet 4.6 (respond) &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/bdr-agent" target="_blank">lgoldfarb-hub/bdr-agent</a></div>
       <p class="doc-description">
-        AI-powered BDR agent that responds to inbound prospect emails on behalf of Albato's sales team. Goal: book discovery calls with qualified prospects for Albato Embedded and Albato MCP. Operates in four modes: <strong>draft</strong> (generates reply to inbound email, posts to Slack for rep approval), <strong>send</strong> (creates a Front reply draft on rep approval), <strong>respond</strong> (conversational Slack loop — reps can ask for rewrites, score drafts, or train the KB), and <strong>learn</strong> (extracts winning email threads when a deal books a meeting). Reps train Amy directly from Slack using simple commands: <code>approved</code> / <code>reject</code>, score 1–10, <code>save thread</code>, <code>save tov:</code>, <code>save guideline:</code>, <code>save source:</code>.
+        AI-powered BDR agent that responds to inbound prospect emails on behalf of Albato's sales team. Goal: book discovery calls with qualified prospects for Albato Embedded and Albato MCP. Operates in four modes: <strong>draft</strong> (generates reply to inbound email, posts to Slack for rep approval), <strong>send</strong> (creates a Front reply draft on rep approval), <strong>respond</strong> (conversational Slack loop — reps can ask for rewrites, score drafts, or train the KB), and <strong>learn</strong> (extracts winning email threads when a deal books a meeting). Reps train Amy directly from Slack using simple commands: <code>approved</code> / <code>reject</code>, score 1–10, <code>save thread</code>, <code>save tov:</code>, <code>save guideline:</code>, <code>save source:</code>. Amy identifies which Albato product is relevant for each lead (Embedded iPaaS, Embedded AI Agents, or MCP) before drafting.
       </p>
       <div class="doc-section-label">Workflow — Draft mode</div>
       <div class="workflow">
@@ -926,7 +926,7 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">📚</div><div class="wf-label">Retrieve KB</div><div class="wf-sub">kb_sources.json + kb_winning_threads.json</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Generate Draft</div><div class="wf-sub">Claude Sonnet — Amy persona</div></div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Generate Draft</div><div class="wf-sub">Claude Opus 4.8 — Amy persona</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Post to Slack</div><div class="wf-sub">C0ALHBW32CD — rep approval</div></div>
       </div>
@@ -998,7 +998,7 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">📋 Deal context</div>
-          <div class="rule-body">Fetches last 5 emails + last 3 notes from the HubSpot deal (via legacy engagements API). Agent-generated notes are excluded (same prefix filter as Follow-up Tracker: <code>buying intent</code>, <code>weekly review (ai)</code>, <code>ai meeting evaluation</code>, <code>auto-generated</code>, <code>reactivation review</code>).</div>
+          <div class="rule-body">Fetches 25+ populated deal properties via HubSpot CRM v3 API (<code>buying_signal</code>, <code>needs</code>, <code>semaphore</code>, <code>decision_criteria</code>, <code>red_flags</code>, <code>embedded_competitors</code>, <code>arr__deal_</code>, <code>timeline</code>, <code>stakeholders</code>, etc.) plus engagements. ICP EVALUATION and Buying Signal notes are always prioritised (up to 3), then up to 2 regular notes and 5 emails. Agent-generated notes excluded.</div>
         </div>
       </div>
       <div class="doc-section-label">People</div>
@@ -1020,6 +1020,7 @@
           <tr><td>Lead message text</td><td>Amplemarket reply body — used for KB retrieval query; fallback if Front hasn't synced yet</td></tr>
           <tr><td>Lead job title, sequence name</td><td>Amplemarket — injected into BDR_PROMPT as Lead Context for tone/pitch tailoring</td></tr>
           <tr><td>Company name, company domain</td><td>Albato webhook payload — used for personalisation in draft (Amy uses company name, not "your platform")</td></tr>
+          <tr><td>Company website content (<code>website_content</code>)</td><td>Albato scrapes lead's website and pipes content into webhook — Amy uses it to detect AI agent/MCP signals and personalise drafts (capped at 3,000 chars)</td></tr>
           <tr><td>Front conversation thread (last 6 messages)</td><td>Front API — conversation history for lead email</td></tr>
           <tr><td>Deal notes + emails (last 5 emails, last 3 notes)</td><td>HubSpot engagements API — deal associations</td></tr>
           <tr><td>Product KB (grounding context)</td><td><code>kb/kb_sources.json</code> — keyword-scored retrieval</td></tr>
