@@ -417,7 +417,9 @@ def api_insights(agent_name):
 # API — Amy Performance
 # ---------------------------------------------------------------------------
 
-BDR_AGENT_PATH = os.path.join(os.path.dirname(__file__), "..", "bdr-agent")
+_local_bdr = os.path.join(os.path.dirname(__file__), "..", "bdr-agent")
+_repo_bdr  = os.path.join(os.path.dirname(__file__), "bdr-agent")
+BDR_AGENT_PATH = _local_bdr if os.path.isdir(_local_bdr) else _repo_bdr
 
 @app.route("/api/amy")
 def api_amy():
