@@ -591,6 +591,7 @@ def api_amy_kb():
 
 
 if __name__ == "__main__":
-    print(f"Dashboard running at http://localhost:5001")
+    port = int(os.environ.get("PORT", 5001))
+    print(f"Dashboard running at http://localhost:{port}")
     print(f"DB: {DB_PATH}")
-    app.run(debug=True, port=5001)
+    app.run(debug=False, host="0.0.0.0", port=port)
