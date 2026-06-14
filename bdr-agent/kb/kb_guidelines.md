@@ -233,3 +233,13 @@ This applies to: apps mentioned in buying signals, client_cases, product_require
 - Objection handled: "Does that address your concern, or would it help to walk through it on a quick call?"
 - General follow-up: "What does your timeline look like for this?"
 
+## Always use HTML hyperlinks for URLs
+
+**Rule:** Never write bare URLs in email drafts. Always format links as HTML anchor tags so they are clickable in Front.
+
+**Format:** `<a href="https://albato.com/apps">albato.com/apps</a>`
+
+**Examples:**
+- App catalog: `<a href="https://albato.com/apps">browse our full app catalog</a>`
+- Meeting link: `<a href="https://meetings.hubspot.com/marianaguerci/meet-with-albato">book a slot here</a>`
+
