@@ -517,50 +517,44 @@ def api_amy_kb():
 
     result = {}
 
-    # Guidelines — parse into sections
-    guidelines_path = os.path.join(BDR_AGENT_PATH, "kb", "kb_guidelines.md")
-    if os.path.exists(guidelines_path):
-        with open(guidelines_path) as f:
-            raw = f.read()
+    def _parse_kb_sections(raw):
+        import re as _re
         sections = []
         current = None
         for line in raw.splitlines():
             if line.startswith("## "):
                 if current:
                     sections.append(current)
-                current = {"title": line[3:].strip(), "body": []}
+                current = {"title": line[3:].strip(), "body": [], "added_date": "", "added_by": ""}
             elif current:
                 current["body"].append(line)
         if current:
             sections.append(current)
         for s in sections:
-            # trim trailing blank lines
             while s["body"] and not s["body"][-1].strip():
                 s["body"].pop()
-            s["body"] = "\n".join(s["body"])
-        result["guidelines"] = sections
+            body_text = "\n".join(s["body"])
+            m = _re.search(r'_Added:\s*(\d{4}-\d{2}-\d{2})\s+by\s+([^_]+)_', body_text)
+            if m:
+                s["added_date"] = m.group(1)
+                s["added_by"] = m.group(2).strip()
+            s["body"] = body_text
+        sections.sort(key=lambda x: x["added_date"] or "0000-00-00", reverse=True)
+        return sections
+
+    # Guidelines — parse into sections
+    guidelines_path = os.path.join(BDR_AGENT_PATH, "kb", "kb_guidelines.md")
+    if os.path.exists(guidelines_path):
+        with open(guidelines_path) as f:
+            raw = f.read()
+        result["guidelines"] = _parse_kb_sections(raw)
 
     # Tone of voice — parse into sections
     tov_path = os.path.join(BDR_AGENT_PATH, "kb", "kb_tone_of_voice.md")
     if os.path.exists(tov_path):
         with open(tov_path) as f:
             raw = f.read()
-        sections = []
-        current = None
-        for line in raw.splitlines():
-            if line.startswith("## "):
-                if current:
-                    sections.append(current)
-                current = {"title": line[3:].strip(), "body": []}
-            elif current:
-                current["body"].append(line)
-        if current:
-            sections.append(current)
-        for s in sections:
-            while s["body"] and not s["body"][-1].strip():
-                s["body"].pop()
-            s["body"] = "\n".join(s["body"])
-        result["tov"] = sections
+        result["tov"] = _parse_kb_sections(raw)
 
     # Sources — group by unique title, one chunk per title
     sources_path = os.path.join(BDR_AGENT_PATH, "kb", "kb_sources.json")

@@ -437,8 +437,11 @@ function renderKbPanel(name) {
     el.innerHTML = sections.map((s, i) => `
       <div class="kb-section">
         <div class="kb-section-header" onclick="toggleKbSection(this)">
-          ${escHtml(s.title)}
-          <span class="kb-chevron">▶</span>
+          <span>${escHtml(s.title)}</span>
+          <span style="display:flex;gap:12px;align-items:center">
+            ${s.added_date ? `<span style="font-size:12px;color:#888;font-weight:400">${escHtml(s.added_date)}${s.added_by ? ' &nbsp;·&nbsp; ' + escHtml(s.added_by) : ''}</span>` : ''}
+            <span class="kb-chevron">▶</span>
+          </span>
         </div>
         <div class="kb-section-body">${escHtml(s.body)}</div>
       </div>`).join('') || '<p style="color:#999">Empty</p>';
