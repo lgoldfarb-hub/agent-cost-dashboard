@@ -560,7 +560,13 @@ def api_amy_kb():
     sources_path = os.path.join(BDR_AGENT_PATH, "kb", "kb_sources.json")
     if os.path.exists(sources_path):
         with open(sources_path) as f:
-            chunks = json.load(f)
+            raw_sources = json.load(f)
+        if isinstance(raw_sources, dict):
+            chunks = raw_sources.get("entries", [])
+            result["sources_refreshed_at"] = raw_sources.get("refreshed_at", "")
+        else:
+            chunks = raw_sources
+            result["sources_refreshed_at"] = ""
         seen = {}
         for c in chunks:
             title = c.get("title", "Untitled")

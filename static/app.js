@@ -470,7 +470,11 @@ function renderKbPanel(name) {
 
   if (name === 'sources') {
     const sources = _kbData.sources || [];
-    el.innerHTML = sources.map(s => `
+    const refreshedAt = _kbData.sources_refreshed_at || '';
+    const header = refreshedAt
+      ? `<p style="font-size:12px;color:#888;margin:0 0 12px">Last refreshed: ${escHtml(refreshedAt)}</p>`
+      : '';
+    el.innerHTML = header + (sources.map(s => `
       <div class="kb-section">
         <div class="kb-section-header" onclick="toggleKbSection(this)">
           ${escHtml(s.title)}
@@ -480,7 +484,7 @@ function renderKbPanel(name) {
           </span>
         </div>
         <div class="kb-section-body">${escHtml(s.text)}…</div>
-      </div>`).join('') || '<p style="color:#999">No sources</p>';
+      </div>`).join('') || '<p style="color:#999">No sources</p>');
   }
 }
 
