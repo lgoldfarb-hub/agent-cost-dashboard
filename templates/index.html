@@ -12,6 +12,7 @@
 
   <div class="tab-nav">
     <button class="tab-btn active" data-tab="dashboard" onclick="showTab('dashboard')">Dashboard</button>
+    <button class="tab-btn" data-tab="amy" onclick="showTab('amy')">Amy Performance</button>
     <button class="tab-btn" data-tab="docs" onclick="showTab('docs')">Documentation</button>
   </div>
 
@@ -68,6 +69,79 @@
   </div>
 
   <!-- ── Documentation tab ── -->
+  <!-- Amy Performance Tab -->
+  <div id="tab-amy" style="display:none">
+    <div id="amy-error" style="color:red;margin-bottom:12px"></div>
+
+    <!-- Stat cards -->
+    <div class="stat-grid" style="margin-bottom:24px">
+      <div class="stat-card">
+        <div class="stat-label">Drafts generated</div>
+        <div class="stat-value" id="amy-drafts">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Meetings booked</div>
+        <div class="stat-value" id="amy-meetings">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Avg draft score</div>
+        <div class="stat-value" id="amy-avg-score">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Guidelines in KB</div>
+        <div class="stat-value" id="amy-guidelines">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Respond runs (MTD)</div>
+        <div class="stat-value" id="amy-respond-runs">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">MTD cost</div>
+        <div class="stat-value" id="amy-mtd-cost">—</div>
+      </div>
+    </div>
+
+    <!-- Score trend chart -->
+    <div class="chart-card" style="margin-bottom:24px">
+      <h3 style="font-size:14px;font-weight:600;margin-bottom:12px;color:#444">Draft score trend</h3>
+      <canvas id="amy-score-chart" height="80"></canvas>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px">
+      <!-- Meetings booked -->
+      <div class="doc-card" style="padding:20px">
+        <h3 style="font-size:14px;font-weight:600;margin-bottom:12px;color:#444">Meetings booked</h3>
+        <table style="width:100%;border-collapse:collapse;font-size:13.5px">
+          <thead><tr>
+            <th style="text-align:left;padding:6px 8px;background:#f5f5f5;border-bottom:2px solid #ddd">Date</th>
+            <th style="text-align:left;padding:6px 8px;background:#f5f5f5;border-bottom:2px solid #ddd">Deal</th>
+            <th style="text-align:left;padding:6px 8px;background:#f5f5f5;border-bottom:2px solid #ddd">Contact</th>
+          </tr></thead>
+          <tbody id="amy-meetings-tbody"></tbody>
+        </table>
+      </div>
+
+      <!-- Score log -->
+      <div class="doc-card" style="padding:20px">
+        <h3 style="font-size:14px;font-weight:600;margin-bottom:12px;color:#444">Score log</h3>
+        <table style="width:100%;border-collapse:collapse;font-size:13.5px">
+          <thead><tr>
+            <th style="text-align:left;padding:6px 8px;background:#f5f5f5;border-bottom:2px solid #ddd">Date</th>
+            <th style="text-align:left;padding:6px 8px;background:#f5f5f5;border-bottom:2px solid #ddd">Score</th>
+            <th style="text-align:left;padding:6px 8px;background:#f5f5f5;border-bottom:2px solid #ddd">Thread</th>
+          </tr></thead>
+          <tbody id="amy-score-log-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Guidelines KB -->
+    <div class="doc-card" style="padding:20px">
+      <h3 style="font-size:14px;font-weight:600;margin-bottom:12px;color:#444">Guidelines KB</h3>
+      <div id="amy-guidelines-list"></div>
+    </div>
+  </div><!-- /tab-amy -->
+
   <div id="tab-docs" style="display:none">
 
     <div class="agent-filter-bar">

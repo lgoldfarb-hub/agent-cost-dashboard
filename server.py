@@ -389,6 +389,102 @@ def api_insights(agent_name):
         return jsonify({"error": str(e)}), 500
 
 
+# ---------------------------------------------------------------------------
+# API — Amy Performance
+# ---------------------------------------------------------------------------
+
+BDR_AGENT_PATH = os.path.join(os.path.dirname(__file__), "..", "bdr-agent")
+
+@app.route("/api/amy")
+def api_amy():
+    import re
+
+    # 1. Draft + respond runs from SQLite
+    conn = get_conn()
+    draft_runs = conn.execute(
+        "SELECT COUNT(*) FROM jobs WHERE agent_name='bdr-agent' AND job_name LIKE 'draft:%'"
+    ).fetchone()[0]
+    respond_runs = conn.execute(
+        "SELECT COUNT(*) FROM jobs WHERE agent_name='bdr-agent' AND job_name LIKE 'respond:%'"
+    ).fetchone()[0]
+    mtd_cost = conn.execute(
+        "SELECT COALESCE(SUM(cost_total),0) FROM jobs WHERE agent_name='bdr-agent' AND started_at>=?",
+        (_mtd_start(),)
+    ).fetchone()[0]
+
+    # 2. Scores from respond job names: "respond: 8" or "respond: 8/10"
+    score_jobs = conn.execute(
+        "SELECT job_name, started_at FROM jobs WHERE agent_name='bdr-agent' AND job_name LIKE 'respond:%' ORDER BY started_at DESC"
+    ).fetchall()
+    conn.close()
+
+    score_log = []
+    for row in score_jobs:
+        m = re.match(r"respond:\s*(\d+)(/10)?$", row["job_name"].strip())
+        if m:
+            score_log.append({
+                "score": int(m.group(1)),
+                "date": row["started_at"][:10],
+                "job_name": row["job_name"],
+            })
+
+    avg_score = round(sum(s["score"] for s in score_log) / len(score_log), 1) if score_log else None
+
+    # Scores by date (avg per day)
+    from collections import defaultdict
+    by_date = defaultdict(list)
+    for s in score_log:
+        by_date[s["date"]].append(s["score"])
+    scores_by_date = sorted([
+        {"date": d, "avg_score": round(sum(v)/len(v), 1)}
+        for d, v in by_date.items()
+    ], key=lambda x: x["date"])
+
+    # 3. Meetings booked from kb_winning_threads.json
+    meetings = []
+    threads_path = os.path.join(BDR_AGENT_PATH, "kb", "kb_winning_threads.json")
+    if os.path.exists(threads_path):
+        try:
+            with open(threads_path) as f:
+                threads = json.load(f)
+            for t in threads:
+                date = t.get("meeting_date") or t.get("booked_at") or ""
+                if date:
+                    meetings.append({
+                        "date": date,
+                        "deal_name": t.get("deal_name", ""),
+                        "contact": t.get("contact_name", ""),
+                    })
+            meetings.sort(key=lambda x: x["date"], reverse=True)
+        except Exception:
+            pass
+
+    # 4. Guidelines from kb_guidelines.md — parse ## headings
+    guidelines = []
+    guidelines_path = os.path.join(BDR_AGENT_PATH, "kb", "kb_guidelines.md")
+    if os.path.exists(guidelines_path):
+        try:
+            with open(guidelines_path) as f:
+                for line in f:
+                    if line.startswith("## "):
+                        guidelines.append({"title": line[3:].strip(), "date": ""})
+        except Exception:
+            pass
+
+    return jsonify({
+        "total_drafts":       draft_runs,
+        "total_respond_runs": respond_runs,
+        "total_meetings":     len(meetings),
+        "avg_score":          avg_score,
+        "total_guidelines":   len(guidelines),
+        "mtd_cost":           mtd_cost,
+        "scores_by_date":     scores_by_date,
+        "score_log":          score_log[:50],
+        "meetings":           meetings,
+        "guidelines":         guidelines,
+    })
+
+
 if __name__ == "__main__":
     print(f"Dashboard running at http://localhost:5001")
     print(f"DB: {DB_PATH}")

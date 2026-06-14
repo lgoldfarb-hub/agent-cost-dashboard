@@ -310,4 +310,96 @@ function showTab(name) {
   });
   document.getElementById('tab-dashboard').style.display = name === 'dashboard' ? '' : 'none';
   document.getElementById('tab-docs').style.display      = name === 'docs'      ? '' : 'none';
+  document.getElementById('tab-amy').style.display       = name === 'amy'       ? '' : 'none';
+  if (name === 'amy') loadAmy();
+}
+
+// ── Amy Performance Tab ────────────────────────────────────────────────────
+let _amyScoreChart = null;
+let _amyLoaded = false;
+
+async function loadAmy() {
+  if (_amyLoaded) return;
+  _amyLoaded = true;
+  try {
+    const r = await fetch('/api/amy');
+    const d = await r.json();
+    renderAmyStats(d);
+    renderAmyScoreChart(d);
+    renderAmyMeetings(d);
+    renderAmyScoreLog(d);
+    renderAmyGuidelines(d);
+  } catch(e) {
+    document.getElementById('amy-error').textContent = 'Failed to load: ' + e;
+  }
+}
+
+function renderAmyStats(d) {
+  document.getElementById('amy-drafts').textContent      = d.total_drafts ?? '—';
+  document.getElementById('amy-meetings').textContent    = d.total_meetings ?? '—';
+  document.getElementById('amy-avg-score').textContent   = d.avg_score != null ? d.avg_score.toFixed(1) + ' / 10' : '—';
+  document.getElementById('amy-guidelines').textContent  = d.total_guidelines ?? '—';
+  document.getElementById('amy-respond-runs').textContent = d.total_respond_runs ?? '—';
+  document.getElementById('amy-mtd-cost').textContent    = d.mtd_cost != null ? '$' + d.mtd_cost.toFixed(2) : '—';
+}
+
+function renderAmyScoreChart(d) {
+  const scores = d.scores_by_date || [];
+  if (!scores.length) return;
+  const ctx = document.getElementById('amy-score-chart').getContext('2d');
+  if (_amyScoreChart) _amyScoreChart.destroy();
+  _amyScoreChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: scores.map(s => s.date),
+      datasets: [{
+        label: 'Avg Score',
+        data: scores.map(s => s.avg_score),
+        borderColor: '#4a6cf7',
+        backgroundColor: 'rgba(74,108,247,0.08)',
+        tension: 0.3,
+        pointRadius: 4,
+        fill: true,
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: { y: { min: 0, max: 10, ticks: { stepSize: 2 } } },
+      plugins: { legend: { display: false } }
+    }
+  });
+}
+
+function renderAmyMeetings(d) {
+  const meetings = d.meetings || [];
+  const tbody = document.getElementById('amy-meetings-tbody');
+  if (!meetings.length) { tbody.innerHTML = '<tr><td colspan="3" style="color:#999;text-align:center">No meetings recorded yet</td></tr>'; return; }
+  tbody.innerHTML = meetings.map(m => `
+    <tr>
+      <td>${m.date || '—'}</td>
+      <td>${m.deal_name || '—'}</td>
+      <td>${m.contact || '—'}</td>
+    </tr>`).join('');
+}
+
+function renderAmyScoreLog(d) {
+  const scores = d.score_log || [];
+  const tbody = document.getElementById('amy-score-log-tbody');
+  if (!scores.length) { tbody.innerHTML = '<tr><td colspan="3" style="color:#999;text-align:center">No scores recorded yet</td></tr>'; return; }
+  tbody.innerHTML = scores.map(s => `
+    <tr>
+      <td>${s.date || '—'}</td>
+      <td><strong>${s.score}</strong> / 10</td>
+      <td style="color:#666;font-size:13px">${s.job_name || '—'}</td>
+    </tr>`).join('');
+}
+
+function renderAmyGuidelines(d) {
+  const items = d.guidelines || [];
+  const el = document.getElementById('amy-guidelines-list');
+  if (!items.length) { el.innerHTML = '<p style="color:#999">No guidelines yet</p>'; return; }
+  el.innerHTML = items.map(g => `
+    <div style="padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:13.5px">
+      <span style="color:#888;font-size:12px;margin-right:8px">${g.date || ''}</span>${g.title}
+    </div>`).join('');
 }
