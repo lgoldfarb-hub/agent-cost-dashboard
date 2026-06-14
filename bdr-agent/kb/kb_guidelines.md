@@ -25,6 +25,8 @@
 
 **Never pitch all three equally.** Use the deal intelligence (company description, needs, buying signals, product requirements) to make the call.
 
+_Added: 2026-06-12 by Leo_
+
 ---
 
 Handling instructions for common prospect questions and situations. Use these as templates — adapt tone to match the prospect.
@@ -42,6 +44,8 @@ Apply this throughout the email, not just in the first mention.
 
 **Also:** Never end with "if you're a SaaS company thinking about X" — all leads are SaaS by definition. Skip that qualifier entirely and go straight to the specific angle or question.
 
+_Added: 2026-06-12 by Leo_
+
 ---
 
 ## Albato Embedded positioning — lead with AI agents
@@ -57,6 +61,8 @@ Apply this throughout the email, not just in the first mention.
 - Bad: "Albato Embedded is a white-label integration layer you can embed into Surfe"
 - Good: "Albato Embedded lets you ship AI agents inside Surfe that can execute across your customers' entire app stack (CRMs, dialers, sales tools) on their behalf. The integrations layer underneath covers 1,000+ apps out of the box."
 
+_Added: 2026-06-12 by Leo_
+
 ---
 
 ## MCP positioning — highlight the maintenance pain
@@ -66,6 +72,8 @@ Apply this throughout the email, not just in the first mention.
 - Bad: "without you having to wire up each app separately"
 - Good: "without you having to wire up each MCP separately and maintain dozens of API connectors"
 
+_Added: 2026-06-13 by Leo_
+
 ---
 
 ## App count — always say 1,000+
@@ -74,6 +82,8 @@ Apply this throughout the email, not just in the first mention.
 
 - Bad: "gives AI agents live access to 700+ apps"
 - Good: "gives AI agents live access to 1,000+ apps"
+
+_Added: 2026-06-13 by Leo_
 
 ---
 
@@ -92,6 +102,8 @@ Apply this throughout the email, not just in the first mention.
 - The BDR decides whether to hold the line, escalate the offer, or drop the lead
 - Always quote the prospect's exact message so the rep has full context
 
+_Added: 2026-06-13 by Leo_
+
 ---
 
 ## Don't push for a meeting when the lead has unresolved concerns
@@ -102,6 +114,8 @@ Apply this throughout the email, not just in the first mention.
 - Good: "We custom-build missing integrations in a matter of days as part of the managed service. Which specific apps are you not seeing in the catalog?"
 
 The meeting follows naturally once the lead feels heard and the gap is closed. A soft, non-intrusive mention is fine though: "Happy to have a quick call and walk you through Albato and the process of building custom apps." No question mark, no pressure.
+
+_Added: 2026-06-13 by Leo_
 
 ---
 
@@ -118,6 +132,8 @@ Apply this framing throughout: open with their situation or goal, then bring in 
 
 **Always include:** AI agents and 1,000+ connectors must be mentioned in every reply — these are non-negotiable talking points regardless of what the prospect asked.
 
+_Added: 2026-06-13 by Leo_
+
 ---
 
 ## Name the prospect's current vendor or solution when known
@@ -128,6 +144,8 @@ Apply this framing throughout: open with their situation or goal, then bring in 
 - Good: "Instead of maintaining your own Zapier workflows, your customers get a native integration experience inside [Product]."
 
 This makes the pitch feel researched and specific — not generic. Don't use it if the vendor isn't confirmed in the deal data.
+
+_Added: 2026-06-13 by Leo_
 
 ---
 
@@ -140,6 +158,8 @@ This makes the pitch feel researched and specific — not generic. Don't use it 
 
 This applies to: apps mentioned in buying signals, client_cases, product_requirements, needs, or the ICP evaluation notes. Only name apps that are actually in the deal data — never assume or invent.
 
+_Added: 2026-06-13 by Leo_
+
 ---
 
 ## Read the thread carefully before assuming what was shared
@@ -148,6 +168,8 @@ This applies to: apps mentioned in buying signals, client_cases, product_require
 
 - Bad: "Thanks for the list." (when no list was shared yet)
 - Good: "Yes, please share the list."
+
+_Added: 2026-06-13 by Leo_
 
 ---
 
@@ -165,6 +187,8 @@ This applies to: apps mentioned in buying signals, client_cases, product_require
 - Don't over-promise on timelines; "a matter of days" is the standard framing
 - Don't push for a meeting straight after — first resolve the uncertainty. Ask a genuine question that shows you care about their specific situation, e.g. "Which specific apps are you missing from our catalog?" Then move to a meeting once the gap is addressed.
 
+_Added: 2026-06-13 by Leo_
+
 ---
 
 ## Call duration — never mention unless asked
@@ -176,6 +200,8 @@ This applies to: apps mentioned in buying signals, client_cases, product_require
 - Bad: "The call is a 45-minute demo and conversation focused on…"
 - Bad: "The call is a demo and conversation focused on…"
 - Good: "The call is a discovery session and a live demo of…"
+
+_Added: 2026-06-13 by Leo_
 
 ---
 
@@ -200,6 +226,8 @@ This applies to: apps mentioned in buying signals, client_cases, product_require
 - Keep it natural — don't make it sound like you're reading from a file
 - If there's no relevant signal, fall back to a general empathetic response
 
+_Added: 2026-06-13 by Leo_
+
 ---
 
 ## Gift card currency — always clarify it's USD
@@ -208,6 +236,8 @@ This applies to: apps mentioned in buying signals, client_cases, product_require
 
 - Bad: "Yes, a $200 gift card redeemable at..."
 - Good: "It's $200 USD, yes. A personal gift card redeemable at..."
+
+_Added: 2026-06-13 by Leo_
 
 ---
 
@@ -224,6 +254,8 @@ This applies to: apps mentioned in buying signals, client_cases, product_require
 - Keep it short — no need to over-explain the mechanics
 - Always end with a confirmation question to keep the thread moving
 
+_Added: 2026-06-13 by Leo_
+
 ## Never close a reply without a question
 
 **Rule:** Every email Amy sends must end with an open question. Never leave the ball in Amy's court with a closed statement like "happy to reconnect when the timing is right." Always ask something specific to keep the thread alive.
@@ -233,7 +265,7 @@ This applies to: apps mentioned in buying signals, client_cases, product_require
 - Objection handled: "Does that address your concern, or would it help to walk through it on a quick call?"
 - General follow-up: "What does your timeline look like for this?"
 
-_Added: 2026-06-12 by Leo_
+_Added: 2026-06-14 by Leo_
 
 ## Tailor call agendas to deal signals and intelligence
 
@@ -252,7 +284,7 @@ _Added: 2026-06-12 by Leo_
 3. Your AI Reviewer feature and whether a single MCP connection makes sense for your agent stack
 4. Whether there is a fit worth exploring further
 
-_Added: 2026-06-12 by Leo_
+_Added: 2026-06-14 by Leo_
 
 ## Never include pricing in a first call agenda
 
@@ -261,7 +293,7 @@ _Added: 2026-06-12 by Leo_
 **Wrong:** "3. Pricing and next steps if there is a fit"
 **Right:** "3. Whether there is a fit worth exploring further"
 
-_Added: 2026-06-12 by Leo_
+_Added: 2026-06-14 by Leo_
 
 ## Always write as the email sender, not as Amy
 
@@ -270,7 +302,7 @@ _Added: 2026-06-12 by Leo_
 **Wrong:** "I'm Amy, Mike's assistant..." or any mention of Amy at all.
 **Right:** Write and sign as Mike, Leo, Mariana, or Nick — whoever owns the thread.
 
-_Added: 2026-06-12 by Leo_
+_Added: 2026-06-14 by Leo_
 
 ## Never mention team location unless asked — if asked, it's Portugal
 
