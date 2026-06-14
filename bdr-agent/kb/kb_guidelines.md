@@ -233,6 +233,23 @@ This applies to: apps mentioned in buying signals, client_cases, product_require
 - Objection handled: "Does that address your concern, or would it help to walk through it on a quick call?"
 - General follow-up: "What does your timeline look like for this?"
 
+## Tailor call agendas to deal signals and intelligence
+
+**Rule:** When sending a call agenda, always personalise it using available deal intelligence — the prospect's current tools, pain points, product features, or stated needs. Never send a generic agenda.
+
+**Sources to draw from:** Sybill notes, HubSpot deal properties (needs, competitors, buying signals, red flags), company website content, the prospect's email text.
+
+**Wrong:**
+1. Quick intro to Albato Embedded
+2. Your current integration setup
+3. Whether there is a fit
+
+**Right (using deal signals):**
+1. Filestage's current setup and how far Zapier takes you today
+2. How Albato Embedded could replace Zapier with native integrations inside your product
+3. Your AI Reviewer feature and whether a single MCP connection makes sense for your agent stack
+4. Whether there is a fit worth exploring further
+
 ## Never include pricing in a first call agenda
 
 **Rule:** When sending a call agenda, never list "pricing" as an agenda item. The first call is a discovery session. Pricing comes later, once fit is established.
