@@ -440,26 +440,20 @@ def api_amy():
         for d, v in by_date.items()
     ], key=lambda x: x["date"])
 
-    # 3. Meetings booked from kb_winning_threads.json
-    meetings = []
-    threads_path = os.path.join(BDR_AGENT_PATH, "kb", "kb_winning_threads.json")
-    if os.path.exists(threads_path):
-        try:
-            with open(threads_path) as f:
-                threads = json.load(f)
-            for t in threads:
-                if t.get("source") != "albato_learn":
-                    continue
-                date = t.get("booked_at") or t.get("meeting_date") or ""
-                if date:
-                    meetings.append({
-                        "date": date,
-                        "deal_name": t.get("deal_name", ""),
-                        "contact": t.get("contact_name", ""),
-                    })
-            meetings.sort(key=lambda x: x["date"], reverse=True)
-        except Exception:
-            pass
+    # 3. Meetings booked — count bdr-learn job runs from SQLite
+    conn2 = get_conn()
+    learn_jobs = conn2.execute(
+        "SELECT job_name, started_at FROM jobs WHERE agent_name='bdr-agent' AND job_name LIKE 'learn:%' ORDER BY started_at DESC"
+    ).fetchall()
+    conn2.close()
+    meetings = [
+        {
+            "date": row["started_at"][:10],
+            "deal_name": row["job_name"].replace("learn:", "").strip(),
+            "contact": "",
+        }
+        for row in learn_jobs
+    ]
 
     # 4. Guidelines from kb_guidelines.md — parse ## headings
     guidelines = []
