@@ -1,0 +1,289 @@
+[
+  {
+    "deal_id": "61024274729",
+    "deal_name": "Exclaimer | active,paid meetings campaign",
+    "booked_at": "2026-06-12",
+    "lead_title": "Product Manager",
+    "sequence_name": "",
+    "messages": [
+      {
+        "role": "rep",
+        "text": "Hey Lawrence, any chance you saw my emails? \n\nI'm offering 200 usd for 60 min of your time to chat about Exclaimer's integrations &amp; AI agents. \n\nOpen to it?"
+      },
+      {
+        "role": "lead",
+        "text": "Hi Nik"
+      },
+      {
+        "role": "lead",
+        "text": "Could you please let me know a little more about the call?"
+      },
+      {
+        "role": "lead",
+        "text": "Sounds good. \n\nDoes Friday 19th between 11am-2pm UK time work for you?"
+      },
+      {
+        "role": "rep",
+        "text": "Perfect! Let's do 12:45 UK time next Friday?\n\n Please share your email and I'll send the invite."
+      },
+      {
+        "role": "lead",
+        "text": "Great. It's lawrence.tatham@exclaimer.com"
+      },
+      {
+        "role": "lead",
+        "text": "Have a nice weekend"
+      },
+      {
+        "role": "rep",
+        "text": "thanks :) \n\nlikewise!"
+      },
+      {
+        "role": "rep",
+        "text": "I booked a call for 12:30, a little change of plans. Hope that's okay! I also asked our Head of Strategic Accounts, Mariana, to join.\n\nLooking forward!"
+      }
+    ]
+  },
+  {
+    "deal_id": "60009416735",
+    "deal_name": "Axonify",
+    "contact_name": "Larysa Wood",
+    "contact_email": "lwood@axonify.com",
+    "meeting_date": "2026-05-27",
+    "added_at": "2026-06-12",
+    "messages": [
+      {
+        "role": "lead",
+        "author": "lwood@axonify.com",
+        "date": "2026-05-18",
+        "text": "Very sorry, I needed to book some last minute travel and will lot longer be\nable to make this time. Do you have availability Wednesday May 27th between\n9 and 12pm ET?"
+      },
+      {
+        "role": "rep",
+        "author": "m.r.guerci@albato.com",
+        "date": "2026-05-18",
+        "text": "Hi Larysa,\n\nThanks for the heads-up, no worries at all!\nI’ve moved the call to next Wednesday at 10am ET. Looking forward to speaking then."
+      },
+      {
+        "role": "rep",
+        "author": "tanya@albato.com",
+        "date": "2026-05-27",
+        "text": "Hi Larysa,\n\nI just want to confirm our meeting today. Are we still good?\n\nLooking forward to connecting with you.\n\nBest,"
+      },
+      {
+        "role": "lead",
+        "author": "lwood@axonify.com",
+        "date": "2026-05-27",
+        "text": "Still good, speak to you soon"
+      }
+    ]
+  },
+  {
+    "deal_id": "59758006417",
+    "deal_name": "Surfe",
+    "contact_name": "Dominik Szczechla",
+    "contact_email": "dominik.szczechla@surfe.com",
+    "meeting_date": "2026-05-08",
+    "added_at": "2026-06-12",
+    "messages": [
+      {
+        "role": "lead",
+        "author": "dominik.szczechla@surfe.com",
+        "date": "2026-04-28",
+        "text": "I can share a shortlist, you can say if you could do it, did it or have it\non the radar ;)\n\nZOHO CRM (this one was on the list), Creatio, Adobe Experience Cloud and\nSAP as CRM's to sync leads into\n\nWe were thinking of integrating a dialer such as Nooks\n\nFrom sales enablement we'd love to get Gong Engage.\n\nAlmost every integration requires our user to connect their own account for\nthose services, via API key or OAuth flow.\n\nI think we could set up an hour and see if some of those would be better\nand cheaper to plug-and-play with your platform instead."
+      },
+      {
+        "role": "rep",
+        "author": "tanya@albato.com",
+        "date": "2026-04-28",
+        "text": "Thanks a lot for the list, Dominik.\nAfter a high-level review, we should be able to deliver these apps. For some systems, we’ll need API access and clarification of your use cases.\n\nI suggest setting up a call to discuss this in more detail. Could you grab a slot from the calendar?\nHave a nice evening!\n\nBest,"
+      },
+      {
+        "role": "rep",
+        "author": "tanya@albato.com",
+        "date": "2026-05-04",
+        "text": "Hi Dominik,\nHope you had a restful weekend!\n\nLet me know the best time to connect this week.\n\nHappy to discuss your integrations list together and share more about our capabilities so you can compare in-house vs plug-and-play with our platform.\n\nBest,"
+      },
+      {
+        "role": "lead",
+        "author": "dominik.szczechla@surfe.com",
+        "date": "2026-05-04",
+        "text": "Hey!\n\nWe quickly moved from a paid discovery straight to my organization's needs\nand into a sales call direction :)  Happy to meet for a *discovery* call.\nDon't want to go into a situation when its basically a sales pitch with a\nlittle something for me on top - it's a classic conflict of interest if I\nrecommend your platform later on after getting something first.\n\nRegards"
+      },
+      {
+        "role": "rep",
+        "author": "tanya@albato.com",
+        "date": "2026-05-04",
+        "text": "Hi Dominik,\n\nYou are absolutely right!\n\nI was referring to a paid 1-hour discovery call, as proposed initially. No pitches, no hard sell. Just a casual chat to go through your integration priorities (you already shared a list) and see if Albato could add value now or down the road.\n\nDoes that work for you? Happy to hear if you had something different in mind.\n\nBest,"
+      },
+      {
+        "role": "lead",
+        "author": "dominik.szczechla@surfe.com",
+        "date": "2026-05-05",
+        "text": "Lets meet on Friday, if that works for you.\n\nRegards"
+      },
+      {
+        "role": "rep",
+        "author": "tanya@albato.com",
+        "date": "2026-05-05",
+        "text": "Hi Dominik,\n\nFriday works. Talk to you soon.\nHave a nice day!\n\nBest,"
+      }
+    ]
+  },
+  {
+    "deal_id": "58367556178",
+    "deal_name": "Unifyr",
+    "contact_name": "Philip Juchert",
+    "contact_email": "philipjuchert@unifyr.com",
+    "meeting_date": "2026-04-14",
+    "added_at": "2026-06-12",
+    "messages": [
+      {
+        "role": "lead",
+        "author": "holgerschneider@unifyr.com",
+        "date": "2026-03-30",
+        "text": "Hi Mike, we do a have a conflict now - could we reschedule to 13 of April 5pm Munich time? Sorry & BR Holger"
+      },
+      {
+        "role": "rep",
+        "author": "m.r.guerci@albato.com",
+        "date": "2026-03-30",
+        "text": "Hi Holger and team,\n\nThanks for the heads-up. Call rescheduled to April 13th."
+      },
+      {
+        "role": "rep",
+        "author": "tanya@albato.com",
+        "date": "2026-04-14",
+        "text": "Hi Holger and team,\n\nI wanted to confirm our meeting today, are we still on?\nLooking forward to it.\n\nBest,"
+      },
+      {
+        "role": "lead",
+        "author": "holgerschneider@unifyr.com",
+        "date": "2026-04-14",
+        "text": "Hi Leo,\n\nYes absolutely - I do have only 45min. But should be hopefully ok for a\nfirst meet-up.\n\nLooking forward to it.\n\nBR Holger"
+      }
+    ]
+  },
+  {
+    "deal_id": "58208937267",
+    "deal_name": "Grain",
+    "contact_name": "Taylor Halversen-Bates",
+    "contact_email": "taylor@grain.co",
+    "meeting_date": "2026-05-15",
+    "added_at": "2026-06-12",
+    "messages": [
+      {
+        "role": "rep",
+        "author": "l.goldfarb@albato.com",
+        "date": "2026-03-30",
+        "text": "Hi Taylor,\n\nI hope you’re having a great week.\n\nI saw that you declined our meeting this Friday.\n\nIs there a chance we could reschedule?"
+      },
+      {
+        "role": "rep",
+        "author": "l.goldfarb@albato.com",
+        "date": "2026-04-01",
+        "text": "Hi Taylor,\n\nI'd really appreciate a quick note on why the call was declined and if it makes sense for us to reconnect on another day.\n\nIf the integration opportunity has shifted down on your priority list, no problem at all.\n\nHappy to step back and revisit when the timing is better.\n\nHave a great week!"
+      },
+      {
+        "role": "lead",
+        "author": "taylor@grain.co",
+        "date": "2026-04-01",
+        "text": "Hi Leo-\n\nUnfortunately, I’ve learned that I will not be in this position for much\nlonger. I just don’t have the capacity to champion the partnership.\n\nBest of luck,\nTaylor"
+      },
+      {
+        "role": "rep",
+        "author": "l.goldfarb@albato.com",
+        "date": "2026-04-01",
+        "text": "Hi Taylor,\n\nThanks for letting me know and I’m sorry to hear that.\n\nIf it isn’t too much to ask, would it be possible to introduce us to\nsomeone who might be best placed to help drive our project on Grain’s side?\n\nEither way, I wish you all the best and thank you very much for working\nwith us on this!\n\nBest,\nLeo"
+      },
+      {
+        "role": "rep",
+        "author": "l.goldfarb@albato.com",
+        "date": "2026-04-03",
+        "text": "P.S. If an intro isn't possible, a quick pointer to the right contact at Grain would be super helpful.\n\nHave a great Friday!"
+      }
+    ]
+  },
+  {
+    "deal_id": "58134588796",
+    "deal_name": "PandaDoc",
+    "contact_name": "Alessio Ragni",
+    "contact_email": "alessio.ragni@pandadoc.com",
+    "meeting_date": "2026-03-25",
+    "added_at": "2026-06-12",
+    "messages": [
+      {
+        "role": "lead",
+        "author": "alessio.ragni@pandadoc.com",
+        "date": "2026-03-17",
+        "text": "Hi Leo, Can we reschedule for next week? It's not urgent for us and I have other meetings that are conflicting. Thanks."
+      },
+      {
+        "role": "rep",
+        "author": "l.goldfarb@albato.com",
+        "date": "2026-03-17",
+        "text": "Hey Alex,\n\nAbsolutely!\n\nCan we meet next Wednesday (March 25th) at the same time?\n\nI just grabbed a slot on your calendar. Please let me know if that works\nfor you.\n\n---\nBest,"
+      },
+      {
+        "role": "rep",
+        "author": "tanya@albato.com",
+        "date": "2026-03-18",
+        "text": "Hey Alex,\n\nHope next Wednesday (March 25th) at the same time works for you. Could you please let me know?\nIf the time works, I’d really appreciate it if we could extend to 60 minutes as initially proposed (or at least 45)\nHave a nice day."
+      },
+      {
+        "role": "rep",
+        "author": "tanya@albato.com",
+        "date": "2026-03-23",
+        "text": "Hey Alex,\nHope you had a restful weekend.\nAre we still on for a meeting this Wed?\nLet me know if it's possible on your side to extend the meeting to 60 min, or at least 45 min. Would really help us cover everything.\nHave a nice start to the week!\nBest,"
+      },
+      {
+        "role": "lead",
+        "author": "alessio.ragni@pandadoc.com",
+        "date": "2026-03-24",
+        "text": "Done"
+      },
+      {
+        "role": "rep",
+        "author": "tanya@albato.com",
+        "date": "2026-03-24",
+        "text": "Perfect. Thanks, Alex!\n\nLooking forward.\n\nBest,"
+      }
+    ]
+  },
+  {
+    "deal_id": "59758006417",
+    "deal_name": "Surfe — missing apps objection + build vs buy",
+    "contact_name": "Dominik Szczechla",
+    "added_at": "2026-06-13",
+    "source": "slack_training",
+    "messages": [
+      {
+        "role": "lead",
+        "text": "Hey Mike.\n\nInteresting opening for a cold email ;) 200 of what and in what form?\n\nI am actually a PM also of Integrations departament of Surfe. We integrate 4 CRM's, a few dozen enrichment providers and some sales outreach solutions. Streamlining all of this would be interesting, but I did not see most of the products that are interesting for us on https://albato.com/apps. Or this is not a list of integrations you provide?\n\nI am investigating build vs buy on some of the integrations, so yes, the discussion might be interesting"
+      },
+      {
+        "role": "rep",
+        "text": "Hi Dominik,\n\nThe $200 is a personal gift card, redeemable across 180+ brands including Amazon, Airbnb, Apple, and Starbucks.\n\nOn the app catalog: don't worry about missing apps. We custom-build integrations for customers in a matter of days. It's part of the managed service.\n\nWhich specific apps are you not seeing in the catalog?\n\nOn the build vs buy side: you're already maintaining connectors across 4 CRMs and dozens of enrichment tools. Every time HubSpot ships a schema change, someone on your team absorbs it. Albato Embedded handles that maintenance layer and gives Surfe a unified API that stays consistent regardless of connector version changes.\n\nHappy to have a quick call and walk you through Albato and the process of building custom apps.\n\nBest,\nMike"
+      }
+    ]
+  },
+  {
+    "deal_id": "60326348344",
+    "deal_name": "Re: Paid discovery",
+    "booked_at": "",
+    "lead_title": "",
+    "sequence_name": "",
+    "messages": [
+      {
+        "role": "lead",
+        "text": "Hi Mike. Happy to chat."
+      },
+      {
+        "role": "rep",
+        "text": "Hi Eden,\n\nGreat, looking forward to it.\n\nCould you please grab a 1-hour slot here: <https://meetings.hubspot.com/marianaguerci/meet-with-albato>\n\nThanks,\nTalk soon!"
+      }
+    ],
+    "source": "slack_training"
+  }
+]
+
