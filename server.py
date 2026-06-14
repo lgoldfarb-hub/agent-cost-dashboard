@@ -448,7 +448,9 @@ def api_amy():
             with open(threads_path) as f:
                 threads = json.load(f)
             for t in threads:
-                date = t.get("meeting_date") or t.get("booked_at") or ""
+                if t.get("source") != "albato_learn":
+                    continue
+                date = t.get("booked_at") or t.get("meeting_date") or ""
                 if date:
                     meetings.append({
                         "date": date,
