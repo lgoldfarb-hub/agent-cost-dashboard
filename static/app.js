@@ -329,6 +329,7 @@ async function loadAmy() {
     renderAmyMeetings(d);
     renderAmyScoreLog(d);
     renderAmyGuidelines(d);
+    loadKb();
   } catch(e) {
     document.getElementById('amy-error').textContent = 'Failed to load: ' + e;
   }
@@ -395,11 +396,102 @@ function renderAmyScoreLog(d) {
 }
 
 function renderAmyGuidelines(d) {
-  const items = d.guidelines || [];
-  const el = document.getElementById('amy-guidelines-list');
-  if (!items.length) { el.innerHTML = '<p style="color:#999">No guidelines yet</p>'; return; }
-  el.innerHTML = items.map(g => `
-    <div style="padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:13.5px">
-      <span style="color:#888;font-size:12px;margin-right:8px">${g.date || ''}</span>${g.title}
-    </div>`).join('');
+  // kept for stat card count only — KB viewer handles content
+}
+
+// ── Amy KB Viewer ──────────────────────────────────────────────────────────
+let _kbLoaded = false;
+let _kbData = null;
+
+async function loadKb() {
+  if (_kbLoaded) return;
+  _kbLoaded = true;
+  try {
+    const r = await fetch('/api/amy/kb');
+    _kbData = await r.json();
+    renderKbPanel('guidelines');
+  } catch(e) {
+    document.getElementById('kb-guidelines').textContent = 'Failed to load KB: ' + e;
+  }
+}
+
+function showKb(name) {
+  document.querySelectorAll('.kb-tab-btn').forEach((b, i) => {
+    const names = ['guidelines', 'tov', 'threads', 'sources'];
+    b.classList.toggle('active', names[i] === name);
+  });
+  ['guidelines', 'tov', 'threads', 'sources'].forEach(n => {
+    document.getElementById('kb-' + n).style.display = n === name ? '' : 'none';
+  });
+  renderKbPanel(name);
+}
+
+function renderKbPanel(name) {
+  if (!_kbData) return;
+  const el = document.getElementById('kb-' + name);
+  if (el.dataset.rendered) return;
+  el.dataset.rendered = '1';
+
+  if (name === 'guidelines' || name === 'tov') {
+    const sections = _kbData[name === 'guidelines' ? 'guidelines' : 'tov'] || [];
+    el.innerHTML = sections.map((s, i) => `
+      <div class="kb-section">
+        <div class="kb-section-header" onclick="toggleKbSection(this)">
+          ${escHtml(s.title)}
+          <span class="kb-chevron">▶</span>
+        </div>
+        <div class="kb-section-body">${escHtml(s.body)}</div>
+      </div>`).join('') || '<p style="color:#999">Empty</p>';
+  }
+
+  if (name === 'threads') {
+    const threads = _kbData.threads || [];
+    el.innerHTML = threads.map((t, i) => `
+      <div class="kb-section">
+        <div class="kb-section-header" onclick="toggleKbSection(this)">
+          <span>${escHtml(t.deal_name)}${t.contact ? ' &nbsp;·&nbsp; <span style="font-weight:400;color:#666">' + escHtml(t.contact) + '</span>' : ''}</span>
+          <span style="display:flex;gap:12px;align-items:center">
+            <span style="font-size:12px;color:#888;font-weight:400">${t.date || ''} &nbsp;·&nbsp; ${t.message_count} msgs &nbsp;·&nbsp; ${t.source === 'slack_training' ? '✍️ training' : '🔗 albato'}</span>
+            <span class="kb-chevron">▶</span>
+          </span>
+        </div>
+        <div class="kb-section-body">
+          ${(t.messages || []).map(m => `
+            <div class="kb-msg ${m.role}">
+              <div class="kb-msg-label">${m.role === 'rep' ? '👤 Rep' : '📩 Lead'}</div>
+              ${escHtml(m.text || '')}
+            </div>`).join('')}
+        </div>
+      </div>`).join('') || '<p style="color:#999">No threads yet</p>';
+  }
+
+  if (name === 'sources') {
+    const sources = _kbData.sources || [];
+    el.innerHTML = sources.map(s => `
+      <div class="kb-section">
+        <div class="kb-section-header" onclick="toggleKbSection(this)">
+          ${escHtml(s.title)}
+          <span style="display:flex;gap:12px;align-items:center">
+            <a href="${escHtml(s.url)}" target="_blank" style="font-size:12px;font-weight:400;color:#4a6cf7" onclick="event.stopPropagation()">↗ source</a>
+            <span class="kb-chevron">▶</span>
+          </span>
+        </div>
+        <div class="kb-section-body">${escHtml(s.text)}…</div>
+      </div>`).join('') || '<p style="color:#999">No sources</p>';
+  }
+}
+
+function toggleKbSection(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.kb-chevron');
+  body.classList.toggle('open');
+  chevron.classList.toggle('open');
+}
+
+function escHtml(str) {
+  return String(str || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
 }

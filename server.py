@@ -481,6 +481,93 @@ def api_amy():
     })
 
 
+# ---------------------------------------------------------------------------
+# API — Amy KB viewer
+# ---------------------------------------------------------------------------
+
+@app.route("/api/amy/kb")
+def api_amy_kb():
+    import re
+
+    result = {}
+
+    # Guidelines — parse into sections
+    guidelines_path = os.path.join(BDR_AGENT_PATH, "kb", "kb_guidelines.md")
+    if os.path.exists(guidelines_path):
+        with open(guidelines_path) as f:
+            raw = f.read()
+        sections = []
+        current = None
+        for line in raw.splitlines():
+            if line.startswith("## "):
+                if current:
+                    sections.append(current)
+                current = {"title": line[3:].strip(), "body": []}
+            elif current:
+                current["body"].append(line)
+        if current:
+            sections.append(current)
+        for s in sections:
+            # trim trailing blank lines
+            while s["body"] and not s["body"][-1].strip():
+                s["body"].pop()
+            s["body"] = "\n".join(s["body"])
+        result["guidelines"] = sections
+
+    # Tone of voice — parse into sections
+    tov_path = os.path.join(BDR_AGENT_PATH, "kb", "kb_tone_of_voice.md")
+    if os.path.exists(tov_path):
+        with open(tov_path) as f:
+            raw = f.read()
+        sections = []
+        current = None
+        for line in raw.splitlines():
+            if line.startswith("## "):
+                if current:
+                    sections.append(current)
+                current = {"title": line[3:].strip(), "body": []}
+            elif current:
+                current["body"].append(line)
+        if current:
+            sections.append(current)
+        for s in sections:
+            while s["body"] and not s["body"][-1].strip():
+                s["body"].pop()
+            s["body"] = "\n".join(s["body"])
+        result["tov"] = sections
+
+    # Sources — group by unique title, one chunk per title
+    sources_path = os.path.join(BDR_AGENT_PATH, "kb", "kb_sources.json")
+    if os.path.exists(sources_path):
+        with open(sources_path) as f:
+            chunks = json.load(f)
+        seen = {}
+        for c in chunks:
+            title = c.get("title", "Untitled")
+            if title not in seen:
+                seen[title] = {"title": title, "url": c.get("url", ""), "text": c.get("text", "")[:600]}
+        result["sources"] = list(seen.values())
+
+    # Winning threads — summary view
+    threads_path = os.path.join(BDR_AGENT_PATH, "kb", "kb_winning_threads.json")
+    if os.path.exists(threads_path):
+        with open(threads_path) as f:
+            threads = json.load(f)
+        result["threads"] = [
+            {
+                "deal_name": t.get("deal_name", ""),
+                "contact": t.get("contact_name", ""),
+                "date": t.get("meeting_date") or t.get("booked_at") or t.get("added_at", ""),
+                "source": t.get("source", "albato_learn"),
+                "message_count": len(t.get("messages", [])),
+                "messages": t.get("messages", []),
+            }
+            for t in threads
+        ]
+
+    return jsonify(result)
+
+
 if __name__ == "__main__":
     print(f"Dashboard running at http://localhost:5001")
     print(f"DB: {DB_PATH}")

@@ -135,10 +135,21 @@
       </div>
     </div>
 
-    <!-- Guidelines KB -->
-    <div class="doc-card" style="padding:20px">
-      <h3 style="font-size:14px;font-weight:600;margin-bottom:12px;color:#444">Guidelines KB</h3>
-      <div id="amy-guidelines-list"></div>
+    <!-- KB Viewer -->
+    <div class="doc-card" style="padding:20px;margin-top:4px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+        <h3 style="font-size:15px;font-weight:600;color:#222;margin:0">Knowledge Base</h3>
+        <div style="display:flex;gap:6px" id="kb-switcher">
+          <button class="kb-tab-btn active" onclick="showKb('guidelines')">Guidelines</button>
+          <button class="kb-tab-btn" onclick="showKb('tov')">Tone of Voice</button>
+          <button class="kb-tab-btn" onclick="showKb('threads')">Winning Threads</button>
+          <button class="kb-tab-btn" onclick="showKb('sources')">Sources</button>
+        </div>
+      </div>
+      <div id="kb-guidelines"></div>
+      <div id="kb-tov" style="display:none"></div>
+      <div id="kb-threads" style="display:none"></div>
+      <div id="kb-sources" style="display:none"></div>
     </div>
   </div><!-- /tab-amy -->
 
