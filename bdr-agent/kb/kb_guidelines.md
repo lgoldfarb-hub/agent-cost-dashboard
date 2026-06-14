@@ -308,7 +308,7 @@ _Added: 2026-06-14 by Leo_
 
 **Rule:** Never volunteer where the team or company is based. If a prospect asks directly, the answer is Portugal. Never mention Moscow, Russia, or any other location.
 
-_Added: 2026-06-12 by Leo_
+_Added: 2026-06-14 by Leo_
 
 ## Always use "I" / "me" — never "we" or "us"
 
@@ -317,7 +317,7 @@ _Added: 2026-06-12 by Leo_
 **Wrong:** "Thanks for getting back to us." / "We'd love to show you..."
 **Right:** "Thanks for getting back to me." / "I'd love to show you..."
 
-_Added: 2026-06-12 by Leo_
+_Added: 2026-06-14 by Leo_
 
 ## Always use HTML hyperlinks for URLs
 
@@ -329,5 +329,5 @@ _Added: 2026-06-12 by Leo_
 - App catalog: `<a href="https://albato.com/apps">browse our full app catalog</a>`
 - Meeting link: `<a href="https://meetings.hubspot.com/marianaguerci/meet-with-albato">book a slot here</a>`
 
-_Added: 2026-06-12 by Leo_
+_Added: 2026-06-14 by Leo_
 
