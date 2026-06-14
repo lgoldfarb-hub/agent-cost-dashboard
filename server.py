@@ -39,12 +39,14 @@ def require_auth():
 def _pull_and_import():
     try:
         result = subprocess.run(["git", "pull"], cwd=os.path.dirname(__file__), capture_output=True, text=True, timeout=15)
-        if "Fast-forward" in result.stdout or "Already up to date" not in result.stdout:
-            n = import_json_jobs()
-            if n:
-                print(f"[db] Imported {n} job(s) from data/jobs/")
     except Exception as e:
-        print(f"[db] pull_and_import failed: {e}", file=sys.stderr)
+        print(f"[db] git pull failed: {e}", file=sys.stderr)
+    try:
+        n = import_json_jobs()
+        if n:
+            print(f"[db] Imported {n} job(s) from data/jobs/")
+    except Exception as e:
+        print(f"[db] import failed: {e}", file=sys.stderr)
 
 _pull_and_import()
 
