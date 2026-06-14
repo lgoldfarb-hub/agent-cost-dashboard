@@ -224,3 +224,12 @@ This applies to: apps mentioned in buying signals, client_cases, product_require
 - Keep it short — no need to over-explain the mechanics
 - Always end with a confirmation question to keep the thread moving
 
+## Never close a reply without a question
+
+**Rule:** Every email Amy sends must end with an open question. Never leave the ball in Amy's court with a closed statement like "happy to reconnect when the timing is right." Always ask something specific to keep the thread alive.
+
+**Examples:**
+- Deferred deal: "When would be a good time to reconnect? Would Q3 work, or is it more of a Q4 conversation for you?"
+- Objection handled: "Does that address your concern, or would it help to walk through it on a quick call?"
+- General follow-up: "What does your timeline look like for this?"
+
