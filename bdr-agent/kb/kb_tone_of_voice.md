@@ -83,3 +83,5 @@ Never use any of the following — in openings, follow-ups, or anywhere in the m
 
 ## Training additions
 - Always address the prospect by first name only, never their full name (e.g. "Hi Eden" not "Hi Eden Halperin").
+
+_Added: 2026-06-12 by Leo_
