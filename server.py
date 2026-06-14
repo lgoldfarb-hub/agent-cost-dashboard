@@ -1,7 +1,8 @@
 import os
 import json
+import base64
 from datetime import datetime, timezone, timedelta
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, Response
 import anthropic
 
 sys_path = os.path.dirname(__file__)
@@ -13,6 +14,27 @@ import subprocess
 
 app = Flask(__name__)
 init_db()
+
+DASHBOARD_PASSWORD = os.environ.get("DASHBOARD_PASSWORD", "")
+
+@app.before_request
+def require_auth():
+    if not DASHBOARD_PASSWORD:
+        return
+    auth = request.headers.get("Authorization", "")
+    if auth.startswith("Basic "):
+        try:
+            decoded = base64.b64decode(auth[6:]).decode("utf-8")
+            _, password = decoded.split(":", 1)
+            if password == DASHBOARD_PASSWORD:
+                return
+        except Exception:
+            pass
+    return Response(
+        "Unauthorized",
+        401,
+        {"WWW-Authenticate": 'Basic realm="Agent Dashboard"'},
+    )
 
 def _pull_and_import():
     try:
