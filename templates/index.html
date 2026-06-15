@@ -997,9 +997,9 @@
     <!-- BDR Agent (Amy Walker) -->
     <div class="doc-card" data-agent="bdr-agent">
       <h2>BDR Agent (Amy Walker)</h2>
-      <div class="doc-meta">Trigger: Albato webhook → repository_dispatch &nbsp;·&nbsp; Model: Claude Opus 4.8 (draft) / Sonnet 4.6 (respond) &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/bdr-agent" target="_blank">lgoldfarb-hub/bdr-agent</a></div>
+      <div class="doc-meta">Trigger: Albato webhook → repository_dispatch &nbsp;·&nbsp; Model: Claude Opus 4.8 (draft/followup) / Sonnet 4.6 (respond) &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/bdr-agent" target="_blank">lgoldfarb-hub/bdr-agent</a></div>
       <p class="doc-description">
-        AI-powered BDR agent that responds to inbound prospect emails on behalf of Albato's sales team. Goal: book discovery calls with qualified prospects for Albato Embedded and Albato MCP. Operates in four modes: <strong>draft</strong> (generates reply to inbound email, posts to Slack for rep approval), <strong>send</strong> (creates a Front reply draft on rep approval), <strong>respond</strong> (conversational Slack loop — reps can ask for rewrites, score drafts, or train the KB), and <strong>learn</strong> (extracts winning email threads when a deal books a meeting). Reps train Amy directly from Slack using simple commands: <code>approved</code> / <code>reject</code>, score 1–10, <code>save thread</code>, <code>save tov:</code>, <code>save guideline:</code>, <code>save source:</code>. Amy identifies which Albato product is relevant for each lead (Embedded iPaaS, Embedded AI Agents, or MCP) before drafting.
+        AI-powered BDR agent that handles inbound email replies and overdue follow-ups on behalf of Albato's sales team. Goal: book discovery calls with qualified prospects for Albato Embedded and Albato MCP. Operates in five modes: <strong>draft</strong> (generates reply to inbound email, posts to Slack for rep approval), <strong>send</strong> (creates a Front reply draft on rep approval), <strong>respond</strong> (conversational Slack loop — reps can ask for rewrites, score drafts, or train the KB), <strong>learn</strong> (extracts winning email threads when a deal books a meeting), and <strong>followup</strong> (handles overdue HubSpot tasks — follow-ups #1–2 are short friendly bumps, #3–4 are signal-driven using deal notes as hooks). Reps train Amy directly from Slack using simple commands: <code>approved</code> / <code>reject</code>, score 1–10, <code>save thread</code>, <code>save tov:</code>, <code>save guideline:</code>, <code>save source:</code>. Amy identifies which Albato product is relevant for each lead (Embedded iPaaS, Embedded AI Agents, or MCP) before drafting.
       </p>
       <div class="doc-section-label">Workflow — Draft mode</div>
       <div class="workflow">
@@ -1014,6 +1014,20 @@
         <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Generate Draft</div><div class="wf-sub">Claude Opus 4.8 — Amy persona</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Post to Slack</div><div class="wf-sub">C0ALHBW32CD — rep approval</div></div>
+      </div>
+      <div class="doc-section-label">Workflow — Follow-up mode</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">⏰</div><div class="wf-label">Overdue Task</div><div class="wf-sub">HubSpot task reminder → Google Sheets → Albato → repository_dispatch</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Deal Context</div><div class="wf-sub">Follow-up # from <code>of_email_followups</code> field + lead email + buying signals</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📬</div><div class="wf-label">Fetch Thread</div><div class="wf-sub">Front conversation for lead email</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-condition"><div class="wf-icon">🔀</div><div class="wf-label">Follow-up #?</div><div class="wf-sub">#1–2: friendly bump · #3–4: signal-driven hook</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Generate Draft</div><div class="wf-sub">Claude Opus 4.8 — FOLLOWUP_PROMPT</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Post to Slack</div><div class="wf-sub">C0ALHBW32CD — same approval flow as draft mode</div></div>
       </div>
       <div class="doc-section-label">Workflow — Learn mode</div>
       <div class="workflow">
@@ -1113,6 +1127,8 @@
           <tr><td>Slack thread (all messages)</td><td>Slack API — <code>conversations.replies</code> (respond mode only)</td></tr>
           <tr><td>Front draft body (for redraft / send)</td><td>Slack thread metadata <code>&lt;!--meta:...--&gt;</code> or Front drafts API fallback</td></tr>
           <tr><td>Winning threads (learn mode)</td><td>HubSpot deal stage → contact email → Front conversation → <code>kb/kb_winning_threads.json</code></td></tr>
+          <tr><td>Follow-up task data (<code>task_id</code>, <code>task_title</code>, <code>task_owner</code>, <code>deal_id</code>, <code>deal_name</code>)</td><td>HubSpot overdue task → Google Sheets → Albato → repository_dispatch (followup mode)</td></tr>
+          <tr><td>Follow-up number (<code>of_email_followups</code>)</td><td>HubSpot deal property — determines follow-up style (#1–2: simple bump, #3–4: signal-driven)</td></tr>
         </tbody>
       </table>
       <div class="doc-section-label">Secrets</div>
@@ -1128,7 +1144,7 @@
       </table>
       <div class="doc-section-label">File Structure</div>
       <pre class="file-tree">bdr-agent/
-├── bdr_agent.py          # single entry point (--draft / --send / --respond / --learn / --sandbox)
+├── bdr_agent.py          # single entry point (--draft / --send / --respond / --learn / --sandbox / --followup)
 ├── tracker.py            # cost tracking push to agent-cost-dashboard
 ├── kb/
 │   ├── kb_sources.json         # product KB (auto-refreshed bi-weekly; reps can add URLs via Slack)
@@ -1136,6 +1152,14 @@
 │   ├── kb_tone_of_voice.md    # Amy's writing style guide (save tov: [rule])
 │   └── kb_guidelines.md       # scenario handling rules (save guideline: [rule])
 ├── kb_refresh.py         # KB scraper (runs via kb-refresh.yml)
+├── .github/workflows/
+│   ├── bdr-draft.yml     # repository_dispatch: bdr-draft
+│   ├── bdr-send.yml      # repository_dispatch: bdr-send (Slack approval)
+│   ├── bdr-respond.yml   # repository_dispatch: bdr-respond (Slack thread replies)
+│   ├── bdr-learn.yml     # repository_dispatch: bdr-learn (HubSpot meeting booked)
+│   ├── bdr-followup.yml  # repository_dispatch: bdr-followup (HubSpot overdue tasks)
+│   ├── bdr-sandbox.yml   # manual dry-run (no secrets required)
+│   └── kb-refresh.yml    # cron: Mon + Thu 06:00 UTC
 ├── requirements.txt
 ├── CLAUDE.md
 └── docs/
