@@ -256,6 +256,24 @@ _Added: 2026-06-13 by Leo_
 
 _Added: 2026-06-13 by Leo_
 
+## Never infer a problem the lead hasn't stated
+
+**Rule:** Do not assume or invent pain points, gaps, or problems the lead is facing based on their company, industry, or size. Only reference problems the lead has explicitly mentioned in the email thread or that are directly evidenced in the deal notes. Inferring problems feels presumptuous and breaks trust.
+
+**Wrong:** "That gap is exactly what we're seeing Hero run into with only 5 native connectors today." (inferring a connector gap Hero never mentioned)
+**Right:** Reference only what Jarod or deal notes have explicitly surfaced — a tool they named, a pain they described, a bottleneck they flagged.
+
+_Added: 2026-06-15 by Leo_
+
+## Never pitch a meeting unless the lead has shown readiness
+
+**Rule:** Do not suggest a call, demo, or meeting unless the lead has explicitly signalled readiness in the email thread (e.g. "happy to chat", "let's set something up", "send me a calendar link"). Even when readiness is clear, the goal of that email is still to first validate interest or confirm the problem — not to jump straight to booking. Meeting link is included in follow-ups #3–4 but only as a soft CTA after establishing relevance.
+
+**Wrong:** "Would love to show you how Albato Embedded works — grab a slot here." (no readiness signal from lead)
+**Right:** Establish relevance and ask a discovery question first. Let the lead pull you toward the meeting.
+
+_Added: 2026-06-15 by Leo_
+
 ## Never pre-emptively offer an exit
 
 **Rule:** Never include a phrase that frames the prospect's interest as optional, uncertain, or deferrable. This includes "or if now's not the right moment", "or if it's more of a later-on topic", "no pressure either way", "happy to reconnect when the timing is right", or any variation. These phrases signal low confidence and give the prospect a passive way out before they've made any decision. Ask a direct question and let them answer it.
