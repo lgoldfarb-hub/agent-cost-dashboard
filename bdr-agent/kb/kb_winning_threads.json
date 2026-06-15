@@ -268,6 +268,24 @@
     ]
   },
   {
+    "deal_id": "60544186985",
+    "deal_name": "Vivun | SaaStr_2026_postconf",
+    "contact_name": "Jarod Greene",
+    "contact_email": "jarod.greene@vivun.com",
+    "lead_title": "Chief Marketing Officer",
+    "added_at": "2026-06-15",
+    "outcome": "High score from Albato rep",
+    "followup_number": 1,
+    "source": "slack_training",
+    "notes": "Short follow-up #1 after sending SaaStr exec summary. No pitch, no meeting push. Two direct questions: was the summary useful, are integrations on their radar. Signed as Leo Goldfarb.",
+    "messages": [
+      {
+        "role": "rep",
+        "text": "Hi Jarod,\n\nDid the SaaStr summary end up being useful?\n\nStill curious whether the integration trends in there match what you're seeing at Vivun. Are integrations and AI agent execution on your radar this year?\n\nBest,\n\nLeo Goldfarb\nCo-founder @Albato"
+      }
+    ]
+  },
+  {
     "deal_id": "60326348344",
     "deal_name": "Re: Paid discovery",
     "booked_at": "",
