@@ -1,0 +1,23 @@
+{
+  "agent_name": "bdr-agent",
+  "job_name": "respond: <@U0378HYECRK> agree, looks short, not pushy",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-15T16:01:55.592777+00:00",
+  "completed_at": "2026-06-15T16:01:58.803907+00:00",
+  "duration_seconds": 3.21113,
+  "input_tokens": 10996,
+  "output_tokens": 42,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 10996,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.032988,
+  "cost_output": 0.0006299999999999999,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.033618
+}
