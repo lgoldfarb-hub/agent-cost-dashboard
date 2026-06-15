@@ -997,9 +997,9 @@
     <!-- BDR Agent (Amy Walker) -->
     <div class="doc-card" data-agent="bdr-agent">
       <h2>BDR Agent (Amy Walker)</h2>
-      <div class="doc-meta">Trigger: Albato webhook → repository_dispatch &nbsp;·&nbsp; Model: Claude Opus 4.8 (draft/followup) / Sonnet 4.6 (respond) &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/bdr-agent" target="_blank">lgoldfarb-hub/bdr-agent</a></div>
+      <div class="doc-meta">Trigger: Albato webhook → repository_dispatch &nbsp;·&nbsp; Model: Claude Opus 4.8 (draft/followup) / Haiku 4.5 (validator) / Sonnet 4.6 (respond) &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/bdr-agent" target="_blank">lgoldfarb-hub/bdr-agent</a></div>
       <p class="doc-description">
-        AI-powered BDR agent that handles inbound email replies and overdue follow-ups on behalf of Albato's sales team. Goal: book discovery calls with qualified prospects for Albato Embedded and Albato MCP. Operates in five modes: <strong>draft</strong> (generates reply to inbound email, posts to Slack for rep approval), <strong>send</strong> (creates a Front reply draft on rep approval), <strong>respond</strong> (conversational Slack loop — reps can ask for rewrites, score drafts, or train the KB), <strong>learn</strong> (extracts winning email threads when a deal books a meeting), and <strong>followup</strong> (handles overdue HubSpot tasks — follow-ups #1–2 are short friendly bumps, #3–4 are signal-driven using deal notes as hooks). Reps train Amy directly from Slack using simple commands: <code>approved</code> / <code>reject</code>, score 1–10, <code>save thread</code>, <code>save tov:</code>, <code>save guideline:</code>, <code>save source:</code>. Amy identifies which Albato product is relevant for each lead (Embedded iPaaS, Embedded AI Agents, or MCP) before drafting.
+        AI-powered BDR agent that handles inbound email replies and overdue follow-ups on behalf of Albato's sales team. Goal: book discovery calls with qualified prospects for Albato Embedded and Albato MCP. Operates in five modes: <strong>draft</strong> (generates reply to inbound email, posts to Slack for rep approval with token + cost line), <strong>send</strong> (creates a Front reply draft on rep approval), <strong>respond</strong> (conversational Slack loop — reps can ask for rewrites, score drafts, or train the KB), <strong>learn</strong> (extracts winning email threads when a deal books a meeting), and <strong>followup</strong> (handles overdue HubSpot tasks — follow-ups #1–2 are short friendly bumps, #3–4 are signal-driven using deal notes as hooks; drafts are validated by Haiku before posting). Reps train Amy directly from Slack using simple commands: <code>approved</code> / <code>reject</code>, score 1–10, <code>save thread</code>, <code>save tov:</code>, <code>save guideline:</code>, <code>save source:</code>. Amy identifies which Albato product is relevant for each lead (Embedded iPaaS, Embedded AI Agents, or MCP) before drafting.
       </p>
       <div class="doc-section-label">Workflow — Draft mode</div>
       <div class="workflow">
@@ -1027,7 +1027,9 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Generate Draft</div><div class="wf-sub">Claude Opus 4.8 — FOLLOWUP_PROMPT</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Post to Slack</div><div class="wf-sub">C0ALHBW32CD — same approval flow as draft mode</div></div>
+        <div class="wf-node wf-ai"><div class="wf-icon">✅</div><div class="wf-label">Validate Draft</div><div class="wf-sub">Haiku 4.5 checks TOV + guidelines · up to 3 rewrite attempts · failure → Slack alert</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Post to Slack</div><div class="wf-sub">C0ALHBW32CD — token + cost line shown · "⚠️ Rewritten after validation (N/3)" if rewrites needed</div></div>
       </div>
       <div class="doc-section-label">Workflow — Learn mode</div>
       <div class="workflow">
@@ -1098,6 +1100,14 @@
         <div class="rule-item">
           <div class="rule-title">📋 Deal context</div>
           <div class="rule-body">Fetches 25+ populated deal properties via HubSpot CRM v3 API (<code>buying_signal</code>, <code>needs</code>, <code>semaphore</code>, <code>decision_criteria</code>, <code>red_flags</code>, <code>embedded_competitors</code>, <code>arr__deal_</code>, <code>timeline</code>, <code>stakeholders</code>, etc.) plus engagements. ICP EVALUATION and Buying Signal notes are always prioritised (up to 3), then up to 2 regular notes and 5 emails. Agent-generated notes excluded.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🛡️ Follow-up draft validator</div>
+          <div class="rule-body">Every follow-up draft is checked by a second Claude call (<code>claude-haiku-4-5-20251001</code>, ~$0.001/call) before posting to Slack. The validator checks the draft against <code>kb/kb_tone_of_voice.md</code> and <code>kb/kb_guidelines.md</code> and returns a JSON result with <code>pass</code>, <code>violations</code>, and <code>feedback</code>. On failure, the feedback is injected back into <code>generate_followup</code> as a rewrite instruction — up to 3 attempts total. If all 3 attempts fail, the draft is suppressed and a failure alert is posted to Slack instead (violations listed, manual follow-up flagged). FOLLOWUP_PROMPT also has a hardcoded <strong>BANNED phrases</strong> block that forbids hedge phrases (e.g. "no pressure either way", "circling back", "gone quiet") at the prompt level.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">💰 Token + cost display</div>
+          <div class="rule-body">Every Slack draft post (both inbound <strong>draft</strong> mode and <strong>followup</strong> mode) includes a usage line in the format <em>N in / N out · $0.00XX</em> calculated from the Anthropic response usage object. Costs use Opus 4.8 rates ($15/M input, $75/M output). If validation rewrites were needed, the Slack message also shows "⚠️ Rewritten after validation (attempt N/3)".</div>
         </div>
       </div>
       <div class="doc-section-label">People</div>
