@@ -60,6 +60,7 @@ AGENTS = [
     "followup_tracker",
     "second_brain",
     "daily_todo_agent",
+    "bdr-agent",
 ]
 
 AGENT_LABELS = {
@@ -72,6 +73,7 @@ AGENT_LABELS = {
     "followup_tracker":     "Follow-up Tracker",
     "second_brain":         "Second Brain",
     "daily_todo_agent":     "Daily Todo Agent",
+    "bdr-agent":            "BDR Agent (Amy)",
 }
 
 
