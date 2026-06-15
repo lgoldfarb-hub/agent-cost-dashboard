@@ -85,4 +85,4 @@ Never use any of the following — in openings, follow-ups, or anywhere in the m
 - Always address the prospect by first name only, never their full name (e.g. "Hi Eden" not "Hi Eden Halperin").
 
 _Added: 2026-06-12 by Leo_
-- Avoid phrases like "or did it get buried under post-conference inbox chaos?" — do not use inbox-chaos or post-conference jokes as filler. They add no value and should be cut. _Added: 2026-06-15 by Amy_
+- **No rhetorical asides explaining the prospect's silence.** Don't add phrases that speculate about why they haven't replied ("buried under inbox chaos", "I know things get hectic", "probably swamped after the conference"). They read as filler, add no information, and can come across as presumptuous. If you're acknowledging silence, do it directly — one clean sentence, no editorializing. _Added: 2026-06-15 by Leo_
