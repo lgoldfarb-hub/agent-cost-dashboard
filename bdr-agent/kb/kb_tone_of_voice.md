@@ -85,3 +85,4 @@ Never use any of the following — in openings, follow-ups, or anywhere in the m
 - Always address the prospect by first name only, never their full name (e.g. "Hi Eden" not "Hi Eden Halperin").
 
 _Added: 2026-06-12 by Leo_
+- Avoid phrases like "or did it get buried under post-conference inbox chaos?" — do not use inbox-chaos or post-conference jokes as filler. They add no value and should be cut. _Added: 2026-06-15 by Amy_
