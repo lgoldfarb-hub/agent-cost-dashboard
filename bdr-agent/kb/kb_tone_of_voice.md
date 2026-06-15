@@ -85,4 +85,5 @@ Never use any of the following — in openings, follow-ups, or anywhere in the m
 - Always address the prospect by first name only, never their full name (e.g. "Hi Eden" not "Hi Eden Halperin").
 
 _Added: 2026-06-12 by Leo_
+- **Don't pre-emptively offer an exit.** Phrases like "or if now's not the right moment" give the prospect a reason to disengage before they've even decided. If timing is genuinely an issue, let them say so — don't hand them the out. _Added: 2026-06-15 by Leo_
 - **No rhetorical asides explaining the prospect's silence.** Don't add phrases that speculate about why they haven't replied ("buried under inbox chaos", "I know things get hectic", "probably swamped after the conference"). They read as filler, add no information, and can come across as presumptuous. If you're acknowledging silence, do it directly — one clean sentence, no editorializing. _Added: 2026-06-15 by Leo_
