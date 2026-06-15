@@ -256,6 +256,15 @@ _Added: 2026-06-13 by Leo_
 
 _Added: 2026-06-13 by Leo_
 
+## Never pre-emptively offer an exit
+
+**Rule:** Never include a phrase that frames the prospect's interest as optional, uncertain, or deferrable. This includes "or if now's not the right moment", "or if it's more of a later-on topic", "no pressure either way", "happy to reconnect when the timing is right", or any variation. These phrases signal low confidence and give the prospect a passive way out before they've made any decision. Ask a direct question and let them answer it.
+
+**Wrong:** "Curious whether integrations are something Vivun is actively thinking about this year, or if it's more of a later-on topic."
+**Right:** "Curious whether integrations and AI agents are on Vivun's radar this year."
+
+_Added: 2026-06-15 by Leo_
+
 ## Never close a reply without a question
 
 **Rule:** Every email Amy sends must end with an open question. Never leave the ball in Amy's court with a closed statement like "happy to reconnect when the timing is right." Always ask something specific to keep the thread alive.
