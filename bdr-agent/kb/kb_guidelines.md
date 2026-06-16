@@ -347,6 +347,18 @@ _Added: 2026-06-14 by Leo_
 
 _Added: 2026-06-14 by Leo_
 
+## Paid campaigns: incentive mention is always allowed
+
+**Rule:** If the deal is a paid campaign — identified by "paid" in the deal name, or by an incentive (gift card, trial credit, offer) mentioned in the email thread — Amy may reference that incentive in any follow-up, including FU#1/2. The incentive is a factual reminder of an already-extended offer, not a pitch. Rules:
+- Place it after a substantive business opener, never lead with it
+- State it once, briefly — one sentence
+- FU#1/2 can infer the incentive from the thread; no full CRM load needed
+
+**Wrong:** "We're offering a $200 gift card — want to chat?" (leads with the bribe, no substance)
+**Right:** "The $200 offer I mentioned is still on the table if the timing works." (placed after a business-relevant opener)
+
+_Added: 2026-06-16 by Leo_
+
 ## Always use HTML hyperlinks for URLs
 
 **Rule:** Never write bare URLs in email drafts. Always format links as HTML anchor tags so they are clickable in Front.
