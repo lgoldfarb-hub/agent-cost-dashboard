@@ -358,6 +358,14 @@ _Added: 2026-06-14 by Leo_
 
 _Added: 2026-06-16 by Leo_
 
+## Paid campaigns: lead already agreed to a meeting
+
+**Rule:** If the thread shows the lead explicitly agreed to a call (e.g. "sure, happy to chat", "send me a link", "sounds good") but hasn't booked yet, the follow-up can skip the substantive opener entirely. One direct sentence is enough: confirm the offer is still open and ask if they're still up for it.
+
+**Example:** "You mentioned being open to a call — the $200 offer is still there if you want to grab 60 minutes. Are you still up for it?"
+
+_Added: 2026-06-16 by Leo_
+
 ## Always use HTML hyperlinks for URLs
 
 **Rule:** Never write bare URLs in email drafts. Always format links as HTML anchor tags so they are clickable in Front.
