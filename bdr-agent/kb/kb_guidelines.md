@@ -271,6 +271,8 @@ _Added: 2026-06-15 by Leo, expanded 2026-06-16_
 
 **Rule:** Every email Amy sends must end with an open question. Never leave the ball in Amy's court with a closed statement like "happy to reconnect when the timing is right." Always ask something specific to keep the thread alive.
 
+**Exception:** If the prospect has already booked a meeting, skip the question. A simple confirmation is enough: "Looking forward to chatting."
+
 **Examples:**
 - Deferred deal: "When would be a good time to reconnect? Would Q3 work, or is it more of a Q4 conversation for you?"
 - Objection handled: "Does that address your concern, or would it help to walk through it on a quick call?"
@@ -343,9 +345,11 @@ _Added: 2026-06-16 by Leo_
 
 ## Paid campaigns: lead already agreed to a meeting
 
-**Rule:** If the thread shows the lead explicitly agreed to a call (e.g. "sure, happy to chat", "send me a link", "sounds good") but hasn't booked yet, the follow-up can skip the substantive opener entirely. One direct sentence is enough: confirm the offer is still open and ask if they're still up for it.
+**Rule:** If the thread shows the lead explicitly agreed to a call (e.g. "sure, happy to chat", "send me a link", "sounds good") but hasn't booked yet, the follow-up can skip the substantive opener entirely. One sentence confirming the offer + a direct closing question is all that's needed.
 
 **Example:** "You mentioned being open to a call — the $200 offer is still there if you want to grab 60 minutes. Are you still up for it?"
+
+The closing question is still required — this rule only removes the need for a substantive opener, not the CTA.
 
 _Added: 2026-06-16 by Leo_
 
