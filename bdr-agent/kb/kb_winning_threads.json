@@ -302,6 +302,23 @@
       }
     ],
     "source": "slack_training"
+  },
+  {
+    "deal_id": "60448552802",
+    "deal_name": "Follow-up #2 — Pipeline CRM",
+    "booked_at": "",
+    "lead_title": "",
+    "sequence_name": "",
+    "messages": [
+      {
+        "role": "lead",
+        "text": "Hey Yuriy,\n\nHope you're having a great week!\n\nI recently had Leo Goldfarb (co-founder of Albato) on my podcast. \n\nThey offer a white-label integration platform with 1K+ apps that SaaS companies embed directly into their products ( https://albato.com/embedded )\n\nSince Pipeline CRM is pushing upmarket and automation is your key differentiator, I figured more native integrations might make sense.\n\nCCed Leo here, so you can follow up right away if that's interesting.\n\nP.S. Albato has also launched a unified MCP for AI assistants that lets them execute across 1K+ external tools. \n Cheers, Anna Head of Growth saas.group \n 📢  saas.unbound podcast \n🙌 saas.connect events"
+      },
+      {
+        "role": "rep",
+        "text": "Hey Yuriy,\n\nIs exploring white-label integrations for Pipeline CRM still on your radar?\n\nHappy to find a time that works for a quick intro call.\n\nBest,\nLeo"
+      }
+    ],
+    "source": "slack_training"
   }
 ]
-
