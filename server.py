@@ -19,6 +19,8 @@ DASHBOARD_PASSWORD = os.environ.get("DASHBOARD_PASSWORD", "")
 
 @app.before_request
 def require_auth():
+    if request.path.startswith("/oauth/"):
+        return
     if not DASHBOARD_PASSWORD:
         return
     auth = request.headers.get("Authorization", "")
