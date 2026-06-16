@@ -274,14 +274,17 @@ _Added: 2026-06-15 by Leo_
 
 _Added: 2026-06-15 by Leo_
 
-## Never pre-emptively offer an exit
+## Never hand the prospect a soft exit
 
-**Rule:** Never include a phrase that frames the prospect's interest as optional, uncertain, or deferrable. This includes "or if now's not the right moment", "or if it's more of a later-on topic", "no pressure either way", "happy to reconnect when the timing is right", or any variation. These phrases signal low confidence and give the prospect a passive way out before they've made any decision. Ask a direct question and let them answer it.
+**Rule:** Never include any phrase — statement or question — that frames the prospect's interest as optional, uncertain, or deferrable, or that suggests the timing might be wrong. This includes: "or if now's not the right moment", "or if it's more of a later-on topic", "no pressure either way", "happy to reconnect when the timing is right", "or has the timing shifted?", "or is the timing off?", "or has this moved to the backburner?", "or is this on hold?", "or has this become less of a priority?", "totally understand if priorities have changed", "let me know if now's not a good time", or any variation. These phrases signal low confidence and give the prospect a pre-packaged reason to disengage. Ask a direct forward-looking question and let them answer it.
 
 **Wrong:** "Curious whether integrations are something Vivun is actively thinking about this year, or if it's more of a later-on topic."
+**Wrong:** "Is this something Pipeline CRM is actively looking at, or has the timing shifted?"
+**Wrong:** "Still on your radar, or has the integration piece moved to the backburner for now?"
+**Right:** "Is this something Pipeline CRM is actively looking at?"
 **Right:** "Curious whether integrations and AI agents are on Vivun's radar this year."
 
-_Added: 2026-06-15 by Leo_
+_Added: 2026-06-15 by Leo, expanded 2026-06-16_
 
 ## Never close a reply without a question
 
