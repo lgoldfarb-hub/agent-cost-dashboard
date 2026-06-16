@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Pictory| Zapier Batch 17 - Feb 25",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-16T14:01:46.039037+00:00",
+  "completed_at": "2026-06-16T14:07:36.743495+00:00",
+  "duration_seconds": 350.704458,
+  "input_tokens": 27589,
+  "output_tokens": 8094,
+  "cache_read_tokens": 712707,
+  "cache_write_tokens": 29194,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 24334,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.082767,
+  "cost_output": 0.12141,
+  "cost_cache_read": 0.21381209999999998,
+  "cost_cache_write": 0.1094775,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5274666
+}
