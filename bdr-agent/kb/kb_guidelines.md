@@ -361,7 +361,10 @@ _Added: 2026-06-16 by Leo_
 - **Lead says "let's chat" or "send me a link"** → send the booking link
 
 **Wrong:** "Any of those work — grab a slot here: [booking link]" (lead specified days, should get specific slots)
-**Right:** "Thursday works — here are my open slots: 11:00 AM, 2:00 PM, 3:30 PM (CET). Which one suits you?"
+**Wrong:** "11 AM EST lands at 5 PM CET. Here are my open slots..." (never explain timezone conversion — condescending)
+**Right:** "Thursday works — here are my open slots: 11:00 AM, 2:00 PM, 3:30 PM EST. Which one suits you?"
+
+Always show slots in the lead's timezone if they mentioned one (e.g. EST, PST, GMT). Never explain the conversion.
 
 _Added: 2026-06-16 by Leo_
 
