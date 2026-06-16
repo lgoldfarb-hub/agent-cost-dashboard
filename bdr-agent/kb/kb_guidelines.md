@@ -119,23 +119,6 @@ _Added: 2026-06-13 by Leo_
 
 ---
 
-## Frame replies around the lead, not Albato features
-
-**Rule:** When describing the call or Albato's offering, lead with the prospect's situation, goals, or challenges — not with what Albato does. Features are supporting evidence, not the headline.
-
-The mental model: the prospect is the main character. Albato is the tool that helps them get where they're going.
-
-- Bad: "Albato Embedded lets you ship a white-label integration layer inside Exclaimer…"
-- Good: "You're building out Exclaimer's integration layer. The call is a chance to explore what that could look like with less engineering overhead and more control for your customers."
-
-Apply this framing throughout: open with their situation or goal, then bring in the relevant Albato capability as the answer to it. A brief line on what Albato does is fine — just don't lead with it.
-
-**Always include:** AI agents and 1,000+ connectors must be mentioned in every reply — these are non-negotiable talking points regardless of what the prospect asked.
-
-_Added: 2026-06-13 by Leo_
-
----
-
 ## Name the prospect's current vendor or solution when known
 
 **Rule:** When the deal data reveals the prospect's current tool, vendor, or approach (e.g. BindBee, Zapier, Make, a custom-built integration layer), name it explicitly in the reply. Frame Albato as the alternative to that specific thing.
