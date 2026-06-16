@@ -1,0 +1,23 @@
+{
+  "agent_name": "bdr-agent",
+  "job_name": "respond: save thread:\n\n```Hey Yuriy,\n\nSince automation is Pipeline CR",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-16T15:23:45.300636+00:00",
+  "completed_at": "2026-06-16T15:23:51.029952+00:00",
+  "duration_seconds": 5.729316,
+  "input_tokens": 14380,
+  "output_tokens": 19,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 14380,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.04314,
+  "cost_output": 0.000285,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.043425
+}
