@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  PandaDoc| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-16T19:06:59.334584+00:00",
+  "completed_at": "2026-06-16T19:10:12.942797+00:00",
+  "duration_seconds": 193.608213,
+  "input_tokens": 357,
+  "output_tokens": 4625,
+  "cache_read_tokens": 144021,
+  "cache_write_tokens": 29379,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 0,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.001071,
+  "cost_output": 0.06937499999999999,
+  "cost_cache_read": 0.0432063,
+  "cost_cache_write": 0.11017125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.22382354999999998
+}
