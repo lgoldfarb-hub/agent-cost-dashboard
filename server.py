@@ -2,7 +2,7 @@ import os
 import json
 import base64
 from datetime import datetime, timezone, timedelta
-from flask import Flask, render_template, jsonify, request, Response
+from flask import Flask, render_template, jsonify, request, Response, redirect
 import anthropic
 
 sys_path = os.path.dirname(__file__)
@@ -619,8 +619,7 @@ def oauth_start():
         "access_type": "offline",
         "prompt": "consent",
     })
-    from flask import redirect as flask_redirect
-    return flask_redirect(f"https://accounts.google.com/o/oauth2/v2/auth?{params}")
+    return redirect(f"https://accounts.google.com/o/oauth2/v2/auth?{params}")
 
 @app.route("/oauth/callback")
 def oauth_callback():
