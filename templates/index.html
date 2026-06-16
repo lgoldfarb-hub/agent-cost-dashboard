@@ -1106,6 +1106,14 @@
           <div class="rule-body">Every follow-up draft is checked by a second Claude call (<code>claude-haiku-4-5-20251001</code>, ~$0.001/call) before posting to Slack. The validator checks the draft against <code>kb/kb_tone_of_voice.md</code> and <code>kb/kb_guidelines.md</code> and returns a JSON result with <code>pass</code>, <code>violations</code>, and <code>feedback</code>. On failure, the feedback is injected back into <code>generate_followup</code> as a rewrite instruction — up to 3 attempts total. If all 3 attempts fail, the draft is suppressed and a failure alert is posted to Slack instead (violations listed, manual follow-up flagged). FOLLOWUP_PROMPT also has a hardcoded <strong>BANNED phrases</strong> block that forbids hedge phrases (e.g. "no pressure either way", "circling back", "gone quiet") at the prompt level. The generator uses <code>load_guidelines_for_followup()</code> which strips 8 irrelevant sections (gift cards, payment, agendas, pricing, etc.), reducing guidelines from ~18kb to ~12kb (~30% token savings).</div>
         </div>
         <div class="rule-item">
+          <div class="rule-title">🚫 No inferred problems</div>
+          <div class="rule-body">Amy must only reference problems explicitly stated in the email thread or HubSpot deal notes. She must never assume pain points based on company type, industry, or persona — even if they're plausible. Rule enforced in <code>kb/kb_guidelines.md</code> ("Never infer a problem the lead hasn't stated") and checked by the Haiku validator on every follow-up draft.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">📅 No premature meeting pitch</div>
+          <div class="rule-body">Amy must not invite the lead to a call or demo unless the lead has explicitly signalled openness to one in the thread. Even when the lead shows readiness, Amy validates interest before sending the booking link. Rule enforced in <code>kb/kb_guidelines.md</code> ("Never pitch a meeting unless the lead has shown readiness") and checked by the Haiku validator.</div>
+        </div>
+        <div class="rule-item">
           <div class="rule-title">💰 Token + cost display</div>
           <div class="rule-body">Every Slack draft post (both inbound <strong>draft</strong> mode and <strong>followup</strong> mode) includes a usage line in the format <em>N in / N out · $0.00XX</em> calculated from the Anthropic response usage object. <code>_format_usage_line(usage, model=)</code> applies model-aware pricing: Sonnet 4.6 rates ($3/M input, $15/M output) for followup mode; Opus 4.8 rates ($15/M input, $75/M output) for draft mode. Expected cost: ~$0.07/follow-up (down from ~$0.41 with Opus). If validation rewrites were needed, the Slack message also shows "⚠️ Rewritten after validation (attempt N/3)".</div>
         </div>
