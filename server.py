@@ -596,6 +596,60 @@ def api_amy_kb():
     return jsonify(result)
 
 
+# ---------------------------------------------------------------------------
+# Google Calendar OAuth — one-time flow to get Mariana's refresh token
+# ---------------------------------------------------------------------------
+
+GCAL_CLIENT_ID     = os.environ.get("GCAL_CLIENT_ID", "")
+GCAL_CLIENT_SECRET = os.environ.get("GCAL_CLIENT_SECRET", "")
+GCAL_REDIRECT_URI  = os.environ.get("GCAL_REDIRECT_URI", "https://web-production-0e7481.up.railway.app/oauth/callback")
+GCAL_SCOPES        = "https://www.googleapis.com/auth/calendar.readonly"
+
+@app.route("/oauth/start")
+def oauth_start():
+    if not GCAL_CLIENT_ID:
+        return "GCAL_CLIENT_ID not set", 500
+    params = urllib.parse.urlencode({
+        "client_id": GCAL_CLIENT_ID,
+        "redirect_uri": GCAL_REDIRECT_URI,
+        "response_type": "code",
+        "scope": GCAL_SCOPES,
+        "access_type": "offline",
+        "prompt": "consent",
+    })
+    from flask import redirect as flask_redirect
+    return flask_redirect(f"https://accounts.google.com/o/oauth2/v2/auth?{params}")
+
+@app.route("/oauth/callback")
+def oauth_callback():
+    code = request.args.get("code")
+    if not code:
+        return f"Error: {request.args.get('error', 'no code')}", 400
+    data = urllib.parse.urlencode({
+        "code": code,
+        "client_id": GCAL_CLIENT_ID,
+        "client_secret": GCAL_CLIENT_SECRET,
+        "redirect_uri": GCAL_REDIRECT_URI,
+        "grant_type": "authorization_code",
+    }).encode()
+    req = urllib.request.Request("https://oauth2.googleapis.com/token", data=data, method="POST")
+    req.add_header("Content-Type", "application/x-www-form-urlencoded")
+    try:
+        with urllib.request.urlopen(req) as r:
+            tokens = json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        return f"Token exchange failed: {e.read().decode()}", 500
+    refresh_token = tokens.get("refresh_token", "")
+    if not refresh_token:
+        return "No refresh token returned — make sure prompt=consent was set.", 400
+    return f"""
+    <h2>OAuth successful</h2>
+    <p>Add this to your Railway environment variables:</p>
+    <pre style="background:#f0f0f0;padding:12px;border-radius:6px">GCAL_REFRESH_TOKEN={refresh_token}</pre>
+    <p>Then redeploy Railway.</p>
+    """, 200
+
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5001))
     print(f"Dashboard running at http://localhost:{port}")
