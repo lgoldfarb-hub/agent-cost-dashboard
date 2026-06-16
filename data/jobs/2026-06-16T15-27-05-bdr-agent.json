@@ -1,0 +1,23 @@
+{
+  "agent_name": "bdr-agent",
+  "job_name": "respond: save thread\n\n```Hey Yuriy,\n\nAnna's intro framed Albato aroun",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-16T15:27:05.790894+00:00",
+  "completed_at": "2026-06-16T15:27:08.516434+00:00",
+  "duration_seconds": 2.72554,
+  "input_tokens": 14480,
+  "output_tokens": 19,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 14480,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.04344,
+  "cost_output": 0.000285,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.043725
+}
