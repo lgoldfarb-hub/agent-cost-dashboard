@@ -353,6 +353,18 @@ The closing question is still required — this rule only removes the need for a
 
 _Added: 2026-06-16 by Leo_
 
+## Scheduling: specific day/time request vs. general availability
+
+**Rule:** When a lead asks about a specific day or time (e.g. "how's Thursday at 11?", "next week M/T/W?", "are you free Friday afternoon?"), check Mariana's calendar and offer the specific free slots for that day — do NOT send the booking link. The booking link is for when the lead hasn't specified a time.
+
+- **Lead asks for specific day/time** → check calendar, offer available slots for that day in CET
+- **Lead says "let's chat" or "send me a link"** → send the booking link
+
+**Wrong:** "Any of those work — grab a slot here: [booking link]" (lead specified days, should get specific slots)
+**Right:** "Thursday works — here are my open slots: 11:00 AM, 2:00 PM, 3:30 PM (CET). Which one suits you?"
+
+_Added: 2026-06-16 by Leo_
+
 ## Always use HTML hyperlinks for URLs
 
 **Rule:** Never write bare URLs in email drafts. Always format links as HTML anchor tags so they are clickable in Front.
