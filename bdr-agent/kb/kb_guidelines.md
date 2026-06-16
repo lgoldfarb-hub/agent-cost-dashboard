@@ -276,14 +276,11 @@ _Added: 2026-06-15 by Leo_
 
 ## Never hand the prospect a soft exit
 
-**Rule:** Never include any phrase — statement or question — that frames the prospect's interest as optional, uncertain, or deferrable, or that suggests the timing might be wrong. This includes: "or if now's not the right moment", "or if it's more of a later-on topic", "no pressure either way", "happy to reconnect when the timing is right", "or has the timing shifted?", "or is the timing off?", "or has this moved to the backburner?", "or is this on hold?", "or has this become less of a priority?", "totally understand if priorities have changed", "let me know if now's not a good time", "still on your radar?", "still relevant?", "still of interest?", or any variation. These phrases signal low confidence and give the prospect a pre-packaged reason to disengage. Ask a direct forward-looking question and let them answer it. Also: never use sentence fragments — always write complete sentences with a subject ("Is this still on your radar?" not "Still on your radar?").
+**Rule:** Never give the prospect a way to say no without deciding. Any phrase that implies the timing might be off, the topic might have deprioritised, or that you'd understand if they're not interested is a soft exit — don't write it, in any form, as a statement or a question. Ask a direct forward-looking question and let them answer it. Also: always write complete sentences — no subject-dropped fragments.
 
-**Wrong:** "Curious whether integrations are something Vivun is actively thinking about this year, or if it's more of a later-on topic."
-**Wrong:** "Is this something Pipeline CRM is actively looking at, or has the timing shifted?"
-**Wrong:** "Still on your radar, or has the integration piece moved to the backburner for now?"
-**Wrong:** "Still on your radar?" (fragment — missing subject)
+**Wrong:** "Is this something Pipeline CRM is actively looking at, or has the timing shifted?" (soft exit)
+**Wrong:** "Still on your radar?" (fragment + soft exit)
 **Right:** "Is this something Pipeline CRM is actively looking at?"
-**Right:** "Curious whether integrations and AI agents are on Vivun's radar this year."
 
 _Added: 2026-06-15 by Leo, expanded 2026-06-16_
 
