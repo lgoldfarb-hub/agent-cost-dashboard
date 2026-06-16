@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  RevenueBase| n8n_Paid_meeting_CEO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-16T17:56:34.718757+00:00",
+  "completed_at": "2026-06-16T18:04:44.276334+00:00",
+  "duration_seconds": 489.557577,
+  "input_tokens": 107421,
+  "output_tokens": 14801,
+  "cache_read_tokens": 1182889,
+  "cache_write_tokens": 81232,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 104166,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.322263,
+  "cost_output": 0.222015,
+  "cost_cache_read": 0.35486670000000003,
+  "cost_cache_write": 0.30462,
+  "cost_web_search": 0.0,
+  "cost_total": 1.2037647000000002
+}
