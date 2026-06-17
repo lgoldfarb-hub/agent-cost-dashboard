@@ -796,22 +796,32 @@
       <h2>Action Plan Agent</h2>
       <div class="doc-meta">Trigger: Sybill webhook → Albato → GitHub dispatch &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/action-plan-agent" target="_blank">lgoldfarb-hub/action-plan-agent</a></div>
       <p class="doc-description">
-        Generates a Mutual Action Plan (MAP) immediately after a discovery call ends. Triggered automatically by a Sybill call transcript arriving via Albato. Claude analyzes the transcript to extract concrete next steps, mutual commitments, AE coaching tips, and a nurture vs. push recommendation — then saves the output as a HubSpot note and notifies the sales team on Slack. The goal is to have a structured action plan ready within minutes of the call ending, while context is fresh.
+        Generates a Mutual Action Plan (MAP) immediately after a discovery call ends, and automatically qualifies the lead as SQL. Triggered by a Sybill call transcript arriving via Albato. Claude analyzes the transcript to extract concrete next steps, mutual commitments, AE coaching tips, and a nurture vs. push recommendation — then saves the output as a HubSpot note, updates the <code>sales_qualified_lead</code> field on the deal, and notifies the sales team on Slack.
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
         <div class="wf-node wf-trigger"><div class="wf-icon">📞</div><div class="wf-label">Sybill Webhook</div><div class="wf-sub">Call ends → Albato → GitHub</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Deal Context</div><div class="wf-sub">HubSpot CRM</div></div>
+        <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Deal + Contacts</div><div class="wf-sub">HubSpot CRM (incl. ai_icp_score + job titles)</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Analyze Transcript</div><div class="wf-sub">Claude Sonnet</div></div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🏷️</div><div class="wf-label">SQL Qualification</div><div class="wf-sub">ICP score + title check (fast path or transcript)</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-ai"><div class="wf-icon">📝</div><div class="wf-label">Generate MAP</div><div class="wf-sub">Next steps + coaching tips</div></div>
+        <div class="wf-node wf-ai"><div class="wf-icon">📝</div><div class="wf-label">Generate MAP</div><div class="wf-sub">Next steps + coaching tips (Claude Sonnet)</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">💾</div><div class="wf-label">Save HubSpot Note</div><div class="wf-sub">On the deal</div></div>
+        <div class="wf-node wf-output"><div class="wf-icon">💾</div><div class="wf-label">Save HubSpot Note + SQL field</div><div class="wf-sub">Note on deal + sales_qualified_lead = Yes/No</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-external"><div class="wf-icon">💬</div><div class="wf-label">Slack Notify</div><div class="wf-sub">Sales channel</div></div>
+        <div class="wf-node wf-external"><div class="wf-icon">💬</div><div class="wf-label">Slack Notify</div><div class="wf-sub">AE channel (MAP) + sales team channel (SQL)</div></div>
       </div>
+      <div class="doc-section-label">SQL Qualification Logic</div>
+      <p style="margin:0 0 8px 0; font-size:13px;">Both criteria must pass for SQL = Yes:</p>
+      <table class="input-table">
+        <thead><tr><th>Criterion</th><th>Logic</th></tr></thead>
+        <tbody>
+          <tr><td>ICP Score</td><td><code>ai_icp_score</code> on the deal must indicate fit (non-null, non-zero, not "Low"/"No fit"). Missing = unknown (doesn't block SQL alone).</td></tr>
+          <tr><td>Right Title</td><td>At least one contact holds an ICP persona title (Product, Tech/Engineering, Founders, C-level, Integrations/Ecosystem). Non-ICP titles (Sales, CS, AE, Marketing, etc.) only pass if the transcript shows a clear path to an ICP persona.</td></tr>
+        </tbody>
+      </table>
+      <p style="margin:8px 0 0 0; font-size:13px;"><strong>Fast path:</strong> if HubSpot contact title matches ICP, verdict is set immediately — no transcript fetch, no Claude call. <strong>Slow path:</strong> title doesn't match → fetch Sybill transcript → Claude checks for ICP persona path on the call. Title matching handles variations: SVP, Senior Vice President, Acting CTO, Co-founder &amp; CEO, etc.</p>
       <div class="doc-section-label">Input Data</div>
       <table class="input-table">
         <thead><tr><th>Field</th><th>Source</th></tr></thead>
@@ -819,19 +829,19 @@
           <tr><td>Deal ID</td><td>Webhook payload (<code>client_payload.deal_id</code>)</td></tr>
           <tr><td>Meeting name</td><td>Webhook payload (<code>client_payload.meeting_name</code>) — Sybill recording title</td></tr>
           <tr><td>Call ID</td><td>Webhook payload (<code>client_payload.call_id</code>) — parsed from Sybill URL field (<code>?id=</code>)</td></tr>
-          <tr><td>Full call transcript (speaker + text + timestamps)</td><td>Sybill API — fetched directly via <code>GET /v1/conversations/{call_id}</code> using <code>SYBILL_KEY</code></td></tr>
-          <tr><td>Deal name, stage, amount, close date, owner ID</td><td>HubSpot CRM — deal properties API</td></tr>
+          <tr><td>Full call transcript (speaker + text + timestamps)</td><td>Sybill API — fetched directly via <code>GET /v1/conversations/{call_id}</code> using <code>SYBILL_KEY</code> (skipped on fast path)</td></tr>
+          <tr><td>Deal name, stage, amount, close date, owner ID, <strong>ai_icp_score</strong></td><td>HubSpot CRM — deal properties API</td></tr>
           <tr><td>Contact name, email, job title, company</td><td>HubSpot CRM — contacts associated with the deal</td></tr>
-          <tr><td>All notes on the deal (discovery brief, prior action plans)</td><td>HubSpot CRM — notes associated with the deal</td></tr>
+          <tr><td>All notes on the deal (discovery brief, prior action plans)</td><td>HubSpot CRM — notes associated with the deal (skipped on fast path)</td></tr>
         </tbody>
       </table>
       <div class="doc-section-label">Secrets</div>
       <table class="input-table">
         <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
         <tbody>
-          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — analyzes the transcript and generates the MAP + coaching tips</td></tr>
-          <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads deal, contacts, and notes; writes the action plan note</td></tr>
-          <tr><td><code>SLACK_BOT_ACTION_PLAN_AGENT</code></td><td>Slack bot token — posts the action plan notification as a thread reply in the AE evaluation channel</td></tr>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — analyzes the transcript and generates the MAP + coaching tips (and SQL qualification on slow path)</td></tr>
+          <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads deal, contacts, notes; writes action plan note + updates <code>sales_qualified_lead</code> field</td></tr>
+          <tr><td><code>SLACK_BOT_ACTION_PLAN_AGENT</code></td><td>Slack bot token — posts MAP notification to AE channel (<code>C08PAF33MNK</code>) + SQL result to sales team channel (<code>C09NJPKC66T</code>)</td></tr>
           <tr><td><code>SYBILL_KEY</code></td><td>Sybill API key (Export scope) — fetches full call transcript from <code>/v1/conversations/{call_id}</code></td></tr>
           <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
@@ -839,7 +849,7 @@
       <div class="doc-section-label">File Structure</div>
       <pre class="file-tree">action-plan-agent/
 ├── generate_action_plan.py   # single entry point (repository_dispatch)
-├── action_plan_prompts.py    # prompt templates for MAP generation
+├── action_plan_prompts.py    # prompt templates + ICP_TITLES set + is_icp_title()
 ├── tracker.py                # cost tracking push to agent-cost-dashboard
 ├── requirements.txt
 ├── CLAUDE.md
