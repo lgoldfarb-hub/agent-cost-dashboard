@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: Madison Logic | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-17T14:58:45.299876+00:00",
+  "completed_at": "2026-06-17T15:18:59.638886+00:00",
+  "duration_seconds": 1214.33901,
+  "input_tokens": 14157,
+  "output_tokens": 42412,
+  "cache_read_tokens": 3140351,
+  "cache_write_tokens": 139645,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 7102,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.042470999999999995,
+  "cost_output": 0.63618,
+  "cost_cache_read": 0.9421052999999999,
+  "cost_cache_write": 0.52366875,
+  "cost_web_search": 0.0,
+  "cost_total": 2.14442505
+}
