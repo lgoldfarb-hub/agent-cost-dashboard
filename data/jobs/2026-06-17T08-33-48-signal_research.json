@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Metabase | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-17T08:33:48.304739+00:00",
+  "completed_at": "2026-06-17T08:40:39.452162+00:00",
+  "duration_seconds": 411.147423,
+  "input_tokens": 49663,
+  "output_tokens": 8152,
+  "cache_read_tokens": 1131627,
+  "cache_write_tokens": 60322,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 46408,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.14898899999999998,
+  "cost_output": 0.12228,
+  "cost_cache_read": 0.33948809999999996,
+  "cost_cache_write": 0.2262075,
+  "cost_web_search": 0.0,
+  "cost_total": 0.8369646
+}
