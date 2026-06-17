@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Signpost| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-17T16:36:49.420167+00:00",
+  "completed_at": "2026-06-17T16:40:18.056960+00:00",
+  "duration_seconds": 208.636793,
+  "input_tokens": 43247,
+  "output_tokens": 6621,
+  "cache_read_tokens": 242957,
+  "cache_write_tokens": 31405,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 39992,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.129741,
+  "cost_output": 0.099315,
+  "cost_cache_read": 0.0728871,
+  "cost_cache_write": 0.11776875,
+  "cost_web_search": 0.0,
+  "cost_total": 0.41971185
+}
