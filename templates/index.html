@@ -817,7 +817,7 @@
       <table class="input-table">
         <thead><tr><th>Criterion</th><th>Logic</th></tr></thead>
         <tbody>
-          <tr><td>ICP Score</td><td><code>ai_icp_score</code> on the deal must indicate fit (non-null, non-zero, not "Low"/"No fit"). Missing = unknown (doesn't block SQL alone).</td></tr>
+          <tr><td>ICP Score</td><td><code>ai_icp_score</code> on the deal must be <strong>≥ 7</strong> (numeric). Invalid or missing values = fail.</td></tr>
           <tr><td>Right Title</td><td>At least one contact holds an ICP persona title (Product, Tech/Engineering, Founders, C-level, Integrations/Ecosystem). Non-ICP titles (Sales, CS, AE, Marketing, etc.) only pass if the transcript shows a clear path to an ICP persona.</td></tr>
         </tbody>
       </table>
