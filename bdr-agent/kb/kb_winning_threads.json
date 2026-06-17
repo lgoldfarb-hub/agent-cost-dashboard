@@ -62,7 +62,7 @@
         "role": "rep",
         "author": "m.r.guerci@albato.com",
         "date": "2026-05-18",
-        "text": "Hi Larysa,\n\nThanks for the heads-up, no worries at all!\nI\u2019ve moved the call to next Wednesday at 10am ET. Looking forward to speaking then."
+        "text": "Hi Larysa,\n\nThanks for the heads-up, no worries at all!\nI’ve moved the call to next Wednesday at 10am ET. Looking forward to speaking then."
       },
       {
         "role": "rep",
@@ -96,7 +96,7 @@
         "role": "rep",
         "author": "tanya@albato.com",
         "date": "2026-04-28",
-        "text": "Thanks a lot for the list, Dominik.\nAfter a high-level review, we should be able to deliver these apps. For some systems, we\u2019ll need API access and clarification of your use cases.\n\nI suggest setting up a call to discuss this in more detail. Could you grab a slot from the calendar?\nHave a nice evening!\n\nBest,"
+        "text": "Thanks a lot for the list, Dominik.\nAfter a high-level review, we should be able to deliver these apps. For some systems, we’ll need API access and clarification of your use cases.\n\nI suggest setting up a call to discuss this in more detail. Could you grab a slot from the calendar?\nHave a nice evening!\n\nBest,"
       },
       {
         "role": "rep",
@@ -176,7 +176,7 @@
         "role": "rep",
         "author": "l.goldfarb@albato.com",
         "date": "2026-03-30",
-        "text": "Hi Taylor,\n\nI hope you\u2019re having a great week.\n\nI saw that you declined our meeting this Friday.\n\nIs there a chance we could reschedule?"
+        "text": "Hi Taylor,\n\nI hope you’re having a great week.\n\nI saw that you declined our meeting this Friday.\n\nIs there a chance we could reschedule?"
       },
       {
         "role": "rep",
@@ -188,13 +188,13 @@
         "role": "lead",
         "author": "taylor@grain.co",
         "date": "2026-04-01",
-        "text": "Hi Leo-\n\nUnfortunately, I\u2019ve learned that I will not be in this position for much\nlonger. I just don\u2019t have the capacity to champion the partnership.\n\nBest of luck,\nTaylor"
+        "text": "Hi Leo-\n\nUnfortunately, I’ve learned that I will not be in this position for much\nlonger. I just don’t have the capacity to champion the partnership.\n\nBest of luck,\nTaylor"
       },
       {
         "role": "rep",
         "author": "l.goldfarb@albato.com",
         "date": "2026-04-01",
-        "text": "Hi Taylor,\n\nThanks for letting me know and I\u2019m sorry to hear that.\n\nIf it isn\u2019t too much to ask, would it be possible to introduce us to\nsomeone who might be best placed to help drive our project on Grain\u2019s side?\n\nEither way, I wish you all the best and thank you very much for working\nwith us on this!\n\nBest,\nLeo"
+        "text": "Hi Taylor,\n\nThanks for letting me know and I’m sorry to hear that.\n\nIf it isn’t too much to ask, would it be possible to introduce us to\nsomeone who might be best placed to help drive our project on Grain’s side?\n\nEither way, I wish you all the best and thank you very much for working\nwith us on this!\n\nBest,\nLeo"
       },
       {
         "role": "rep",
@@ -228,7 +228,7 @@
         "role": "rep",
         "author": "tanya@albato.com",
         "date": "2026-03-18",
-        "text": "Hey Alex,\n\nHope next Wednesday (March 25th) at the same time works for you. Could you please let me know?\nIf the time works, I\u2019d really appreciate it if we could extend to 60 minutes as initially proposed (or at least 45)\nHave a nice day."
+        "text": "Hey Alex,\n\nHope next Wednesday (March 25th) at the same time works for you. Could you please let me know?\nIf the time works, I’d really appreciate it if we could extend to 60 minutes as initially proposed (or at least 45)\nHave a nice day."
       },
       {
         "role": "rep",
@@ -252,7 +252,7 @@
   },
   {
     "deal_id": "59758006417",
-    "deal_name": "Surfe \u2014 missing apps objection + build vs buy",
+    "deal_name": "Surfe — missing apps objection + build vs buy",
     "contact_name": "Dominik Szczechla",
     "added_at": "2026-06-13",
     "source": "slack_training",
@@ -302,5 +302,27 @@
       }
     ],
     "source": "slack_training"
+  },
+  {
+    "deal_id": "61137335585",
+    "deal_name": "Madison Logic | active,paid meetings campaign",
+    "booked_at": "2026-06-17 15:58",
+    "lead_title": "Vice President of Products",
+    "sequence_name": "",
+    "source": "albato_learn",
+    "messages": [
+      {
+        "role": "rep",
+        "text": "Hey Justin, any chance you saw my emails? \n\nI'm offering 200 usd for 60 min of your time to chat about Madison Logic's integrations & AI agents. \n\nOpen to it?"
+      },
+      {
+        "role": "lead",
+        "text": "Hoskins\n\nhow's next week M,T,W,Thursday at 11 EST?"
+      },
+      {
+        "role": "rep",
+        "text": "Hey Justin, next Wed at 11am EST works great. Mind sharing your email? I'll book a call for us\n\nOr feel free to book directly in the calendar: https://meetings.hubspot.com/marianaguerci/meet-with-albato?uuid=1c4b2bd3-3ba2-4288-b27f-94623aa6a11c"
+      }
+    ]
   }
 ]
