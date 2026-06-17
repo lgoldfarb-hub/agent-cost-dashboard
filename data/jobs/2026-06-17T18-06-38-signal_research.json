@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Vainu| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-17T18:06:38.836232+00:00",
+  "completed_at": "2026-06-17T18:12:17.308983+00:00",
+  "duration_seconds": 338.472751,
+  "input_tokens": 48962,
+  "output_tokens": 9562,
+  "cache_read_tokens": 481346,
+  "cache_write_tokens": 40150,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 45707,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.146886,
+  "cost_output": 0.14343,
+  "cost_cache_read": 0.1444038,
+  "cost_cache_write": 0.1505625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5852823
+}
