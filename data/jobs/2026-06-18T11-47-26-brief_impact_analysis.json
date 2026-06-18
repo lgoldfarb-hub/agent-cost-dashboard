@@ -1,0 +1,23 @@
+{
+  "agent_name": "brief_impact_analysis",
+  "job_name": "Impact:  RELAYTO AI| MCP_general_ICP_june26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-18T11:47:26.181211+00:00",
+  "completed_at": "2026-06-18T11:49:19.613297+00:00",
+  "duration_seconds": 113.432086,
+  "input_tokens": 14587,
+  "output_tokens": 6130,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 1490,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 13097,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.043760999999999994,
+  "cost_output": 0.09195,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.135711
+}
