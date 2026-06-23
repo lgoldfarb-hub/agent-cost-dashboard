@@ -1,0 +1,23 @@
+{
+  "agent_name": "bdr-agent",
+  "job_name": "respond: Good message, well done!\n\nOne tweak: instead of your questio",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-23T16:50:27.103499+00:00",
+  "completed_at": "2026-06-23T16:50:33.719954+00:00",
+  "duration_seconds": 6.616455,
+  "input_tokens": 14938,
+  "output_tokens": 135,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 14938,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.044814,
+  "cost_output": 0.002025,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.046839
+}
