@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Flat Creek| Cusdev 2026 (HS pipeline)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-23T16:40:01.785780+00:00",
+  "completed_at": "2026-06-23T16:44:55.599585+00:00",
+  "duration_seconds": 293.813805,
+  "input_tokens": 37003,
+  "output_tokens": 8212,
+  "cache_read_tokens": 465467,
+  "cache_write_tokens": 34748,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 33748,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.111009,
+  "cost_output": 0.12318000000000001,
+  "cost_cache_read": 0.1396401,
+  "cost_cache_write": 0.130305,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5041341
+}
