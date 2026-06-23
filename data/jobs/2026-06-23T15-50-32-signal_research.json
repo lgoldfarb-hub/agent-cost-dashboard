@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Yohn | Golden_Founder_Feb26",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-23T15:50:32.206264+00:00",
+  "completed_at": "2026-06-23T15:53:01.553751+00:00",
+  "duration_seconds": 149.347487,
+  "input_tokens": 48852,
+  "output_tokens": 5146,
+  "cache_read_tokens": 116303,
+  "cache_write_tokens": 23371,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 45597,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.146556,
+  "cost_output": 0.07719000000000001,
+  "cost_cache_read": 0.0348909,
+  "cost_cache_write": 0.08764125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.34627815
+}
