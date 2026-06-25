@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  HR Cloud| Paid_Meeting_CEO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-25T17:28:39.957064+00:00",
+  "completed_at": "2026-06-25T17:31:36.234720+00:00",
+  "duration_seconds": 176.277656,
+  "input_tokens": 39000,
+  "output_tokens": 6117,
+  "cache_read_tokens": 165740,
+  "cache_write_tokens": 28414,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 35745,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.11699999999999999,
+  "cost_output": 0.091755,
+  "cost_cache_read": 0.049721999999999995,
+  "cost_cache_write": 0.1065525,
+  "cost_web_search": 0.0,
+  "cost_total": 0.3650295
+}
