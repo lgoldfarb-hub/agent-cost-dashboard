@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Fini| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-25T18:11:53.348900+00:00",
+  "completed_at": "2026-06-25T18:17:13.128120+00:00",
+  "duration_seconds": 319.77922,
+  "input_tokens": 29929,
+  "output_tokens": 9116,
+  "cache_read_tokens": 1196406,
+  "cache_write_tokens": 63648,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 26674,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.089787,
+  "cost_output": 0.13674,
+  "cost_cache_read": 0.3589218,
+  "cost_cache_write": 0.23867999999999998,
+  "cost_web_search": 0.0,
+  "cost_total": 0.8241288
+}
