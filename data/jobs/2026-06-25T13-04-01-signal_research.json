@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  CTM| Cusdev 2026 (HS pipeline)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-25T13:04:01.602770+00:00",
+  "completed_at": "2026-06-25T13:09:10.749496+00:00",
+  "duration_seconds": 309.146726,
+  "input_tokens": 39475,
+  "output_tokens": 9167,
+  "cache_read_tokens": 611310,
+  "cache_write_tokens": 34471,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 36220,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.118425,
+  "cost_output": 0.137505,
+  "cost_cache_read": 0.183393,
+  "cost_cache_write": 0.12926625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.56858925
+}
