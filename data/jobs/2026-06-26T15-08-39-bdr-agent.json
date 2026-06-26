@@ -1,0 +1,23 @@
+{
+  "agent_name": "bdr-agent",
+  "job_name": "draft: Re: Agentic infra",
+  "model": "claude-opus-4-8",
+  "started_at": "2026-06-26T15:08:39.737009+00:00",
+  "completed_at": "2026-06-26T15:09:06.648663+00:00",
+  "duration_seconds": 26.911654,
+  "input_tokens": 36499,
+  "output_tokens": 407,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 36499,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.547485,
+  "cost_output": 0.030525000000000004,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.57801
+}
