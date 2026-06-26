@@ -1,0 +1,23 @@
+{
+  "agent_name": "daily_todo_agent",
+  "job_name": "actions:Leonid Goldfarb",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-26T07:04:43.725497+00:00",
+  "completed_at": "2026-06-26T07:04:45.479492+00:00",
+  "duration_seconds": 1.753995,
+  "input_tokens": 1060,
+  "output_tokens": 34,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 1060,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.0031799999999999997,
+  "cost_output": 0.00051,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.0036899999999999997
+}
