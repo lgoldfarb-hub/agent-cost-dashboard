@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Tempo.io | Golden_CTO_Feb26",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-29T11:45:41.909496+00:00",
+  "completed_at": "2026-06-29T11:50:51.281502+00:00",
+  "duration_seconds": 309.372006,
+  "input_tokens": 27407,
+  "output_tokens": 8679,
+  "cache_read_tokens": 719179,
+  "cache_write_tokens": 35538,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 24152,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.082221,
+  "cost_output": 0.130185,
+  "cost_cache_read": 0.2157537,
+  "cost_cache_write": 0.1332675,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5614272
+}
