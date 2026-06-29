@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Pipefy | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-29T07:59:45.965137+00:00",
+  "completed_at": "2026-06-29T08:06:13.626669+00:00",
+  "duration_seconds": 387.661532,
+  "input_tokens": 29284,
+  "output_tokens": 10246,
+  "cache_read_tokens": 884956,
+  "cache_write_tokens": 41298,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 26029,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.087852,
+  "cost_output": 0.15369,
+  "cost_cache_read": 0.26548679999999997,
+  "cost_cache_write": 0.1548675,
+  "cost_web_search": 0.0,
+  "cost_total": 0.6618963
+}
