@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Dscout| Paid_Meeting_CTO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-29T16:23:50.068217+00:00",
+  "completed_at": "2026-06-29T16:26:54.603572+00:00",
+  "duration_seconds": 184.535355,
+  "input_tokens": 53755,
+  "output_tokens": 6305,
+  "cache_read_tokens": 163717,
+  "cache_write_tokens": 29594,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 50500,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.161265,
+  "cost_output": 0.09457499999999999,
+  "cost_cache_read": 0.0491151,
+  "cost_cache_write": 0.11097749999999999,
+  "cost_web_search": 0.0,
+  "cost_total": 0.4159326
+}
