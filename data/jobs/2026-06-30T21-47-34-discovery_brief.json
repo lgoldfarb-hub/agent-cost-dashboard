@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  Arcade| Paid_Meeting_CPO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-30T21:47:34.125693+00:00",
+  "completed_at": "2026-06-30T21:58:14.429472+00:00",
+  "duration_seconds": 640.303779,
+  "input_tokens": 12293,
+  "output_tokens": 26858,
+  "cache_read_tokens": 1052016,
+  "cache_write_tokens": 93616,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 5238,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.036879,
+  "cost_output": 0.40287,
+  "cost_cache_read": 0.3156048,
+  "cost_cache_write": 0.35106000000000004,
+  "cost_web_search": 0.0,
+  "cost_total": 1.1064138
+}
