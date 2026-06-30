@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  CustomersAI| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-30T23:01:22.613805+00:00",
+  "completed_at": "2026-06-30T23:07:33.683605+00:00",
+  "duration_seconds": 371.0698,
+  "input_tokens": 19421,
+  "output_tokens": 9436,
+  "cache_read_tokens": 1429925,
+  "cache_write_tokens": 65043,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 16166,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.058263,
+  "cost_output": 0.14154,
+  "cost_cache_read": 0.42897749999999996,
+  "cost_cache_write": 0.24391125000000002,
+  "cost_web_search": 0.0,
+  "cost_total": 0.87269175
+}
