@@ -382,3 +382,4 @@ _Added: 2026-06-14 by Leo_
 
 ## Training additions
 - Do not include a "what does your current setup look like?" or similar diagnostic open-ended question as the CTA — replace it with a direct, low-friction CTA instead. _Added: 2026-06-30 by Amy_
+- Always include the sender's meeting link in outreach emails. _Added: 2026-06-30 by Amy_
