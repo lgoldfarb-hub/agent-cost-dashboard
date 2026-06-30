@@ -1,0 +1,23 @@
+{
+  "agent_name": "bdr-agent",
+  "job_name": "respond: show me rewritten email",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-30T21:06:01.071402+00:00",
+  "completed_at": "2026-06-30T21:06:11.477055+00:00",
+  "duration_seconds": 10.405653,
+  "input_tokens": 10833,
+  "output_tokens": 267,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 10833,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.032499,
+  "cost_output": 0.004005,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.036504
+}
