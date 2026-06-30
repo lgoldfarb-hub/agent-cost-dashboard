@@ -324,5 +324,19 @@
         "text": "Hey Justin, next Wed at 11am EST works great. Mind sharing your email? I'll book a call for us\n\nOr feel free to book directly in the calendar: https://meetings.hubspot.com/marianaguerci/meet-with-albato?uuid=1c4b2bd3-3ba2-4288-b27f-94623aa6a11c"
       }
     ]
+  },
+  {
+    "deal_id": "61914736985",
+    "deal_name": "Re: Paid meeting",
+    "booked_at": "",
+    "lead_title": "",
+    "sequence_name": "",
+    "messages": [
+      {
+        "role": "rep",
+        "text": "Hi Tamar,\n\nHappy to explain.\n\nI hop on a discovery call to talk through how Arcade is thinking about integrations and AI agents this year.\n\nFor your time, I'll send you a $200 USD gift card you can redeem across 180+ brands, including Amazon, Airbnb, Apple, and Starbucks.\n\nDoes that work for you?\n\nFeel free to grab a 60-minute slot here <https://meetings.hubspot.com/marianaguerci/meet-with-albato>\n\nBest,\nMike Fedorinin\nFounder &amp; CEO, Albato"
+      }
+    ],
+    "source": "slack_training"
   }
 ]
