@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: ebillity | Zapier Batch 17 - Sales People",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-06-30T16:32:56.552271+00:00",
+  "completed_at": "2026-06-30T16:37:41.467402+00:00",
+  "duration_seconds": 284.915131,
+  "input_tokens": 55871,
+  "output_tokens": 8007,
+  "cache_read_tokens": 678598,
+  "cache_write_tokens": 75375,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 52616,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.16761299999999998,
+  "cost_output": 0.120105,
+  "cost_cache_read": 0.2035794,
+  "cost_cache_write": 0.28265625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.7739536499999999
+}
