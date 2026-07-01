@@ -338,5 +338,55 @@
       }
     ],
     "source": "slack_training"
+  },
+  {
+    "deal_id": "41048444574",
+    "deal_name": "Woodpecker | Hubspot_installs_100less (EU)",
+    "booked_at": "2026-07-01 14:30",
+    "lead_title": "Chief Executive Officer",
+    "sequence_name": "",
+    "source": "albato_learn",
+    "messages": [
+      {
+        "role": "lead",
+        "text": "Hi Mariana, \n We have a call scheduled tomorrow but due to some personal (family related) issues I won’t be able to attend it tomorrow. Is there any chance we could reschedule it for the next week? \n Best, Margaret \n\n --   Best Regards, Margaret Sikora CEO @ Woodpecker.co 29D Krakowska STR, 50‑424 Wroclaw, Poland, EU Find some tips on our blog   . \n \n \n W dniu pon., 8 wrz 2025 o 17:32 Mariana Guerci < m.r.guerci@albato.com > napisał(a):\n Hi Margaret, \n Thanks for taking the time to chat with us earlier—we really enjoyed it! \n Check out Woodpecker's dedicated page below. It includes helpful resources related to Albato and is designed to help you navigate our journey more conveniently. You’ll also find today’s call in the “Call Recordings”. Feel free to share it with your team. \n https://albato.valuecase.com/spaces/woodpecker_co?token=ccbc3628584cff8c   \n Here are our suggested next steps: Your team: Evaluate Albato's integration list against Woodpecker's voice of customer feature requests and calculate internal development costs vs. Albato's pricing. We’ve also included our ROI Calculator to help you compare the cost of building integrations in-house vs. using Albato Embedded. Please have your team sign up here and let us know their email addresses. We’ll upgrade the accounts to allow for more extensive testing. We’ll set up a shared Slack channel shortly and invite you and the relevant folks from your team. Next meeting: Confirmed for Thursday, September 18th at 2 PM CET. \n Feel free to loop in your CTO or engineering team once you've had a chance to review everything. Let us know if anything comes up in the meantime! \n Best, Mariana Guerci Product Growth @Albato schedule a meeting - albato.com"
+      },
+      {
+        "role": "rep",
+        "text": "Hi Margaret, \n Of course, no problem. \n Could you please suggest a few times that work for you next week? \n Feel free to grab a slot from my calendar if that's easier. \n — Mariana Guerci Account Executive @Albato book a meeting | linkedin"
+      },
+      {
+        "role": "lead",
+        "text": "Would it be possible to reschedule to 14.10? There is no availability in your calendar for the second week of October. \n Unfortunately, after this week, Adam is OOO so that's the earliest date we can both be on a call. \n Best,  Margaret  --   Best Regards, Margaret Sikora CEO @ Woodpecker.co 29D Krakowska STR, 50‑424 Wroclaw, Poland, EU Find some tips on our blog   ."
+      },
+      {
+        "role": "rep",
+        "text": "Yes, 14/10 works. \n Do you have a preferred time for that day? \n — Mariana Guerci Account Executive @Albato book a meeting | linkedin"
+      },
+      {
+        "role": "lead",
+        "text": "Maybe 1 p.m? \n --   Best Regards, Margaret Sikora CEO @ Woodpecker.co 29D Krakowska STR, 50‑424 Wroclaw, Poland, EU Find some tips on our blog   ."
+      },
+      {
+        "role": "rep",
+        "text": "Wonderful. \n You should've received the invite. Can you please check? \n — Mariana Guerci Account Executive @Albato book a meeting | linkedin"
+      },
+      {
+        "role": "lead",
+        "text": "Yes it’s there! I’m also adding Adam ( Adam.biel@woodpecker.co ). \n\n --   Best Regards, Margaret Sikora CEO @ Woodpecker.co 29D Krakowska STR, 50‑424 Wroclaw, Poland, EU Find some tips on our blog   . \n \n \n W dniu czw., 18 wrz 2025 o 13:31 Mariana Guerci < m.r.guerci@albato.com > napisał(a):\n Wonderful. \n You should've received the invite. Can you please check? \n — Mariana Guerci Account Executive @Albato book a meeting   | linkedin"
+      },
+      {
+        "role": "rep",
+        "text": "Hey Margaret,  \n I just wanted to confirm our meeting today. Are still on? \n \n Looking forward to it. \n Best, \nLeo"
+      },
+      {
+        "role": "lead",
+        "text": "Yes, see you then! \n Best,  Margaret  --   Best Regards, Margaret Sikora CEO @ Woodpecker.co 29D Krakowska STR, 50‑424 Wroclaw, Poland, EU Find some tips on our blog   ."
+      },
+      {
+        "role": "rep",
+        "text": "C u \n\n Best, \nLeo"
+      }
+    ]
   }
 ]
