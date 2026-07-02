@@ -90,3 +90,4 @@ _Added: 2026-06-12 by Leo_
 - Never reference previous unanswered outreach in a way that implies the prospect ignored you or failed to respond. Avoid all phrases that highlight a lack of reply, such as "Two notes from me so far and nothing back," "Still no response," or "I've tried reaching out a few times." _Added: 2026-06-16 by Amy_
 - Do not open with a framing line like "The angle for [Company]:" followed by a product pitch block — avoid this structural pattern. _Added: 2026-06-30 by Amy_
 - When writing as a sender, refer to yourself in the first person — never refer to yourself in the third person. If the email is signed as Leo, write "I had a good session..." not "Leo had a good session..." _Added: 2026-07-02 by Amy_
+- Do not use "I" when referring to custom-building or delivering services — use "we" or "Albato" instead (e.g. "we can custom-build it" or "Albato will custom-build it") _Added: 2026-07-02 by Amy_
