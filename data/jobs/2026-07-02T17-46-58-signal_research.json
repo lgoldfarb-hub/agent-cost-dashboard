@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Trainual| Paid_Meeting_CEO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-02T17:46:58.616983+00:00",
+  "completed_at": "2026-07-02T17:54:09.842442+00:00",
+  "duration_seconds": 431.225459,
+  "input_tokens": 50451,
+  "output_tokens": 13231,
+  "cache_read_tokens": 1381264,
+  "cache_write_tokens": 42391,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 47196,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.15135300000000002,
+  "cost_output": 0.198465,
+  "cost_cache_read": 0.4143792,
+  "cost_cache_write": 0.15896625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.92316345
+}
