@@ -1,0 +1,23 @@
+{
+  "agent_name": "brief_impact_analysis",
+  "job_name": "Impact:  Arcade| Paid_Meeting_CPO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-02T15:27:17.739544+00:00",
+  "completed_at": "2026-07-02T15:30:27.589066+00:00",
+  "duration_seconds": 189.849522,
+  "input_tokens": 25035,
+  "output_tokens": 10113,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 1490,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 23545,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.075105,
+  "cost_output": 0.151695,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.2268
+}
