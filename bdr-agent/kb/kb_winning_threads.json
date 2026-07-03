@@ -388,5 +388,31 @@
         "text": "C u \n\n Best, \nLeo"
       }
     ]
+  },
+  {
+    "deal_id": "61791000886",
+    "deal_name": "Hightouch| Paid_Meeting_CTO_June26",
+    "booked_at": "2026-07-03 18:27",
+    "lead_title": "Founding Principal Customer Success Engineer (Tech Lead → Escalation Engineering)",
+    "sequence_name": "",
+    "source": "albato_learn",
+    "messages": [
+      {
+        "role": "lead",
+        "text": "Hi Mariana- could you resent your original email? I searched my inboxes and couldn't find it :) \n Many thanks! Laura"
+      },
+      {
+        "role": "rep",
+        "text": "Hi Laura, Apologies on the delay! \n Sure. In short - AI-native competitors are moving faster because they own the agent layer from day 1. Albato helps CDP SaaS teams like Hightouch close that gap by embedding AI agents + 1K app integrations directly into your product. \n We'd love to offer $200 for 60 min of your time to explore this. Would you be open to it? \n Best, \n — Mariana Guerci Head of Strategic Accounts @Albato book a meeting | linkedin"
+      },
+      {
+        "role": "lead",
+        "text": "sure, that's pretty cool! I have questions about how it works, so let's get together! \n Send me your scheduling link?\n\n --Laura"
+      },
+      {
+        "role": "rep",
+        "text": "Sure, here's the link - https://meetings.hubspot.com/marianaguerci/meet-with-albato \n Have a nice day and looking forward to connecting! \n Best, \n — Mariana Guerci Head of Strategic Accounts @Albato book a meeting | linkedin"
+      }
+    ]
   }
 ]
