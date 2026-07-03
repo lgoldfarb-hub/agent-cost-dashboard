@@ -1,0 +1,23 @@
+{
+  "agent_name": "runtime_custdev_brief",
+  "job_name": "Custdev brief: Duda",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-03T14:24:30.553458+00:00",
+  "completed_at": "2026-07-03T14:30:09.602014+00:00",
+  "duration_seconds": 339.048556,
+  "input_tokens": 23,
+  "output_tokens": 12255,
+  "cache_read_tokens": 977413,
+  "cache_write_tokens": 66918,
+  "system_prompt_tokens": 3174,
+  "tool_result_tokens": 161609,
+  "conversation_tokens": 0,
+  "web_searches": 18,
+  "status": "success",
+  "cost_input": 6.9e-05,
+  "cost_output": 0.18382500000000002,
+  "cost_cache_read": 0.2932239,
+  "cost_cache_write": 0.2509425,
+  "cost_web_search": 0.18,
+  "cost_total": 0.9080603999999999
+}
