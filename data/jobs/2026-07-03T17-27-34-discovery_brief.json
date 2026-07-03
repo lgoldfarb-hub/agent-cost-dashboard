@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  Hightouch| Paid_Meeting_CTO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-03T17:27:34.396639+00:00",
+  "completed_at": "2026-07-03T17:39:14.095142+00:00",
+  "duration_seconds": 699.698503,
+  "input_tokens": 11629,
+  "output_tokens": 29784,
+  "cache_read_tokens": 2698324,
+  "cache_write_tokens": 85656,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4574,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.034887,
+  "cost_output": 0.44676000000000005,
+  "cost_cache_read": 0.8094971999999999,
+  "cost_cache_write": 0.32121,
+  "cost_web_search": 0.0,
+  "cost_total": 1.6123542
+}
