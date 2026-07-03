@@ -168,6 +168,7 @@
       <button class="agent-filter-btn" onclick="filterDocs('albato-helper')">Albato Helper</button>
       <button class="agent-filter-btn" onclick="filterDocs('second-brain')">Second Brain</button>
       <button class="agent-filter-btn" onclick="filterDocs('bdr-agent')">BDR Agent</button>
+      <button class="agent-filter-btn" onclick="filterDocs('runtime-custdev-brief')">Runtime Custdev Brief</button>
     </div>
 
     <!-- Discovery Brief Agent -->
@@ -1205,6 +1206,99 @@
 ├── CLAUDE.md
 └── docs/
     └── session-log.md</pre>
+    </div>
+
+    <!-- Runtime Custdev Brief Agent -->
+    <div class="doc-card" data-agent="runtime-custdev-brief">
+      <h2>Runtime Custdev Brief Agent</h2>
+      <div class="doc-meta">Trigger: Albato webhook (repository_dispatch) or manual &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/discovery-brief-agent-runtime" target="_blank">lgoldfarb-hub/discovery-brief-agent-runtime</a></div>
+      <p class="doc-description">
+        Pre-call research agent for Albato Runtime (the AI agent governance/control-plane product) customer-development interviews. Given a company name and domain, researches whether the target company already has AI agents or feels the security/spend/governance pain Runtime solves, and produces a 12-section brief saved as a HubSpot note. Unlike the Discovery Brief Agent, this is a learning-interview prep tool — it never advances a HubSpot deal stage and has no numeric opportunity score; a company with weak signals is still worth interviewing if it fits the ICP profile.
+      </p>
+      <div class="doc-section-label">Workflow</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">🔔</div><div class="wf-label">Albato Webhook</div><div class="wf-sub">repository_dispatch: new-custdev-call</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">🔍</div><div class="wf-label">Company + Job Openings</div><div class="wf-sub">Amplemarket API</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">👤</div><div class="wf-label">Decision Makers + Contact</div><div class="wf-sub">Amplemarket API</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-external"><div class="wf-icon">📋</div><div class="wf-label">Pipeline Dedupe Check</div><div class="wf-sub">HubSpot REST API (read-only)</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Web Research</div><div class="wf-sub">Claude Sonnet + web_search</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">📝</div><div class="wf-label">Generate Brief</div><div class="wf-sub">12-section custdev brief</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💾</div><div class="wf-label">Save HubSpot Note</div><div class="wf-sub">On matching company</div></div>
+      </div>
+      <div class="doc-section-label">Rules</div>
+      <div class="rules-list">
+        <div class="rule-item">
+          <div class="rule-title">🚫 Never advances a deal</div>
+          <div class="rule-body">Unlike the Discovery Brief Agent, this agent never writes HubSpot deal properties or advances a pipeline stage. It only reads for dedupe context (§1) and writes a note.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">📊 Qualitative readiness verdict, no score</div>
+          <div class="rule-body">Classifies accounts into three buckets — <strong>Has agents + has pain</strong>, <strong>Should have the problem but no evidence yet</strong>, or <strong>Too early / poor fit</strong> — with reasoning. There is no numeric opportunity score; §11 Red Flags is qualitative only.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🌐 Optional pre-scraped website content</div>
+          <div class="rule-body">Albato can pass <code>client_payload.website_content</code> with the lead's scraped site content (truncated to 10,000 chars). When present, treated as a higher-trust primary source for §2/§3/§8 facts, ahead of a fresh <code>web_fetch</code> call on the same homepage.</div>
+        </div>
+      </div>
+      <div class="doc-section-label">Output Structure — 12 Sections</div>
+      <table class="input-table">
+        <thead><tr><th>§</th><th>Section</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Interview Status (incl. HubSpot pipeline dedupe)</td></tr>
+          <tr><td>2</td><td>Company Snapshot</td></tr>
+          <tr><td>3</td><td>Business Overview</td></tr>
+          <tr><td>4</td><td>Contact Overview</td></tr>
+          <tr><td>5</td><td>Key Decision Makers</td></tr>
+          <tr><td>6</td><td>Readiness Verdict</td></tr>
+          <tr><td>7</td><td>Evidence of Agents</td></tr>
+          <tr><td>8</td><td>Tech Stack &amp; Agent Signals</td></tr>
+          <tr><td>9</td><td>Likely Agent Use Cases</td></tr>
+          <tr><td>10</td><td>Discovery Questions (custdev)</td></tr>
+          <tr><td>11</td><td>Red Flags (qualitative)</td></tr>
+          <tr><td>12</td><td>Open Unknowns</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Input Data</div>
+      <table class="input-table">
+        <thead><tr><th>Field</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr><td>Company name, domain</td><td>Albato webhook — <code>client_payload</code> (or manual <code>workflow_dispatch</code> inputs)</td></tr>
+          <tr><td>Interviewee name, title, email, LinkedIn</td><td>Albato webhook — optional <code>client_payload</code> fields</td></tr>
+          <tr><td>Pre-scraped website content</td><td>Optional — Albato webhook <code>client_payload.website_content</code>, truncated to 10k chars</td></tr>
+          <tr><td>Company profile (headcount, HQ, funding)</td><td>Amplemarket API — company enrichment by domain</td></tr>
+          <tr><td>Job openings (scanned for AI/agent titles)</td><td>Amplemarket API — all open roles by domain</td></tr>
+          <tr><td>Decision makers (CTO, CISO, VP Eng, Head of AI/Platform)</td><td>Amplemarket API — people search by domain</td></tr>
+          <tr><td>Interviewee contact profile</td><td>Amplemarket API — person enrichment by email</td></tr>
+          <tr><td>Pipeline dedupe (existing company/deal)</td><td>HubSpot CRM — company search by domain (read-only)</td></tr>
+          <tr><td>Agent-building evidence, tooling fingerprints, compliance posture</td><td>Claude web_search + web_fetch tools</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Secrets</div>
+      <table class="input-table">
+        <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — runs brief generation and web research</td></tr>
+          <tr><td><code>HUBSPOT_TOKEN</code></td><td>HubSpot Private App token — read-only dedupe check, writes note only (no deal writes)</td></tr>
+          <tr><td><code>AMPLEMARKET_TOKEN</code></td><td>Amplemarket API — company, job-openings, and people enrichment</td></tr>
+          <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">File Structure</div>
+      <pre class="file-tree">discovery-brief-agent-runtime/
+├── generate_custdev_brief.py  # entry point (repository_dispatch + workflow_dispatch)
+├── custdev_core.py            # shared brief generation logic
+├── custdev_prompts.py         # system prompt for all 12 sections
+├── tracker.py                 # cost tracking push to agent-cost-dashboard
+├── requirements.txt
+├── CLAUDE.md
+└── docs/
+    └── discovery-brief-agent-runtime-session-log.md</pre>
     </div>
 
   </div><!-- /tab-docs -->
