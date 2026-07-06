@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Essia.io | SaaStock US 2026",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-06T10:28:15.858616+00:00",
+  "completed_at": "2026-07-06T10:33:29.817171+00:00",
+  "duration_seconds": 313.958555,
+  "input_tokens": 53081,
+  "output_tokens": 9932,
+  "cache_read_tokens": 410229,
+  "cache_write_tokens": 33866,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 49826,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.15924300000000002,
+  "cost_output": 0.14898,
+  "cost_cache_read": 0.1230687,
+  "cost_cache_write": 0.1269975,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5582892
+}
