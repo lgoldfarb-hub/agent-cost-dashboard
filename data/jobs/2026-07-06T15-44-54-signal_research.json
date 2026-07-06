@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Mitto| HubSpot_November 25_Complains (size 1-1000)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-06T15:44:54.713198+00:00",
+  "completed_at": "2026-07-06T15:50:45.004241+00:00",
+  "duration_seconds": 350.291043,
+  "input_tokens": 45064,
+  "output_tokens": 9014,
+  "cache_read_tokens": 1137500,
+  "cache_write_tokens": 59357,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 41809,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.135192,
+  "cost_output": 0.13521,
+  "cost_cache_read": 0.34125,
+  "cost_cache_write": 0.22258875,
+  "cost_web_search": 0.0,
+  "cost_total": 0.8342407500000001
+}
