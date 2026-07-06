@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Frame| Paid_Meeting_CEO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-06T14:15:48.821248+00:00",
+  "completed_at": "2026-07-06T14:21:59.783368+00:00",
+  "duration_seconds": 370.96212,
+  "input_tokens": 28196,
+  "output_tokens": 7721,
+  "cache_read_tokens": 1158630,
+  "cache_write_tokens": 50989,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 24941,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.084588,
+  "cost_output": 0.115815,
+  "cost_cache_read": 0.347589,
+  "cost_cache_write": 0.19120875,
+  "cost_web_search": 0.0,
+  "cost_total": 0.7392007500000001
+}
