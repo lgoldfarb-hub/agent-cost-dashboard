@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Druid AI| Paid_Meeting_CEO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-06T08:44:51.245634+00:00",
+  "completed_at": "2026-07-06T08:52:19.668584+00:00",
+  "duration_seconds": 448.42295,
+  "input_tokens": 59264,
+  "output_tokens": 13806,
+  "cache_read_tokens": 1288590,
+  "cache_write_tokens": 51690,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 56009,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.177792,
+  "cost_output": 0.20709,
+  "cost_cache_read": 0.38657699999999995,
+  "cost_cache_write": 0.1938375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.9652964999999999
+}
