@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Cin7| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-06T11:18:16.448860+00:00",
+  "completed_at": "2026-07-06T11:24:46.608417+00:00",
+  "duration_seconds": 390.159557,
+  "input_tokens": 41193,
+  "output_tokens": 11798,
+  "cache_read_tokens": 1163032,
+  "cache_write_tokens": 44999,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 37938,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.123579,
+  "cost_output": 0.17697,
+  "cost_cache_read": 0.3489096,
+  "cost_cache_write": 0.16874625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.81820485
+}
