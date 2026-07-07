@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Buzz AI | SaaStock US 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-07T20:03:22.024704+00:00",
+  "completed_at": "2026-07-07T20:09:08.818418+00:00",
+  "duration_seconds": 346.793714,
+  "input_tokens": 32716,
+  "output_tokens": 9101,
+  "cache_read_tokens": 1076840,
+  "cache_write_tokens": 54598,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 29461,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.09814800000000001,
+  "cost_output": 0.136515,
+  "cost_cache_read": 0.323052,
+  "cost_cache_write": 0.2047425,
+  "cost_web_search": 0.0,
+  "cost_total": 0.7624575
+}
