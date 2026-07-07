@@ -1,0 +1,23 @@
+{
+  "agent_name": "bdr-agent",
+  "job_name": "respond: I don\u2019t fully agree with this validation. In this context, *",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-07T20:11:55.619073+00:00",
+  "completed_at": "2026-07-07T20:12:03.093655+00:00",
+  "duration_seconds": 7.474582,
+  "input_tokens": 16452,
+  "output_tokens": 69,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 16452,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.049356000000000004,
+  "cost_output": 0.001035,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.050391000000000005
+}
