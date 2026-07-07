@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: MCA Suite | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-07T17:13:28.517907+00:00",
+  "completed_at": "2026-07-07T17:17:14.892068+00:00",
+  "duration_seconds": 226.374161,
+  "input_tokens": 41688,
+  "output_tokens": 5913,
+  "cache_read_tokens": 232691,
+  "cache_write_tokens": 28111,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 38433,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.125064,
+  "cost_output": 0.088695,
+  "cost_cache_read": 0.0698073,
+  "cost_cache_write": 0.10541625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.38898255
+}
