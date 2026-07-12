@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: Hightouch",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-12T21:23:13.807050+00:00",
+  "completed_at": "2026-07-12T21:39:08.496549+00:00",
+  "duration_seconds": 954.689499,
+  "input_tokens": 13108,
+  "output_tokens": 36749,
+  "cache_read_tokens": 1427999,
+  "cache_write_tokens": 89256,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 6053,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.039324,
+  "cost_output": 0.5512349999999999,
+  "cost_cache_read": 0.4283997,
+  "cost_cache_write": 0.33471,
+  "cost_web_search": 0.0,
+  "cost_total": 1.3536687
+}
