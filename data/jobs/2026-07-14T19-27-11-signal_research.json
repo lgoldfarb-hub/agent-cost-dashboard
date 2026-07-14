@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  CodeSignal| Paid_Meeting_CPO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-14T19:27:11.784631+00:00",
+  "completed_at": "2026-07-14T19:34:12.136145+00:00",
+  "duration_seconds": 420.351514,
+  "input_tokens": 51641,
+  "output_tokens": 8927,
+  "cache_read_tokens": 619566,
+  "cache_write_tokens": 33489,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 48386,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.154923,
+  "cost_output": 0.133905,
+  "cost_cache_read": 0.18586979999999997,
+  "cost_cache_write": 0.12558375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.6002815499999999
+}
