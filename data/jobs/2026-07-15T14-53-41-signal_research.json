@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Accord| Paid_Meeting_CPO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-15T14:53:41.616538+00:00",
+  "completed_at": "2026-07-15T15:00:51.771359+00:00",
+  "duration_seconds": 430.154821,
+  "input_tokens": 28639,
+  "output_tokens": 9129,
+  "cache_read_tokens": 759271,
+  "cache_write_tokens": 35353,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25384,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.08591700000000001,
+  "cost_output": 0.136935,
+  "cost_cache_read": 0.2277813,
+  "cost_cache_write": 0.13257375000000002,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5832070500000001
+}
