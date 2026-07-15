@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Vivid.money | Network",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-15T23:00:42.070581+00:00",
+  "completed_at": "2026-07-15T23:07:32.119634+00:00",
+  "duration_seconds": 410.049053,
+  "input_tokens": 54549,
+  "output_tokens": 11713,
+  "cache_read_tokens": 870207,
+  "cache_write_tokens": 35985,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 51294,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.163647,
+  "cost_output": 0.175695,
+  "cost_cache_read": 0.26106209999999996,
+  "cost_cache_write": 0.13494375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.73534785
+}
