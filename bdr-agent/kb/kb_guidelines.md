@@ -1,5 +1,7 @@
 # Guidelines — Specific Scenarios & Responses
 
+Paid-campaign-only rules live in `kb_paid_meetings.md`, injected automatically when the deal name contains "paid".
+
 ## Know which Albato product is relevant before drafting
 
 **Rule:** Albato is a bundle of three distinct B2B products. Before drafting any reply, identify which product(s) are relevant to this specific lead based on the email context and deal intelligence. Then pitch only that product — don't dump all three on every lead.
@@ -331,27 +333,6 @@ _Added: 2026-06-14 by Leo_
 **Right:** "Thanks for getting back to me." / "I'd love to show you..."
 
 _Added: 2026-06-14 by Leo_
-
-## Paid campaigns: incentive mention is always allowed
-
-**Rule:** If the deal is a paid campaign — identified by "paid" in the deal name, or by an incentive (gift card, trial credit, offer) mentioned in the email thread — Amy may reference that incentive in any follow-up, including FU#1/2. The incentive goes in a P.S. line at the end of the email, after the sign-off. FU#1/2 can infer the incentive from the thread; no full CRM load needed.
-
-**Format:** `P.S. Still happy to offer $200 for 60 minutes of your time.`
-
-**Wrong:** Leading with the incentive in the email body, or making the incentive the main point of the message.
-**Right:** Short substantive email, then a P.S. with the incentive as a brief factual reminder.
-
-_Added: 2026-06-16 by Leo_
-
-## Paid campaigns: lead already agreed to a meeting
-
-**Rule:** If the thread shows the lead explicitly agreed to a call (e.g. "sure, happy to chat", "send me a link", "sounds good") but hasn't booked yet, the follow-up can skip the substantive opener entirely. One sentence confirming the offer + a direct closing question is all that's needed.
-
-**Example:** "You mentioned being open to a call — the $200 offer is still there if you want to grab 60 minutes. Are you still up for it?"
-
-The closing question is still required — this rule only removes the need for a substantive opener, not the CTA.
-
-_Added: 2026-06-16 by Leo_
 
 ## Scheduling: specific day/time request vs. general availability
 
