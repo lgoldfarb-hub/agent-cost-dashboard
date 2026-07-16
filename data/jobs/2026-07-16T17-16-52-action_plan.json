@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan:  CodeSignal| Paid_Meeting_CPO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-16T17:16:52.829125+00:00",
+  "completed_at": "2026-07-16T17:18:46.397646+00:00",
+  "duration_seconds": 113.568521,
+  "input_tokens": 27611,
+  "output_tokens": 4563,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 1126,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 26601,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.082833,
+  "cost_output": 0.068445,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0042225000000000006,
+  "cost_web_search": 0.0,
+  "cost_total": 0.1555005
+}
