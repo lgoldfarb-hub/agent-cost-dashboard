@@ -460,5 +460,19 @@
         "text": "Hi Ramsey, \n Great to connect! I’ve just sent the calendar invite for tomorrow at 9:30 a.m. PDT. Looking forward to speaking with you and the team. \n Best, Mariana Guerci Head of Strategic Accounts @Albato schedule a meeting - albato.com"
       }
     ]
+  },
+  {
+    "deal_id": "62638552613",
+    "deal_name": "CodeSignal| Paid_Meeting_CPO_June26",
+    "booked_at": "2026-07-16 18:18",
+    "lead_title": "Senior Director of Product Management",
+    "sequence_name": "",
+    "source": "albato_learn",
+    "messages": [
+      {
+        "role": "lead",
+        "text": "Yes, talk to you soon."
+      }
+    ]
   }
 ]
