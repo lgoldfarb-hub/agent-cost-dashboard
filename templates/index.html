@@ -101,6 +101,92 @@
       </div>
     </div>
 
+    <!-- Working with Amy — team guide -->
+    <div class="doc-card" style="padding:20px;margin-bottom:24px">
+      <h2 style="border-bottom:none;margin-top:0;padding-bottom:0">Working with Amy</h2>
+      <div class="doc-meta">Team guide &nbsp;·&nbsp; Updated July 2026 &nbsp;·&nbsp; Questions? Talk to Leo.</div>
+      <p class="doc-description">
+        Amy is an AI assistant that drafts email replies to inbound prospects on behalf of the Albato BDR team. She classifies the prospect's message (simple ack / standard reply / objection or deep question) and loads only the context needed, identifies which Albato product is relevant (Embedded iPaaS, Embedded AI Agents, or Albato MCP), and drafts accordingly. Every draft is checked by a validator model before it reaches Slack and rewritten automatically if it breaks a writing rule (up to 3 attempts). <strong>Amy never sends an email on her own</strong> — every draft goes through the rep first.
+      </p>
+
+      <div class="doc-section-label">How it works</div>
+      <div class="workflow" style="margin-bottom:8px">
+        <div class="wf-node wf-trigger"><div class="wf-icon">📩</div><div class="wf-label">Prospect replies</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">🤖</div><div class="wf-label">Amy reads thread + HubSpot</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">✍️</div><div class="wf-label">Amy drafts a reply</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Posted to Slack</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">✅</div><div class="wf-label">"approved" → Front draft</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">📤</div><div class="wf-label">Rep opens Front, sends manually</div></div>
+      </div>
+
+      <div class="doc-section-label">Approving drafts in Slack</div>
+      <p style="font-size:13.5px;color:#444;margin-bottom:10px">Reply in the draft thread to take action:</p>
+      <ul style="font-size:13.5px;color:#444;margin:0 0 12px 20px;line-height:1.7">
+        <li><code>approved</code> — creates a ready-to-send draft in Front. Amy posts a link to open it.</li>
+        <li><code>reject</code> — discards the draft. Reply manually in Front instead.</li>
+        <li>Any other message — Amy rewrites the draft based on the feedback (e.g. "make it shorter").</li>
+      </ul>
+
+      <div class="doc-section-label">What Amy is good at</div>
+      <div class="rules-list">
+        <div class="rule-item">
+          <div class="rule-title">🔌 Answering integration questions</div>
+          <div class="rule-body">Amy knows the full Albato connector library. If a prospect asks "do you support Salesforce + Gong?", she checks the KB and answers specifically.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🤝 Handling reschedules and declines gracefully</div>
+          <div class="rule-body">Short, warm, low-friction. She won't over-explain or re-pitch when someone just needs to move a meeting.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">👋 Asking for referrals when a contact leaves</div>
+          <div class="rule-body">If a prospect says they're leaving the company, Amy asks for a warm handoff — brief and respectful.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🚫 Knowing when NOT to push for a meeting</div>
+          <div class="rule-body">Amy only includes the booking link once genuine interest is established. She won't paste it in a first reply to a cold question.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🕐 Scheduling in the prospect's timezone</div>
+          <div class="rule-body">When a prospect asks about a specific day or time, Amy checks Mariana's real Google Calendar and offers available slots displayed in the prospect's timezone — no booking link, no timezone math explanations.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">💳 Paid campaign follow-ups</div>
+          <div class="rule-body">On paid deals, Amy can mention the incentive in any follow-up, including FU#1/2, as a P.S. after the sign-off. If the lead already said yes to a meeting but hasn't booked, the email can be one sentence + closing question.</div>
+        </div>
+      </div>
+
+      <div class="doc-section-label">Teaching Amy</div>
+      <p style="font-size:13.5px;color:#444;margin-bottom:10px">Reply <code>save thread</code> in Amy's Slack thread to save it as a winning example, or <code>save to kb</code> to update one of the other three KBs — Amy replies with a numbered menu and the rep replies with the number and what to save.</p>
+      <table class="input-table" style="margin-bottom:10px">
+        <thead><tr><th>#</th><th>KB</th><th>What it contains</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Tone of voice</td><td>Writing rules: banned phrases, sign-off style, CTA guidelines.</td></tr>
+          <tr><td>2</td><td>Guidelines</td><td>Scenario-handling rules that apply to every deal.</td></tr>
+          <tr><td>3</td><td>Paid meetings guidelines</td><td>Rules that only apply when the deal name contains "paid".</td></tr>
+          <tr><td>4</td><td>Product KB</td><td>Reply with a URL — Amy scrapes it and adds it to the product KB.</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:13.5px;color:#444;margin-bottom:0">Example: rep says <code>save to kb</code>, Amy lists the 4 options, rep replies <code>2: never mention pricing on a first call</code> — done in one round trip.</p>
+
+      <div class="doc-section-label">Rating drafts</div>
+      <p style="font-size:13.5px;color:#444;margin-bottom:0">Reply with a number from <strong>1–10</strong> in any Amy thread. <strong>8–10</strong> auto-saves the thread to winning examples. <strong>1–7</strong> — Amy asks "What was off?"; the feedback reply improves tone of voice or guidelines. Score at any point with <code>9</code> or <code>8/10</code>.</p>
+
+      <div class="doc-section-label">What Amy won't do</div>
+      <ul style="font-size:13.5px;color:#444;margin:0 0 0 20px;line-height:1.7">
+        <li>Send anything without rep approval</li>
+        <li>Make up product capabilities — she only cites what's in the KB</li>
+        <li>Start conversations with cold leads (inbound replies only)</li>
+        <li>Reference being an AI in her replies</li>
+        <li>Assume a prospect has a problem she can solve — only references pain points explicitly stated in the thread or HubSpot notes</li>
+        <li>Pitch a meeting or include the booking link unless the lead has clearly signalled they're open to one</li>
+      </ul>
+    </div>
+
     <!-- Score trend chart -->
     <div class="chart-card" style="margin-bottom:24px">
       <h3 style="font-size:14px;font-weight:600;margin-bottom:12px;color:#444">Draft score trend</h3>
@@ -1010,7 +1096,7 @@
       <h2>BDR Agent (Amy Walker)</h2>
       <div class="doc-meta">Trigger: Albato webhook → repository_dispatch &nbsp;·&nbsp; Model: Claude Opus 4.8 (draft + followup) / Haiku 4.5 (intent classifier + availability detection) / Sonnet 4.6 (validator) &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/bdr-agent" target="_blank">lgoldfarb-hub/bdr-agent</a></div>
       <p class="doc-description">
-        AI-powered BDR agent that handles inbound email replies and overdue follow-ups on behalf of Albato's sales team. Goal: book discovery calls with qualified prospects for Albato Embedded and Albato MCP. Operates in five modes: <strong>draft</strong> (generates reply to inbound email, posts to Slack for rep approval with token + cost line), <strong>send</strong> (creates a Front reply draft on rep approval), <strong>respond</strong> (conversational Slack loop — reps can ask for rewrites, score drafts, or train the KB), <strong>learn</strong> (extracts winning email threads when a deal books a meeting), and <strong>followup</strong> (handles overdue HubSpot tasks — follow-ups #1–2 are short friendly bumps, #3–4 are signal-driven using deal notes as hooks; drafts are validated by Sonnet before posting). Reps train Amy directly from Slack using simple commands: <code>approved</code> / <code>reject</code>, score 1–10, <code>save thread</code>, <code>save tov:</code>, <code>save guideline:</code>, <code>save source:</code>. Amy identifies which Albato product is relevant for each lead (Embedded iPaaS, Embedded AI Agents, or MCP) before drafting. When a prospect asks for a specific day/time, Amy checks Mariana's real Google Calendar and offers available slots in the lead's timezone.
+        AI-powered BDR agent that handles inbound email replies and overdue follow-ups on behalf of Albato's sales team. Goal: book discovery calls with qualified prospects for Albato Embedded and Albato MCP. Operates in five modes: <strong>draft</strong> (generates reply to inbound email, posts to Slack for rep approval with token + cost line), <strong>send</strong> (creates a Front reply draft on rep approval), <strong>respond</strong> (conversational Slack loop — reps can ask for rewrites, score drafts, or train the KB), <strong>learn</strong> (extracts winning email threads when a deal books a meeting), and <strong>followup</strong> (handles overdue HubSpot tasks — follow-ups #1–2 are short friendly bumps, #3–4 are signal-driven using deal notes as hooks; drafts are validated by Sonnet before posting). Reps train Amy directly from Slack using simple commands: <code>approved</code> / <code>reject</code>, score 1–10, <code>save thread</code>, and <code>save to kb</code> (Amy replies with a numbered menu of the 4 trainable KBs — tone of voice, guidelines, paid meetings guidelines, product KB — and the rep replies <code>N: rule or URL</code>). Amy identifies which Albato product is relevant for each lead (Embedded iPaaS, Embedded AI Agents, or MCP) before drafting. When a prospect asks for a specific day/time, Amy checks Mariana's real Google Calendar and offers available slots in the lead's timezone.
       </p>
       <div class="doc-section-label">Workflow — Draft mode</div>
       <div class="workflow">
@@ -1079,8 +1165,8 @@
             <div class="wf-node wf-output" style="min-width:150px"><div class="wf-icon">💾</div><div class="wf-label">Save thread</div><div class="wf-sub">Winning thread KB (manual)</div></div>
           </div>
           <div class="wf-branch-row">
-            <div class="wf-branch-label">save tov / guideline / source</div>
-            <div class="wf-node wf-output" style="min-width:150px"><div class="wf-icon">✍️</div><div class="wf-label">Update KB</div><div class="wf-sub">Rule/URL appended to respective KB file</div></div>
+            <div class="wf-branch-label">save to kb</div>
+            <div class="wf-node wf-output" style="min-width:150px"><div class="wf-icon">✍️</div><div class="wf-label">Numbered KB menu</div><div class="wf-sub">Rep replies "N: rule or URL" → appended to that KB file</div></div>
           </div>
           <div class="wf-branch-row">
             <div class="wf-branch-label">anything else</div>
@@ -1116,7 +1202,7 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">🛡️ Draft validator (all modes)</div>
-          <div class="rule-body">Every draft (inbound reply and follow-up) is checked by Sonnet 4.6 before posting to Slack. The validator checks against <code>kb/kb_tone_of_voice.md</code> and <code>kb/kb_guidelines.md</code> and returns JSON with <code>pass</code>, <code>violations</code>, and <code>feedback</code>. Scope constraint: validator only flags violations visible in the text itself — it does not flag context-grounded claims (conference references, prior conversation mentions) as unverifiable since it doesn't have access to the thread or CRM. On failure, feedback is injected back as a rewrite instruction — up to 3 attempts. If all 3 fail, a failure alert is posted to Slack instead (with deal name, deal ID, and violations). When a rewrite happened, the Slack message shows <code>⚠️ Rewritten after validation (attempt N/3)</code> with the specific bullets.</div>
+          <div class="rule-body">Every draft (inbound reply and follow-up) is checked by Sonnet 4.6 before posting to Slack. The validator checks against <code>kb/kb_tone_of_voice.md</code>, <code>kb/kb_guidelines.md</code>, and — for paid-campaign deals — <code>kb/kb_paid_meetings.md</code>, and returns JSON with <code>pass</code>, <code>violations</code>, and <code>feedback</code>. Scope constraint: validator only flags violations visible in the text itself — it does not flag context-grounded claims (conference references, prior conversation mentions) as unverifiable since it doesn't have access to the thread or CRM. On failure, feedback is injected back as a rewrite instruction — up to 3 attempts. If all 3 fail, a failure alert is posted to Slack instead (with deal name, deal ID, and violations). When a rewrite happened, the Slack message shows <code>⚠️ Rewritten after validation (attempt N/3)</code> with the specific bullets.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">🚫 No inferred problems</div>
@@ -1132,7 +1218,7 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">💳 Paid campaign handling</div>
-          <div class="rule-body">If the deal name contains "paid" or the thread mentions an incentive, Amy may reference it in any follow-up including FU#1/2. The incentive goes in a P.S. line after the sign-off: "P.S. Still happy to offer $200 for 60 minutes of your time." If the lead already agreed to a meeting but hasn't booked, the entire email can be one sentence + closing question — no substantive opener needed. The closing question is always required.</div>
+          <div class="rule-body">Paid-only rules live in their own KB file, <code>kb/kb_paid_meetings.md</code>, and are injected on top of the standard guidelines whenever <code>is_paid_deal()</code> detects "paid" in the deal name — across draft mode, both follow-up tiers, and the validator. If the deal name contains "paid" or the thread mentions an incentive, Amy may reference it in any follow-up including FU#1/2. The incentive goes in a P.S. line after the sign-off: "P.S. Still happy to offer $200 for 60 minutes of your time." If the lead already agreed to a meeting but hasn't booked, the entire email can be one sentence + closing question — no substantive opener needed. The closing question is always required. Reps train this file via the <code>save to kb</code> menu, option 3.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">💰 Token + cost display</div>
@@ -1191,8 +1277,9 @@
 ├── kb/
 │   ├── kb_sources.json         # product KB (auto-refreshed bi-weekly; reps can add URLs via Slack)
 │   ├── kb_winning_threads.json # winning email threads (auto + scoring + save thread)
-│   ├── kb_tone_of_voice.md    # Amy's writing style guide (save tov: [rule])
-│   └── kb_guidelines.md       # scenario handling rules (save guideline: [rule])
+│   ├── kb_tone_of_voice.md    # Amy's writing style guide (save to kb → 1)
+│   ├── kb_guidelines.md       # scenario handling rules (save to kb → 2)
+│   └── kb_paid_meetings.md    # paid-campaign-only rules (save to kb → 3)
 ├── kb_refresh.py         # KB scraper (runs via kb-refresh.yml)
 ├── .github/workflows/
 │   ├── bdr-draft.yml     # repository_dispatch: bdr-draft
