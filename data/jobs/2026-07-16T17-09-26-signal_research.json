@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Momentus Technologies| Paid_Meeting_CTO_June26_2 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-16T17:09:26.666937+00:00",
+  "completed_at": "2026-07-16T17:14:06.692063+00:00",
+  "duration_seconds": 280.025126,
+  "input_tokens": 36203,
+  "output_tokens": 9040,
+  "cache_read_tokens": 439693,
+  "cache_write_tokens": 54976,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 32948,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.108609,
+  "cost_output": 0.1356,
+  "cost_cache_read": 0.1319079,
+  "cost_cache_write": 0.20615999999999998,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5822769
+}
