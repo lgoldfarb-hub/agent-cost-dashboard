@@ -1,0 +1,23 @@
+{
+  "agent_name": "bdr-agent",
+  "job_name": "draft: Automatic reply: Embedded agents",
+  "model": "claude-opus-4-8",
+  "started_at": "2026-07-16T17:09:29.224686+00:00",
+  "completed_at": "2026-07-16T17:10:24.731091+00:00",
+  "duration_seconds": 55.506405,
+  "input_tokens": 45676,
+  "output_tokens": 369,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 45676,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.68514,
+  "cost_output": 0.027675,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.712815
+}
