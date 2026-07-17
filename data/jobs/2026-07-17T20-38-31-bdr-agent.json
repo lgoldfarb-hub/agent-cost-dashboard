@@ -1,0 +1,23 @@
+{
+  "agent_name": "bdr-agent",
+  "job_name": "respond: Yes, and help me create a guideline for your knowledge base ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-17T20:38:31.857224+00:00",
+  "completed_at": "2026-07-17T20:38:44.696675+00:00",
+  "duration_seconds": 12.839451,
+  "input_tokens": 15344,
+  "output_tokens": 415,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 15344,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.046032000000000003,
+  "cost_output": 0.006225,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.052257000000000005
+}
