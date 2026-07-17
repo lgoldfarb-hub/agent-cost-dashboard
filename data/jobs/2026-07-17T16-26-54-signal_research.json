@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  SplitMetrics| Paid_Meeting_CTO_June26_2 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-17T16:26:54.170308+00:00",
+  "completed_at": "2026-07-17T16:29:31.578049+00:00",
+  "duration_seconds": 157.407741,
+  "input_tokens": 49022,
+  "output_tokens": 5372,
+  "cache_read_tokens": 140903,
+  "cache_write_tokens": 25260,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 45767,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.147066,
+  "cost_output": 0.08058,
+  "cost_cache_read": 0.0422709,
+  "cost_cache_write": 0.094725,
+  "cost_web_search": 0.0,
+  "cost_total": 0.3646419
+}
