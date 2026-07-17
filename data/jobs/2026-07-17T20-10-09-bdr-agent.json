@@ -1,0 +1,23 @@
+{
+  "agent_name": "bdr-agent",
+  "job_name": "respond: How did you infer that he's asking for use cases for Iris?",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-17T20:10:09.148676+00:00",
+  "completed_at": "2026-07-17T20:10:17.373104+00:00",
+  "duration_seconds": 8.224428,
+  "input_tokens": 13690,
+  "output_tokens": 188,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 13690,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.04107,
+  "cost_output": 0.00282,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.043890000000000005
+}
