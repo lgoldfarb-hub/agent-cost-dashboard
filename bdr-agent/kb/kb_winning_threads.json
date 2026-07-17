@@ -474,5 +474,23 @@
         "text": "Yes, talk to you soon."
       }
     ]
+  },
+  {
+    "deal_id": "62733827651",
+    "deal_name": "Re: Paid meeting",
+    "booked_at": "",
+    "lead_title": "",
+    "sequence_name": "",
+    "messages": [
+      {
+        "role": "lead",
+        "text": "Hello Leo,\n\nI’m open to a conversation. Before scheduling, please send 2–3 concrete SplitMetrics use cases and clarify which app-growth platforms you support, especially Apple Search Ads, Google Ads, Meta, TikTok, AppsFlyer, and Adjust.\nPlease provide your calendar for the next 2 weeks.\n\n \n All the best,  Maxim Lisovsky | Chief Technology Officer  at SplitMetrics Linkedin  | Email :  maxim.lisovsky@splitmetrics.com"
+      },
+      {
+        "role": "rep",
+        "text": "Hi Maxim,\n\nHappy to lay this out.\n\nSplitMetrics already ships Iris, your AI agent for Apple Ads. That's where Albato MCP fits. It gives Iris live access to 1,000+ apps through a single MCP, so your team isn't wiring up each MCP separately and maintaining dozens of API connectors.\n\nThree concrete use cases:\n\n1. Iris pulls spend, CPA, and conversion data from Google Ads, Meta, and TikTok into SplitMetrics to act on cross-channel performance, not just Apple Ads.\n2. Iris syncs attribution and install data from AppsFlyer and Adjust to enrich its growth decisions.\n3. Your customers get a white-label AI agent inside SplitMetrics that can execute actions across their own ad and analytics stack on their behalf.\n\nOn the platforms you listed: Google Ads is a native connector today (2 triggers, 3 actions). For Apple Search Ads, Meta, TikTok, AppsFlyer, and Adjust that aren't already in the catalog, we custom-build them in a matter of days as part of the managed service. No dev lift on your side.\n\nFor times, grab whatever works from my calendar: <a href=\"https://meetings.hubspot.com/marianaguerci/meet-with-albato\">book a slot here</a>.\n\nWhich of those three use cases is closest to what you're trying to solve with Iris?\n\nBest,\nLeo\n\nP.S. Still happy to offer $200 USD for 60 minutes of your time."
+      }
+    ],
+    "source": "slack_training"
   }
 ]
