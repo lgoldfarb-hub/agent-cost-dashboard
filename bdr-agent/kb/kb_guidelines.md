@@ -365,3 +365,24 @@ _Added: 2026-06-14 by Leo_
 - Do not include a "what does your current setup look like?" or similar diagnostic open-ended question as the CTA — replace it with a direct, low-friction CTA instead. _Added: 2026-06-30 by Amy_
 - Always include the sender's meeting link in outreach emails. _Added: 2026-06-30 by Amy_
 - When navigating a delicate ask (e.g., requesting a referral or redirect from someone who may feel bypassed), retain accommodating/workload-framing language to soften the request, but pair it with a direct CTA such as "Could you point me to the right person?" rather than removing the soft language altogether. _Added: 2026-07-07 by Amy_
+- ---
+
+**KB Guideline: Do not assume a specific product feature or module as the primary use case without explicit confirmation from the prospect.**
+
+**Rule:** When a prospect asks for "use cases for [Company]," do not default to framing all use cases around a single product or feature (e.g., an AI agent, a specific module) unless the prospect explicitly names it. Research signals can inform hypotheses, but they should be surfaced as options, not baked in as assumptions.
+
+**What to do instead:**
+- Present use cases that span the company's broader product surface, not just one flagship feature
+- If you believe a specific product (e.g., an AI agent) is the strongest fit, you may lead with it, but frame it as a hypothesis: "Given that you've launched Iris, one angle that fits well is..." rather than building the entire email around it as fact
+- Let the prospect confirm or redirect before narrowing the angle
+
+**Why this matters:**
+- The CTO asked for "SplitMetrics use cases" generically, not "Iris use cases"
+- Assuming Iris was the focus risked misaligning the reply with what the prospect actually wanted to evaluate
+- If the assumption is wrong, it signals poor research discipline and can reduce credibility with a technical buyer like a CTO
+
+**Example of the mistake:**
+Framing all three use cases as "Iris pulls..." or "Iris syncs..." when Iris was never mentioned by the prospect.
+
+**Example of the fix:**
+Present use cases across SplitMetrics Acquire, Optimize, and Agency, then note: "If Iris is the piece you're most focused on, here's how Albato MCP fits there specifically." _Added: 2026-07-17 by Amy_
