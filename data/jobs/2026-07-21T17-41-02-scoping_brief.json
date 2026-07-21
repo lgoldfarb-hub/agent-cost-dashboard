@@ -1,0 +1,23 @@
+{
+  "agent_name": "scoping_brief",
+  "job_name": "Scoping brief: The Agency",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-21T17:41:02.014567+00:00",
+  "completed_at": "2026-07-21T18:00:39.457546+00:00",
+  "duration_seconds": 1177.442979,
+  "input_tokens": 303,
+  "output_tokens": 21634,
+  "cache_read_tokens": 6069253,
+  "cache_write_tokens": 118363,
+  "system_prompt_tokens": 4149,
+  "tool_result_tokens": 181759,
+  "conversation_tokens": 0,
+  "web_searches": 38,
+  "status": "success",
+  "cost_input": 0.000909,
+  "cost_output": 0.32451,
+  "cost_cache_read": 1.8207759,
+  "cost_cache_write": 0.44386125,
+  "cost_web_search": 0.38,
+  "cost_total": 2.9700561499999996
+}
