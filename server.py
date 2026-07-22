@@ -67,6 +67,7 @@ AGENTS = [
     "daily_todo_agent",
     "bdr-agent",
     "runtime_custdev_brief",
+    "scoping_brief",
 ]
 
 AGENT_LABELS = {
@@ -81,6 +82,7 @@ AGENT_LABELS = {
     "daily_todo_agent":     "Daily Todo Agent",
     "bdr-agent":            "BDR Agent (Amy)",
     "runtime_custdev_brief": "Runtime Custdev Brief",
+    "scoping_brief":        "Scoping Brief (Custom)",
 }
 
 
