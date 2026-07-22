@@ -81,7 +81,7 @@ AGENT_LABELS = {
     "second_brain":         "Second Brain",
     "daily_todo_agent":     "Daily Todo Agent",
     "bdr-agent":            "BDR Agent (Amy)",
-    "runtime_custdev_brief": "Runtime Custdev Brief",
+    "runtime_custdev_brief": "Discovery Brief Runtime",
     "scoping_brief":        "Discovery Brief Custom",
 }
 
