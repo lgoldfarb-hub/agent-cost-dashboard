@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  360insights| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-22T10:00:43.505971+00:00",
+  "completed_at": "2026-07-22T10:07:08.800858+00:00",
+  "duration_seconds": 385.294887,
+  "input_tokens": 58074,
+  "output_tokens": 9317,
+  "cache_read_tokens": 1155624,
+  "cache_write_tokens": 58754,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 54819,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.174222,
+  "cost_output": 0.13975500000000002,
+  "cost_cache_read": 0.3466872,
+  "cost_cache_write": 0.2203275,
+  "cost_web_search": 0.0,
+  "cost_total": 0.8809917
+}
