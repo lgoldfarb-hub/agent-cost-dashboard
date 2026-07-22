@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan: OriginStamp AG | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-22T09:42:44.476000+00:00",
+  "completed_at": "2026-07-22T09:44:46.456785+00:00",
+  "duration_seconds": 121.980785,
+  "input_tokens": 19455,
+  "output_tokens": 5148,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 1126,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 18445,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.058365,
+  "cost_output": 0.07722,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0042225000000000006,
+  "cost_web_search": 0.0,
+  "cost_total": 0.1398075
+}
