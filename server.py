@@ -82,7 +82,7 @@ AGENT_LABELS = {
     "daily_todo_agent":     "Daily Todo Agent",
     "bdr-agent":            "BDR Agent (Amy)",
     "runtime_custdev_brief": "Runtime Custdev Brief",
-    "scoping_brief":        "Scoping Brief (Custom)",
+    "scoping_brief":        "Discovery Brief Custom",
 }
 
 
