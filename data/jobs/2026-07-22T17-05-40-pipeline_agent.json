@@ -1,0 +1,23 @@
+{
+  "agent_name": "pipeline_agent",
+  "job_name": "Business Fit: OriginStamp AG | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-22T17:05:40.024747+00:00",
+  "completed_at": "2026-07-22T17:05:42.839591+00:00",
+  "duration_seconds": 2.814844,
+  "input_tokens": 6749,
+  "output_tokens": 126,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 6749,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.020247,
+  "cost_output": 0.00189,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.022137
+}
