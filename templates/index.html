@@ -254,7 +254,7 @@
       <button class="agent-filter-btn" onclick="filterDocs('albato-helper')">Albato Helper</button>
       <button class="agent-filter-btn" onclick="filterDocs('second-brain')">Second Brain</button>
       <button class="agent-filter-btn" onclick="filterDocs('bdr-agent')">BDR Agent</button>
-      <button class="agent-filter-btn" onclick="filterDocs('runtime-custdev-brief')">Runtime Custdev Brief</button>
+      <button class="agent-filter-btn" onclick="filterDocs('runtime-custdev-brief')">Discovery Brief Runtime</button>
       <button class="agent-filter-btn" onclick="filterDocs('discovery-brief-custom')">Discovery Brief Custom</button>
     </div>
 
@@ -1298,7 +1298,7 @@
 
     <!-- Runtime Custdev Brief Agent -->
     <div class="doc-card" data-agent="runtime-custdev-brief">
-      <h2>Runtime Custdev Brief Agent</h2>
+      <h2>Discovery Brief Runtime</h2>
       <div class="doc-meta">Trigger: Albato webhook (repository_dispatch) or manual &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/discovery-brief-agent-runtime" target="_blank">lgoldfarb-hub/discovery-brief-agent-runtime</a></div>
       <p class="doc-description">
         Pre-call research agent for Albato Runtime (the AI agent governance/control-plane product) customer-development interviews. Given a company name and domain, researches whether the target company already has AI agents or feels the security/spend/governance pain Runtime solves, and produces a 12-section brief saved as a HubSpot note. Unlike the Discovery Brief Agent, this is a learning-interview prep tool — it never advances a HubSpot deal stage and has no numeric opportunity score; a company with weak signals is still worth interviewing if it fits the ICP profile.
@@ -1416,7 +1416,7 @@
       <div class="rules-list">
         <div class="rule-item">
           <div class="rule-title">🚫 Never advances a deal</div>
-          <div class="rule-body">Like the Runtime Custdev Brief agent, this agent never writes HubSpot deal properties or advances a pipeline stage. It only reads for dedupe context (§1) and writes a note.</div>
+          <div class="rule-body">Like the Discovery Brief Runtime agent, this agent never writes HubSpot deal properties or advances a pipeline stage. It only reads for dedupe context (§1) and writes a note.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">📊 Qualitative readiness verdict, no score</div>
