@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Wrike - New Deal | Interview_Zapier_August\u201925",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-23T23:00:47.317547+00:00",
+  "completed_at": "2026-07-23T23:05:38.253321+00:00",
+  "duration_seconds": 290.935774,
+  "input_tokens": 30451,
+  "output_tokens": 7370,
+  "cache_read_tokens": 917928,
+  "cache_write_tokens": 52281,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 27196,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.09135299999999999,
+  "cost_output": 0.11055,
+  "cost_cache_read": 0.27537839999999997,
+  "cost_cache_write": 0.19605375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.67333515
+}
