@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  SplitMetrics| Paid_Meeting_CTO_June26_2 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-23T06:43:42.564668+00:00",
+  "completed_at": "2026-07-23T06:55:06.878161+00:00",
+  "duration_seconds": 684.313493,
+  "input_tokens": 11771,
+  "output_tokens": 26559,
+  "cache_read_tokens": 2013736,
+  "cache_write_tokens": 79533,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4716,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.035313,
+  "cost_output": 0.398385,
+  "cost_cache_read": 0.6041208,
+  "cost_cache_write": 0.29824875,
+  "cost_web_search": 0.0,
+  "cost_total": 1.3360675499999999
+}
