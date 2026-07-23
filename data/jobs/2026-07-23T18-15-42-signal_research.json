@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Plaud.ai | SaaStr 2026",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-23T18:15:42.919408+00:00",
+  "completed_at": "2026-07-23T18:21:14.367039+00:00",
+  "duration_seconds": 331.447631,
+  "input_tokens": 28086,
+  "output_tokens": 8692,
+  "cache_read_tokens": 852796,
+  "cache_write_tokens": 41689,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 24831,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.084258,
+  "cost_output": 0.13038,
+  "cost_cache_read": 0.2558388,
+  "cost_cache_write": 0.15633375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.62681055
+}
