@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Markup AI | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-24T14:57:14.096232+00:00",
+  "completed_at": "2026-07-24T15:03:48.209304+00:00",
+  "duration_seconds": 394.113072,
+  "input_tokens": 38279,
+  "output_tokens": 9722,
+  "cache_read_tokens": 1312715,
+  "cache_write_tokens": 60919,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 35024,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.114837,
+  "cost_output": 0.14583,
+  "cost_cache_read": 0.3938145,
+  "cost_cache_write": 0.22844625000000002,
+  "cost_web_search": 0.0,
+  "cost_total": 0.8829277499999999
+}
