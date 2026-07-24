@@ -1,0 +1,23 @@
+{
+  "agent_name": "bdr-agent",
+  "job_name": "draft: Re: Paid meeting",
+  "model": "claude-opus-4-8",
+  "started_at": "2026-07-24T15:15:25.692107+00:00",
+  "completed_at": "2026-07-24T15:16:02.590243+00:00",
+  "duration_seconds": 36.898136,
+  "input_tokens": 13025,
+  "output_tokens": 421,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 13025,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.195375,
+  "cost_output": 0.031575,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.22694999999999999
+}
