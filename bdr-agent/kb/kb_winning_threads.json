@@ -492,5 +492,19 @@
       }
     ],
     "source": "slack_training"
+  },
+  {
+    "deal_id": "63077728348",
+    "deal_name": "Send more details about inquiry - Rahul Shroff (Group Product Manager) - Markup AI",
+    "booked_at": "",
+    "lead_title": "",
+    "sequence_name": "",
+    "messages": [
+      {
+        "role": "rep",
+        "text": "Hi Rahul,\n\nThanks for the reply, and congrats on the new role starting in August.\n\nYou mentioned you're open to a conversation. Are you still up for connecting once you're settled in?\n\nBest,\nNik\n\nP.S. Happy to offer $200 for 60 minutes of your time."
+      }
+    ],
+    "source": "slack_training"
   }
 ]
