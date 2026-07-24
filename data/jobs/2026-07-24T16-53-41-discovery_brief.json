@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: RallyUp | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-24T16:53:41.479950+00:00",
+  "completed_at": "2026-07-24T17:10:50.733321+00:00",
+  "duration_seconds": 1029.253371,
+  "input_tokens": 13111,
+  "output_tokens": 38040,
+  "cache_read_tokens": 3113734,
+  "cache_write_tokens": 125872,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 6056,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.039333,
+  "cost_output": 0.5706,
+  "cost_cache_read": 0.9341202,
+  "cost_cache_write": 0.47202000000000005,
+  "cost_web_search": 0.0,
+  "cost_total": 2.0160732
+}
