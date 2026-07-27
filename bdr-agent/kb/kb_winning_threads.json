@@ -506,5 +506,75 @@
       }
     ],
     "source": "slack_training"
+  },
+  {
+    "deal_id": "58368950082",
+    "deal_name": "Splitmetrics | Paid_meetings_TAM_Feb26",
+    "booked_at": "2026-07-27 17:48",
+    "lead_title": "Chief Technology Officer",
+    "sequence_name": "",
+    "source": "albato_learn",
+    "messages": [
+      {
+        "role": "lead",
+        "text": "Hello Leo,\n\nI’m open to a conversation. Before scheduling, please send 2–3 concrete SplitMetrics use cases and clarify which app-growth platforms you support, especially Apple Search Ads, Google Ads, Meta, TikTok, AppsFlyer, and Adjust.\nPlease provide your calendar for the next 2 weeks.\n\n \n All the best,  Maxim Lisovsky | Chief Technology Officer  at SplitMetrics Linkedin  | Email :  maxim.lisovsky@splitmetrics.com"
+      },
+      {
+        "role": "rep",
+        "text": "Hi Maxim, \nSure. \n Concrete use cases we see for a platform like SplitMetrics: 1. Sync campaign performance data into customers' BI or data warehouse (Tableau, Looker, BigQuery) 2. Trigger alerts in Slack or a CRM when performance signals cross a threshold 3. Give Iris an execution layer so it can push actions (bid changes, keyword adds) into external tools, not just SplitMetrics Acquire \n On platforms , we support Google Ads, TikTok Business, and Meta (Facebook Ads) natively. Apple Search Ads, AppsFlyer, and Adjust would be custom connectors, and feasibility depends on the specific workflows, so worth confirming what you'd want to enable there. \n Mind sharing which use cases you have in mind for AppsFlyer, Adjust, and Apple Search Ads? \n Best, \n Leo Goldfarb Co-Founder @Albato book a meeting - albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi Leo,\n\nPlease provide your calendar for the next 2 weeks."
+      },
+      {
+        "role": "rep",
+        "text": "Hi Maxim, \n Happy to find time. To make the call useful, it'd help to know a bit about what you're looking to enable. \n Which integrations are top of mind for your customers: Apple Search Ads, AppsFlyer, Adjust, or something else? \n We're in the same time zone, so Thursday or Friday this week, or Monday or Wednesday next week, would work best. \n Best, \n Leo Goldfarb Co-Founder @Albato book a meeting - albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi Leo,\n\nWe already have integrations with the main MMPs and Apple Search Ads, so there isn’t a specific gap or immediate integration need on our side right now.\n\nWhat I’d be interested in understanding is where Albato could potentially be useful for us longer term, especially around embedded integrations, multi-channel workflows, and an execution layer for AI-driven actions across external platforms.\n\nHappy to keep the conversation more exploratory and see if there’s a fit for our future roadmap."
+      },
+      {
+        "role": "rep",
+        "text": "Hi Maxim, \n Thanks a lot for the clarity! Can you please pick a slot for next week in the calendar ? \nI've also cc'ed our Head of Strategic Accounts, Mariana. She'll be joining the call as well. \n Looking forward to our chat. \n Best, \n Leo Goldfarb Co-Founder @Albato book a meeting - albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi Leo,\n\nI've scheduled it for Friday."
+      },
+      {
+        "role": "rep",
+        "text": "Hi Maxim, \n Mariana here. I'll be leading the call tomorrow. Hope you're doing well! Would you be available to start an hour later, at 11 am CET? \n Best, Mariana Guerci Head of Strategic Accounts @Albato schedule a meeting - albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi Mariana,\n\nUnfortunately, I can't do it late. If you need, we can reschedule for next week. \n All the best,  Maxim Lisovsky | Chief Technology Officer  at SplitMetrics Linkedin  | Email :  maxim.lisovsky@splitmetrics.com"
+      },
+      {
+        "role": "rep",
+        "text": "Hi Maxim, \n Thank you for the flexibility! Would Monday at 10 am or 11 am work for you? \n Best, Mariana Guerci Head of Strategic Accounts @Albato schedule a meeting - albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "I have time at 9:00 or 13:00 CET on Monday."
+      },
+      {
+        "role": "rep",
+        "text": "I’ve updated the invite for Monday at 13:00 CET. Thank you!  \n\n Mariana Guerci  \nAccount Executive at @Albato\n\nNo matter the process. Automate it with no-code.\n albato.com Book a meeting \n Il giorno gio 23 lug 2026 alle 18:43 Maxim Lisovsky < maxim.lisovsky@splitmetrics.com > ha scritto:\n I have time at 9:00 or 13:00 CET on Monday."
+      },
+      {
+        "role": "rep",
+        "text": "Hey Maxim, \n I just want to confirm our meeting today. Are we still good? \n Best, \n — Mariana Guerci Head of Strategic Accounts @Albato book a meeting | linkedin"
+      },
+      {
+        "role": "lead",
+        "text": "Hey Mariana,\n\nYes, I confirm my participation. \n All the best,  Maxim Lisovsky | Chief Technology Officer  at SplitMetrics Linkedin  | Email :  maxim.lisovsky@splitmetrics.com"
+      },
+      {
+        "role": "rep",
+        "text": "Hi Maxim, \n I appreciate you taking the time to chat with me today! \n Here’s a summary of the main challenges you highlighted: - Building deep, write-capable channel connectors will be a “long journey”: in a very positive scenario, “for two engineers it will take approximately a quarter for one channel.” You need multi-channel (Facebook, TikTok, Google, Snapchat), which multiplies effort and delays time-to-market. - Off‑the‑shelf options you tested (e.g., Airbyte, Unified.to, Nango, Windsor AI) “can read data,” but “when we are talking about pushing back data, it’s another story.” Gaps include Facebook authorization (“pass through regimes”), the need for a synchronization service to trigger updates/deletes/creates, and asset breakdown handling, meaning you’d still have to build on top, creating inconsistency and extra maintenance. - “The most complicated topic here is compliance and security,” and your high‑load performance standards still require people oversight, adding risk and slowing delivery when connecting new tools. - Data freshness is critical in your domain: with channel rate limits and client‑specific refresh frequencies, you “ideally should have the same information in our system and all channels,” or campaign decisions suffer. - These initiatives have slipped before: “we started to talk about those initiatives even two years ago… each year we announce them,” and you hope not to repeat the pattern, aiming to start next quarter. \n Net-net, the engineering lift per channel, write/auth complexity, and strict compliance/performance needs put multi‑channel launch timelines and campaign quality at risk. Albato’s headless/Universal API approach can help SplitMetrics ship reliable write‑capable connectors faster (with managed auth and connector maintenance) while keeping the UX under the hood and your team focused on core product work. \n As promised, I'm sharing some helpful resources so you can review and easily share them with your team: - Your dedicated resource hub with the pricing, FAQs, tech documentation, and an overview of the embedded solution. https://albato.valuecase.com/spaces/splitmetrics?token=65b9728dd34ae90d - Today's meeting recording \n Can you please let me know if these links work for you? \n Also, here's a quick summary of our next steps: - Maxim to assess embedded integration demand and specific connector requirements with internal teams by August 7th. - We'll meet again on August 7th (anytime from 10 am - 2 pm CET). I've sent a placeholder for 11 am CET. Please let me know which time slots work best for you and any additional team members. \n I am happy to help if any technical questions come up during your internal review and look forward to reconnecting soon. \n We'll also send the gift card instructions in a separate thread. \n Best, Mariana Guerci Head of Strategic Accounts @Albato schedule a meeting - albato.com"
+      }
+    ]
   }
 ]
