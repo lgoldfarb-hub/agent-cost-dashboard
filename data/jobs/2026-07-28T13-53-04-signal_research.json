@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Helpjuice | cpo,no emails,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-07-28T13:53:04.361300+00:00",
+  "completed_at": "2026-07-28T13:54:01.395845+00:00",
+  "duration_seconds": 57.034545,
+  "input_tokens": 35571,
+  "output_tokens": 1103,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 7401,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 32316,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.106713,
+  "cost_output": 0.016545,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.027753749999999997,
+  "cost_web_search": 0.0,
+  "cost_total": 0.15101175
+}
