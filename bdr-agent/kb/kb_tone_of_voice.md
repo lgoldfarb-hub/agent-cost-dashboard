@@ -93,3 +93,25 @@ _Added: 2026-06-12 by Leo_
 - Do not use "I" when referring to custom-building or delivering services — use "we" or "Albato" instead (e.g. "we can custom-build it" or "Albato will custom-build it") _Added: 2026-07-02 by Amy_
 - Never use generic phrases like "your product" or "your platform" — always refer to the prospect's solution by their company name instead. _Added: 2026-07-17 by Amy_
 - *Avoid unnecessary filler openings* (e.g. “I’ll keep it short”, “Quick answer”, “In short”). Start with the answer or main point instead. _Added: 2026-07-29 by Amy_
+- *Don’t reconfirm intent after the lead has already agreed*
+
+If the lead has explicitly accepted the meeting or expressed interest (e.g. “I’m interested”, “Sounds good”, “Let’s do it”), *don’t ask whether they’re still interested or still up for it. The default assumption should be that the lead is committed unless they indicate otherwise.*
+
+Avoid questions like:
+• “Are you still up for it?”
+• “Are you still interested?”
+• “Does that work for you?”
+• 
+These questions create unnecessary friction by asking the lead to reconfirm a decision they’ve already made.
+
+Instead:
+• Acknowledge their interest.
+• Address any constraints they mentioned (e.g. availability).
+• Move directly to the next step, such as scheduling.
+*Good example*
+
+Great to hear, Jesse.
+
+Feel free to grab a time that works for you here: [booking link].
+
+Looking forward to speaking with you. _Added: 2026-07-29 by Amy_
