@@ -1486,6 +1486,95 @@
     └── discovery-brief-custom-session-log.md</pre>
     </div>
 
+    <!-- Churn Radar -->
+    <div class="doc-card" data-agent="churn-radar">
+      <h2>Churn Radar</h2>
+      <div class="doc-meta">Trigger: Albato webhook (repository_dispatch) every Monday, plus GitHub Actions cron fallback &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/churn-radar" target="_blank">lgoldfarb-hub/churn-radar</a></div>
+      <p class="doc-description">
+        Early-warning system for customer churn. Scans every existing Albato Embedded customer — deals in the Global Embedded pipeline's Set-up and Active stages — and reads their Sybill call transcripts, HubSpot CRM notes, and engagement history to detect evidence-backed churn signals: competitor or in-house-build mentions, declining product value or usage, dissatisfaction with product/support/pricing, discount requests tied to perceived value, seat/scope reduction plans, budget cuts, or explicit renewal concerns. Claude only flags a customer when there is a direct or closely-paraphrased quote backing the risk — no speculation. Every flagged customer gets a 0–100% churn probability, a risk level, a confidence score, and concrete next steps, and the highest-risk accounts are reported to the Customer Success team every Monday in Slack, ranked worst-first.
+      </p>
+      <div class="doc-section-label">Workflow</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">📅</div><div class="wf-label">Weekly Trigger</div><div class="wf-sub">Albato webhook (repository_dispatch: churn-radar-run) or Monday 08:00 UTC cron</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Customers</div><div class="wf-sub">HubSpot — Global Embedded pipeline, Set-up + Active stages</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📝</div><div class="wf-label">Fetch CRM Notes</div><div class="wf-sub">Most recent 15 notes per deal, paginated batch-read</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">🎙️</div><div class="wf-label">Fetch Call Transcripts</div><div class="wf-sub">Sybill — conversation IDs extracted from note links</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Detect Churn Signals</div><div class="wf-sub">Claude Sonnet 4.6 — evidence-only, quote-backed</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">📝</div><div class="wf-label">HubSpot Note</div><div class="wf-sub">Audit trail on flagged deals</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Slack Report</div><div class="wf-sub">Ranked highest-risk first</div></div>
+      </div>
+      <div class="doc-section-label">Rules</div>
+      <div class="rules-list">
+        <div class="rule-item">
+          <div class="rule-title">🔍 Evidence-only, no speculation</div>
+          <div class="rule-body">Claude is instructed to flag a churn signal only when there is explicit evidence — a direct or closely-paraphrased customer quote — in a call transcript or CRM note. Silence, generic caution, or industry norms are never treated as risk. If there's no explicit evidence, <code>has_risk</code> is false and the customer is excluded from the report entirely, rather than padded in with a low score.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🎙️ Sybill linkage via HubSpot notes</div>
+          <div class="rule-body">Sybill's conversation-list API does not accept a HubSpot deal ID as a filter (confirmed: returns <code>400 unknown source_id</code>). Instead, Sybill posts each call summary as a HubSpot note containing a dashboard link (<code>sybill.ai/c?id=&lt;uuid&gt;</code>); <code>extract_sybill_conversation_ids()</code> regex-extracts that UUID from the deal's notes and fetches the transcript directly via <code>GET /v1/conversations/{id}</code>. A direct Sybill title-search is kept as a fallback for calls not yet synced to HubSpot, but is unverified.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">📄 Notes fetch is paginated and capped</div>
+          <div class="rule-body">HubSpot's <code>notes/batch/read</code> endpoint caps at 100 IDs per call. Long-lived customer deals can have 100+ notes, which crashed the agent's first real run. Fixed by paginating the association-ID fetch, batch-reading in chunks of 100, then keeping only the most recent 15 notes — recent activity is what matters for churn signals, not full history.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🎯 Customer scope — Set-up + Active stages only</div>
+          <div class="rule-body">Scans HubSpot deals in the Global Embedded pipeline (<code>6777604</code>), stages Set-up (<code>20414289</code>) and Active (<code>20427820</code>) — i.e. accounts that have already closed and started using the product, not sales-pipeline prospects.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">📝 Audit trail on every flagged account</div>
+          <div class="rule-body">When a customer is flagged, Churn Radar writes a HubSpot note to that deal recording the churn probability, risk level, and summary — so the flag is visible directly on the CRM record, not just in the Slack report.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🚫 No padding to fill out the report</div>
+          <div class="rule-body">Only customers with <code>has_risk: true</code> and a churn probability above 0 appear in the weekly report. If no customers show meaningful risk, the report says so explicitly rather than listing low-signal accounts to look thorough.</div>
+        </div>
+      </div>
+      <div class="doc-section-label">Weekly Report Contents</div>
+      <table class="input-table">
+        <thead><tr><th>Field</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Client name + account owner</td><td>Deal name and resolved HubSpot owner (PM/CSM)</td></tr>
+          <tr><td>Churn probability</td><td>0–100%, ranked highest-first across the report</td></tr>
+          <tr><td>Risk level</td><td>Low / Medium / High / Critical</td></tr>
+          <tr><td>Supporting quotes</td><td>Up to 3 direct/paraphrased customer quotes backing the assessment</td></tr>
+          <tr><td>Why at risk</td><td>1–3 sentence summary</td></tr>
+          <tr><td>Actions already taken</td><td>Pulled from CRM notes, if any exist</td></tr>
+          <tr><td>Recommended next steps</td><td>Concrete action for the CS team</td></tr>
+          <tr><td>Confidence score</td><td>0–100%, how confident the model is given available evidence</td></tr>
+          <tr><td>Evidence source</td><td>Which call or note the evidence came from</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Secrets</div>
+      <table class="input-table">
+        <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — churn signal analysis</td></tr>
+          <tr><td><code>HUBSPOT_TOKEN</code></td><td>HubSpot REST API — reads deals/notes/owners, writes audit-trail notes</td></tr>
+          <tr><td><code>SYBILL_KEY</code></td><td>Sybill REST API — call transcripts and summaries</td></tr>
+          <tr><td><code>SLACK_BOT</code></td><td>Slack bot token — posts the weekly report. Scope: <code>chat:write</code></td></tr>
+          <tr><td><code>GHUB_PAT</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:12.5px;color:#888;margin:8px 0 0">Note: secret names differ from other Albato agent repos (e.g. <code>bdr-agent</code> uses <code>HUBSPOT_MCP_TOKEN</code> / <code>SLACK_BOT_TOKEN</code> / <code>TRACKER_GITHUB_TOKEN</code>) — this repo uses the shorter names above.</p>
+      <div class="doc-section-label">File Structure</div>
+      <pre class="file-tree">churn-radar/
+├── churn_radar.py        # single entry point (--dry-run / --deal / --debug-sybill)
+├── tracker.py            # cost tracking push to agent-cost-dashboard
+├── requirements.txt
+├── CLAUDE.md
+├── .github/workflows/
+│   └── churn-radar.yml   # repository_dispatch: churn-radar-run + Monday 08:00 UTC cron
+└── docs/
+    └── session-log.md</pre>
+    </div>
+
   </div><!-- /tab-docs -->
 </div><!-- /container -->
 

@@ -68,6 +68,7 @@ AGENTS = [
     "bdr-agent",
     "runtime_custdev_brief",
     "scoping_brief",
+    "churn-radar",
 ]
 
 AGENT_LABELS = {
@@ -83,6 +84,7 @@ AGENT_LABELS = {
     "bdr-agent":            "BDR Agent (Amy)",
     "runtime_custdev_brief": "Discovery Brief Runtime",
     "scoping_brief":        "Discovery Brief Custom",
+    "churn-radar":          "Churn Radar",
 }
 
 
