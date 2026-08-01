@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: DonorDock| Zapier + reviews (Negative) - Version 2",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-01T10:23:12.616449+00:00",
+  "completed_at": "2026-08-01T10:23:31.162094+00:00",
+  "duration_seconds": 18.545645,
+  "input_tokens": 15526,
+  "output_tokens": 812,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 15526,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.046578,
+  "cost_output": 0.01218,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.058758000000000005
+}
