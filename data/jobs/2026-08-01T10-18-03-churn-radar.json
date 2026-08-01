@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Bitrix24 | Network ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-01T10:18:03.750282+00:00",
+  "completed_at": "2026-08-01T10:18:05.496366+00:00",
+  "duration_seconds": 1.746084,
+  "input_tokens": 8694,
+  "output_tokens": 72,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 8694,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.026082,
+  "cost_output": 0.00108,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.027162000000000002
+}
