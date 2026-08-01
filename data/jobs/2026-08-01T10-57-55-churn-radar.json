@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Helply | SaaStr 2026",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-01T10:57:55.582426+00:00",
+  "completed_at": "2026-08-01T10:58:11.721423+00:00",
+  "duration_seconds": 16.138997,
+  "input_tokens": 3832,
+  "output_tokens": 614,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 3832,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.011496,
+  "cost_output": 0.00921,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.020706
+}
