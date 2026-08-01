@@ -1509,7 +1509,7 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-output"><div class="wf-icon">📝</div><div class="wf-label">HubSpot Note</div><div class="wf-sub">Audit trail on flagged deals</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Slack Report</div><div class="wf-sub">Summary table + ranked detail, highest-risk first</div></div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Slack Report</div><div class="wf-sub">Table message + threaded detail replies, highest-risk first</div></div>
       </div>
       <div class="doc-section-label">Rules</div>
       <div class="rules-list">
@@ -1547,7 +1547,7 @@
         </div>
       </div>
       <div class="doc-section-label">Weekly Report Contents</div>
-      <p style="font-size:12.5px;color:#888;margin:0 0 8px">Report opens with a one-line-per-customer summary table (risk, score, main reason, sentiment, owner), followed by a detailed block per flagged customer. Bullet fields are capped at ~20 words per bullet for conciseness. Long reports chunk into multiple Slack messages above ~12,000 chars (well below Slack's ~40,000-char limit), so a typical week (5–15 flagged customers) stays in one message.</p>
+      <p style="font-size:12.5px;color:#888;margin:0 0 8px">Report opens with a real Slack Block Kit table (customer, risk + score, main reason, sentiment, owner) as the top-level message. Per-customer detail blocks post as threaded replies underneath, not as separate top-level messages. Bullet fields are capped at ~20 words per bullet for conciseness. Detail replies chunk above ~12,000 chars (well below Slack's ~40,000-char limit), so a typical week (5–15 flagged customers) stays in one threaded reply.</p>
       <table class="input-table">
         <thead><tr><th>Field</th><th>Description</th></tr></thead>
         <tbody>
