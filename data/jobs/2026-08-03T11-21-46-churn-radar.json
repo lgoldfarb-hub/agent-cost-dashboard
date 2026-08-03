@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Textellent | Zapier Batch 7 | Founders",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-03T11:21:46.743092+00:00",
+  "completed_at": "2026-08-03T11:21:58.890484+00:00",
+  "duration_seconds": 12.147392,
+  "input_tokens": 7451,
+  "output_tokens": 637,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 7451,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.022353,
+  "cost_output": 0.009555,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.031908
+}
