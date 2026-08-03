@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_QuestionPro | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-03T13:17:09.312084+00:00",
+  "completed_at": "2026-08-03T13:24:49.714499+00:00",
+  "duration_seconds": 460.402415,
+  "input_tokens": 55095,
+  "output_tokens": 11666,
+  "cache_read_tokens": 1603954,
+  "cache_write_tokens": 62424,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 51840,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.165285,
+  "cost_output": 0.17498999999999998,
+  "cost_cache_read": 0.4811862,
+  "cost_cache_write": 0.23409,
+  "cost_web_search": 0.0,
+  "cost_total": 1.0555512
+}
