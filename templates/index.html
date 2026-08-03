@@ -1548,6 +1548,10 @@
           <div class="rule-body">When a customer is flagged, Churn Radar writes a HubSpot note to that deal recording the churn probability, risk level, and summary — so the flag is visible directly on the CRM record, not just in the Slack report.</div>
         </div>
         <div class="rule-item">
+          <div class="rule-title">📝 Audit trail on every Slack pull, not just flagged deals</div>
+          <div class="rule-body">For any deal with a confirmed Slack channel, every real run (not <code>--dry-run</code>) writes a HubSpot note listing a permalink for each Slack message pulled that run (parent + thread replies) — a record of what was scanned, independent of whether the deal was ultimately flagged as at-risk.</div>
+        </div>
+        <div class="rule-item">
           <div class="rule-title">🚫 No padding to fill out the report</div>
           <div class="rule-body">Only customers with <code>has_risk: true</code> and a churn probability above 0 appear in the weekly report. If no customers show meaningful risk, the report says so explicitly rather than listing low-signal accounts to look thorough.</div>
         </div>
