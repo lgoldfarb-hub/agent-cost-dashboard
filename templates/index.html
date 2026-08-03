@@ -1511,7 +1511,9 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-output"><div class="wf-icon">📝</div><div class="wf-label">HubSpot Note</div><div class="wf-sub">Audit trail on flagged deals</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Slack Report</div><div class="wf-sub">Table message + threaded detail replies, highest-risk first</div></div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Slack Report</div><div class="wf-sub">Table + threaded detail replies + "From previous weeks" diff</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">📊</div><div class="wf-label">Update History</div><div class="wf-sub">data/churn_history.json — full scans only</div></div>
       </div>
       <div class="doc-section-label">Rules</div>
       <div class="rules-list">
@@ -1522,6 +1524,10 @@
         <div class="rule-item">
           <div class="rule-title">🚧 Isolated operational issues don't qualify on their own</div>
           <div class="rule-body">A bug report, feature request, implementation delay, or support ticket filed neutrally — no dissatisfaction, value concern, or renewal/competitor language attached — is not itself a churn signal. The same issue paired with frustration, a value question, or renewal/competitor language does qualify. Tightened after review to avoid over-flagging routine product friction as churn risk.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">📊 Week-over-week history, full scans only</div>
+          <div class="rule-body"><code>data/churn_history.json</code> tracks every currently-flagged deal (via the GitHub Contents API, same pattern as job-cost tracking). Each report includes a "From previous weeks" section showing every previously-flagged deal's outcome this run — still flagged with a probability delta (e.g. "Up from 32% → 55%") or resolved. Only runs on full (unscoped) scans — a <code>--deal</code>-scoped test run skips history entirely so it never overwrites everyone else's state, and is skipped on <code>--dry-run</code>.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">🎙️ Sybill linkage via HubSpot notes</div>
