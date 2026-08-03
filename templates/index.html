@@ -1517,7 +1517,11 @@
       <div class="rules-list">
         <div class="rule-item">
           <div class="rule-title">🔍 Evidence-only, no speculation</div>
-          <div class="rule-body">Claude is instructed to flag a churn signal only when there is explicit evidence — a direct or closely-paraphrased customer quote — in a call transcript or CRM note. Silence, generic caution, or industry norms are never treated as risk. If there's no explicit evidence, <code>has_risk</code> is false and the customer is excluded from the report entirely, rather than padded in with a low score.</div>
+          <div class="rule-body">Claude is instructed to flag a churn signal only when there is explicit evidence — a direct or closely-paraphrased customer quote — in a call transcript, CRM note, email, or Slack message. Silence, generic caution, or industry norms are never treated as risk. If there's no explicit evidence, <code>has_risk</code> is false and the customer is excluded from the report entirely, rather than padded in with a low score.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🚧 Isolated operational issues don't qualify on their own</div>
+          <div class="rule-body">A bug report, feature request, implementation delay, or support ticket filed neutrally — no dissatisfaction, value concern, or renewal/competitor language attached — is not itself a churn signal. The same issue paired with frustration, a value question, or renewal/competitor language does qualify. Tightened after review to avoid over-flagging routine product friction as churn risk.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">🎙️ Sybill linkage via HubSpot notes</div>
