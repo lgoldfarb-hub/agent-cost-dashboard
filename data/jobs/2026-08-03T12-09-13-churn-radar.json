@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Skylead | Linkedin Niche Campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-03T12:09:13.847738+00:00",
+  "completed_at": "2026-08-03T12:09:27.741905+00:00",
+  "duration_seconds": 13.894167,
+  "input_tokens": 6145,
+  "output_tokens": 602,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 6145,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.018435,
+  "cost_output": 0.00903,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.027465
+}
