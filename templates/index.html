@@ -1519,6 +1519,10 @@
       <div class="doc-section-label">Rules</div>
       <div class="rules-list">
         <div class="rule-item">
+          <div class="rule-title">🎲 temperature=0 to reduce run-to-run scoring variance</div>
+          <div class="rule-body">The Claude API call for churn analysis is pinned to <code>temperature=0</code>. Added after two runs ~15 minutes apart on identical 9-day evidence scored the same customer 55% High then 0%, despite strong unambiguous quotes ("the team doesn't believe in Albato anymore," explicit Zapier/n8n switching language) — inconsistency on the same facts, not a legitimate re-evaluation. Reduces but does not eliminate variance, and won't resolve genuinely borderline cases at a decision boundary.</div>
+        </div>
+        <div class="rule-item">
           <div class="rule-title">🔍 Evidence-only, no speculation</div>
           <div class="rule-body">Claude is instructed to flag a churn signal only when there is explicit evidence — a direct or closely-paraphrased customer quote — in a call transcript, CRM note, email, or Slack message. Silence, generic caution, or industry norms are never treated as risk. If there's no explicit evidence, <code>has_risk</code> is false and the customer is excluded from the report entirely, rather than padded in with a low score.</div>
         </div>
