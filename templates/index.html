@@ -1519,8 +1519,8 @@
       <div class="doc-section-label">Rules</div>
       <div class="rules-list">
         <div class="rule-item">
-          <div class="rule-title">🎲 temperature=0 to reduce run-to-run scoring variance</div>
-          <div class="rule-body">The Claude API call for churn analysis is pinned to <code>temperature=0</code>. Added after two runs ~15 minutes apart on identical 9-day evidence scored the same customer 55% High then 0%, despite strong unambiguous quotes ("the team doesn't believe in Albato anymore," explicit Zapier/n8n switching language) — inconsistency on the same facts, not a legitimate re-evaluation. Reduces but does not eliminate variance, and won't resolve genuinely borderline cases at a decision boundary.</div>
+          <div class="rule-title">🔁 Agent's own audit notes are excluded from its future evidence</div>
+          <div class="rule-body">A same-day customer (Darwin AI) swung from 55% High to 0% between runs ~15 minutes apart. Initially suspected as model sampling variance (fixed by pinning <code>temperature=0</code>), the real cause was found by pulling the deal's actual HubSpot notes: repeated manual test runs had filled the most-recent-notes window with Churn Radar's own past "flagged this account" audit notes, crowding the real customer evidence (a call, NPS surveys) out of the recency cap — the model was reasoning over its own prior output as new input. Fixed by filtering any note starting with <code>OWN_NOTE_PREFIX</code> ("🔎 Churn Radar") out of <code>hs_get_deal_notes()</code> entirely, before the recency cap is applied. <code>temperature=0</code> is kept regardless, for general consistency.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">🔍 Evidence-only, no speculation</div>
