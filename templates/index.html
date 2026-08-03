@@ -1524,7 +1524,7 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">🚧 Isolated operational issues don't qualify on their own</div>
-          <div class="rule-body">A bug report, feature request, implementation delay, or support ticket filed neutrally — no dissatisfaction, value concern, or renewal/competitor language attached — is not itself a churn signal. The same issue paired with frustration, a value question, or renewal/competitor language does qualify. Tightened after review to avoid over-flagging routine product friction as churn risk.</div>
+          <div class="rule-body">A bug report, feature request, implementation delay, or support ticket filed neutrally — no dissatisfaction, value concern, or renewal/competitor language attached — is not itself a churn signal. The same issue paired with frustration, a value question, or renewal/competitor language does qualify. Tightened after review to avoid over-flagging routine product friction as churn risk. Enforced with a code-level backstop: the model must name which of 9 numbered signals is explicitly met (or <code>"none"</code>) via a <code>qualifying_signal</code> field before scoring — if <code>"none"</code>, <code>churn_probability</code> is forced to 0 in code regardless of what the model output, after a real dry run scored a customer 18% while its own confidence caveat admitted no qualifying signal was found.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">📊 Week-over-week history, full scans only</div>
