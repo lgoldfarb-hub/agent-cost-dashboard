@@ -1491,7 +1491,7 @@
       <h2>Churn Radar</h2>
       <div class="doc-meta">Trigger: Albato webhook (repository_dispatch) every Monday, plus GitHub Actions cron fallback &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/churn-radar" target="_blank">lgoldfarb-hub/churn-radar</a></div>
       <p class="doc-description">
-        Early-warning system for customer churn. Scans every existing Albato Embedded customer — deals in the Global Embedded pipeline's Set-up and Active stages — and reads their Sybill call transcripts, HubSpot CRM notes, logged emails, and engagement history from the last 9 days to detect evidence-backed churn signals: competitor or in-house-build mentions, declining product value or usage, dissatisfaction with product/support/pricing, discount requests tied to perceived value, seat/scope reduction plans, budget cuts, or explicit renewal concerns. Claude only flags a customer when there is a direct or closely-paraphrased quote backing the risk — no speculation — and weighs any concrete commitment Albato already made to the customer's ask, scoring the residual risk rather than the original complaint alone. Every flagged customer gets a 0–100% churn probability, a risk level, a confidence score, customer sentiment, the key contact to win over, and the 3 most impactful next steps, and the highest-risk accounts are reported to the Customer Success team every Monday in Slack, ranked worst-first.
+        Early-warning system for customer churn. Scans every existing Albato Embedded customer — deals in the Global Embedded pipeline's Set-up and Active stages — and reads their Sybill call transcripts, HubSpot CRM notes, logged emails, client Slack channel messages (where available), and engagement history from the last 9 days to detect evidence-backed churn signals: competitor or in-house-build mentions, declining product value or usage, dissatisfaction with product/support/pricing, discount requests tied to perceived value, seat/scope reduction plans, budget cuts, or explicit renewal concerns. Claude only flags a customer when there is a direct or closely-paraphrased quote backing the risk — no speculation — and weighs any concrete commitment Albato already made to the customer's ask, scoring the residual risk rather than the original complaint alone. Every flagged customer gets a 0–100% churn probability, a risk level, a confidence score, customer sentiment, the key contact to win over, and the 3 most impactful next steps, and the highest-risk accounts are reported to the Customer Success team every Monday in Slack, ranked worst-first.
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
@@ -1504,6 +1504,8 @@
         <div class="wf-node wf-action"><div class="wf-icon">📧</div><div class="wf-label">Fetch Logged Emails</div><div class="wf-sub">Last 9 days, paginated batch-read, capped at 15</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">🎙️</div><div class="wf-label">Fetch Call Transcripts</div><div class="wf-sub">Sybill — conversation IDs extracted from note links</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">💬</div><div class="wf-label">Fetch Slack Channel Messages</div><div class="wf-sub">Last 9 days — only for deals with a confirmed channel mapping</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-ai"><div class="wf-icon">🤖</div><div class="wf-label">Detect Churn Signals</div><div class="wf-sub">Claude Sonnet 4.6 — evidence-only, quote-backed, response-weighted</div></div>
         <div class="wf-arrow">→</div>
@@ -1534,6 +1536,10 @@
           <div class="rule-body">If the evidence shows Albato already responded to the customer's specific ask with a concrete commitment, fix, or concession, the prompt instructs Claude to score the residual risk after that response — not the original complaint in isolation. Added after a dry run scored a customer 32% Medium despite the account owner already having committed to the fix in the same email thread.</div>
         </div>
         <div class="rule-item">
+          <div class="rule-title">💬 Slack channel coverage is deliberately partial, never guessed</div>
+          <div class="rule-body"><code>DEAL_SLACK_CHANNELS</code> is a hardcoded, manually-maintained map of HubSpot deal ID → Slack channel ID, populated only for customers where the bot's channel membership has been confirmed (15 of 43 as of 2026-08-03). Deals not in the map simply get no Slack evidence — channel IDs are never auto-derived from a naming convention, since a wrong guess could misattribute one customer's messages to another. Requires <code>channels:history</code> + <code>groups:history</code> scopes in addition to <code>chat:write</code>.</div>
+        </div>
+        <div class="rule-item">
           <div class="rule-title">🎯 Customer scope — Set-up + Active stages only</div>
           <div class="rule-body">Scans HubSpot deals in the Global Embedded pipeline (<code>6777604</code>), stages Set-up (<code>20414289</code>) and Active (<code>20427820</code>) — i.e. accounts that have already closed and started using the product, not sales-pipeline prospects.</div>
         </div>
@@ -1562,7 +1568,7 @@
           <tr><td>Actions already taken</td><td>Bullet points, pulled from CRM notes/emails, if any exist</td></tr>
           <tr><td>Recommended next steps</td><td>The 3 most impactful actions, ranked by impact, as bullet points</td></tr>
           <tr><td>Confidence score</td><td>0–100%, how confident the model is given available evidence. Below 90%, a brief caveat note is shown inline (e.g. "single email thread, no call context")</td></tr>
-          <tr><td>Evidence source</td><td>Which call, note, or email the evidence came from</td></tr>
+          <tr><td>Evidence source</td><td>Which call, note, email, or Slack message the evidence came from</td></tr>
           <tr><td>HubSpot deal link</td><td>"View in HubSpot" link on the first line, next to the client name (portal <code>21092545</code>)</td></tr>
           <tr><td>Sybill recording links</td><td>Links to only the specific call recordings actually used as evidence, not every conversation found</td></tr>
         </tbody>
@@ -1574,7 +1580,7 @@
           <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — churn signal analysis</td></tr>
           <tr><td><code>HUBSPOT_TOKEN</code></td><td>HubSpot REST API — reads deals/notes/owners, writes audit-trail notes</td></tr>
           <tr><td><code>SYBILL_KEY</code></td><td>Sybill REST API — call transcripts and summaries</td></tr>
-          <tr><td><code>SLACK_BOT</code></td><td>Slack bot token — posts the weekly report. Scope: <code>chat:write</code></td></tr>
+          <tr><td><code>SLACK_BOT</code></td><td>Slack bot token — posts the weekly report and reads client Slack Connect channels. Scopes: <code>chat:write</code>, <code>channels:history</code>, <code>groups:history</code></td></tr>
           <tr><td><code>GHUB_PAT</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
