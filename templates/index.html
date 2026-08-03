@@ -1537,7 +1537,7 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">💬 Slack channel coverage is deliberately partial, never guessed</div>
-          <div class="rule-body"><code>DEAL_SLACK_CHANNELS</code> is a hardcoded, manually-maintained map of HubSpot deal ID → Slack channel ID, populated only for customers where the bot's channel membership has been confirmed (15 of 43 as of 2026-08-03). Deals not in the map simply get no Slack evidence — channel IDs are never auto-derived from a naming convention, since a wrong guess could misattribute one customer's messages to another. Requires <code>channels:history</code> + <code>groups:history</code> scopes in addition to <code>chat:write</code>.</div>
+          <div class="rule-body"><code>DEAL_SLACK_CHANNELS</code> is a hardcoded, manually-maintained map of HubSpot deal ID → Slack channel ID, populated only for customers where the bot's channel membership has been confirmed (15 of 43 as of 2026-08-03). Deals not in the map simply get no Slack evidence — channel IDs are never auto-derived from a naming convention, since a wrong guess could misattribute one customer's messages to another. Requires <code>channels:history</code> + <code>groups:history</code> scopes in addition to <code>chat:write</code>. <code>conversations.history</code> only returns top-level messages, so any parent with replies is expanded via <code>conversations.replies</code> — churn-relevant discussion often lives in the thread, not the parent message.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">🎯 Customer scope — Set-up + Active stages only</div>
