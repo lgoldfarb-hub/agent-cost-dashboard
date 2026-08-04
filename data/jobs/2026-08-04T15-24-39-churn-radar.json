@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: BotConversa | Zapier Batch 16 - Resequence",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-04T15:24:39.625064+00:00",
+  "completed_at": "2026-08-04T15:24:44.814069+00:00",
+  "duration_seconds": 5.189005,
+  "input_tokens": 3109,
+  "output_tokens": 207,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 3109,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.009326999999999998,
+  "cost_output": 0.0031049999999999997,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.012431999999999999
+}
