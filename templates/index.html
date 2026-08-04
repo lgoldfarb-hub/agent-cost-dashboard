@@ -1490,13 +1490,13 @@
     <!-- Churn Radar -->
     <div class="doc-card" data-agent="churn-radar">
       <h2>Churn Radar</h2>
-      <div class="doc-meta">Trigger: Albato webhook (repository_dispatch) every Monday — no cron fallback &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/churn-radar" target="_blank">lgoldfarb-hub/churn-radar</a></div>
+      <div class="doc-meta">Trigger: Albato webhook (repository_dispatch) daily — no cron fallback &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/churn-radar" target="_blank">lgoldfarb-hub/churn-radar</a></div>
       <p class="doc-description">
         Early-warning system for customer churn. Scans every existing Albato Embedded customer — deals in the Global Embedded pipeline's Set-up and Active stages — and reads their Sybill call transcripts, HubSpot CRM notes, logged emails, client Slack channel messages (where available), and engagement history from the last 9 days to detect evidence-backed churn signals: competitor or in-house-build mentions, declining product value or usage, dissatisfaction with product/support/pricing, discount requests tied to perceived value, seat/scope reduction plans, budget cuts, or explicit renewal concerns. Claude only flags a customer when there is a direct or closely-paraphrased quote backing the risk — no speculation — and weighs any concrete commitment Albato already made to the customer's ask, scoring the residual risk rather than the original complaint alone. Every flagged customer gets a 0–100% churn probability, a risk level, a confidence score, customer sentiment, the key contact to win over, and the 3 most impactful next steps, and the highest-risk accounts are reported to the Customer Success team every Monday in Slack, ranked worst-first.
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
-        <div class="wf-node wf-trigger"><div class="wf-icon">📅</div><div class="wf-label">Weekly Trigger</div><div class="wf-sub">Albato webhook (repository_dispatch: churn-radar-run) only — no cron fallback</div></div>
+        <div class="wf-node wf-trigger"><div class="wf-icon">📅</div><div class="wf-label">Daily Trigger</div><div class="wf-sub">Albato webhook (repository_dispatch: churn-radar-run), fires daily — no cron fallback</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Customers</div><div class="wf-sub">HubSpot — Global Embedded pipeline, Set-up + Active stages</div></div>
         <div class="wf-arrow">→</div>
@@ -1512,7 +1512,7 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-output"><div class="wf-icon">📝</div><div class="wf-label">HubSpot Note</div><div class="wf-sub">Audit trail on flagged deals</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Slack Report</div><div class="wf-sub">Table + threaded detail replies + "From previous weeks" diff</div></div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Slack Report</div><div class="wf-sub">Mon–Thu: new customers only. Fri: full report + "From previous weeks" diff</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-output"><div class="wf-icon">📊</div><div class="wf-label">Update History</div><div class="wf-sub">data/churn_history.json — full scans only</div></div>
       </div>
@@ -1539,8 +1539,12 @@
           <div class="rule-body">The prompt tells the model to leave <code>worth_reporting=false</code> whenever <code>qualifying_signal</code> is met (genuine risk is already conveyed via <code>churn_probability</code>) — but <code>run()</code>'s report-inclusion filter checked <code>worth_reporting</code> alone, so a customer with real, correctly-detected churn risk and the expected <code>worth_reporting=false</code> was silently dropped from the report entirely. This is what made Darwin AI appear to "swing" from 55% churn risk to 0% between two runs — it actually had a genuine <code>qualifying_signal</code> match both times; the bug was hiding the second result, not the model re-scoring inconsistently. <code>temperature=0</code> and the self-note filtering fix were both worthwhile independently, but neither was the real cause here. Fixed by gating report inclusion on <code>(has_risk and churn_probability &gt; 0) OR worth_reporting</code>, matching the two paths that are actually meant to produce a row.</div>
         </div>
         <div class="rule-item">
+          <div class="rule-title">📆 Daily delta Mon–Thu, full report + diff on Friday</div>
+          <div class="rule-body">Albato's webhook fires daily (changed from weekly on 2026-08-04). Monday–Thursday, Churn Radar posts only customers newly flagged since their last appearance — i.e. not already a key in <code>data/churn_history.json</code> — titled "Daily Update — New Customers." If there's nothing new, <strong>no Slack message is posted at all</strong> (no daily "all clear" noise). Friday always posts the full report (every currently at-risk or worth-reporting customer, even if empty) titled "Weekly Report," plus the "From previous weeks" week-over-week diff. <code>is_friday = datetime.now(timezone.utc).weekday() == 4</code> decides the mode. History updates after every real, unscoped run (daily and Friday alike), so "new" on any day is relative to the prior day's run, not last Friday's snapshot. A <code>--deal</code>-scoped test run always gets full-report framing regardless of day.</div>
+        </div>
+        <div class="rule-item">
           <div class="rule-title">📊 Week-over-week history, full scans only</div>
-          <div class="rule-body"><code>data/churn_history.json</code> tracks every currently-flagged deal (via the GitHub Contents API, same pattern as job-cost tracking). Each report includes a "From previous weeks" section showing every previously-flagged deal's outcome this run — still flagged with a probability delta (e.g. "Up from 32% → 55%") or resolved. Only runs on full (unscoped) scans — a <code>--deal</code>-scoped test run skips history entirely so it never overwrites everyone else's state, and is skipped on <code>--dry-run</code>.</div>
+          <div class="rule-body"><code>data/churn_history.json</code> tracks every currently-flagged deal (via the GitHub Contents API, same pattern as job-cost tracking). The Friday report includes a "From previous weeks" section showing every previously-flagged deal's outcome this run — still flagged with a probability delta (e.g. "Up from 32% → 55%") or resolved. Only runs on full (unscoped) scans — a <code>--deal</code>-scoped test run skips history entirely so it never overwrites everyone else's state, and is skipped on <code>--dry-run</code>.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">🎙️ Sybill linkage via HubSpot notes</div>
@@ -1579,7 +1583,7 @@
           <div class="rule-body">Only customers with <code>has_risk: true</code> and a churn probability above 0 appear in the weekly report. If no customers show meaningful risk, the report says so explicitly rather than listing low-signal accounts to look thorough.</div>
         </div>
       </div>
-      <div class="doc-section-label">Weekly Report Contents</div>
+      <div class="doc-section-label">Report Contents (Daily Delta / Friday Full Report)</div>
       <p style="font-size:12.5px;color:#888;margin:0 0 8px">Report opens with a real Slack Block Kit table (customer, risk + score, main reason, sentiment, owner) as the top-level message. Per-customer detail blocks post as threaded replies underneath, not as separate top-level messages. Bullet fields are capped at ~20 words per bullet for conciseness. Detail replies chunk above ~12,000 chars (well below Slack's ~40,000-char limit), so a typical week (5–15 flagged customers) stays in one threaded reply.</p>
       <table class="input-table">
         <thead><tr><th>Field</th><th>Description</th></tr></thead>
