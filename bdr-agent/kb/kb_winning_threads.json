@@ -576,5 +576,39 @@
         "text": "Hi Maxim, \n I appreciate you taking the time to chat with me today! \n Here’s a summary of the main challenges you highlighted: - Building deep, write-capable channel connectors will be a “long journey”: in a very positive scenario, “for two engineers it will take approximately a quarter for one channel.” You need multi-channel (Facebook, TikTok, Google, Snapchat), which multiplies effort and delays time-to-market. - Off‑the‑shelf options you tested (e.g., Airbyte, Unified.to, Nango, Windsor AI) “can read data,” but “when we are talking about pushing back data, it’s another story.” Gaps include Facebook authorization (“pass through regimes”), the need for a synchronization service to trigger updates/deletes/creates, and asset breakdown handling, meaning you’d still have to build on top, creating inconsistency and extra maintenance. - “The most complicated topic here is compliance and security,” and your high‑load performance standards still require people oversight, adding risk and slowing delivery when connecting new tools. - Data freshness is critical in your domain: with channel rate limits and client‑specific refresh frequencies, you “ideally should have the same information in our system and all channels,” or campaign decisions suffer. - These initiatives have slipped before: “we started to talk about those initiatives even two years ago… each year we announce them,” and you hope not to repeat the pattern, aiming to start next quarter. \n Net-net, the engineering lift per channel, write/auth complexity, and strict compliance/performance needs put multi‑channel launch timelines and campaign quality at risk. Albato’s headless/Universal API approach can help SplitMetrics ship reliable write‑capable connectors faster (with managed auth and connector maintenance) while keeping the UX under the hood and your team focused on core product work. \n As promised, I'm sharing some helpful resources so you can review and easily share them with your team: - Your dedicated resource hub with the pricing, FAQs, tech documentation, and an overview of the embedded solution. https://albato.valuecase.com/spaces/splitmetrics?token=65b9728dd34ae90d - Today's meeting recording \n Can you please let me know if these links work for you? \n Also, here's a quick summary of our next steps: - Maxim to assess embedded integration demand and specific connector requirements with internal teams by August 7th. - We'll meet again on August 7th (anytime from 10 am - 2 pm CET). I've sent a placeholder for 11 am CET. Please let me know which time slots work best for you and any additional team members. \n I am happy to help if any technical questions come up during your internal review and look forward to reconnecting soon. \n We'll also send the gift card instructions in a separate thread. \n Best, Mariana Guerci Head of Strategic Accounts @Albato schedule a meeting - albato.com"
       }
     ]
+  },
+  {
+    "deal_id": "63178906933",
+    "deal_name": "Salesmsg | connected,Leo,no emails,paid meetings campaign,CTO",
+    "booked_at": "2026-08-04 20:36",
+    "lead_title": "Director of Products,  Solution Architect",
+    "sequence_name": "",
+    "source": "albato_learn",
+    "messages": [
+      {
+        "role": "rep",
+        "text": "Hey Aleksandr, any chance you saw my emails? \n\nI'm offering 200 usd for 60 min of your time to chat about Salesmsg's integrations & AI agents. \n\nOpen to it?"
+      },
+      {
+        "role": "lead",
+        "text": "Polyansky\n\nHappy to chat. Before scheduling, could you share:\n\n - What company is sponsoring the interview?\n - What's the purpose of the conversation (customer research, product demo, market research, etc.)?\n - Will this be recorded, and are there any confidentiality requirements?"
+      },
+      {
+        "role": "lead",
+        "text": "Polyansky\n\nsounds good. We can talk. Usually I'm available for calls after 11 AM PDT"
+      },
+      {
+        "role": "rep",
+        "text": "Hey Aleksandr, 11am PDT works. How about Tuesday or Wednesday? \n\nOr feel free to book a call for early next week via my calendar - https://meetings.hubspot.com/leonid-goldfarb?uuid=08508701-3ffa-46ab-a8c3-984d52d30091"
+      },
+      {
+        "role": "rep",
+        "text": "Thanks! See you"
+      },
+      {
+        "role": "lead",
+        "text": "Polyansky\n\nHi Leo,\njust booked a meeting for Tuesday, August 4, 2026, at 11:00 AM. See you then!"
+      }
+    ]
   }
 ]
