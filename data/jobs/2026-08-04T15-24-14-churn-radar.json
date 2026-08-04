@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Passcreator | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-04T15:24:14.460308+00:00",
+  "completed_at": "2026-08-04T15:24:19.284722+00:00",
+  "duration_seconds": 4.824414,
+  "input_tokens": 6150,
+  "output_tokens": 185,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 6150,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.01845,
+  "cost_output": 0.002775,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.021225
+}
