@@ -1490,13 +1490,13 @@
     <!-- Churn Radar -->
     <div class="doc-card" data-agent="churn-radar">
       <h2>Churn Radar</h2>
-      <div class="doc-meta">Trigger: Albato webhook (repository_dispatch) every Monday, plus GitHub Actions cron fallback &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/churn-radar" target="_blank">lgoldfarb-hub/churn-radar</a></div>
+      <div class="doc-meta">Trigger: Albato webhook (repository_dispatch) every Monday — no cron fallback &nbsp;·&nbsp; Model: Claude Sonnet 4.6 &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/churn-radar" target="_blank">lgoldfarb-hub/churn-radar</a></div>
       <p class="doc-description">
         Early-warning system for customer churn. Scans every existing Albato Embedded customer — deals in the Global Embedded pipeline's Set-up and Active stages — and reads their Sybill call transcripts, HubSpot CRM notes, logged emails, client Slack channel messages (where available), and engagement history from the last 9 days to detect evidence-backed churn signals: competitor or in-house-build mentions, declining product value or usage, dissatisfaction with product/support/pricing, discount requests tied to perceived value, seat/scope reduction plans, budget cuts, or explicit renewal concerns. Claude only flags a customer when there is a direct or closely-paraphrased quote backing the risk — no speculation — and weighs any concrete commitment Albato already made to the customer's ask, scoring the residual risk rather than the original complaint alone. Every flagged customer gets a 0–100% churn probability, a risk level, a confidence score, customer sentiment, the key contact to win over, and the 3 most impactful next steps, and the highest-risk accounts are reported to the Customer Success team every Monday in Slack, ranked worst-first.
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
-        <div class="wf-node wf-trigger"><div class="wf-icon">📅</div><div class="wf-label">Weekly Trigger</div><div class="wf-sub">Albato webhook (repository_dispatch: churn-radar-run) or Monday 08:00 UTC cron</div></div>
+        <div class="wf-node wf-trigger"><div class="wf-icon">📅</div><div class="wf-label">Weekly Trigger</div><div class="wf-sub">Albato webhook (repository_dispatch: churn-radar-run) only — no cron fallback</div></div>
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-action"><div class="wf-icon">📋</div><div class="wf-label">Fetch Customers</div><div class="wf-sub">HubSpot — Global Embedded pipeline, Set-up + Active stages</div></div>
         <div class="wf-arrow">→</div>
@@ -1619,7 +1619,7 @@
 ├── requirements.txt
 ├── CLAUDE.md
 ├── .github/workflows/
-│   └── churn-radar.yml   # repository_dispatch: churn-radar-run + Monday 08:00 UTC cron
+│   └── churn-radar.yml   # repository_dispatch: churn-radar-run (no cron)
 └── docs/
     └── session-log.md</pre>
     </div>
