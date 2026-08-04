@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: Salesmsg | connected,Leo,no emails,paid meetings campaign,CTO",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-04T19:37:01.833435+00:00",
+  "completed_at": "2026-08-04T19:49:51.355949+00:00",
+  "duration_seconds": 769.522514,
+  "input_tokens": 12762,
+  "output_tokens": 31467,
+  "cache_read_tokens": 1169341,
+  "cache_write_tokens": 71255,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 5707,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.038286,
+  "cost_output": 0.472005,
+  "cost_cache_read": 0.35080229999999996,
+  "cost_cache_write": 0.26720625,
+  "cost_web_search": 0.0,
+  "cost_total": 1.12829955
+}
