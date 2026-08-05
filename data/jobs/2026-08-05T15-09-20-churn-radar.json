@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Vivantio | Chatbots Campaign - Product (Outreach)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-05T15:09:20.343370+00:00",
+  "completed_at": "2026-08-05T15:09:25.731321+00:00",
+  "duration_seconds": 5.387951,
+  "input_tokens": 10791,
+  "output_tokens": 247,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 10791,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.032373,
+  "cost_output": 0.003705,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.036078
+}
