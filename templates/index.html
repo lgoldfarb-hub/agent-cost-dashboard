@@ -1514,7 +1514,7 @@
         <div class="wf-arrow">→</div>
         <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Slack Report</div><div class="wf-sub">Mon–Thu: new customers only. Fri: full report + "From previous weeks" diff</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">📊</div><div class="wf-label">Update History</div><div class="wf-sub">data/churn_history.json — full scans only</div></div>
+        <div class="wf-node wf-output"><div class="wf-icon">📊</div><div class="wf-label">Update History</div><div class="wf-sub">data/churn_history.json — full scans only; no-fresh-evidence deals carried forward, not dropped</div></div>
       </div>
       <div class="doc-section-label">Rules</div>
       <div class="rules-list">
@@ -1552,7 +1552,15 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">📊 Week-over-week history, full scans only</div>
-          <div class="rule-body"><code>data/churn_history.json</code> tracks every currently-flagged deal (via the GitHub Contents API, same pattern as job-cost tracking). The Friday report includes a "From previous weeks" section showing every previously-flagged deal's outcome this run — still flagged with a probability delta (e.g. "Up from 32% → 55%") or resolved. Only runs on full (unscoped) scans — a <code>--deal</code>-scoped test run skips history entirely so it never overwrites everyone else's state, and is skipped on <code>--dry-run</code>.</div>
+          <div class="rule-body"><code>data/churn_history.json</code> tracks every currently-flagged deal (via the GitHub Contents API, same pattern as job-cost tracking). The Friday report includes a "From previous weeks" section showing every previously-flagged deal's outcome this run — still flagged with a probability delta (e.g. "Up from 32% → 55%"), resolved (confirmed or unconfirmed), or carried forward with no fresh evidence (see below). Only runs on full (unscoped) scans — a <code>--deal</code>-scoped test run skips history entirely so it never overwrites everyone else's state, and is skipped on <code>--dry-run</code>.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🐛 Fixed: no-fresh-evidence deals were silently dropped from history instead of carried forward</div>
+          <div class="rule-body">A deal with zero fresh evidence (no transcript/note/email/Slack message) in the rolling 9-day <code>LOOKBACK_DAYS</code> window never reached <code>analyze_churn_risk()</code>, and was previously just dropped from <code>data/churn_history.json</code> and absent from Friday's report — indistinguishable from an actual resolved risk, even though nothing was confirmed, the evidence just aged out of the window. Fixed: such deals are now carried forward into history and Friday's report unchanged, rendered from their last-known stored values (<code>churn_probability</code>, <code>risk_level</code>, <code>main_reason</code>) and explicitly marked "No fresh evidence this period — carried forward from last known status," with sentiment shown as "(no fresh evidence)" rather than a stale value presented as current. Carried-forward deals keep their original <code>last_updated</code> timestamp (nothing was re-verified) and are correctly excluded from the Monday–Thursday delta, since they're already in history and not new.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">📝 Resolution notes now shown in the week-over-week diff, not just true/false</div>
+          <div class="rule-body"><code>analyze_churn_risk()</code> already returned a <code>prior_risk_note</code> field explaining specifically what evidence showed a prior concern resolved (or why it didn't) alongside the <code>prior_risk_resolved</code> boolean, but the note was discarded before reaching Slack — the diff only ever showed a bare probability delta or "confirmed"/"unconfirmed" label. Now the note is threaded through <code>build_previous_weeks_updates()</code> and appended to the "resolved," "still flagged," and "no longer flagged" lines (e.g. "Down from 55% → 0% (confirmed improvement) — team confirmed release completed and expressed satisfaction"), so the report shows what specifically changed, not just that a number moved.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">🎙️ Sybill linkage via HubSpot notes</div>
