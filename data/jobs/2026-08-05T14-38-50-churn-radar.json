@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: EventMobi | Zapier Batch 16 - Resequence (Resequence)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-05T14:38:50.296524+00:00",
+  "completed_at": "2026-08-05T14:38:56.662249+00:00",
+  "duration_seconds": 6.365725,
+  "input_tokens": 4645,
+  "output_tokens": 262,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4645,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.013935,
+  "cost_output": 0.00393,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.017865
+}
