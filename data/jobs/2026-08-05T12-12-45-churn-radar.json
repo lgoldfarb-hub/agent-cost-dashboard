@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Feefo | Event | Booth | SaaStock 2025",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-05T12:12:45.376306+00:00",
+  "completed_at": "2026-08-05T12:12:59.628870+00:00",
+  "duration_seconds": 14.252564,
+  "input_tokens": 12585,
+  "output_tokens": 507,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 12585,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.037755000000000004,
+  "cost_output": 0.007605,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.045360000000000004
+}
