@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Woodpecker | Hubspot_installs_100less (EU)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-05T00:01:23.146370+00:00",
+  "completed_at": "2026-08-05T00:01:27.175662+00:00",
+  "duration_seconds": 4.029292,
+  "input_tokens": 7663,
+  "output_tokens": 206,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 7663,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.022989,
+  "cost_output": 0.00309,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.026078999999999998
+}
