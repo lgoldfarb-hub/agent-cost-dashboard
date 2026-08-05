@@ -1552,7 +1552,7 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">📊 Week-over-week history, full scans only</div>
-          <div class="rule-body"><code>data/churn_history.json</code> tracks every currently-flagged deal (via the GitHub Contents API, same pattern as job-cost tracking). The Friday report includes a "From previous weeks" section showing every previously-flagged deal's outcome this run — still flagged with a probability delta (e.g. "Up from 32% → 55%"), resolved (confirmed or unconfirmed), or carried forward with no fresh evidence (see below). Only runs on full (unscoped) scans — a <code>--deal</code>-scoped test run skips history entirely so it never overwrites everyone else's state, and is skipped on <code>--dry-run</code>.</div>
+          <div class="rule-body"><code>data/churn_history.json</code> tracks every currently-flagged deal (via the GitHub Contents API, same pattern as job-cost tracking). The Friday report includes a "From previous weeks" section showing every previously-flagged deal's outcome this run — still flagged with a risk-level delta (e.g. "Up — Medium → High"; raw percentages aren't shown in the diff, only the code-derived risk level — see the risk-level bands entry above), resolved (confirmed or unconfirmed), or carried forward with no fresh evidence (see below). Only runs on full (unscoped) scans — a <code>--deal</code>-scoped test run skips history entirely so it never overwrites everyone else's state, and is skipped on <code>--dry-run</code>.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">🐛 Fixed: no-fresh-evidence deals were silently dropped from history instead of carried forward</div>
@@ -1560,7 +1560,15 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">📝 Resolution notes now shown in the week-over-week diff, not just true/false</div>
-          <div class="rule-body"><code>analyze_churn_risk()</code> already returned a <code>prior_risk_note</code> field explaining specifically what evidence showed a prior concern resolved (or why it didn't) alongside the <code>prior_risk_resolved</code> boolean, but the note was discarded before reaching Slack — the diff only ever showed a bare probability delta or "confirmed"/"unconfirmed" label. Now the note is threaded through <code>build_previous_weeks_updates()</code> and appended to the "resolved," "still flagged," and "no longer flagged" lines (e.g. "Down from 55% → 0% (confirmed improvement) — team confirmed release completed and expressed satisfaction"), so the report shows what specifically changed, not just that a number moved.</div>
+          <div class="rule-body"><code>analyze_churn_risk()</code> already returned a <code>prior_risk_note</code> field explaining specifically what evidence showed a prior concern resolved (or why it didn't) alongside the <code>prior_risk_resolved</code> boolean, but the note was discarded before reaching Slack — the diff only ever showed a bare probability delta or "confirmed"/"unconfirmed" label. Now the note is threaded through <code>build_previous_weeks_updates()</code> and appended to the "resolved," "still flagged," and "no longer flagged" lines (e.g. "Down — High → None (confirmed improvement) — team confirmed release completed and expressed satisfaction"), so the report shows what specifically changed, not just that a number moved. (Diff lines show risk-level deltas, not raw percentages — see the risk-level bands entry below.)</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">⚓ churn_probability anchored to the prior run, not re-derived from scratch</div>
+          <div class="rule-body">Darwin AI scored 68% then 72% across two runs on the exact same call transcript/note — no new evidence, just the model re-deriving the number from a blank slate each time. Fixed with a new prompt section, "Anchoring churn_probability to the prior assessment": when a prior assessment exists and this run's evidence contains nothing beyond what it already reflects, <code>churn_probability</code> MUST equal the prior value exactly; any change requires pointing to a specific new fact, quote, or event, not a re-weighing of already-seen evidence. Validated by re-running the identical real evidence post-fix (68% both times), then confirmed via a live production run with zero drift across all 6 tracked customers.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🎯 Risk-level bands are fixed and code-enforced; raw percentage hidden from customers</div>
+          <div class="rule-body">New fixed thresholds: 0–19% Low, 20–34% Medium, 35–79% High, 80–100% Critical. <code>risk_level</code> is computed in code from <code>churn_probability</code> via <code>churn_probability_to_risk_level()</code> — the same code-level-backstop pattern used for <code>qualifying_signal</code> — rather than trusted from the model's own free-text label, so the label is guaranteed to match the score under these exact bands run to run. Per explicit user instruction, Slack blocks (summary table, per-customer detail, the week-over-week diff) and the HubSpot audit note now show only risk level + color (e.g. "🟠 High churn risk") — the raw percentage is no longer surfaced in any customer-facing text. <code>churn_probability</code> is still retained internally for sorting, history storage, and the anchoring/resolution logic above.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">🎙️ Sybill linkage via HubSpot notes</div>
@@ -1592,7 +1600,7 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">📝 Audit trail on every flagged account</div>
-          <div class="rule-body">When a customer is flagged, Churn Radar writes a HubSpot note to that deal recording the churn probability, risk level, and summary — so the flag is visible directly on the CRM record, not just in the Slack report.</div>
+          <div class="rule-body">When a customer is flagged, Churn Radar writes a HubSpot note to that deal recording the risk level and summary — so the flag is visible directly on the CRM record, not just in the Slack report. As of the risk-level-bands change above, the note shows risk level + color only, not the raw percentage.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">📝 Audit trail on every Slack pull, not just flagged deals</div>
@@ -1604,13 +1612,12 @@
         </div>
       </div>
       <div class="doc-section-label">Report Contents (Daily Delta / Friday Full Report)</div>
-      <p style="font-size:12.5px;color:#888;margin:0 0 8px">Report opens with a real Slack Block Kit table (customer, risk + score, main reason, sentiment, owner) as the top-level message. Per-customer detail blocks post as threaded replies underneath, not as separate top-level messages. Bullet fields are capped at ~20 words per bullet for conciseness. Detail replies chunk above ~12,000 chars (well below Slack's ~40,000-char limit), so a typical week (5–15 flagged customers) stays in one threaded reply.</p>
+      <p style="font-size:12.5px;color:#888;margin:0 0 8px">Report opens with a real Slack Block Kit table (customer, risk level, main reason, sentiment, owner) as the top-level message. Per-customer detail blocks post as threaded replies underneath, not as separate top-level messages. Bullet fields are capped at ~20 words per bullet for conciseness. Detail replies chunk above ~12,000 chars (well below Slack's ~40,000-char limit), so a typical week (5–15 flagged customers) stays in one threaded reply.</p>
       <table class="input-table">
         <thead><tr><th>Field</th><th>Description</th></tr></thead>
         <tbody>
           <tr><td>Client name + account owner</td><td>Deal name and resolved HubSpot owner (PM/CSM)</td></tr>
-          <tr><td>Churn probability</td><td>0–100%, ranked highest-first across the report</td></tr>
-          <tr><td>Risk level</td><td>Low / Medium / High / Critical</td></tr>
+          <tr><td>Risk level</td><td>Low (0–19%) / Medium (20–34%) / High (35–79%) / Critical (80–100%) — code-derived from the internal churn_probability via fixed bands; the raw percentage itself is never shown in Slack/HubSpot text, ranked highest-first across the report</td></tr>
           <tr><td>Main reason</td><td>One-line phrase (max 8 words) naming the primary churn driver</td></tr>
           <tr><td>Customer sentiment</td><td>One-line phrase (max 8 words) on tone — e.g. cooperative/partnership-seeking vs. frustrated/hostile — independent of the churn score</td></tr>
           <tr><td>Key contact to appease</td><td>Named individual on the customer's team whose buy-in matters most for retention, when the evidence identifies one</td></tr>
