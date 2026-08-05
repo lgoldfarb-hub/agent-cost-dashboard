@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Pointerpro | Zapier Batch 13 - Resequence",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-05T14:38:22.971781+00:00",
+  "completed_at": "2026-08-05T14:38:26.524534+00:00",
+  "duration_seconds": 3.552753,
+  "input_tokens": 7526,
+  "output_tokens": 166,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 7526,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.022578,
+  "cost_output": 0.00249,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.025068
+}
