@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_StreamNative | ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-07T09:01:25.735359+00:00",
+  "completed_at": "2026-08-07T09:06:11.813319+00:00",
+  "duration_seconds": 286.07796,
+  "input_tokens": 38649,
+  "output_tokens": 9253,
+  "cache_read_tokens": 226731,
+  "cache_write_tokens": 35466,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 35394,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.11594700000000001,
+  "cost_output": 0.138795,
+  "cost_cache_read": 0.06801929999999999,
+  "cost_cache_write": 0.1329975,
+  "cost_web_search": 0.0,
+  "cost_total": 0.4557588
+}
