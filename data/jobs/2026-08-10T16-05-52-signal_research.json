@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_Experiture | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-10T16:05:52.311341+00:00",
+  "completed_at": "2026-08-10T16:08:32.607798+00:00",
+  "duration_seconds": 160.296457,
+  "input_tokens": 28318,
+  "output_tokens": 5966,
+  "cache_read_tokens": 297492,
+  "cache_write_tokens": 44778,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25063,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.084954,
+  "cost_output": 0.08949,
+  "cost_cache_read": 0.0892476,
+  "cost_cache_write": 0.1679175,
+  "cost_web_search": 0.0,
+  "cost_total": 0.43160909999999997
+}
