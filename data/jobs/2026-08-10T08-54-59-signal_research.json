@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_Podia | ceo,no emails,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-10T08:54:59.520038+00:00",
+  "completed_at": "2026-08-10T08:56:39.527425+00:00",
+  "duration_seconds": 100.007387,
+  "input_tokens": 17386,
+  "output_tokens": 2779,
+  "cache_read_tokens": 81231,
+  "cache_write_tokens": 13956,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 14131,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.052157999999999996,
+  "cost_output": 0.041685,
+  "cost_cache_read": 0.0243693,
+  "cost_cache_write": 0.052335,
+  "cost_web_search": 0.0,
+  "cost_total": 0.17054729999999999
+}
