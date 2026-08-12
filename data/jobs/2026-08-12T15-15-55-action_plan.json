@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan: Insider | Network",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-12T15:15:55.804988+00:00",
+  "completed_at": "2026-08-12T15:17:38.943398+00:00",
+  "duration_seconds": 103.13841,
+  "input_tokens": 15242,
+  "output_tokens": 4212,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 1126,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 14232,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.045726,
+  "cost_output": 0.06318,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0042225000000000006,
+  "cost_web_search": 0.0,
+  "cost_total": 0.1131285
+}
