@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Chronus| Paid_Meeting_AI_June26",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-14T17:25:06.430728+00:00",
+  "completed_at": "2026-08-14T17:32:07.411329+00:00",
+  "duration_seconds": 420.980601,
+  "input_tokens": 49817,
+  "output_tokens": 9115,
+  "cache_read_tokens": 708582,
+  "cache_write_tokens": 38789,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 46562,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.149451,
+  "cost_output": 0.13672499999999999,
+  "cost_cache_read": 0.2125746,
+  "cost_cache_write": 0.14545875,
+  "cost_web_search": 0.0,
+  "cost_total": 0.64420935
+}
