@@ -1590,6 +1590,14 @@
           <div class="rule-title">✅ actions_taken covers a full retention-action taxonomy, always with a named actor</div>
           <div class="rule-body">Every run scans for and lists, as separate bullets: follow-up outreach (with a count and whether the customer replied to any attempt), concrete fixes/commitments shipped, pricing concessions, escalation/ownership changes, save-attempt pitches, and scheduled check-ins. Follow-through on OLD commitments is checked too — cross-referencing the prior assessment for anything Albato previously promised and confirming whether it was delivered on time, late, or missed. Every bullet must name the specific Albato person when the evidence identifies them (email sender, call speaker, note/Slack author) — that name carries across an entire thread even if a later message doesn't repeat it.</div>
         </div>
+        <div class="rule-item">
+          <div class="rule-title">🏷️ Sender identity is verified data, never inferred from context</div>
+          <div class="rule-body">A real report attributed an Albato rep's follow-up to the customer's own name ("Albato's Giacomo followed up") because the model inferred sender identity from the email's greeting line ("Hey Giacomo,") — there was no actual sender field in the evidence. Fixed at the data layer, not just the prompt: <code>hs_get_deal_emails()</code> now fetches <code>hs_email_from_firstname/lastname/email</code> and tags each email's evidence with an explicit <code>From:</code> field; Slack messages resolve the sender's user ID (and any <code>&lt;@U...&gt;</code> mentions inside the text) to a real name via <code>users.info</code>, then tag it <code>(Albato)</code> or <code>(customer)</code> deterministically from the verified email domain (<code>@albato.com</code> vs. not) — not a model guess. The prompt explicitly says a name inside a greeting or @-mention is who the message is <em>addressed to</em>, never who sent it, and that the <code>From:</code>/domain tag always wins over anything inferred from tone or context.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">📎 Every actions_taken / Change bullet ends with an inline evidence citation</div>
+          <div class="rule-body">Per explicit user request, both <code>actions_taken</code> ("Already done") and <code>prior_risk_note</code> ("Change") bullets must end with a parenthetical citing evidence type + date, e.g. "(email, 2026-08-13)" or "(call, 2026-08-10)" — sourced from the dated <code>[Email: ...]</code>/<code>[Call: ...]</code>/<code>[Note: ...]</code>/<code>[Slack message: ...]</code> tags already in the evidence, never invented. A bullet spanning multiple sources cites all of them.</div>
+        </div>
       </div>
 
       <div class="doc-section-label">Report Behavior</div>
@@ -1600,7 +1608,11 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">📖 "Existing customers" — bulleted, evidence-grounded change explanation</div>
-          <div class="rule-body">Every returning customer's entry shows the risk-level transition (or "No change") plus 2–3 short bullets from <code>prior_risk_note</code> explaining specifically why, grounded in evidence — not a bare label, and not a dense paragraph. Also shown: Customer sentiment, Already done (full <code>actions_taken</code> list), and Next steps as their own labeled sub-sections. A separate "New evidence" quote block appears only when something actually changed, so unchanged old evidence never gets shown as if it were fresh. The summary table's "Change" column mirrors this same content ("🆕 New" for a customer never in history before, otherwise the transition + bullets).</div>
+          <div class="rule-body">Every returning customer's entry shows, in this order: Customer sentiment, New evidence (only when something actually changed, so unchanged old evidence never gets shown as if it were fresh), the risk-level transition (or "No change") plus 2–3 short bullets from <code>prior_risk_note</code> explaining specifically why — grounded in evidence, not a bare label or a dense paragraph — then Already done (full <code>actions_taken</code> list) and Next steps as their own labeled sub-sections. Section order was moved per explicit user feedback so sentiment and fresh evidence read first, ahead of the Change explanation. The summary table's "Change" column mirrors the transition content ("🆕 New" for a customer never in history before, otherwise the transition + bullets).</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🛠️ Next steps (and summary/quotes/sentiment/reason) can't be gated on worth_reporting alone</div>
+          <div class="rule-body">A real Friday report was missing the "Next steps" section for some flagged customers. Root cause: <code>recommended_next_steps</code> (and <code>summary</code>, <code>quotes</code>, <code>main_reason</code>, <code>customer_sentiment</code>) were specified as "populate whenever <code>worth_reporting</code> is true" — but a customer with real churn risk correctly has <code>worth_reporting=false</code> (it's a separate, narrower 0%-risk-only field), so the model left these fields empty for exactly the customers that most needed them. Same root-cause class as the earlier report-inclusion bug below. Fixed by gating all five fields on "<code>qualifying_signal</code> is not <code>none</code> OR <code>worth_reporting</code> is true" — i.e. populate whenever the customer will actually appear in the report at all.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">💰 Per-customer token usage and cost shown inline</div>
@@ -1628,7 +1640,7 @@
       <div class="rules-list">
         <div class="rule-item">
           <div class="rule-title">📝 HubSpot notes on every flag, and on every Slack pull</div>
-          <div class="rule-body">Every flagged customer gets a HubSpot note recording the risk level (color-coded, no raw percentage) and summary. Separately, for any deal with a confirmed Slack channel, every real run writes a note listing a permalink for each message pulled that run (parent + thread replies) — an audit trail of what was scanned, independent of whether the deal was ultimately flagged.</div>
+          <div class="rule-body">Every flagged customer gets a HubSpot note recording the risk level (color-coded, no raw percentage) and summary. Separately, for any deal with a confirmed Slack channel, every real run writes a note containing the actual Slack message text (timestamp + content) pulled that run — not just permalinks, per explicit user request that the notes be useful without opening Slack — independent of whether the deal was ultimately flagged. <code>hs_add_note()</code> truncates bodies over 65,000 chars to stay under HubSpot's note size limit. (A one-off workflow purged all 175 legacy permalink-only notes after this change shipped; the cleanup script and workflow were deleted immediately after running, per this repo's one-off-script convention.)</div>
         </div>
       </div>
 
@@ -1666,7 +1678,7 @@
           <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — churn signal analysis</td></tr>
           <tr><td><code>HUBSPOT_TOKEN</code></td><td>HubSpot REST API — reads deals/notes/owners, writes audit-trail notes</td></tr>
           <tr><td><code>SYBILL_KEY</code></td><td>Sybill REST API — call transcripts and summaries</td></tr>
-          <tr><td><code>SLACK_BOT</code></td><td>Slack bot token — posts the weekly report and reads client Slack Connect channels. Scopes: <code>chat:write</code>, <code>channels:history</code>, <code>groups:history</code></td></tr>
+          <tr><td><code>SLACK_BOT</code></td><td>Slack bot token — posts the weekly report, reads client Slack Connect channels, and resolves user IDs/emails for sender attribution. Scopes: <code>chat:write</code>, <code>channels:history</code>, <code>groups:history</code>, <code>users:read</code>, <code>users:read.email</code>, <code>users.profile:read</code></td></tr>
           <tr><td><code>GHUB_PAT</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
