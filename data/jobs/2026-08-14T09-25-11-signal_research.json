@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_InMoment | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-14T09:25:11.948107+00:00",
+  "completed_at": "2026-08-14T09:31:05.585222+00:00",
+  "duration_seconds": 353.637115,
+  "input_tokens": 28499,
+  "output_tokens": 9298,
+  "cache_read_tokens": 1125225,
+  "cache_write_tokens": 58571,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25244,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.085497,
+  "cost_output": 0.13947,
+  "cost_cache_read": 0.33756749999999996,
+  "cost_cache_write": 0.21964124999999998,
+  "cost_web_search": 0.0,
+  "cost_total": 0.78217575
+}
