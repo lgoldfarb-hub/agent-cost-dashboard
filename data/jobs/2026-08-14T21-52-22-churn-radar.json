@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Climbo | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-14T21:52:22.077664+00:00",
+  "completed_at": "2026-08-14T21:52:31.000250+00:00",
+  "duration_seconds": 8.922586,
+  "input_tokens": 6538,
+  "output_tokens": 395,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 6538,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.019614,
+  "cost_output": 0.005925,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.025539
+}
