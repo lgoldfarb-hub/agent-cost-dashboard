@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_Pactum AI | paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-17T09:17:20.400691+00:00",
+  "completed_at": "2026-08-17T09:23:05.013956+00:00",
+  "duration_seconds": 344.613265,
+  "input_tokens": 27507,
+  "output_tokens": 8132,
+  "cache_read_tokens": 1130677,
+  "cache_write_tokens": 56236,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 24252,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.082521,
+  "cost_output": 0.12198,
+  "cost_cache_read": 0.3392031,
+  "cost_cache_write": 0.21088500000000002,
+  "cost_web_search": 0.0,
+  "cost_total": 0.7545891
+}
