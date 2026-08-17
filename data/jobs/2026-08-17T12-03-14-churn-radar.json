@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: CustomerX | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-17T12:03:14.041685+00:00",
+  "completed_at": "2026-08-17T12:03:27.940853+00:00",
+  "duration_seconds": 13.899168,
+  "input_tokens": 9801,
+  "output_tokens": 189,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 9801,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.029403000000000002,
+  "cost_output": 0.0028350000000000003,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.032238
+}
