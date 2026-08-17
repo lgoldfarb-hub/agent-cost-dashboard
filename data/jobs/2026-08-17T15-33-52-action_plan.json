@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan: Cxite Group | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-17T15:33:52.654160+00:00",
+  "completed_at": "2026-08-17T15:35:18.099872+00:00",
+  "duration_seconds": 85.445712,
+  "input_tokens": 16100,
+  "output_tokens": 3377,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 1126,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 15090,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.048299999999999996,
+  "cost_output": 0.050655,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0042225000000000006,
+  "cost_web_search": 0.0,
+  "cost_total": 0.10317749999999999
+}
