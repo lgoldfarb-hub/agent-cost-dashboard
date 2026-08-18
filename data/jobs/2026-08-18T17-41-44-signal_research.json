@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: System Surveyor | SaaStock US 2026",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-18T17:41:44.368447+00:00",
+  "completed_at": "2026-08-18T17:44:49.551139+00:00",
+  "duration_seconds": 185.182692,
+  "input_tokens": 79585,
+  "output_tokens": 1525,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 7401,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 76330,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.238755,
+  "cost_output": 0.022875000000000003,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.027753749999999997,
+  "cost_web_search": 0.0,
+  "cost_total": 0.28938375
+}
