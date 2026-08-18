@@ -1,0 +1,23 @@
+{
+  "agent_name": "daily_todo_agent",
+  "job_name": "actions:Mariana Guerci",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-18T07:01:48.444243+00:00",
+  "completed_at": "2026-08-18T07:01:55.204504+00:00",
+  "duration_seconds": 6.760261,
+  "input_tokens": 4312,
+  "output_tokens": 194,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4312,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.012936,
+  "cost_output": 0.00291,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.015846
+}
