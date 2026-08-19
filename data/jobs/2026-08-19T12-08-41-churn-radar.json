@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: ECAL | TAM Batch 1 - Sales automation SaaS",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-19T12:08:41.073516+00:00",
+  "completed_at": "2026-08-19T12:09:03.388062+00:00",
+  "duration_seconds": 22.314546,
+  "input_tokens": 20144,
+  "output_tokens": 947,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 20144,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.060432,
+  "cost_output": 0.014205,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.074637
+}
