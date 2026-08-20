@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief:  Deskpro| SaaStock US 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-20T15:27:55.766256+00:00",
+  "completed_at": "2026-08-20T15:48:03.853013+00:00",
+  "duration_seconds": 1208.086757,
+  "input_tokens": 12187,
+  "output_tokens": 41989,
+  "cache_read_tokens": 4526736,
+  "cache_write_tokens": 150243,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 5132,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.036560999999999996,
+  "cost_output": 0.6298349999999999,
+  "cost_cache_read": 1.3580207999999998,
+  "cost_cache_write": 0.5634112499999999,
+  "cost_web_search": 0.0,
+  "cost_total": 2.5878280499999997
+}
