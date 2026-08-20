@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Glowtify | SaaStr 2026",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-20T17:01:08.338240+00:00",
+  "completed_at": "2026-08-20T17:06:18.091974+00:00",
+  "duration_seconds": 309.753734,
+  "input_tokens": 30186,
+  "output_tokens": 7997,
+  "cache_read_tokens": 741715,
+  "cache_write_tokens": 50435,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 26931,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.090558,
+  "cost_output": 0.119955,
+  "cost_cache_read": 0.2225145,
+  "cost_cache_write": 0.18913125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.62215875
+}
