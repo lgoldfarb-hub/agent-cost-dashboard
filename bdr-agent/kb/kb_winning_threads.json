@@ -656,5 +656,19 @@
         "text": "Hey Tony, \n I appreciate you taking the time to chat with me today. \n As promised, I'm sharing some helpful resources so you can review and easily share them with your team: Your dedicated resource hub with the pricing, FAQs, tech documentation, and an overview of the embedded solution. https://albato.valuecase.com/spaces/cxite_group_llc?token=c9336e20cd8a5457 Today's meeting recording \n Can you please let me know if these links work for you? \n Next steps: I'll confirm with our technical team the best architecture for routing HubSpot data into your Google Cloud database (direct push vs. API), and share a recommendation before we reconnect. When you're ready, sign up for a trial account here and send me the email you used so I can add extra credits and transactions. I'll send a 15-minute calendar invite for next week, so we can check in on your progress and talk through any questions. \n Here’s what I heard from your side that matters most: Timeline: MVP ready to demo in 60–90 days, with customer pilots starting in Q4. User experience: Setup needs to be simple for non-technical users. CXite would manage configuration and field mapping, while customers get visibility into sync status. Sync: Nightly batch syncs are sufficient; real-time updates aren’t required. Data sources: CRM data plus customer-specific product data from databases, cloud environments, or CSV files. Requirements: SOC 2, a fully white-labeled/headless experience, and pricing that works with a relatively small number of users initially. \n Please feel free to reach out if you need anything in the meantime. \n Best, Mariana Guerci Head of Strategic Accounts @Albato schedule a meeting - albato.com"
       }
     ]
+  },
+  {
+    "deal_id": "60785631011",
+    "deal_name": "Deskpro| SaaStock US 2026 (Leo)",
+    "booked_at": "2026-08-20 16:27",
+    "lead_title": "CEO",
+    "sequence_name": "",
+    "source": "albato_learn",
+    "messages": [
+      {
+        "role": "lead",
+        "text": "Hi,\n\nYou’re receiving this email as part of the email introductions feature of SaaStock USA. \n\nA meeting was scheduled at SaaStock USA for Brad Murdoch and Leo Goldfarb, but one or more of you wasn’t able to attend the meeting.\n\nHere are your details, we’ll leave it to you to take it from here:\n\n \n Brad Murdoch, CEO, Deskpro, Inc., brad.murdoch@deskpro.com \n \n\n \n Leo Goldfarb, Co-founder, Albato, l.goldfarb@albato.com \n \n\nPlease do not reply to this email. Email any questions to info@saastock.com .\n\nThanks,\n\nThe SaaStock USA Team"
+      }
+    ]
   }
 ]
