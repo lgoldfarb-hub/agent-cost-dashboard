@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_Dotdigital | Pt 2,active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-20T06:58:07.434834+00:00",
+  "completed_at": "2026-08-20T07:04:18.507534+00:00",
+  "duration_seconds": 371.0727,
+  "input_tokens": 49191,
+  "output_tokens": 8273,
+  "cache_read_tokens": 1032791,
+  "cache_write_tokens": 55816,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 45936,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.147573,
+  "cost_output": 0.12409500000000001,
+  "cost_cache_read": 0.3098373,
+  "cost_cache_write": 0.20931,
+  "cost_web_search": 0.0,
+  "cost_total": 0.7908153
+}
