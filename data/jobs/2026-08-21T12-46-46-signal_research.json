@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_KODIF | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-21T12:46:46.625626+00:00",
+  "completed_at": "2026-08-21T12:52:26.101384+00:00",
+  "duration_seconds": 339.475758,
+  "input_tokens": 63651,
+  "output_tokens": 7828,
+  "cache_read_tokens": 646498,
+  "cache_write_tokens": 34769,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 60396,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.19095299999999998,
+  "cost_output": 0.11742,
+  "cost_cache_read": 0.1939494,
+  "cost_cache_write": 0.13038375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.63270615
+}
