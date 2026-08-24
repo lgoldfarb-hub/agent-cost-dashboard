@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_EasyDMARC | paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-24T09:06:03.993723+00:00",
+  "completed_at": "2026-08-24T09:14:20.244614+00:00",
+  "duration_seconds": 496.250891,
+  "input_tokens": 50248,
+  "output_tokens": 10888,
+  "cache_read_tokens": 1809599,
+  "cache_write_tokens": 72872,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 46993,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.150744,
+  "cost_output": 0.16332,
+  "cost_cache_read": 0.5428797,
+  "cost_cache_write": 0.27327,
+  "cost_web_search": 0.0,
+  "cost_total": 1.1302137
+}
