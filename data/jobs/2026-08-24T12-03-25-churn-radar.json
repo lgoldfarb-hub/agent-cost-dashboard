@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Trackdesk | Zapier Batch 17 - Feb 25",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-24T12:03:25.395489+00:00",
+  "completed_at": "2026-08-24T12:03:30.255928+00:00",
+  "duration_seconds": 4.860439,
+  "input_tokens": 7061,
+  "output_tokens": 218,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 7061,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.021183,
+  "cost_output": 0.0032700000000000003,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.024453000000000003
+}
