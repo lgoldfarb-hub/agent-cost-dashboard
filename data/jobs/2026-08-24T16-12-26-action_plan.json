@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan:  Deskpro| SaaStock US 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-24T16:12:26.007321+00:00",
+  "completed_at": "2026-08-24T16:14:16.665661+00:00",
+  "duration_seconds": 110.65834,
+  "input_tokens": 22188,
+  "output_tokens": 4371,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 1126,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 21178,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.066564,
+  "cost_output": 0.065565,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0042225000000000006,
+  "cost_web_search": 0.0,
+  "cost_total": 0.1363515
+}
