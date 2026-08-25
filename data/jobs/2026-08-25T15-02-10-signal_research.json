@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Filestage| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-25T15:02:10.234233+00:00",
+  "completed_at": "2026-08-25T15:07:04.567080+00:00",
+  "duration_seconds": 294.332847,
+  "input_tokens": 24205,
+  "output_tokens": 7951,
+  "cache_read_tokens": 822773,
+  "cache_write_tokens": 49198,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 20950,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.072615,
+  "cost_output": 0.119265,
+  "cost_cache_read": 0.2468319,
+  "cost_cache_write": 0.1844925,
+  "cost_web_search": 0.0,
+  "cost_total": 0.6232044
+}
