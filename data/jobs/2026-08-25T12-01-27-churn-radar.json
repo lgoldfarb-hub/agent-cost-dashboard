@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Weeztix | Product Interview | Campaign #1",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-25T12:01:27.842588+00:00",
+  "completed_at": "2026-08-25T12:01:34.493372+00:00",
+  "duration_seconds": 6.650784,
+  "input_tokens": 7071,
+  "output_tokens": 307,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 7071,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.021213,
+  "cost_output": 0.004605,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.025818
+}
