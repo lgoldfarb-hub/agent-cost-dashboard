@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_Arima | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-26T14:01:58.566609+00:00",
+  "completed_at": "2026-08-26T14:07:51.520525+00:00",
+  "duration_seconds": 352.953916,
+  "input_tokens": 61662,
+  "output_tokens": 9830,
+  "cache_read_tokens": 822150,
+  "cache_write_tokens": 59009,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 58407,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.184986,
+  "cost_output": 0.14745,
+  "cost_cache_read": 0.246645,
+  "cost_cache_write": 0.22128375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.80036475
+}
