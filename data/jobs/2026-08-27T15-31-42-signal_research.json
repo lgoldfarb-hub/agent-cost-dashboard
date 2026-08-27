@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Agree| SaaStock US 2026 (Mariana)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-27T15:31:42.247258+00:00",
+  "completed_at": "2026-08-27T15:40:23.614411+00:00",
+  "duration_seconds": 521.367153,
+  "input_tokens": 53725,
+  "output_tokens": 15796,
+  "cache_read_tokens": 616186,
+  "cache_write_tokens": 52311,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 50470,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.161175,
+  "cost_output": 0.23694,
+  "cost_cache_read": 0.1848558,
+  "cost_cache_write": 0.19616625000000001,
+  "cost_web_search": 0.0,
+  "cost_total": 0.77913705
+}
