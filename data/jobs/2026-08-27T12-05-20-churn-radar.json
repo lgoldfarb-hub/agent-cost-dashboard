@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Sendr | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-27T12:05:20.280133+00:00",
+  "completed_at": "2026-08-27T12:05:25.042468+00:00",
+  "duration_seconds": 4.762335,
+  "input_tokens": 8563,
+  "output_tokens": 204,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 8563,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.025688999999999997,
+  "cost_output": 0.00306,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.028748999999999997
+}
