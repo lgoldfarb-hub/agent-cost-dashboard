@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan: Dmitrii Sergeev",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-27T11:20:42.257357+00:00",
+  "completed_at": "2026-08-27T11:36:05.169428+00:00",
+  "duration_seconds": 922.912071,
+  "input_tokens": 31533,
+  "output_tokens": 4343,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 1126,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 30523,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.09459899999999999,
+  "cost_output": 0.065145,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0042225000000000006,
+  "cost_web_search": 0.0,
+  "cost_total": 0.1639665
+}
