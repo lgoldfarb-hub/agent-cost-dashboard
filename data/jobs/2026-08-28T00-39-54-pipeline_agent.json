@@ -1,0 +1,23 @@
+{
+  "agent_name": "pipeline_agent",
+  "job_name": "FIT SCORE fields: Lethal Lifting Club",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-28T00:39:54.352739+00:00",
+  "completed_at": "2026-08-28T00:39:56.851247+00:00",
+  "duration_seconds": 2.498508,
+  "input_tokens": 1112,
+  "output_tokens": 62,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 1112,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.0033359999999999996,
+  "cost_output": 0.00093,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.004266
+}
