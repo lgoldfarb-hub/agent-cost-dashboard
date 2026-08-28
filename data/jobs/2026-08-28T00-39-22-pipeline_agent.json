@@ -1,0 +1,23 @@
+{
+  "agent_name": "pipeline_agent",
+  "job_name": "Business Fit:  CodeSignal| Paid_Meeting_CPO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-28T00:39:22.884081+00:00",
+  "completed_at": "2026-08-28T00:39:25.435003+00:00",
+  "duration_seconds": 2.550922,
+  "input_tokens": 10888,
+  "output_tokens": 127,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 10888,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.032664,
+  "cost_output": 0.001905,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.034568999999999996
+}
