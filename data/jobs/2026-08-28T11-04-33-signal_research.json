@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Fibery| Meeting_CEO_Aug26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-28T11:04:33.156196+00:00",
+  "completed_at": "2026-08-28T11:10:37.775865+00:00",
+  "duration_seconds": 364.619669,
+  "input_tokens": 83013,
+  "output_tokens": 8739,
+  "cache_read_tokens": 524195,
+  "cache_write_tokens": 38160,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 79758,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.249039,
+  "cost_output": 0.131085,
+  "cost_cache_read": 0.1572585,
+  "cost_cache_write": 0.1431,
+  "cost_web_search": 0.0,
+  "cost_total": 0.6804825
+}
