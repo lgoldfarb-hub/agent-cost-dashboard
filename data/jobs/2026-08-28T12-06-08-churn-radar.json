@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: SEPHIROTEC GmbH | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-28T12:06:08.594549+00:00",
+  "completed_at": "2026-08-28T12:06:25.901059+00:00",
+  "duration_seconds": 17.30651,
+  "input_tokens": 8479,
+  "output_tokens": 710,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 8479,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.025437,
+  "cost_output": 0.01065,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.036087
+}
