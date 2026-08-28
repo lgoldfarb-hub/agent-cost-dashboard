@@ -670,5 +670,23 @@
         "text": "Hi,\n\nYou’re receiving this email as part of the email introductions feature of SaaStock USA. \n\nA meeting was scheduled at SaaStock USA for Brad Murdoch and Leo Goldfarb, but one or more of you wasn’t able to attend the meeting.\n\nHere are your details, we’ll leave it to you to take it from here:\n\n \n Brad Murdoch, CEO, Deskpro, Inc., brad.murdoch@deskpro.com \n \n\n \n Leo Goldfarb, Co-founder, Albato, l.goldfarb@albato.com \n \n\nPlease do not reply to this email. Email any questions to info@saastock.com .\n\nThanks,\n\nThe SaaStock USA Team"
       }
     ]
+  },
+  {
+    "deal_id": "13449749072",
+    "deal_name": "Valuecase | LinkedIn outbound",
+    "booked_at": "2026-08-28 12:43",
+    "lead_title": "Co-Founder",
+    "sequence_name": "",
+    "source": "albato_learn",
+    "messages": [
+      {
+        "role": "lead",
+        "text": "Hey Lennart, \n We are looking forward to kicking off with Albato and during their sales process we were exposed to Valuecase. You've built an awesome tool. Would love to chat about our use cases. \n \n Got some time to connect next week?\n \n -Logan  \n Sent via Superhuman"
+      },
+      {
+        "role": "lead",
+        "text": "Hey Logan,  \n Sure thing - happy to chat!  \n (And thanks for the feedback)  \n Do you have a cal link by any chance? I’m a bit swamped at the moment, but can shuffle things around. Otherwise, you’ll find my availability here: Https://calendly.com/lennart-prange/call-with-lennart   \n - Lennart\n\n Lennart Prange\nCo-Founder @ Valuecase \n P.S. thanks for the intro, Leo (BCC)!"
+      }
+    ]
   }
 ]
