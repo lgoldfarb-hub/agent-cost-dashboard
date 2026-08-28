@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Chatfuel - Zapier Batch 5",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-08-28T12:03:20.145281+00:00",
+  "completed_at": "2026-08-28T12:03:25.410807+00:00",
+  "duration_seconds": 5.265526,
+  "input_tokens": 8605,
+  "output_tokens": 209,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 8605,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.025814999999999998,
+  "cost_output": 0.003135,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.028949999999999997
+}
