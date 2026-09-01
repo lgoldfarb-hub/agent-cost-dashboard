@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_Iris AI | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-01T07:57:53.602537+00:00",
+  "completed_at": "2026-09-01T08:04:46.959714+00:00",
+  "duration_seconds": 413.357177,
+  "input_tokens": 48892,
+  "output_tokens": 10332,
+  "cache_read_tokens": 1472056,
+  "cache_write_tokens": 68934,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 45637,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.146676,
+  "cost_output": 0.15497999999999998,
+  "cost_cache_read": 0.4416168,
+  "cost_cache_write": 0.25850249999999997,
+  "cost_web_search": 0.0,
+  "cost_total": 1.0017752999999998
+}
