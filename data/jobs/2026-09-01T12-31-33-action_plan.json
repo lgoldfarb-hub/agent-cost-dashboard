@@ -1,0 +1,23 @@
+{
+  "agent_name": "action_plan",
+  "job_name": "ActionPlan: Burnwe | Lead Magnet",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-01T12:31:33.824300+00:00",
+  "completed_at": "2026-09-01T12:33:05.265249+00:00",
+  "duration_seconds": 91.440949,
+  "input_tokens": 13555,
+  "output_tokens": 3635,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 1126,
+  "system_prompt_tokens": 1010,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 12545,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.040665,
+  "cost_output": 0.054525000000000004,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0042225000000000006,
+  "cost_web_search": 0.0,
+  "cost_total": 0.0994125
+}
