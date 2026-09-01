@@ -1,0 +1,23 @@
+{
+  "agent_name": "pipeline_agent",
+  "job_name": "FIT SCORE fields: InfoWorks ITS",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-01T18:56:31.363021+00:00",
+  "completed_at": "2026-09-01T18:56:34.820185+00:00",
+  "duration_seconds": 3.457164,
+  "input_tokens": 1132,
+  "output_tokens": 4,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 1132,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.0033959999999999997,
+  "cost_output": 5.9999999999999995e-05,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.003456
+}
