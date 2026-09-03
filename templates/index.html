@@ -251,6 +251,7 @@
       <button class="agent-filter-btn" onclick="filterDocs('daily-todo')">Daily Todo</button>
       <button class="agent-filter-btn" onclick="filterDocs('nps')">NPS</button>
       <button class="agent-filter-btn" onclick="filterDocs('action-plan')">Action Plan</button>
+      <button class="agent-filter-btn" onclick="filterDocs('monthly-sql-report')">Monthly SQL Report</button>
       <button class="agent-filter-btn" onclick="filterDocs('albato-helper')">Albato Helper</button>
       <button class="agent-filter-btn" onclick="filterDocs('second-brain')">Second Brain</button>
       <button class="agent-filter-btn" onclick="filterDocs('bdr-agent')">BDR Agent</button>
@@ -945,6 +946,54 @@
 └── docs/
     ├── action-plan-agent-session-log.md
     └── connections.md</pre>
+    </div>
+
+    <!-- Monthly SQL Report Agent -->
+    <div class="doc-card" data-agent="monthly-sql-report">
+      <h2>Monthly SQL Report Agent</h2>
+      <div class="doc-meta">Trigger: Albato webhook (1st of month) → GitHub dispatch &nbsp;·&nbsp; No Claude &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/action-plan-agent" target="_blank">lgoldfarb-hub/action-plan-agent</a></div>
+      <p class="doc-description">
+        Runs on the 1st of every month and posts a list of newly Sales Qualified Leads to the sales team. Scans Global Embedded Pipeline deals in active stages for a completed 1st meeting during the previous calendar month, then filters to deals already marked <code>sales_qualified_lead = Yes</code>, and posts deal names + HubSpot links to Slack. Pure HubSpot query + Slack post — no Claude call, no cost.
+      </p>
+      <div class="doc-section-label">Workflow</div>
+      <div class="workflow">
+        <div class="wf-node wf-trigger"><div class="wf-icon">📅</div><div class="wf-label">Albato Webhook</div><div class="wf-sub">Fires 1st of month → GitHub dispatch</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">📆</div><div class="wf-label">Compute Date Window</div><div class="wf-sub">Previous calendar month, from run date</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">🔎</div><div class="wf-label">Find Completed 1st Meetings</div><div class="wf-sub">HubSpot meetings search (outcome + type + date)</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-action"><div class="wf-icon">🔗</div><div class="wf-label">Resolve Associated Deals</div><div class="wf-sub">Per-meeting associations API → filter pipeline + stage</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">✅</div><div class="wf-label">Filter SQL = Yes</div><div class="wf-sub"><code>sales_qualified_lead</code> deal property</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-external"><div class="wf-icon">💬</div><div class="wf-label">Slack Notify</div><div class="wf-sub">Deal names + HubSpot links (<code>#embedded-gtm</code>)</div></div>
+      </div>
+      <div class="doc-section-label">Filter Criteria</div>
+      <table class="input-table">
+        <thead><tr><th>Filter</th><th>Logic</th></tr></thead>
+        <tbody>
+          <tr><td>Pipeline</td><td>Global Embedded Pipeline only</td></tr>
+          <tr><td>Deal stage</td><td>Lead, Opportunity (Meeting Booked), Post-Meeting Qualification, 2nd meeting booked, Business fit (Champion mapped), Product fit / POC / Trial (Tech lead mapped), Proposal (Champion buy-in), Contract (All stakeholders' buy-in), Contact later</td></tr>
+          <tr><td>Meeting outcome</td><td><code>hs_meeting_outcome</code> = Completed</td></tr>
+          <tr><td>Meeting type</td><td><code>hs_activity_type</code> = "Embedded - 1st meeting (Prospect)" or "Outreach - 1st meeting (Embedded)"</td></tr>
+          <tr><td>Meeting date</td><td><code>hs_meeting_start_time</code> falls within the previous calendar month (e.g. run in September → meetings in August)</td></tr>
+          <tr><td>SQL status</td><td><code>sales_qualified_lead</code> = Yes (deal must already be qualified — this agent does not run qualification itself)</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">Secrets</div>
+      <table class="input-table">
+        <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>HUBSPOT_MCP_TOKEN</code></td><td>HubSpot Private App token — reads meetings, deal-meeting associations, deal properties</td></tr>
+          <tr><td><code>SLACK_BOT_ACTION_PLAN_AGENT</code></td><td>Slack bot token — posts the monthly SQL list to <code>#embedded-gtm</code> (<code>C08BDE3HAHY</code>)</td></tr>
+        </tbody>
+      </table>
+      <div class="doc-section-label">File Structure</div>
+      <pre class="file-tree">action-plan-agent/
+├── monthly_sql_report.py              # single entry point (repository_dispatch)
+└── .github/workflows/
+    └── monthly-sql-report.yml</pre>
     </div>
 
     <!-- Albato Helper -->
