@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Unbounce | CustDev Campaign - OR test (USA) ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-03T06:02:31.222776+00:00",
+  "completed_at": "2026-09-03T06:06:43.405666+00:00",
+  "duration_seconds": 252.18289,
+  "input_tokens": 29531,
+  "output_tokens": 7139,
+  "cache_read_tokens": 486567,
+  "cache_write_tokens": 35314,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 26276,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.088593,
+  "cost_output": 0.107085,
+  "cost_cache_read": 0.1459701,
+  "cost_cache_write": 0.1324275,
+  "cost_web_search": 0.0,
+  "cost_total": 0.47407560000000004
+}
