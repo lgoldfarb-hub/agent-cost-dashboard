@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Beekast | saas.unbound intro",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-03T15:29:08.958652+00:00",
+  "completed_at": "2026-09-03T15:32:59.636982+00:00",
+  "duration_seconds": 230.67833,
+  "input_tokens": 374,
+  "output_tokens": 7049,
+  "cache_read_tokens": 540452,
+  "cache_write_tokens": 27447,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 0,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.001122,
+  "cost_output": 0.105735,
+  "cost_cache_read": 0.16213560000000002,
+  "cost_cache_write": 0.10292625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.37191885
+}
