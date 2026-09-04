@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Suitedash | Zapier_Batch 20_May\u201925 (Regular)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-04T06:03:15.289490+00:00",
+  "completed_at": "2026-09-04T06:07:24.838305+00:00",
+  "duration_seconds": 249.548815,
+  "input_tokens": 378,
+  "output_tokens": 6881,
+  "cache_read_tokens": 810388,
+  "cache_write_tokens": 44814,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 0,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.001134,
+  "cost_output": 0.103215,
+  "cost_cache_read": 0.24311639999999998,
+  "cost_cache_write": 0.1680525,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5155179
+}
