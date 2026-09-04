@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Sendspark | Zapier Batch 13 - New apps",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-04T12:02:56.018724+00:00",
+  "completed_at": "2026-09-04T12:03:00.494704+00:00",
+  "duration_seconds": 4.47598,
+  "input_tokens": 7548,
+  "output_tokens": 203,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 7548,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.022644,
+  "cost_output": 0.003045,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.025689
+}
