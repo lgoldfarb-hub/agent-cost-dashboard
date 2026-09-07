@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_Databox | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-07T13:56:49.535819+00:00",
+  "completed_at": "2026-09-07T14:01:25.321094+00:00",
+  "duration_seconds": 275.785275,
+  "input_tokens": 40050,
+  "output_tokens": 8773,
+  "cache_read_tokens": 320454,
+  "cache_write_tokens": 28286,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 36795,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.12015,
+  "cost_output": 0.131595,
+  "cost_cache_read": 0.0961362,
+  "cost_cache_write": 0.1060725,
+  "cost_web_search": 0.0,
+  "cost_total": 0.4539537
+}
