@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Mercately | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-07T16:04:15.292255+00:00",
+  "completed_at": "2026-09-07T16:08:58.533126+00:00",
+  "duration_seconds": 283.240871,
+  "input_tokens": 19436,
+  "output_tokens": 8942,
+  "cache_read_tokens": 961096,
+  "cache_write_tokens": 64644,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 16181,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.058308,
+  "cost_output": 0.13413,
+  "cost_cache_read": 0.2883288,
+  "cost_cache_write": 0.24241499999999996,
+  "cost_web_search": 0.0,
+  "cost_total": 0.7231818
+}
