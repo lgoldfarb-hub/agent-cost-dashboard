@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  S\u00f3lides| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-07T14:15:13.664847+00:00",
+  "completed_at": "2026-09-07T14:22:17.035616+00:00",
+  "duration_seconds": 423.370769,
+  "input_tokens": 24287,
+  "output_tokens": 11385,
+  "cache_read_tokens": 2071686,
+  "cache_write_tokens": 85216,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 21032,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.072861,
+  "cost_output": 0.17077499999999998,
+  "cost_cache_read": 0.6215058,
+  "cost_cache_write": 0.31956,
+  "cost_web_search": 0.0,
+  "cost_total": 1.1847018
+}
