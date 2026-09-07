@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_FormAssembly | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-07T08:56:22.970085+00:00",
+  "completed_at": "2026-09-07T08:59:13.114095+00:00",
+  "duration_seconds": 170.14401,
+  "input_tokens": 48566,
+  "output_tokens": 5569,
+  "cache_read_tokens": 115689,
+  "cache_write_tokens": 28302,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 45311,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.145698,
+  "cost_output": 0.083535,
+  "cost_cache_read": 0.0347067,
+  "cost_cache_write": 0.1061325,
+  "cost_web_search": 0.0,
+  "cost_total": 0.3700722
+}
