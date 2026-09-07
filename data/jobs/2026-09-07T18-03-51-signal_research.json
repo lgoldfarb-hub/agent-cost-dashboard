@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Grain| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-07T18:03:51.117126+00:00",
+  "completed_at": "2026-09-07T18:08:26.921661+00:00",
+  "duration_seconds": 275.804535,
+  "input_tokens": 29082,
+  "output_tokens": 8319,
+  "cache_read_tokens": 716125,
+  "cache_write_tokens": 28315,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25827,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.087246,
+  "cost_output": 0.12478500000000001,
+  "cost_cache_read": 0.2148375,
+  "cost_cache_write": 0.10618125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.53304975
+}
