@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Prophix | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-07T17:01:27.795206+00:00",
+  "completed_at": "2026-09-07T17:06:58.533891+00:00",
+  "duration_seconds": 330.738685,
+  "input_tokens": 28583,
+  "output_tokens": 7654,
+  "cache_read_tokens": 1051537,
+  "cache_write_tokens": 58567,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25328,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.085749,
+  "cost_output": 0.11481000000000001,
+  "cost_cache_read": 0.3154611,
+  "cost_cache_write": 0.21962625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.73564635
+}
