@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Braintrust| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-07T13:50:56.015474+00:00",
+  "completed_at": "2026-09-07T13:54:44.442767+00:00",
+  "duration_seconds": 228.427293,
+  "input_tokens": 29967,
+  "output_tokens": 5518,
+  "cache_read_tokens": 419790,
+  "cache_write_tokens": 36248,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 26712,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.08990100000000001,
+  "cost_output": 0.08277000000000001,
+  "cost_cache_read": 0.125937,
+  "cost_cache_write": 0.13593,
+  "cost_web_search": 0.0,
+  "cost_total": 0.434538
+}
