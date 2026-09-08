@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: Newo.ai | Network",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-08T12:40:01.629917+00:00",
+  "completed_at": "2026-09-08T12:56:04.084810+00:00",
+  "duration_seconds": 962.454893,
+  "input_tokens": 11857,
+  "output_tokens": 34465,
+  "cache_read_tokens": 3232868,
+  "cache_write_tokens": 139981,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4802,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.035571,
+  "cost_output": 0.5169750000000001,
+  "cost_cache_read": 0.9698604,
+  "cost_cache_write": 0.5249287499999999,
+  "cost_web_search": 0.0,
+  "cost_total": 2.04733515
+}
