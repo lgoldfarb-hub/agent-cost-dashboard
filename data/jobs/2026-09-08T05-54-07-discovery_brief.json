@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: GS_Databox | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-08T05:54:07.440742+00:00",
+  "completed_at": "2026-09-08T06:03:56.657574+00:00",
+  "duration_seconds": 589.216832,
+  "input_tokens": 11692,
+  "output_tokens": 23841,
+  "cache_read_tokens": 1015445,
+  "cache_write_tokens": 71418,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4637,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.035075999999999996,
+  "cost_output": 0.357615,
+  "cost_cache_read": 0.30463349999999995,
+  "cost_cache_write": 0.2678175,
+  "cost_web_search": 0.0,
+  "cost_total": 0.9651419999999999
+}
