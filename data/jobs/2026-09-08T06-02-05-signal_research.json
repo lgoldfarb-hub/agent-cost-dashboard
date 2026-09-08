@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Workup.Cloud | New Deal | Booth | Saastock",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-08T06:02:05.461713+00:00",
+  "completed_at": "2026-09-08T06:06:58.610533+00:00",
+  "duration_seconds": 293.14882,
+  "input_tokens": 42950,
+  "output_tokens": 6881,
+  "cache_read_tokens": 457293,
+  "cache_write_tokens": 23703,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 39695,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.12885000000000002,
+  "cost_output": 0.103215,
+  "cost_cache_read": 0.1371879,
+  "cost_cache_write": 0.08888625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.45813915
+}
