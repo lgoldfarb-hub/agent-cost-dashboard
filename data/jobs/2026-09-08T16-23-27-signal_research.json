@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Coachello| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-08T16:23:27.257736+00:00",
+  "completed_at": "2026-09-08T16:28:30.872762+00:00",
+  "duration_seconds": 303.615026,
+  "input_tokens": 19328,
+  "output_tokens": 7818,
+  "cache_read_tokens": 880276,
+  "cache_write_tokens": 52873,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 16073,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.05798400000000001,
+  "cost_output": 0.11727,
+  "cost_cache_read": 0.26408279999999995,
+  "cost_cache_write": 0.19827375000000003,
+  "cost_web_search": 0.0,
+  "cost_total": 0.63761055
+}
