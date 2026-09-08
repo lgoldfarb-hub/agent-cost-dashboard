@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: MobiloCard | Zapier Campaign #1: Broken Customer Journey (Le",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-08T12:01:33.799494+00:00",
+  "completed_at": "2026-09-08T12:01:39.862374+00:00",
+  "duration_seconds": 6.06288,
+  "input_tokens": 7723,
+  "output_tokens": 271,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 7723,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.023169,
+  "cost_output": 0.004064999999999999,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.027233999999999998
+}
