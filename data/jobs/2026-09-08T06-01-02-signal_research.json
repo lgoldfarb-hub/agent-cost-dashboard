@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Lightfield| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-08T06:01:02.103399+00:00",
+  "completed_at": "2026-09-08T06:06:00.942573+00:00",
+  "duration_seconds": 298.839174,
+  "input_tokens": 32577,
+  "output_tokens": 6650,
+  "cache_read_tokens": 630592,
+  "cache_write_tokens": 38066,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 29322,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.09773100000000001,
+  "cost_output": 0.09974999999999999,
+  "cost_cache_read": 0.1891776,
+  "cost_cache_write": 0.1427475,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5294061
+}
