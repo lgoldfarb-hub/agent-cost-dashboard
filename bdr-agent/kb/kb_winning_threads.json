@@ -824,5 +824,27 @@
         "text": "Hi,\n\nI’m currently on holiday and will be back on August the 16th . During this time, my email access will be limited.\n\nIf it’s urgent, you can reach me by phone at +372 5886 5892 .\n\nThanks for your understanding,\n\nPedro Gallardo"
       }
     ]
+  },
+  {
+    "deal_id": "64725613225",
+    "deal_name": "GS_Databox | active,paid meetings campaign",
+    "booked_at": "2026-09-08 06:53",
+    "lead_title": "VP of Product",
+    "sequence_name": "",
+    "source": "albato_learn",
+    "messages": [
+      {
+        "role": "rep",
+        "text": "Hey Gasper, any chance you saw my emails? \n\nI'm offering 200 usd for 60 min of your time to chat about Databox's integrations & AI agents. \n\nOpen to it?"
+      },
+      {
+        "role": "lead",
+        "text": "Vidovic\n\nhey, send me your calendar, I will try to book something"
+      },
+      {
+        "role": "rep",
+        "text": "Hey Gasper, feel free to book here - https://meetings.hubspot.com/marianaguerci/meet-with-albato\n\nBefore the meeting, could you send me a quick note on your main priorities or current challenges around integrations and AI agents? \n\nEven a couple of bullets would be helpful and will allow me to tailor the conversation to what’s most relevant for you."
+      }
+    ]
   }
 ]
