@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_Oliv - Your AI Assistant for Sales | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-09T08:30:58.149014+00:00",
+  "completed_at": "2026-09-09T08:35:58.933747+00:00",
+  "duration_seconds": 300.784733,
+  "input_tokens": 28658,
+  "output_tokens": 8693,
+  "cache_read_tokens": 1188000,
+  "cache_write_tokens": 62447,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25403,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.085974,
+  "cost_output": 0.13039499999999998,
+  "cost_cache_read": 0.3564,
+  "cost_cache_write": 0.23417625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.80694525
+}
