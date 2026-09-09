@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Currentware | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-09T18:08:59.308897+00:00",
+  "completed_at": "2026-09-09T18:14:09.470396+00:00",
+  "duration_seconds": 310.161499,
+  "input_tokens": 41544,
+  "output_tokens": 8563,
+  "cache_read_tokens": 1168314,
+  "cache_write_tokens": 57758,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 38289,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.12463199999999999,
+  "cost_output": 0.128445,
+  "cost_cache_read": 0.35049420000000003,
+  "cost_cache_write": 0.2165925,
+  "cost_web_search": 0.0,
+  "cost_total": 0.8201636999999999
+}
