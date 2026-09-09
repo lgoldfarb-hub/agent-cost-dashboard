@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Reachdesk | CustDev Campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-09T13:34:10.602366+00:00",
+  "completed_at": "2026-09-09T13:37:34.477690+00:00",
+  "duration_seconds": 203.875324,
+  "input_tokens": 21992,
+  "output_tokens": 6661,
+  "cache_read_tokens": 270882,
+  "cache_write_tokens": 36603,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 18737,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.065976,
+  "cost_output": 0.099915,
+  "cost_cache_read": 0.0812646,
+  "cost_cache_write": 0.13726125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.38441685000000003
+}
