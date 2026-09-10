@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Messente - New Deal | Zapier June 2025",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-10T09:15:37.449983+00:00",
+  "completed_at": "2026-09-10T09:22:06.886280+00:00",
+  "duration_seconds": 389.436297,
+  "input_tokens": 44672,
+  "output_tokens": 9757,
+  "cache_read_tokens": 1432459,
+  "cache_write_tokens": 63519,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 41417,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.13401600000000002,
+  "cost_output": 0.146355,
+  "cost_cache_read": 0.42973769999999994,
+  "cost_cache_write": 0.23819625000000003,
+  "cost_web_search": 0.0,
+  "cost_total": 0.9483049499999999
+}
