@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: TalentDesk.io | Zapier_Pitch_december25_(Green\\\\Yellow)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-10T09:15:45.730407+00:00",
+  "completed_at": "2026-09-10T09:22:41.208529+00:00",
+  "duration_seconds": 415.478122,
+  "input_tokens": 67655,
+  "output_tokens": 11575,
+  "cache_read_tokens": 1672591,
+  "cache_write_tokens": 57429,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 64400,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.202965,
+  "cost_output": 0.173625,
+  "cost_cache_read": 0.5017773,
+  "cost_cache_write": 0.21535875000000002,
+  "cost_web_search": 0.0,
+  "cost_total": 1.09372605
+}
