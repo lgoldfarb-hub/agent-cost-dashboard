@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Rvops | Inbound (from Guilherme Toledo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-10T08:16:19.958739+00:00",
+  "completed_at": "2026-09-10T08:21:40.208295+00:00",
+  "duration_seconds": 320.249556,
+  "input_tokens": 43464,
+  "output_tokens": 8692,
+  "cache_read_tokens": 912356,
+  "cache_write_tokens": 41965,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 40209,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.130392,
+  "cost_output": 0.13038,
+  "cost_cache_read": 0.2737068,
+  "cost_cache_write": 0.15736875,
+  "cost_web_search": 0.0,
+  "cost_total": 0.6918475500000001
+}
