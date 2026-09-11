@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: RTX | Inbound ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-11T13:31:10.666641+00:00",
+  "completed_at": "2026-09-11T13:37:23.120713+00:00",
+  "duration_seconds": 372.454072,
+  "input_tokens": 34503,
+  "output_tokens": 9864,
+  "cache_read_tokens": 970306,
+  "cache_write_tokens": 42491,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 31248,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.10350899999999999,
+  "cost_output": 0.14795999999999998,
+  "cost_cache_read": 0.2910918,
+  "cost_cache_write": 0.15934125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.7019020499999999
+}
