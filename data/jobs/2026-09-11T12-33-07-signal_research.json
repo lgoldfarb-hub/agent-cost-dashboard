@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Camphouse| Golden_Sales_Feb26",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-11T12:33:07.411348+00:00",
+  "completed_at": "2026-09-11T12:38:33.768426+00:00",
+  "duration_seconds": 326.357078,
+  "input_tokens": 32808,
+  "output_tokens": 8542,
+  "cache_read_tokens": 1056560,
+  "cache_write_tokens": 49013,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 29553,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.09842399999999998,
+  "cost_output": 0.12813,
+  "cost_cache_read": 0.31696799999999997,
+  "cost_cache_write": 0.18379875,
+  "cost_web_search": 0.0,
+  "cost_total": 0.72732075
+}
