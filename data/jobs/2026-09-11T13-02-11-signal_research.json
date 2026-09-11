@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Reevo | SaaStr 2026",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-11T13:02:11.054065+00:00",
+  "completed_at": "2026-09-11T13:08:28.194340+00:00",
+  "duration_seconds": 377.140275,
+  "input_tokens": 31893,
+  "output_tokens": 8784,
+  "cache_read_tokens": 871789,
+  "cache_write_tokens": 39539,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 28638,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.09567899999999999,
+  "cost_output": 0.13176,
+  "cost_cache_read": 0.2615367,
+  "cost_cache_write": 0.14827125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.63724695
+}
