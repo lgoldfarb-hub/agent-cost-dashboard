@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: Strataflow (Albato's Network)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-11T15:33:10.066741+00:00",
+  "completed_at": "2026-09-11T15:46:30.095707+00:00",
+  "duration_seconds": 800.028966,
+  "input_tokens": 11877,
+  "output_tokens": 30553,
+  "cache_read_tokens": 1530632,
+  "cache_write_tokens": 102301,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4822,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.035631,
+  "cost_output": 0.458295,
+  "cost_cache_read": 0.4591896,
+  "cost_cache_write": 0.38362875,
+  "cost_web_search": 0.0,
+  "cost_total": 1.33674435
+}
