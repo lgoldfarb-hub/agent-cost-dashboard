@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Kiflo - Linkedin Outreach",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-14T13:33:11.302119+00:00",
+  "completed_at": "2026-09-14T13:38:11.934948+00:00",
+  "duration_seconds": 300.632829,
+  "input_tokens": 39037,
+  "output_tokens": 7547,
+  "cache_read_tokens": 891370,
+  "cache_write_tokens": 46688,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 35782,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.117111,
+  "cost_output": 0.113205,
+  "cost_cache_read": 0.267411,
+  "cost_cache_write": 0.17508,
+  "cost_web_search": 0.0,
+  "cost_total": 0.672807
+}
