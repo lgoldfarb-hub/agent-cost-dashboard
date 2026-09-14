@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Lytho| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-14T16:08:08.466207+00:00",
+  "completed_at": "2026-09-14T16:14:38.866016+00:00",
+  "duration_seconds": 390.399809,
+  "input_tokens": 29691,
+  "output_tokens": 9785,
+  "cache_read_tokens": 1420429,
+  "cache_write_tokens": 61585,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 26436,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.089073,
+  "cost_output": 0.14677500000000002,
+  "cost_cache_read": 0.42612869999999997,
+  "cost_cache_write": 0.23094375,
+  "cost_web_search": 0.0,
+  "cost_total": 0.89292045
+}
