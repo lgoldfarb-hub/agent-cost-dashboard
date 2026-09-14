@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: DashThis | saas.unbound intro",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-14T18:00:45.019280+00:00",
+  "completed_at": "2026-09-14T18:05:50.155471+00:00",
+  "duration_seconds": 305.136191,
+  "input_tokens": 42422,
+  "output_tokens": 8821,
+  "cache_read_tokens": 770416,
+  "cache_write_tokens": 36711,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 39167,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.127266,
+  "cost_output": 0.13231500000000002,
+  "cost_cache_read": 0.2311248,
+  "cost_cache_write": 0.13766625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.62837205
+}
