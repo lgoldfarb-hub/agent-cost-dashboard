@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Infobip | New Deal (niche campaign - messaging platforms)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-14T17:46:12.477319+00:00",
+  "completed_at": "2026-09-14T17:50:56.111480+00:00",
+  "duration_seconds": 283.634161,
+  "input_tokens": 33019,
+  "output_tokens": 7767,
+  "cache_read_tokens": 639610,
+  "cache_write_tokens": 31270,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 29764,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.099057,
+  "cost_output": 0.116505,
+  "cost_cache_read": 0.191883,
+  "cost_cache_write": 0.11726249999999999,
+  "cost_web_search": 0.0,
+  "cost_total": 0.5247075
+}
