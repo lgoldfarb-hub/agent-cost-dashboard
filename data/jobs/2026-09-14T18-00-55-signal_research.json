@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Operating| HubSpot_November 25_Complains (size 1-1000)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-14T18:00:55.505777+00:00",
+  "completed_at": "2026-09-14T18:02:38.918783+00:00",
+  "duration_seconds": 103.413006,
+  "input_tokens": 30701,
+  "output_tokens": 2806,
+  "cache_read_tokens": 87066,
+  "cache_write_tokens": 2816,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 27446,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.09210299999999999,
+  "cost_output": 0.042089999999999995,
+  "cost_cache_read": 0.026119800000000002,
+  "cost_cache_write": 0.01056,
+  "cost_web_search": 0.0,
+  "cost_total": 0.1708728
+}
