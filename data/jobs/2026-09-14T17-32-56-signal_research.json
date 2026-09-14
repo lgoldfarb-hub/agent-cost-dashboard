@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Chattermill| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-14T17:32:56.949600+00:00",
+  "completed_at": "2026-09-14T17:39:11.873103+00:00",
+  "duration_seconds": 374.923503,
+  "input_tokens": 55524,
+  "output_tokens": 11954,
+  "cache_read_tokens": 668982,
+  "cache_write_tokens": 59894,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 52269,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.166572,
+  "cost_output": 0.17931,
+  "cost_cache_read": 0.20069459999999997,
+  "cost_cache_write": 0.2246025,
+  "cost_web_search": 0.0,
+  "cost_total": 0.7711791
+}
