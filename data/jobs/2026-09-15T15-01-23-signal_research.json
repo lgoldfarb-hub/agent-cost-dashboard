@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Glide| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-15T15:01:23.493156+00:00",
+  "completed_at": "2026-09-15T15:05:55.961858+00:00",
+  "duration_seconds": 272.468702,
+  "input_tokens": 31502,
+  "output_tokens": 7508,
+  "cache_read_tokens": 545382,
+  "cache_write_tokens": 31778,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 28247,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.094506,
+  "cost_output": 0.11262,
+  "cost_cache_read": 0.1636146,
+  "cost_cache_write": 0.11916750000000001,
+  "cost_web_search": 0.0,
+  "cost_total": 0.48990809999999996
+}
