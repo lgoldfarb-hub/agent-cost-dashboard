@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Plan Prophet | Referred by Pressero",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-15T12:06:40.914594+00:00",
+  "completed_at": "2026-09-15T12:06:59.368591+00:00",
+  "duration_seconds": 18.453997,
+  "input_tokens": 7702,
+  "output_tokens": 829,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 7702,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.023105999999999998,
+  "cost_output": 0.012435,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.035540999999999996
+}
