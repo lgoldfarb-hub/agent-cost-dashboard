@@ -1,0 +1,23 @@
+{
+  "agent_name": "pipeline_agent",
+  "job_name": "FIT SCORE fields: Spikes Shop",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-15T19:19:52.633242+00:00",
+  "completed_at": "2026-09-15T19:19:55.752523+00:00",
+  "duration_seconds": 3.119281,
+  "input_tokens": 1106,
+  "output_tokens": 53,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 1106,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.0033179999999999998,
+  "cost_output": 0.000795,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.0041129999999999995
+}
