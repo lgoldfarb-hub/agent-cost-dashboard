@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Spinify | Hubspot_installs_100less (EU) ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-15T09:03:33.822163+00:00",
+  "completed_at": "2026-09-15T09:09:23.439794+00:00",
+  "duration_seconds": 349.617631,
+  "input_tokens": 33623,
+  "output_tokens": 9735,
+  "cache_read_tokens": 1336766,
+  "cache_write_tokens": 64402,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 30368,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.100869,
+  "cost_output": 0.14602500000000002,
+  "cost_cache_read": 0.40102979999999994,
+  "cost_cache_write": 0.2415075,
+  "cost_web_search": 0.0,
+  "cost_total": 0.8894312999999999
+}
