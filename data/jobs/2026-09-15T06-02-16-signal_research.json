@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Lumion | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-15T06:02:16.456900+00:00",
+  "completed_at": "2026-09-15T06:06:50.446161+00:00",
+  "duration_seconds": 273.989261,
+  "input_tokens": 19263,
+  "output_tokens": 7343,
+  "cache_read_tokens": 743824,
+  "cache_write_tokens": 50173,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 16008,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.05778899999999999,
+  "cost_output": 0.11014499999999999,
+  "cost_cache_read": 0.22314720000000002,
+  "cost_cache_write": 0.18814875,
+  "cost_web_search": 0.0,
+  "cost_total": 0.57922995
+}
