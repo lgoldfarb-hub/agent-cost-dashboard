@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Wave | Zapier Batch 16 - V2",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-16T19:03:51.888508+00:00",
+  "completed_at": "2026-09-16T19:08:53.639230+00:00",
+  "duration_seconds": 301.750722,
+  "input_tokens": 384,
+  "output_tokens": 7722,
+  "cache_read_tokens": 1110475,
+  "cache_write_tokens": 51613,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 0,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.001152,
+  "cost_output": 0.11582999999999999,
+  "cost_cache_read": 0.3331425,
+  "cost_cache_write": 0.19354875,
+  "cost_web_search": 0.0,
+  "cost_total": 0.64367325
+}
