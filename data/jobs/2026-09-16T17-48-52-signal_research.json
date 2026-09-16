@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Clinked| Zapier_Batch 21_August 25 | Green+Yellow (size <20)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-16T17:48:52.320947+00:00",
+  "completed_at": "2026-09-16T17:55:16.054578+00:00",
+  "duration_seconds": 383.733631,
+  "input_tokens": 40010,
+  "output_tokens": 11321,
+  "cache_read_tokens": 1490499,
+  "cache_write_tokens": 59973,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 36755,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.12003,
+  "cost_output": 0.169815,
+  "cost_cache_read": 0.4471497,
+  "cost_cache_write": 0.22489874999999998,
+  "cost_web_search": 0.0,
+  "cost_total": 0.96189345
+}
