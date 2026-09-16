@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Knack | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-16T12:01:41.956223+00:00",
+  "completed_at": "2026-09-16T12:02:06.266319+00:00",
+  "duration_seconds": 24.310096,
+  "input_tokens": 17661,
+  "output_tokens": 951,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 17661,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.052983,
+  "cost_output": 0.014265,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.067248
+}
