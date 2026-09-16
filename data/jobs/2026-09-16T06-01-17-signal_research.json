@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: CRM PipeRun | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-16T06:01:17.368649+00:00",
+  "completed_at": "2026-09-16T06:04:52.686924+00:00",
+  "duration_seconds": 215.318275,
+  "input_tokens": 364,
+  "output_tokens": 7068,
+  "cache_read_tokens": 286136,
+  "cache_write_tokens": 25929,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 0,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.001092,
+  "cost_output": 0.10601999999999999,
+  "cost_cache_read": 0.0858408,
+  "cost_cache_write": 0.09723375000000001,
+  "cost_web_search": 0.0,
+  "cost_total": 0.29018655
+}
