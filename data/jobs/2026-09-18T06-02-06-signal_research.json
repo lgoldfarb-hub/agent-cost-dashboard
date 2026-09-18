@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Aaniie | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-18T06:02:06.576078+00:00",
+  "completed_at": "2026-09-18T06:05:55.831166+00:00",
+  "duration_seconds": 229.255088,
+  "input_tokens": 21368,
+  "output_tokens": 6302,
+  "cache_read_tokens": 616014,
+  "cache_write_tokens": 40347,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 18113,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.06410400000000001,
+  "cost_output": 0.09453,
+  "cost_cache_read": 0.18480419999999997,
+  "cost_cache_write": 0.15130125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.49473944999999997
+}
