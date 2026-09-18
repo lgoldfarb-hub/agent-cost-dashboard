@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Betterworks| Paid_meetings_Feb26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-18T10:30:36.854007+00:00",
+  "completed_at": "2026-09-18T10:34:05.582464+00:00",
+  "duration_seconds": 208.728457,
+  "input_tokens": 32732,
+  "output_tokens": 6123,
+  "cache_read_tokens": 258090,
+  "cache_write_tokens": 33340,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 29477,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.09819599999999999,
+  "cost_output": 0.091845,
+  "cost_cache_read": 0.077427,
+  "cost_cache_write": 0.125025,
+  "cost_web_search": 0.0,
+  "cost_total": 0.392493
+}
