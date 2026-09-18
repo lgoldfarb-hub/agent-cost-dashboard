@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: Flexybox  | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-18T09:00:38.096289+00:00",
+  "completed_at": "2026-09-18T09:04:42.614473+00:00",
+  "duration_seconds": 244.518184,
+  "input_tokens": 33446,
+  "output_tokens": 7631,
+  "cache_read_tokens": 199083,
+  "cache_write_tokens": 37080,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 30191,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.10033799999999998,
+  "cost_output": 0.114465,
+  "cost_cache_read": 0.0597249,
+  "cost_cache_write": 0.13905,
+  "cost_web_search": 0.0,
+  "cost_total": 0.41357789999999994
+}
