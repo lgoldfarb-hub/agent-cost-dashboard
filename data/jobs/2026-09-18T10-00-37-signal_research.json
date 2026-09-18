@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  contactSPACE| SaaStr 2026 (Leo)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-18T10:00:37.570022+00:00",
+  "completed_at": "2026-09-18T10:05:00.448517+00:00",
+  "duration_seconds": 262.878495,
+  "input_tokens": 20531,
+  "output_tokens": 7264,
+  "cache_read_tokens": 861697,
+  "cache_write_tokens": 52427,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 17276,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.061593,
+  "cost_output": 0.10896,
+  "cost_cache_read": 0.2585091,
+  "cost_cache_write": 0.19660125,
+  "cost_web_search": 0.0,
+  "cost_total": 0.62566335
+}
