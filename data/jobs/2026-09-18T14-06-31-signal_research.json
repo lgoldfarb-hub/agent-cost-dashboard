@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_ValueCore | active,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-18T14:06:31.279253+00:00",
+  "completed_at": "2026-09-18T14:13:32.548470+00:00",
+  "duration_seconds": 421.269217,
+  "input_tokens": 58677,
+  "output_tokens": 11236,
+  "cache_read_tokens": 1715020,
+  "cache_write_tokens": 75137,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 55422,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.176031,
+  "cost_output": 0.16854,
+  "cost_cache_read": 0.514506,
+  "cost_cache_write": 0.28176375,
+  "cost_web_search": 0.0,
+  "cost_total": 1.14084075
+}
