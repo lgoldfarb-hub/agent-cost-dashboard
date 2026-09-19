@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: Trillet AI | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-19T04:06:52.240122+00:00",
+  "completed_at": "2026-09-19T04:23:01.037714+00:00",
+  "duration_seconds": 968.797592,
+  "input_tokens": 12668,
+  "output_tokens": 38951,
+  "cache_read_tokens": 3198882,
+  "cache_write_tokens": 129211,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 5613,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.038004,
+  "cost_output": 0.584265,
+  "cost_cache_read": 0.9596645999999999,
+  "cost_cache_write": 0.48454125,
+  "cost_web_search": 0.0,
+  "cost_total": 2.06647485
+}
