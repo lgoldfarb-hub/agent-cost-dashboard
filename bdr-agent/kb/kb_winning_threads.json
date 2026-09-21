@@ -1052,5 +1052,171 @@
         "text": "Hi Jason, Matt, and CIQ Team, \n I hope your week is finishing strong. \n Since you've soft-launched CIQ's Copilot, I figured you might benefit from some insights from my recent interview with Andras Horvath, Director of AI Products at Wrike. They've rolled out several AI copilots and learned valuable lessons along the way. I’d be curious to hear if you’ve run into similar challenges. \n By the way, would you or someone from your team be open to a brief 1-on-1 interview with me about AI agents? \n I'd also be happy to create a similar post, similar to the one I did for Wrike, highlighting CIQ and your AI capabilities. \n What do you say? \n Have a great Friday and a restful weekend. \n — Leo Goldfarb Managing Partner, Albato book a meeting - albato.com"
       }
     ]
+  },
+  {
+    "deal_id": "8005438827",
+    "deal_name": "Duda | Network",
+    "booked_at": "2026-09-21 09:06",
+    "lead_title": "Solutions Engineer",
+    "sequence_name": "",
+    "source": "albato_learn",
+    "messages": [
+      {
+        "role": "lead",
+        "text": "Dear colleagues, \n Please kindly find attached the invoice for Albato services. \n \n Thank you in advance, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Dear colleagues, \n Please kindly find attached the invoice for Albato services in February. \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Dear colleagues, \n Please kindly find attached the invoice for Albato services in March. \n \n \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Dear colleagues, \n Please kindly find attached the invoice for Albato services in May.\n \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Dear colleagues, \n Please kindly find attached the invoice for Albato services in June and July. \n \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Thanks Ekaterina!  \n @Accounts Payable this is approved per services rendered by Albato for Duda. \n $600: Ongoing fee for 4 active apps in June (HubSpot, MailChimp, Facebook, and Slack). $900: Ongoing fee for 6 active apps in July (HubSpot, MailChimp, Facebook, Slack, ActiveCampaign, and the automation builder). $500: Implementation fee for a new app in July (Active Campaign). \n Best, \n JUSTIN WELLS Senior Product Partnerships Manager +1.989.415.7371  |  Learn about Duda"
+      },
+      {
+        "role": "lead",
+        "text": "Hi there, \n I took a time to review it, and would like to complement that we only have 10 connectors live, not 17 as said on the invoice and being charged for so long. \n \n What should we do in this case? \n Best,\n \n \n MARCEL AZEVEDO \n\n Solutions Engineer \n           \n Visit our Help Center | Visit our Duda University \n\n Become the pro everyone wants to work with"
+      },
+      {
+        "role": "rep",
+        "text": "Hi Marcel,  \n Thank you very much for bringing this to our attention. \n On behalf of Albato, I would like to apologize for the mix-up. It turns out that there was a mistake in the billing, and Duda was charged for enabled connectors, not active ones. We are reviewing this case internally as we speak and will provide you with the results of our investigation and the next steps early next week. \n Rest assured, there was no ill will, and it's purely a billing issue. We will credit the overcharged amount toward your next invoices. \n Once again, I would like to offer my sincere apologies for this. \n Regarding the 7 apps that haven't gone live, Alex mentioned that those apps were QA’d and delivered long ago, and we thought you had already accepted them. Our team hasn't been aware of any issues related to the launch of those apps. However, if there's still something holding back the rollout of these 7 apps, please let us know, and we'll tackle them in no time. \n Have a great Friday.\n \n Best, \nLeo"
+      },
+      {
+        "role": "lead",
+        "text": "Hi Leo, \n Per our records, you have started charging over the 10 apps starting from Feb 2025. \n Please send us your calculations once you have the amount. \n Appreciate the cooperation. \n Thanks NOA MATZLIACH Accounting Manager +1-408-480-6354  |  Learn about Duda"
+      },
+      {
+        "role": "rep",
+        "text": "Hi Noa,  \n We’re doing a financial reconciliation for each month as we speak. \n I will be sharing our calculations shortly.\n \n Thank you. \n --- Best, Leo Goldfarb Managing Partner @Albato \n Book a meeting   | LinkedIn"
+      },
+      {
+        "role": "rep",
+        "text": "Dear Noa, Marcel, and Duda team,  \n I hope you are doing well. \n As promised, we've conducted a thorough internal investigation and reconciled all invoices dating back to November 2024, which is when we delivered the initial 10 apps (\"launch connectors,\" as per the agreement) and transitioned to monthly billing based on active connectors.\n\nDuring our reconciliation, we identified another deviation from Annex 2, Clause 1.5 of the agreement. According to this clause, we should bill Duda only for active connectors that have accumulated at least 100 transactions over the past 30 days. \n\nThe discrepancy occurred because Duda is one of the few customers still operating under our legacy billing logic. Since summer 2023, we’ve gradually transitioned all clients from billing based on active connectors to billing based on “shipped” connectors. Unfortunately, this transition created a billing inconsistency in Duda’s contract.\n\nFor full transparency, I’m sharing a spreadsheet with the monthly invoice reconciliation. The total overcharged amount is $10,200 , which will be credited toward your future invoices, beginning this month. \n\n @Noa Matzliach , would it work for Duda if we applied  a 50% deduction to your upcoming invoices until the overcharged amount is fully settled? \nOnce again, on behalf of Albato, I sincerely apologize and want to reaffirm that Duda remains one of our most valued partners. We truly appreciate and cherish our long-standing partnership.\n\nTo make up for this unfortunate mistake, we’d also like to offer Duda:\n- A lifetime increase in your free monthly transaction limit from 1,500,000 to 2,000,000 \n- A free white-glove setup of all our upcoming AI features, e.g., AI Copilot, workflow agents, and more \n Please let me know your thoughts. \n \n --- Best, Leo Goldfarb Managing Partner @Albato \n Book a meeting   | LinkedIn"
+      },
+      {
+        "role": "lead",
+        "text": "Hi Leo, \n Thank you for the quick turnaround and the thorough internal investigation. We appreciate you identifying the billing discrepancies and proposing a resolution. \n Since the September 2025 invoice has not yet been paid, please issue a revised invoice that reflects the correct charges. \n Regarding the remaining overcharged amount of $9,300, we request that this credit be applied at 100% against our upcoming invoices until it is fully depleted. Applying only 50% would significantly extend the repayment period, and given that most of these overcharges relate to 2025, we believe an accelerated credit application is appropriate. \n Regarding your generous offer of additional features, Russ and Mel will be in touch to discuss these further. \n Please let us know if you have any questions or concerns. \n Thanks, NOA MATZLIACH Accounting Manager +1-408-480-6354  |  Learn about Duda"
+      },
+      {
+        "role": "rep",
+        "text": "Hi Noa,  \n 100% works for us. We will reissue the September and October invoices shortly. \n Thank you. \n \n Best, \nLeo"
+      },
+      {
+        "role": "lead",
+        "text": "Hey Leo,  \n Thanks for the prompt resolution time here. Marcel and I chatted and we appreciate your offer for the increase in the monthly transactions and the AI workflow set-up. Last we spoke, those features are primarily applicable inside the Automation Builder rather than the direct connectors so perhaps when relevant we can spend some time better understanding that and ensure all our marketing materials accurately reflect the new features. \n \n \n \n \n MEL KOZUN \n Head of Ecosystem Partnerships \n \n 1-306-380-4650   |   Learn About Duda \n Book A Meeting"
+      },
+      {
+        "role": "lead",
+        "text": "Hi Leo, \n I appreciate that. \n Thank you NOA MATZLIACH Accounting Manager +1-408-480-6354  |  Learn about Duda"
+      },
+      {
+        "role": "lead",
+        "text": "Hi Noa, \n Please kindly find attached the correct invoices for the last 2 months and the credit note for the remaining difference (it's now $9,300 as we've corrected the unpaid invoice for September). We have also enhanced the spreadsheet with the outstanding balance for your convenience. Please let me know if something should be corrected. \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi Ekaterina, \n Thank you for providing these. \n Everything looks in order. \n Thanks NOA MATZLIACH Accounting Manager +1-408-480-6354  |  Learn about Duda"
+      },
+      {
+        "role": "lead",
+        "text": "#fae_2oo29sgn p.fab6k8g, #fae_2oo29sgn li.fab6k8g, #fae_2oo29sgn :where(.front-email-body) div.fab6k8g\n\t{margin:0in;\n\tfont-size:12.0pt;\n\tfont-family:\"Aptos\",sans-serif;}\n#fae_2oo29sgn a:link, #fae_2oo29sgn span.farytb2y\n\t{mso-style-priority:99;\n\tcolor:blue;\n\ttext-decoration:underline;}\n#fae_2oo29sgn a:visited, #fae_2oo29sgn span.fa-58l6bn\n\t{mso-style-priority:99;\n\tcolor:purple;\n\ttext-decoration:underline;}\n@page WordSection1\n\t{size:8.5in 11.0in;\n\tmargin:1.0in 1.0in 1.0in 1.0in;}\n#fae_2oo29sgn :where(.front-email-body) div.fac9qm84\n\t{page:WordSection1;}\n#fae_2oo29sgn ol\n\t{margin-bottom:0in;}\n#fae_2oo29sgn ul\n\t{margin-bottom:0in;} \n Hi Ekaterina,\n\nHope you are doing great\n\nWe have applied the CM with both the open invoices in our record , please apply CM with both Sept and Oct invoice in you record and once done please share the confirmation with us. So that books are align at both ends. \n\n \n\n Kindly let us know in case of any further query or assistance is required. \n\n \n\n Thanks and regards \n\n Duda AP Team \n\n \n \n From: Noa Matzliach < noa@duda.co > \n Sent: Wednesday, October 8, 2025 3:51 AM\n To: Ekaterina Razevig < e.razevig@albato.com >\n Cc: Accounts Payable < ap@duda.co >; Leo Goldfarb < l.goldfarb@albato.com >; Marcel Azevedo < marcel@duda.co >; Albato Group < cyprus@albato.com >; Mel Kozun < mel.kozun@duda.co >; russ@duda.co \n Subject: Re: Albato invoice \n \n \n \nHi Ekaterina, \n \n \n \nThank you for providing these. \n \n \n \nEverything looks in order. \n \n \n \nThanks \n \n NOA MATZLIACH \n \n Accounting Manager \n \n +1-408-480-6354 | Learn about Duda"
+      },
+      {
+        "role": "lead",
+        "text": "Hello team, \n Please find attached the invoice for November with applied CN (as well as 2 previous invoices with applied CN). \n \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hello team, \n Please find attached the invoice for December with applied CN. \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "#fae_33ex4q3b p.fab6k8g, #fae_33ex4q3b li.fab6k8g, #fae_33ex4q3b :where(.front-email-body) div.fab6k8g\n\t{margin:0in;\n\tfont-size:12.0pt;\n\tfont-family:\"Aptos\",sans-serif;}\n#fae_33ex4q3b a:link, #fae_33ex4q3b span.farytb2y\n\t{mso-style-priority:99;\n\tcolor:blue;\n\ttext-decoration:underline;}\n#fae_33ex4q3b a:visited, #fae_33ex4q3b span.fa-58l6bn\n\t{mso-style-priority:99;\n\tcolor:purple;\n\ttext-decoration:underline;}\n@page WordSection1\n\t{size:8.5in 11.0in;\n\tmargin:1.0in 1.0in 1.0in 1.0in;}\n#fae_33ex4q3b :where(.front-email-body) div.fac9qm84\n\t{page:WordSection1;}\n#fae_33ex4q3b ol\n\t{margin-bottom:0in;}\n#fae_33ex4q3b ul\n\t{margin-bottom:0in;} \n Hi Team, \n\n \n\n Thank you for sharing the invoice with us. \n\n \n\n There will be balance due of $100 after applying the credit memo of $9300(CM balance $2275 applied with INV24 -256 ), kindly share the updated copy of invoice or confirm if there is any additional balance of CM to applied. \n\n \nKindly let us know in case of any further query or concern. \n\n \n\n Best regards \n\n Duda AP Team \n\n \n \n From: Ekaterina Razevig < e.razevig@albato.com > \n Sent: Thursday, December 4, 2025 11:11 PM\n To: ap@duda.co \n Cc: Leo Goldfarb < l.goldfarb@albato.com >; Marcel Azevedo < marcel@duda.co >; Noa Matzliach < noa@duda.co >; Albato Group < cyprus@albato.com >; Mel Kozun < mel.kozun@duda.co >; russ@duda.co \n Subject: Re: Albato invoice \n \n \n \nHello team, \n \n \n \nPlease find attached the invoice for December with applied CN. \n \n \n \nKind regards, \n \nEkaterina Razevig \n \nCFO Albato \n \n \n \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi team, \n Let's re-check the reconciliation table https://docs.google.com/spreadsheets/d/17gZKzI6JwWPnZuyGhDwpOiadTwvrAKjllcUT8Ie7t9w/edit?pli=1&gid=0#gid=0 \n\nAccording to our records, an open balance of $2,275 is still remaining. It will be offset against the next invoice. \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi Ekaterina,  \n I went through this thread and tried to reconcile the information here, with the sheet, and the only difference I have is that our amounts and yours are off by $100, which I believe is why Duda AP thought there would be a $100 balance. \n Can you confirm the amount carrying forward, and show the total credits, and where they were applied for ease of clarification? \n \n \n\n \n MEL KOZUN \n Head of Ecosystem Partnerships \n \n 1-306-380-4650   |   Learn About Duda \n Book A Meeting"
+      },
+      {
+        "role": "lead",
+        "text": "#fae_33gt3yc7 p.fab6k8g, #fae_33gt3yc7 li.fab6k8g, #fae_33gt3yc7 :where(.front-email-body) div.fab6k8g\n\t{margin:0in;\n\tfont-size:12.0pt;\n\tfont-family:\"Aptos\",sans-serif;}\n#fae_33gt3yc7 a:link, #fae_33gt3yc7 span.farytb2y\n\t{mso-style-priority:99;\n\tcolor:blue;\n\ttext-decoration:underline;}\n#fae_33gt3yc7 a:visited, #fae_33gt3yc7 span.fa-58l6bn\n\t{mso-style-priority:99;\n\tcolor:purple;\n\ttext-decoration:underline;}\n@page WordSection1\n\t{size:8.5in 11.0in;\n\tmargin:1.0in 1.0in 1.0in 1.0in;}\n#fae_33gt3yc7 :where(.front-email-body) div.fac9qm84\n\t{page:WordSection1;}\n#fae_33gt3yc7 ol\n\t{margin-bottom:0in;}\n#fae_33gt3yc7 ul\n\t{margin-bottom:0in;} \n Hi Team, \n\n \n\n Thank you for the below email and adding to below.\n\nThe reconciliation balance in the excel sheet matches with the Bill.com credit balance till November 2025 as $2275, the entry for December 2025 invoice amount $2375 is not updated in the spreadsheet and we owe $100 after applying the available credit balance of $2275 as per vendor credit information we have in our record, which is needed to pay for December invoice. however as per attached invoice the CM balance mentioned as $2375 and on sheet provided is $2275 \n\n    \n\nKindly let us know in case of any further query or assistance is required. \n\n \n\n Thanks, and regards \n\n Duda AP Team \n\n \n \n From: Mel Kozun < mel.kozun@duda.co > \n Sent: Sunday, December 7, 2025 5:50 AM\n To: Ekaterina Razevig < e.razevig@albato.com >\n Cc: ap@duda.co ; Leo Goldfarb < l.goldfarb@albato.com >; Marcel Azevedo < marcel@duda.co >; Noa Matzliach < noa@duda.co >; Albato Group < cyprus@albato.com >; russ@duda.co \n Subject: Re: Albato invoice \n \n \n \nHi Ekaterina, \n \n \n \nI went through this thread and tried to reconcile the information here, with the sheet, and the only difference I have is that our amounts and yours are off by $100, which I believe is why Duda AP thought there would be a $100 balance. \n \n \n \nCan you confirm the amount carrying forward, and show the total credits, and where they were applied for ease of clarification? \n \n \n \n \n \n MEL KOZUN \nHead of Ecosystem Partnerships \n \n 1-306-380-4650 | Learn About Duda \n \n \n \n Book A Meeting"
+      },
+      {
+        "role": "lead",
+        "text": "Hi team, \n I see the outstanding balance of the credit note as follows: - CN is in the amount of $9,300. It was applied starting from the invoice for September (as the invoice for August INV24-224 was paid on 17.09.2025).\n- Invoices for September - December equals to 2,375+2,275+2,375= $ 7,025. - So, the remaining credit is 2,275 as calculated in the last row in the table . \n\n \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "#fae_33j377br p.fab6k8g, #fae_33j377br li.fab6k8g, #fae_33j377br :where(.front-email-body) div.fab6k8g\n\t{margin:0in;\n\tfont-size:12.0pt;\n\tfont-family:\"Aptos\",sans-serif;}\n#fae_33j377br a:link, #fae_33j377br span.farytb2y\n\t{mso-style-priority:99;\n\tcolor:blue;\n\ttext-decoration:underline;}\n#fae_33j377br a:visited, #fae_33j377br span.fa-58l6bn\n\t{mso-style-priority:99;\n\tcolor:purple;\n\ttext-decoration:underline;}\n@page WordSection1\n\t{size:8.5in 11.0in;\n\tmargin:1.0in 1.0in 1.0in 1.0in;}\n#fae_33j377br :where(.front-email-body) div.fac9qm84\n\t{page:WordSection1;}\n#fae_33j377br ol\n\t{margin-bottom:0in;}\n#fae_33j377br ul\n\t{margin-bottom:0in;} \n Hi Ekaterina, \n\n \n\n With reference to below email, the credit balance remaining after applying the $7025 CN to September to November 2025 invoices is $2275 as per our record ( which will be applied to December invoice $2375 ) however, CN mentioned on December invoice you have shared it states credit Balance of $2375 (Highlighted in yellow I below snip). Total Balance for December invoice should be $100 ($2375 - $2275 = $100 {refer to calculation below}), hope this is clarify everything.\n\n - Invoices for September - November equals to 2,375+2,275+2,375= $ 7,025. \n\n \n\n \n Please refer to below calculation including Dec invoice \n\n \n \n Invoice number \n \n Service Month \n \n invice amount \n \n CN applied \n \n Balance \n \n Remarks \n \n INV 24 - 233 \n \n Sep-25 \n \n 2375 \n \n 2375 \n \n 0 \n \n CN Applied \n \n INV 24 - 237 \n \n Oct-25 \n \n 2375 \n \n 2375 \n \n 0 \n \n CN Applied \n \n INV 24 247 \n \n Nov-25 \n \n 2275 \n \n 2275 \n \n 0 \n \n CN Applied \n \n Inv 24 - 256 \n \n Dec-25 \n \n 2375 \n \n 2275 \n \n 100 \n \n Balance after CN Applied \n \n \n\nPlease share the update invoice with us or let us know in case of any further query or concern. \n\n \n\n Thanks, and regards, \n\n Duda AP Team \n\n \n \n From: Ekaterina Razevig < e.razevig@albato.com > \n Sent: Tuesday, December 9, 2025 6:06 PM\n To: ap@duda.co \n Cc: Mel Kozun < mel.kozun@duda.co >; Leo Goldfarb < l.goldfarb@albato.com >; Marcel Azevedo < marcel@duda.co >; Noa Matzliach < noa@duda.co >; Albato Group < cyprus@albato.com >; russ@duda.co \n Subject: Re: Albato invoice \n \n \n \nHi team, \n \n \n \nI see the outstanding balance of the credit note as follows: \n \n- CN is in the amount of $9,300. It was applied starting from the invoice for September (as the invoice for August INV24-224 was paid on 17.09.2025).\n- Invoices for September - December equals to 2,375+2,275+2,375= $ 7,025. \n \n- So, the remaining credit is 2,275 as calculated in the last row in the table . \n \n \n \nKind regards, \n \nEkaterina Razevig \n \nCFO Albato \n \n \n \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi team, \n Thank you for the clarifications, your records are correct, please find attached the updated invoice. \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi team, \n Please find attached the invoice for January. \n \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "#fae_33zyiqvr p.fab6k8g, #fae_33zyiqvr li.fab6k8g, #fae_33zyiqvr :where(.front-email-body) div.fab6k8g\n\t{margin:0in;\n\tfont-size:12.0pt;\n\tfont-family:\"Aptos\",sans-serif;}\n#fae_33zyiqvr a:link, #fae_33zyiqvr span.farytb2y\n\t{mso-style-priority:99;\n\tcolor:blue;\n\ttext-decoration:underline;}\n#fae_33zyiqvr a:visited, #fae_33zyiqvr span.fa-58l6bn\n\t{mso-style-priority:99;\n\tcolor:purple;\n\ttext-decoration:underline;}\n@page WordSection1\n\t{size:8.5in 11.0in;\n\tmargin:1.0in 1.0in 1.0in 1.0in;}\n#fae_33zyiqvr :where(.front-email-body) div.fac9qm84\n\t{page:WordSection1;}\n#fae_33zyiqvr ol\n\t{margin-bottom:0in;}\n#fae_33zyiqvr ul\n\t{margin-bottom:0in;} \n Hi Ekaterina, \n\n \n\n Thank you for sharing the January invoice with us, \n\n \n\n However, in the line item it is mentioned as 12.2025, could please check and provide the updated copy of invoice. \n\n \n\n Best regards \n\n Duda AP Team \n\n \n \n From: Ekaterina Razevig < e.razevig@albato.com > \n Sent: Wednesday, January 14, 2026 3:17 PM\n To: ap@duda.co \n Cc: Mel Kozun < mel.kozun@duda.co >; Leo Goldfarb < l.goldfarb@albato.com >; Marcel Azevedo < marcel@duda.co >; Noa Matzliach < noa@duda.co >; Albato Group < cyprus@albato.com >; russ@duda.co \n Subject: Re: Albato invoice \n \n \n \nHi team, \n \n \n \nPlease find attached the invoice for January. \n \n \n \n \n \nKind regards, \n \nEkaterina Razevig \n \nCFO Albato \n \n \n \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi!\nUpdated invoice is attached, thank you!\n\n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi team, \n \n   \n \nPlease find attached the invoice for February.\n\n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi team, \n \n   \n \nPlease find attached the invoice for March.\n\n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "#fae_34su72hj p.fab6k8g, #fae_34su72hj li.fab6k8g, #fae_34su72hj :where(.front-email-body) div.fab6k8g\n\t{margin:0in;\n\tfont-size:12.0pt;\n\tfont-family:\"Aptos\",sans-serif;}\n#fae_34su72hj a:link, #fae_34su72hj span.farytb2y\n\t{mso-style-priority:99;\n\tcolor:blue;\n\ttext-decoration:underline;}\n#fae_34su72hj a:visited, #fae_34su72hj span.fa-58l6bn\n\t{mso-style-priority:99;\n\tcolor:purple;\n\ttext-decoration:underline;}\n@page WordSection1\n\t{size:8.5in 11.0in;\n\tmargin:1.0in 1.0in 1.0in 1.0in;}\n#fae_34su72hj :where(.front-email-body) div.fac9qm84\n\t{page:WordSection1;}\n#fae_34su72hj ol\n\t{margin-bottom:0in;}\n#fae_34su72hj ul\n\t{margin-bottom:0in;} \n Hi Ekaterina, \n\n \n\n Thank you for sharing the March invoice with us, \n\n   \n\n However, in the line item it is mentioned as 02.2025 , could please check and provide the updated copy of invoice. \n\n \n\n Best regards \n\n Duda AP Team \n\n \n \n From: Ekaterina Razevig < e.razevig@albato.com > \n Sent: Wednesday, March 4, 2026 8:57 PM\n To: ap@duda.co \n Cc: Mel Kozun < mel.kozun@duda.co >; Leo Goldfarb < l.goldfarb@albato.com >; Marcel Azevedo < marcel@duda.co >; Noa Matzliach < noa@duda.co >; Albato Group < cyprus@albato.com >; russ@duda.co \n Subject: Re: Albato invoice \n \n \n \nHi team, \n \n \n \nPlease find attached the invoice for March. \n\n \n \nKind regards, \n \nEkaterina Razevig \n \nCFO Albato \n \n \n \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi team, \n Please find attached the updated invoice, sorry for the inconvenience. \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi, \n Please find attached the invoices for May and April (resending it in case you haven't received it recently). \n \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi team, \n \n  \n \nPlease find attached the invoice for June.\n\n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi team, \n \n  \n \nPlease find attached the invoice for July.\n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi team, \n Please find attached the invoice for August. \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Hi team, \n Please find attached the invoice for September. \n \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
+      }
+    ]
   }
 ]
