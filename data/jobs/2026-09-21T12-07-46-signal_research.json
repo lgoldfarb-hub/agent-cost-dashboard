@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals:  Arcade| Paid_Meeting_CPO_June26 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-21T12:07:46.751220+00:00",
+  "completed_at": "2026-09-21T12:13:06.337257+00:00",
+  "duration_seconds": 319.586037,
+  "input_tokens": 28816,
+  "output_tokens": 11541,
+  "cache_read_tokens": 1138881,
+  "cache_write_tokens": 46535,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 25561,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.086448,
+  "cost_output": 0.173115,
+  "cost_cache_read": 0.3416643,
+  "cost_cache_write": 0.17450625,
+  "cost_web_search": 0.0,
+  "cost_total": 0.7757335499999999
+}
