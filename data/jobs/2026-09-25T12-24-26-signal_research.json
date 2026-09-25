@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_Synapsa | no emails,paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-25T12:24:26.147572+00:00",
+  "completed_at": "2026-09-25T12:29:22.012180+00:00",
+  "duration_seconds": 295.864608,
+  "input_tokens": 49186,
+  "output_tokens": 8419,
+  "cache_read_tokens": 963335,
+  "cache_write_tokens": 59160,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 45931,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.147558,
+  "cost_output": 0.12628499999999998,
+  "cost_cache_read": 0.2890005,
+  "cost_cache_write": 0.22185,
+  "cost_web_search": 0.0,
+  "cost_total": 0.7846934999999999
+}
