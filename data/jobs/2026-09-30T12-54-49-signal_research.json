@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_Inkfluence AI | paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-09-30T12:54:49.110180+00:00",
+  "completed_at": "2026-09-30T12:58:58.491511+00:00",
+  "duration_seconds": 249.381331,
+  "input_tokens": 27592,
+  "output_tokens": 7646,
+  "cache_read_tokens": 931790,
+  "cache_write_tokens": 60748,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 24337,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.08277599999999999,
+  "cost_output": 0.11469,
+  "cost_cache_read": 0.279537,
+  "cost_cache_write": 0.227805,
+  "cost_web_search": 0.0,
+  "cost_total": 0.704808
+}
