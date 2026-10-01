@@ -1,0 +1,23 @@
+{
+  "agent_name": "signal_research",
+  "job_name": "Signals: GS_Nfig | paid meetings campaign",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-01T13:38:41.834218+00:00",
+  "completed_at": "2026-10-01T13:46:11.983682+00:00",
+  "duration_seconds": 450.149464,
+  "input_tokens": 48474,
+  "output_tokens": 12381,
+  "cache_read_tokens": 2104748,
+  "cache_write_tokens": 78199,
+  "system_prompt_tokens": 3255,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 45219,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.145422,
+  "cost_output": 0.185715,
+  "cost_cache_read": 0.6314243999999999,
+  "cost_cache_write": 0.29324625000000004,
+  "cost_web_search": 0.0,
+  "cost_total": 1.25580765
+}
