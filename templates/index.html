@@ -812,46 +812,77 @@
     <!-- NPS Agent -->
     <div class="doc-card" data-agent="nps">
       <h2>NPS Agent</h2>
-      <div class="doc-meta">Trigger: Weekday cron 12:00 + 15:00 UTC &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/nps-agent" target="_blank">lgoldfarb-hub/nps-agent</a></div>
+      <div class="doc-meta">Trigger: Weekday cron 07:00 + 08:00 UTC (phase runs), 11:00 UTC (daily update) &nbsp;·&nbsp; Survey send: manual approval only &nbsp;·&nbsp; <a href="https://github.com/lgoldfarb-hub/nps-agent" target="_blank">lgoldfarb-hub/nps-agent</a></div>
       <p class="doc-description">
-        Automates Albato's quarterly NPS survey end-to-end. Sends surveys via email and Slack, tracks who has responded in a Google Sheet, sends up to three reminder waves to non-respondents, and posts daily response rate updates to Slack. At the end of the quarter, generates a final PDF report with the NPS score, per-client breakdown, and qualitative feedback analysis. Also listens for @Albato NPS Agent mentions in Slack for live Q&A about results.
+        Automates Albato's quarterly NPS survey end-to-end. Resets the respondent sheet and asks the team to update the list, sends the survey via email and Slack once a human approves it, tracks who has responded in a Google Sheet, sends up to three reminder waves to non-respondents, and posts daily response rate updates to Slack. After the survey deadline, generates a final PDF report with the NPS score, per-client breakdown, and qualitative feedback analysis. Also listens for @Albato NPS Agent mentions in Slack for live Q&amp;A about results.
       </p>
       <div class="doc-section-label">Workflow</div>
       <div class="workflow">
-        <div class="wf-node wf-trigger"><div class="wf-icon">📅</div><div class="wf-label">Weekday Cron</div><div class="wf-sub">12:00 heads-up / 15:00 send</div></div>
+        <div class="wf-node wf-trigger"><div class="wf-icon">📅</div><div class="wf-label">Weekday Cron</div><div class="wf-sub">07:00 / 08:00 UTC phase runs</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-external"><div class="wf-icon">📊</div><div class="wf-label">Read Respondent List</div><div class="wf-sub">Google Sheets</div></div>
+        <div class="wf-node wf-external"><div class="wf-icon">📊</div><div class="wf-label">Reset Sheet + Notify Team</div><div class="wf-sub">T-14: update respondent list</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">📧</div><div class="wf-label">Send Surveys</div><div class="wf-sub">Gmail + Slack</div></div>
+        <div class="wf-node wf-action"><div class="wf-icon">✋</div><div class="wf-label">Manual Approval</div><div class="wf-sub">Dry run → send_surveys=true</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-external"><div class="wf-icon">✅</div><div class="wf-label">Track Responses</div><div class="wf-sub">Google Sheets</div></div>
+        <div class="wf-node wf-output"><div class="wf-icon">📧</div><div class="wf-label">Send Surveys</div><div class="wf-sub">Gmail + Slack (2h heads-up)</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">🔔</div><div class="wf-label">Send Reminders</div><div class="wf-sub">Up to 3 waves</div></div>
+        <div class="wf-node wf-external"><div class="wf-icon">✅</div><div class="wf-label">Track Responses</div><div class="wf-sub">Form → Albato → GitHub → Sheet</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Daily Slack Update</div><div class="wf-sub">Response rate + avg score</div></div>
+        <div class="wf-node wf-output"><div class="wf-icon">🔔</div><div class="wf-label">Send Reminders</div><div class="wf-sub">Up to 3 waves (cron)</div></div>
         <div class="wf-arrow">→</div>
-        <div class="wf-node wf-output"><div class="wf-icon">📄</div><div class="wf-label">Final PDF Report</div><div class="wf-sub">NPS + per-client breakdown</div></div>
+        <div class="wf-node wf-output"><div class="wf-icon">💬</div><div class="wf-label">Daily Slack Update</div><div class="wf-sub">Response rate + avg Q5</div></div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-node wf-output"><div class="wf-icon">📄</div><div class="wf-label">Final PDF Report</div><div class="wf-sub">After deadline (2h heads-up)</div></div>
+      </div>
+      <div class="doc-section-label">Rules</div>
+      <div class="rules-list">
+        <div class="rule-item">
+          <div class="rule-title">✋ Survey send is manual-only</div>
+          <div class="rule-body">The initial survey send (Phase 2) only runs from a manual <code>nps-run.yml</code> dispatch with <code>send_surveys=true</code>, after a human approves the dry run. Cron runs and the Slack bot (&ldquo;run the agent&rdquo;) can never send surveys. It also never fires before the quarter's send date.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">⏰ Heads-up gate</div>
+          <div class="rule-body">Every customer-facing phase (surveys, each reminder wave, final report) first posts a heads-up to #embedded-nps and only executes ≥2 hours later. For surveys and reminders the heads-up must be from the same UTC day — a stale heads-up never authorizes a send.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🔔 Reminder logic</div>
+          <div class="rule-body">Max 3 reminders per company, one message per company per day, ≥2 days apart (Reminder 1 counts from the survey send). A company is skipped entirely once any of its contacts responds. After the final round completes cleanly, <code>reminders_complete</code> is set and no further reminders go out that quarter.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">📆 Schedule &amp; overrides</div>
+          <div class="rule-body">Default schedule: sheet reset + team notice at T-14, team reminder at T-12, survey send at T-10 (moved to Monday if it lands on a weekend), reminders every 2 days, deadline = last workday of the quarter. A quarter can override send/reminder/deadline dates via <code>SCHEDULE_OVERRIDES</code> in <code>config.py</code> (used for Q3'2026's late start). A cycle that hasn't sent its surveys keeps running into the next calendar quarter until its own deadline.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">☑️ Sheet checkboxes</div>
+          <div class="rule-body">After each send, <strong>NPS Sent</strong> / <strong>Reminder N</strong> is ticked for every contact who received it — all rows in the company's Slack channel, or every address on the group email — in one batched write. Sheets API calls retry with backoff on rate-limit (429) and 5xx errors.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-title">🏷️ Quarter tags in results</div>
+          <div class="rule-body">The report filters the NPS results tab by its <strong>Quarter</strong> column, which the survey form sets as a fixed value switched between cycles. Switch it only after the previous quarter's report is final — late responses submitted after the switch get the next quarter's tag and drop out of the report.</div>
+        </div>
       </div>
       <div class="doc-section-label">Input Data</div>
       <table class="input-table">
         <thead><tr><th>Field</th><th>Source</th></tr></thead>
         <tbody>
-          <tr><td>Respondent list (name, company, email)</td><td>Google Sheets — quarterly survey sheet (respondents tab)</td></tr>
+          <tr><td>Respondent list (name, company, email)</td><td>Google Sheets — "List of respondents" tab</td></tr>
           <tr><td>Delivery channel per respondent (email or Slack)</td><td>Google Sheets — "channel" column (email / slack)</td></tr>
-          <tr><td>Slack channel ID per respondent</td><td>Google Sheets — "slack channel id" column</td></tr>
-          <tr><td>Survey phase state (NPS Sent, Responded flags)</td><td>Google Sheets — boolean columns per respondent row</td></tr>
-          <tr><td>NPS score + qualitative feedback</td><td>Google Sheets — response columns written by form-response workflow</td></tr>
-          <tr><td>@mention Q&A queries</td><td>Slack — via Cloudflare Worker webhook listener</td></tr>
+          <tr><td>Slack channel ID per respondent</td><td>Google Sheets — "slack channel id" column (needed on every Slack row for checkboxes to tick)</td></tr>
+          <tr><td>Survey phase state (NPS Sent, Reminder 1–3, Responded)</td><td>Google Sheets — checkbox columns per respondent row</td></tr>
+          <tr><td>Cycle state (phase flags, reminder counts, heads-up times)</td><td>Google Sheets — "Agent State" tab, one JSON row per quarter</td></tr>
+          <tr><td>NPS score, category scores + feedback (Q1–Q7)</td><td>Google Sheets — "NPS results" tab, filtered by Quarter column</td></tr>
+          <tr><td>Response notifications</td><td>Albato scenario → GitHub <code>repository_dispatch</code> (form-response) → marks Responded</td></tr>
+          <tr><td>@mention Q&amp;A queries</td><td>Slack — via Cloudflare Worker webhook listener</td></tr>
         </tbody>
       </table>
       <div class="doc-section-label">Secrets</div>
       <table class="input-table">
         <thead><tr><th>Secret</th><th>Purpose</th></tr></thead>
         <tbody>
-          <tr><td><code>GOOGLE_SERVICE_ACCOUNT_JSON</code></td><td>Google service account key — read/write access to the respondent Google Sheet</td></tr>
-          <tr><td><code>SLACK_BOT</code></td><td>Slack bot token — sends NPS surveys and reminders to Slack channels; posts daily updates and final report</td></tr>
-          <tr><td><code>SLACK_USER_TOKEN</code></td><td>Slack user token (Leo's) — sends messages from client-facing Slack channels</td></tr>
-          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — answers @mention Q&A queries about NPS results</td></tr>
+          <tr><td><code>GOOGLE_SERVICE_ACCOUNT_JSON</code></td><td>Google service account key — read/write the respondent sheet; sends survey emails via Gmail domain-wide delegation (as l.goldfarb@albato.com)</td></tr>
+          <tr><td><code>SLACK_BOT</code></td><td>Slack bot token — posts heads-ups, daily updates and the final report to #embedded-nps; Q&amp;A bot</td></tr>
+          <tr><td><code>SLACK_USER_TOKEN</code></td><td>Slack user token (Leo's) — sends surveys and reminders into client Slack channels</td></tr>
+          <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Claude API — feedback theme analysis in the report; answers @mention Q&amp;A queries</td></tr>
           <tr><td><code>TRACKER_GITHUB_TOKEN</code></td><td>GitHub PAT — pushes job cost records to the agent-cost-dashboard repo</td></tr>
         </tbody>
       </table>
@@ -859,17 +890,25 @@
       <pre class="file-tree">nps-agent/
 ├── src/nps_agent/
 │   ├── bot.py           # Slack bot @mention handler
-│   ├── config.py        # quarter config, respondent list
-│   ├── phase.py         # phase state machine (send → remind → report)
+│   ├── config.py        # settings, quarter dates, per-quarter schedule overrides
+│   ├── phase.py         # phase state machine (reset → notify → send → remind → report)
 │   ├── reminders.py     # reminder wave logic
 │   ├── report.py        # final PDF report generation
-│   ├── sheets.py        # Google Sheets read/write
+│   ├── sheets.py        # Google Sheets read/write (retry + batched writes)
 │   ├── slack_client.py  # Slack API wrapper
 │   ├── gmail_client.py  # Gmail send wrapper
 │   ├── templates.py     # email + Slack message templates
-│   ├── models.py        # data models
-│   ├── dryrun.py        # dry-run helpers
+│   ├── models.py        # data models (QuarterState etc.)
+│   ├── dryrun.py        # dry-run preview of the next send
 │   └── tracker.py       # cost tracking
+├── .github/workflows/
+│   ├── nps-run.yml          # phase runs (cron + manual send_surveys)
+│   ├── nps-daily-update.yml # daily response-rate post
+│   ├── nps-dry-run.yml      # preview next send
+│   ├── form-response.yml    # mark responded (repository_dispatch)
+│   ├── nps-slack.yml        # Slack bot handler
+│   ├── read-sheet.yml       # report preview utility
+│   └── tests.yml            # pytest on push
 ├── slack-worker/
 │   └── worker.js        # Cloudflare Worker — receives Slack @mention webhooks
 ├── tests/               # pytest suite

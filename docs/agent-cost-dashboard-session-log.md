@@ -10,6 +10,28 @@ Each entry covers:
 
 ---
 
+## 2026-10-02
+
+### Done
+- **Updated the NPS Agent documentation card** (`templates/index.html`, `data-agent="nps"`) to match the nps-agent changes from Sep 28 to Oct 1:
+  - Fixed the stale trigger times: the card said 12:00/15:00 UTC; the real crons are 07:00/08:00 phase runs plus the 11:00 daily update.
+  - Workflow diagram now shows the sheet reset + team notice and the manual-approval step before the survey send.
+  - New Rules section: manual-only survey send (`send_surveys=true`), the 2h same-day heads-up gate, reminder logic and `reminders_complete`, default schedule and `SCHEDULE_OVERRIDES`, per-recipient checkbox ticking with Sheets retry, and Quarter-tag switching.
+  - Input data adds the Agent State tab and the Albato → `repository_dispatch` response flow.
+  - Secrets corrected: the user token, not the bot, sends to client channels; Gmail sends via the service account's domain-wide delegation.
+  - File tree now lists the workflows.
+
+### Problems
+- None.
+
+### Deferred
+- None.
+
+### Open questions / next session
+- None.
+
+---
+
 ## 2026-06-14
 
 ### Done
