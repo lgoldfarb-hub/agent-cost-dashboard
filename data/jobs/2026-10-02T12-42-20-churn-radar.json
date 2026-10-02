@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Time4commerce | Web Summit (Booth)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-02T12:42:20.322828+00:00",
+  "completed_at": "2026-10-02T12:42:25.138220+00:00",
+  "duration_seconds": 4.815392,
+  "input_tokens": 31036,
+  "output_tokens": 232,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 31036,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.093108,
+  "cost_output": 0.00348,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.096588
+}
