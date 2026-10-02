@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: ChatDash | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-02T12:41:21.646499+00:00",
+  "completed_at": "2026-10-02T12:41:26.748005+00:00",
+  "duration_seconds": 5.101506,
+  "input_tokens": 8434,
+  "output_tokens": 237,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 8434,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.025302,
+  "cost_output": 0.003555,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.028857
+}
