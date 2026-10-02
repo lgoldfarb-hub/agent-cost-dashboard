@@ -857,8 +857,8 @@
           <div class="rule-body">After each send, <strong>NPS Sent</strong> / <strong>Reminder N</strong> is ticked for every contact who received it — all rows in the company's Slack channel, or every address on the group email — in one batched write. Sheets API calls retry with backoff on rate-limit (429) and 5xx errors.</div>
         </div>
         <div class="rule-item">
-          <div class="rule-title">🏷️ Quarter tags in results</div>
-          <div class="rule-body">The report filters the NPS results tab by its <strong>Quarter</strong> column, which the survey form sets as a fixed value switched between cycles. Switch it only after the previous quarter's report is final — late responses submitted after the switch get the next quarter's tag and drop out of the report.</div>
+          <div class="rule-title">🏷️ Quarter tag validation</div>
+          <div class="rule-body">The report filters the NPS results tab by its <strong>Quarter</strong> column, which the Albato automation fills from the submission date (converted to the previous quarter). That&rsquo;s wrong for answers submitted inside the quarter being surveyed. So on every form-response webhook the agent checks the new row&rsquo;s tag against the running cycle (fallback: submission date &minus; 45 days). A wrong tag is fixed in place and reported to #embedded-nps. Only the last 10 rows are considered, so an older submission is never touched. If the row hasn&rsquo;t landed yet, it retries, then warns without changing anything.</div>
         </div>
       </div>
       <div class="doc-section-label">Input Data</div>
@@ -871,7 +871,7 @@
           <tr><td>Survey phase state (NPS Sent, Reminder 1–3, Responded)</td><td>Google Sheets — checkbox columns per respondent row</td></tr>
           <tr><td>Cycle state (phase flags, reminder counts, heads-up times)</td><td>Google Sheets — "Agent State" tab, one JSON row per quarter</td></tr>
           <tr><td>NPS score, category scores + feedback (Q1–Q7)</td><td>Google Sheets — "NPS results" tab, filtered by Quarter column</td></tr>
-          <tr><td>Response notifications</td><td>Albato scenario → GitHub <code>repository_dispatch</code> (form-response) → marks Responded</td></tr>
+          <tr><td>Response notifications</td><td>Albato scenario → GitHub <code>repository_dispatch</code> (form-response) → marks Responded + validates the row&rsquo;s Quarter tag</td></tr>
           <tr><td>@mention Q&amp;A queries</td><td>Slack — via Cloudflare Worker webhook listener</td></tr>
         </tbody>
       </table>
@@ -900,6 +900,7 @@
 │   ├── templates.py     # email + Slack message templates
 │   ├── models.py        # data models (QuarterState etc.)
 │   ├── dryrun.py        # dry-run preview of the next send
+│   ├── form_response.py # webhook checks: quarter-tag validation, active cycle
 │   └── tracker.py       # cost tracking
 ├── .github/workflows/
 │   ├── nps-run.yml          # phase runs (cron + manual send_surveys)

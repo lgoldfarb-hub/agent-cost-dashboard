@@ -20,6 +20,7 @@ Each entry covers:
   - Input data adds the Agent State tab and the Albato → `repository_dispatch` response flow.
   - Secrets corrected: the user token, not the bot, sends to client channels; Gmail sends via the service account's domain-wide delegation.
   - File tree now lists the workflows.
+- **Later the same day:** replaced the "Quarter tags in results" rule with "Quarter tag validation". The form-response webhook now checks and fixes each response's Quarter tag. Added `form_response.py` to the file tree, and the input row now mentions validation.
 
 ### Problems
 - None.
