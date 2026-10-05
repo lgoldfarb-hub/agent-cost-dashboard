@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Pressero | Zapier - Batch 3",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-05T12:02:34.393705+00:00",
+  "completed_at": "2026-10-05T12:02:39.746698+00:00",
+  "duration_seconds": 5.352993,
+  "input_tokens": 10545,
+  "output_tokens": 192,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 10545,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.031635,
+  "cost_output": 0.00288,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.034515000000000004
+}
