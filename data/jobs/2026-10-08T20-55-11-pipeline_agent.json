@@ -1,0 +1,23 @@
+{
+  "agent_name": "pipeline_agent",
+  "job_name": "FIT SCORE fields: Travmanity",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-08T20:55:11.455370+00:00",
+  "completed_at": "2026-10-08T20:55:13.250020+00:00",
+  "duration_seconds": 1.79465,
+  "input_tokens": 1216,
+  "output_tokens": 59,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 1216,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.003648,
+  "cost_output": 0.0008849999999999999,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.004533000000000001
+}
