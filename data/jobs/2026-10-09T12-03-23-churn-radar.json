@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Selzy | Network",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-09T12:03:23.888291+00:00",
+  "completed_at": "2026-10-09T12:03:50.476038+00:00",
+  "duration_seconds": 26.587747,
+  "input_tokens": 10916,
+  "output_tokens": 1090,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 10916,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.032748,
+  "cost_output": 0.01635,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.049098
+}
