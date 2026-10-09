@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: CallSine | Zapier Batch 13 - Resequence",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-09T12:08:33.679706+00:00",
+  "completed_at": "2026-10-09T12:08:53.851095+00:00",
+  "duration_seconds": 20.171389,
+  "input_tokens": 12562,
+  "output_tokens": 880,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 12562,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.037686,
+  "cost_output": 0.0132,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.050886
+}
