@@ -1218,5 +1218,107 @@
         "text": "Hi team, \n Please find attached the invoice for September. \n \n Kind regards, Ekaterina Razevig CFO Albato \n e.razevig@albato.com"
       }
     ]
+  },
+  {
+    "deal_id": "61873260142",
+    "deal_name": "CustomersAI| Paid_meetings_Feb26",
+    "booked_at": "2026-10-14 22:26",
+    "lead_title": "Product Owner",
+    "sequence_name": "",
+    "source": "albato_learn",
+    "messages": [
+      {
+        "role": "lead",
+        "text": "Nice to meet you, Leah - indeed, I spent over a decade at J.P. Morgan. Throughout my career, I saw conversation intelligence companies experience lots of pain with custom integrations (and integrations in general).\n\nThe insights Leo shared in the first email about Chorus.ai , Gong.io , and Otter.ai are real.\n\nAlbato’s product is a nice way to replace custom integrations when customers need that. We transfer all the data from CRM to BigQuery.\n\nWanted you both to connect and chat."
+      },
+      {
+        "role": "rep",
+        "text": "OpenPhone’s nailed business calls/texts and contacts management. That really differentiates OpenPhone from Dialpad and RingCentral. \n On a side note, your team put in great effort to support integrations with CRMs and other cloud-based apps. Imagine the hurdles you met on the road. \n Guess you can have a backlog like this . Especially when sales reps keep bringing new integration requests from prospects/customers. \n Wouldn’t it be great to replace all custom integrations with a one-stop no-code API? \n Let me know your thoughts. \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      },
+      {
+        "role": "rep",
+        "text": "Penny AI’s nailed social sales and learning and onboarding. That really differentiates Penny AI from SalesRabbit and Outreach. \n On a side note, your team put in great effort to support integrations with cloud-based apps. Imagine the hurdles you met on the road. \n Guess you can have a backlog like this . Especially when sales reps keep bringing new integration requests from prospects/customers. \n Wouldn’t it be great to replace all custom integrations with a one-stop no-code API? \n Let me know your thoughts. \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      },
+      {
+        "role": "lead",
+        "text": "Nice to meet you, \n\nVarya - indeed, I spent over a decade at J.P. Morgan. Throughout my career, I saw SaaS companies experience lots of pain with custom integrations (and integrations in general). \nThe insights Leo shared in the first email about \n\nTars, Botsify, and Tidio are real.\n\nAlbato’s product is a nice way to replace custom integrations when customers need that. We transfer all the data from CRM to BigQuery.\n\nWanted you both to connect and chat."
+      },
+      {
+        "role": "lead",
+        "text": "Nice to meet you, Stephanie - indeed, I spent over a decade at J.P. Morgan. Throughout my career, I saw SaaS companies experience lots of pain with custom integrations (and integrations in general). \nThe insights Leo shared in the first email about Chorus.ai , Refract, and CallMiner are real.\n\nAlbato’s product is a nice way to replace custom integrations when customers need that. We transfer all the data from CRM to BigQuery.\n\nWanted you both to connect and chat."
+      },
+      {
+        "role": "lead",
+        "text": "Nice to meet you, Alfredo - indeed, I spent over a decade at J.P. Morgan. Throughout my career, I saw SaaS companies experience lots of pain with custom integrations (and integrations in general). \nThe insights Leo shared in the first email about \n\nTalkdesk, Aircall, and Dialpad are real.\n\nAlbato’s product is a nice way to replace custom integrations when customers need that. We transfer all the data from CRM to BigQuery.\n\nWanted you both to connect and chat."
+      },
+      {
+        "role": "lead",
+        "text": "Nice to meet you,  Dmitrii  - indeed, I spent over a decade at J.P. Morgan. Throughout my career, I saw SaaS companies experience lots of pain with custom integrations (and integrations in general). \n The insights Leo shared in the first email about  Mixmax, Reply.io , and Autoklose are real. \n Albato’s product is a nice way to replace custom integrations when customers need that. We transfer all the data from CRM to BigQuery. \n\n Wanted you both to connect and chat."
+      },
+      {
+        "role": "lead",
+        "text": "Nice to meet you,  Mads  - indeed, I spent over a decade at J.P. Morgan. Throughout my career, I saw SaaS companies experience lots of pain with custom integrations (and integrations in general). \n The insights Leo shared in the first email about  Clearbit, ZoomInfo, and Leadfeeder are real. \n Albato’s product is a nice way to replace custom integrations when customers need that. We transfer all the data from CRM to BigQuery. \n\n Wanted you both to connect and chat."
+      },
+      {
+        "role": "lead",
+        "text": "Nice to meet you,  Guilherme - indeed, I spent over a decade at J.P. Morgan. Throughout my career, I saw SaaS companies experience lots of pain with custom integrations (and integrations in general). \n The insights Leo shared in the first email about  Boost.ai , Landbot, and Kommunicate are real. \n Albato’s product is a nice way to replace custom integrations when customers need that. We transfer all the data from CRM to BigQuery. \n\n Wanted you both to connect and chat."
+      },
+      {
+        "role": "lead",
+        "text": "Nice to meet you,  Sergey  - indeed, I spent over a decade at J.P. Morgan. Throughout my career, I saw SaaS companies experience lots of pain with custom integrations (and integrations in general). \n The insights Leo shared in the first email about  Insightly, Zoro, and Pipedrive  are real. \n Albato’s product is a nice way to replace custom integrations when customers need that. We transfer all the data from CRM to BigQuery. \n\n Wanted you both to connect and chat."
+      },
+      {
+        "role": "lead",
+        "text": "Nice to meet you,  Soren - indeed, I spent over a decade at J.P. Morgan. Throughout my career, I saw SaaS companies experience lots of pain with custom integrations (and integrations in general). \n The insights Leo shared in the first email about  VoiceBase, Talkdesk, and Invoca are real. \n Albato’s product is a nice way to replace custom integrations when customers need that. We transfer all the data from CRM to BigQuery. \n\n Wanted you both to connect and chat."
+      },
+      {
+        "role": "rep",
+        "text": "What I shared in the last emails will only work for Reprise unless \n 1/ you already have a no-code iPaaS embedded into Reprise’s 2/ you enjoy dealing with new integrations every sprint, managing auth tokens for your customers, and working heads down on custom integrations \n I will never believe #2 might be the case, nobody loves that :) \n Chris, but joking aside, this is a serious problem in the market, and cost of inaction is high. Worth a quick conversation to trade opinions? \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      },
+      {
+        "role": "rep",
+        "text": "What I shared in the last emails will only work for Snap Call unless \n 1/ you already have a no-code iPaaS embedded into Snap Call’s 2/ you enjoy dealing with new integrations every sprint, managing auth tokens for your customers, and working heads down on custom integrations \n I will never believe #2 might be the case, nobody loves that :) \n Paul, but joking aside, this is a serious problem in the market, and cost of inaction is high. Worth a quick conversation to trade opinions? \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      },
+      {
+        "role": "rep",
+        "text": "What I shared in the last emails will only work for SalesScreen unless \n 1/ you already have a no-code iPaaS embedded into SalesScreen’s 2/ you enjoy dealing with new integrations every sprint, managing auth tokens for your customers, and working heads down on custom integrations \n I will never believe #2 might be the case, nobody loves that :) \n Marius, but joking aside, this is a serious problem in the market, and cost of inaction is high. Worth a quick conversation to trade opinions? \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      },
+      {
+        "role": "rep",
+        "text": "What I shared in the last emails will only work for SalesHood unless \n 1/ you already have a no-code iPaaS embedded into SalesHood’s 2/ you enjoy dealing with new integrations every sprint, managing auth tokens for your customers, and working heads down on custom integrations \n I will never believe #2 might be the case, nobody loves that :) \n Brett, but joking aside, this is a serious problem in the market, and cost of inaction is high. Worth a quick conversation to trade opinions? \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      },
+      {
+        "role": "rep",
+        "text": "What I shared in the last emails will only work for Sabienzia Technologies unless \n 1/ you already have a no-code iPaaS embedded into Sabienzia Technologies’s 2/ you enjoy dealing with new integrations every sprint, managing auth tokens for your customers, and working heads down on custom integrations \n I will never believe #2 might be the case, nobody loves that :) \n Sebastian, but joking aside, this is a serious problem in the market, and cost of inaction is high. Worth a quick conversation to trade opinions? \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      },
+      {
+        "role": "rep",
+        "text": "What I shared in the last emails will only work for Stamped unless \n 1/ you already have a no-code iPaaS embedded into Stamped’s 2/ you enjoy dealing with new integrations every sprint, managing auth tokens for your customers, and working heads down on custom integrations \n I will never believe #2 might be the case, nobody loves that :) \n Nik, but joking aside, this is a serious problem in the market, and cost of inaction is high. Worth a quick conversation to trade opinions? \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      },
+      {
+        "role": "rep",
+        "text": "What I shared in the last emails will only work for Selligence unless \n 1/ you already have a no-code iPaaS embedded into Selligence’s 2/ you enjoy dealing with new integrations every sprint, managing auth tokens for your customers, and working heads down on custom integrations \n I will never believe #2 might be the case, nobody loves that :) \n David, but joking aside, this is a serious problem in the market, and cost of inaction is high. Worth a quick conversation to trade opinions? \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      },
+      {
+        "role": "rep",
+        "text": "What I shared in the last emails will only work for RepCard unless \n 1/ you already have a no-code iPaaS embedded into RepCard’s 2/ you enjoy dealing with new integrations every sprint, managing auth tokens for your customers, and working heads down on custom integrations \n I will never believe #2 might be the case, nobody loves that :) \n Sachin, but joking aside, this is a serious problem in the market, and cost of inaction is high. Worth a quick conversation to trade opinions? \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      },
+      {
+        "role": "rep",
+        "text": "What I shared in the last emails will only work for Reprise unless \n 1/ you already have a no-code iPaaS embedded into Reprise’s 2/ you enjoy dealing with new integrations every sprint, managing auth tokens for your customers, and working heads down on custom integrations \n I will never believe #2 might be the case, nobody loves that :) \n Sarah, but joking aside, this is a serious problem in the market, and cost of inaction is high. Worth a quick conversation to trade opinions? \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      },
+      {
+        "role": "rep",
+        "text": "What I shared in the last emails will only work for Saysimple unless \n 1/ you already have a no-code iPaaS embedded into Saysimple’s 2/ you enjoy dealing with new integrations every sprint, managing auth tokens for your customers, and working heads down on custom integrations \n I will never believe #2 might be the case, nobody loves that :) \n Richard, but joking aside, this is a serious problem in the market, and cost of inaction is high. Worth a quick conversation to trade opinions? \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      },
+      {
+        "role": "rep",
+        "text": "What I shared in the last emails will only work for OpenPhone unless \n 1/ you already have a no-code iPaaS embedded into OpenPhone’s 2/ you enjoy dealing with new integrations every sprint, managing auth tokens for your customers, and working heads down on custom integrations \n I will never believe #2 might be the case, nobody loves that :) \n Gordon, but joking aside, this is a serious problem in the market, and cost of inaction is high. Worth a quick conversation to trade opinions? \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      },
+      {
+        "role": "rep",
+        "text": "What I shared in the last emails will only work for Penny AI unless \n 1/ you already have a no-code iPaaS embedded into Penny AI’s 2/ you enjoy dealing with new integrations every sprint, managing auth tokens for your customers, and working heads down on custom integrations \n I will never believe #2 might be the case, nobody loves that :) \n Erica, but joking aside, this is a serious problem in the market, and cost of inaction is high. Worth a quick conversation to trade opinions? \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
+      }
+    ]
   }
 ]
