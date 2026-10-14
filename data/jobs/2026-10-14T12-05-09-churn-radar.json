@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: TimelinesAI | Inbound (from outreach 2024)",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-14T12:05:09.712087+00:00",
+  "completed_at": "2026-10-14T12:05:38.413437+00:00",
+  "duration_seconds": 28.70135,
+  "input_tokens": 13316,
+  "output_tokens": 1195,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 13316,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.039948,
+  "cost_output": 0.017925,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.057872999999999994
+}
