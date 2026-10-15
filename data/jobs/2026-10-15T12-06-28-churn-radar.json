@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Honch | Zapier Batch 11 ",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-15T12:06:28.962995+00:00",
+  "completed_at": "2026-10-15T12:06:34.538666+00:00",
+  "duration_seconds": 5.575671,
+  "input_tokens": 7094,
+  "output_tokens": 244,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 7094,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.021282,
+  "cost_output": 0.00366,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.024942
+}
