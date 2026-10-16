@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Duda | Network",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-16T12:02:27.638197+00:00",
+  "completed_at": "2026-10-16T12:02:40.330015+00:00",
+  "duration_seconds": 12.691818,
+  "input_tokens": 10692,
+  "output_tokens": 528,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 10692,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.032076,
+  "cost_output": 0.00792,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.039996000000000004
+}
