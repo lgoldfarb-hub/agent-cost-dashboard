@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: CoPilot AI | Zapier - Batch 2",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-16T12:05:07.688116+00:00",
+  "completed_at": "2026-10-16T12:05:21.260418+00:00",
+  "duration_seconds": 13.572302,
+  "input_tokens": 9851,
+  "output_tokens": 544,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 9851,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.029553000000000003,
+  "cost_output": 0.00816,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.037713
+}
