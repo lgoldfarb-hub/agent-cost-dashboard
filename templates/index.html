@@ -854,7 +854,7 @@
         </div>
         <div class="rule-item">
           <div class="rule-title">☑️ Sheet checkboxes</div>
-          <div class="rule-body">After each send, <strong>NPS Sent</strong> / <strong>Reminder N</strong> is ticked for every contact who received it — all rows in the company's Slack channel, or every address on the group email — in one batched write. Sheets API calls retry with backoff on rate-limit (429) and 5xx errors.</div>
+          <div class="rule-body">After each send, <strong>NPS Sent</strong> / <strong>Reminder N</strong> is ticked for every contact who received it — all rows in the company's Slack channel, or every address on the group email — in one batched write. When a Slack contact responds, <strong>Responded</strong> is ticked for every Slack contact of that company, because the team is surveyed in one shared channel. Email contacts are marked individually. Sheets API calls retry with backoff on rate-limit (429) and 5xx errors.</div>
         </div>
         <div class="rule-item">
           <div class="rule-title">🏷️ Quarter tag validation</div>

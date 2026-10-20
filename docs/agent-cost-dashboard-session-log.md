@@ -10,6 +10,22 @@ Each entry covers:
 
 ---
 
+## 2026-10-20
+
+### Done
+- NPS card, "Sheet checkboxes" rule: added that a Slack response ticks Responded for the company's whole Slack team. Email contacts are still marked individually.
+
+### Problems
+- None.
+
+### Deferred
+- None.
+
+### Open questions / next session
+- None.
+
+---
+
 ## 2026-10-02
 
 ### Done
