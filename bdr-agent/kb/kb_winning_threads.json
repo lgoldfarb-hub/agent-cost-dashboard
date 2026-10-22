@@ -1320,5 +1320,23 @@
         "text": "What I shared in the last emails will only work for Penny AI unless \n 1/ you already have a no-code iPaaS embedded into Penny AI’s 2/ you enjoy dealing with new integrations every sprint, managing auth tokens for your customers, and working heads down on custom integrations \n I will never believe #2 might be the case, nobody loves that :) \n Erica, but joking aside, this is a serious problem in the market, and cost of inaction is high. Worth a quick conversation to trade opinions? \n Leo, Managing partner at Albato Schedule a meeting - Albato.com"
       }
     ]
+  },
+  {
+    "deal_id": "66137678132",
+    "deal_name": "Cloud Humans - Inbound Support",
+    "booked_at": "2026-10-22 20:46",
+    "lead_title": "Founder and CEO",
+    "sequence_name": "",
+    "source": "albato_learn",
+    "messages": [
+      {
+        "role": "lead",
+        "text": "Hi Mariana,\n\nThanks for the detailed answers, that helps a lot. I'd rather keep this async for now so it's easier to share with the team.\n\nTo your questions:\n\n Today : our team builds each customer's integrations as custom flows, and we use our own integration layer for global SaaS. What we're missing is coverage for Brazilian apps.\n Priority use cases: order status and tracking, boleto copies and payment status, and opening exchanges or returns.\n Activation: we'll start with a small group of customers and expand from there.\n \nNext steps on our side:\n\n Trial access with Universal MCP, so we can test it with ClaudIA.\n The list of actions available through MCP today for Omie, Bling, Tiny, VTEX, Asaas and Pagar.me .\n \nAlso, we're YC W21, and the other integration platforms we work with gave us their YC startup deals, around $20k in credits for the first 12 months. Do you have something similar?\n\n Thanks,\n Ian\n \n\n \n Ian Kraskoff Founder +55 11 96083-2430 cloudhumans.com \n Sent via Superhuman"
+      },
+      {
+        "role": "rep",
+        "text": "Hi Ian and team, \n Thanks for sharing more context! This gives us a much clearer picture of what you're looking to achieve with ClaudIA. \n We'd be happy to offer your team a 2-week trial with complimentary credits to test our Universal MCP against your use cases. \n To get started, we'd just need a few things: \n Create a free Albato account at albato.com and share the email address you'd like to use as your master company account. Do you use Slack? If so, I'll set up a channel so our technical team can share setup details, support you throughout the trial, and help troubleshoot any issues. In the meantime, feel free to explore our MCP documentation and share any questions. \n Regarding the integrations, we're also sharing the list of currently available triggers and actions for the apps you mentioned. \n Based on your priority use cases, we can already see a few areas where we'd need to expand the existing connectors, particularly around retrieving order details, tracking information, and payment status. Custom development is part of our Embedded offering , and we'd be happy to review and prioritize these additions together as part of a longer-term partnership. \n On the commercial side, while we don't currently have a startup program, we're outlining a custom offer for Cloud Humans based on your needs, expected adoption, and growth plans. \n Would you be available for a 30-minute call this week or next to review the initial proposal and discuss the options together? You can book a time here , or feel free to suggest a few options. \n We can have this conversation in parallel with the technical trial, so your team can evaluate the integration capabilities while we align on what a longer-term partnership could look like. \n Looking forward to getting things started! \n Best, Mariana Guerci Head of Strategic Accounts @Albato schedule a meeting - albato.com"
+      }
+    ]
   }
 ]
