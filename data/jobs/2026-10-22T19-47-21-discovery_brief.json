@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: Cloud Humans - Inbound Support",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-22T19:47:21.389673+00:00",
+  "completed_at": "2026-10-22T20:02:51.673811+00:00",
+  "duration_seconds": 930.284138,
+  "input_tokens": 12203,
+  "output_tokens": 35272,
+  "cache_read_tokens": 2939880,
+  "cache_write_tokens": 140332,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 5148,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.036609,
+  "cost_output": 0.52908,
+  "cost_cache_read": 0.881964,
+  "cost_cache_write": 0.5262450000000001,
+  "cost_web_search": 0.0,
+  "cost_total": 1.973898
+}
