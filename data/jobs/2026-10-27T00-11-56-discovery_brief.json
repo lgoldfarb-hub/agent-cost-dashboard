@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: Access4 | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-27T00:11:56.623489+00:00",
+  "completed_at": "2026-10-27T00:27:18.640062+00:00",
+  "duration_seconds": 922.016573,
+  "input_tokens": 11844,
+  "output_tokens": 34827,
+  "cache_read_tokens": 3372534,
+  "cache_write_tokens": 140574,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4789,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.035532,
+  "cost_output": 0.522405,
+  "cost_cache_read": 1.0117601999999999,
+  "cost_cache_write": 0.5271525,
+  "cost_web_search": 0.0,
+  "cost_total": 2.0968497
+}
