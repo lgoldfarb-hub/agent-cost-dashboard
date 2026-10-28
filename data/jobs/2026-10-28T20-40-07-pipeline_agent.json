@@ -1,0 +1,23 @@
+{
+  "agent_name": "pipeline_agent",
+  "job_name": "FIT SCORE fields: 00x",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-10-28T20:40:07.667272+00:00",
+  "completed_at": "2026-10-28T20:40:08.852247+00:00",
+  "duration_seconds": 1.184975,
+  "input_tokens": 904,
+  "output_tokens": 22,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 904,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.002712,
+  "cost_output": 0.00033,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.003042
+}
