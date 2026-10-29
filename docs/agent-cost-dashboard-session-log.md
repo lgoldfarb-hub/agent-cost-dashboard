@@ -10,6 +10,22 @@ Each entry covers:
 
 ---
 
+## 2026-10-29
+
+### Done
+- NPS card: added a rule, "Report feedback & focus slides". Q7 feedback is now classified into praise vs. complaints before theming (no padded or invented bullets), plus a new score-based Areas of Focus slide. The Action Plan targets the next quarter.
+
+### Problems
+- None.
+
+### Deferred
+- None.
+
+### Open questions / next session
+- None.
+
+---
+
 ## 2026-10-20
 
 ### Done
