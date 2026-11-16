@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze:  Darwin AI | Zapier+reviews Batch 19 | April\u201925",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-11-16T13:03:22.574551+00:00",
+  "completed_at": "2026-11-16T13:03:42.497705+00:00",
+  "duration_seconds": 19.923154,
+  "input_tokens": 8250,
+  "output_tokens": 855,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 8250,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.02475,
+  "cost_output": 0.012825,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.037575
+}
