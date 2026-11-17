@@ -1,0 +1,23 @@
+{
+  "agent_name": "daily_todo_agent",
+  "job_name": "actions:Tanya Deshkevich",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-11-17T08:00:35.073656+00:00",
+  "completed_at": "2026-11-17T08:00:52.410333+00:00",
+  "duration_seconds": 17.336677,
+  "input_tokens": 7198,
+  "output_tokens": 411,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 7198,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.021594000000000002,
+  "cost_output": 0.006165,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.027759000000000002
+}
