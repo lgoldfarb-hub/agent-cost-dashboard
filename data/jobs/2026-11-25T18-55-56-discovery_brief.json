@@ -1,0 +1,23 @@
+{
+  "agent_name": "discovery_brief",
+  "job_name": "Brief: Method Procurment Technologies LLC | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-11-25T18:55:56.527688+00:00",
+  "completed_at": "2026-11-25T19:09:46.336924+00:00",
+  "duration_seconds": 829.809236,
+  "input_tokens": 11934,
+  "output_tokens": 34215,
+  "cache_read_tokens": 2519864,
+  "cache_write_tokens": 131363,
+  "system_prompt_tokens": 7055,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 4879,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.035802,
+  "cost_output": 0.513225,
+  "cost_cache_read": 0.7559592,
+  "cost_cache_write": 0.49261125000000006,
+  "cost_web_search": 0.0,
+  "cost_total": 1.79759745
+}
