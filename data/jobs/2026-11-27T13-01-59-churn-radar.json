@@ -1,0 +1,23 @@
+{
+  "agent_name": "churn-radar",
+  "job_name": "analyze: Birdview PSA | Inbound",
+  "model": "claude-sonnet-4-6",
+  "started_at": "2026-11-27T13:01:59.584778+00:00",
+  "completed_at": "2026-11-27T13:02:08.652281+00:00",
+  "duration_seconds": 9.067503,
+  "input_tokens": 9828,
+  "output_tokens": 264,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 9828,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.029484,
+  "cost_output": 0.00396,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.033444
+}
