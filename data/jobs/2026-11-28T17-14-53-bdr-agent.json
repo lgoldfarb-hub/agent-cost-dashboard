@@ -1,0 +1,23 @@
+{
+  "agent_name": "bdr-agent",
+  "job_name": "draft: Re: Digibee + Albato",
+  "model": "claude-opus-4-8",
+  "started_at": "2026-11-28T17:14:53.346616+00:00",
+  "completed_at": "2026-11-28T17:15:15.791538+00:00",
+  "duration_seconds": 22.444922,
+  "input_tokens": 11481,
+  "output_tokens": 282,
+  "cache_read_tokens": 0,
+  "cache_write_tokens": 0,
+  "system_prompt_tokens": 0,
+  "tool_result_tokens": 0,
+  "conversation_tokens": 11481,
+  "web_searches": 0,
+  "status": "success",
+  "cost_input": 0.172215,
+  "cost_output": 0.021150000000000002,
+  "cost_cache_read": 0.0,
+  "cost_cache_write": 0.0,
+  "cost_web_search": 0.0,
+  "cost_total": 0.193365
+}
